@@ -1,0 +1,1 @@
+console.log("userBar widget loaded");
