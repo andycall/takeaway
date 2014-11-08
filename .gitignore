@@ -1,3 +1,11 @@
+# webstorm
+.idea/
+
+# elm
+
+elm/
+
+
 # Logs
 logs
 *.log
