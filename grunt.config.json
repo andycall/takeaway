@@ -1,0 +1,7 @@
+{
+	"name": "Vector",
+	"js": ["app/views/**/*.js"],
+	"css": ["app/views/**/*.css"],
+	"needTag": false,
+	"depth": 2
+}
