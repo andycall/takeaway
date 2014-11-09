@@ -12,8 +12,9 @@ output:{
     no      : 0  // 错误号 ,错误号就出现在这, 如果没有, 那内容为空.
 }//后端返回数据
 input:{
-    user_email : "" // 用户名或者密码
+    user_email : "" // 用户名或者邮箱
     user_psw   : "" // 用户秘密
     user_auth  : "" // 用户验证码
     user_remember : "true" // // 用户记住我
 }//前端提交数据
+
