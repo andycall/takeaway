@@ -476,7 +476,7 @@ class Application extends Container implements HttpKernelInterface, TerminableIn
     }
     public static function getBootstrapFile()
     {
-        return 'D:\\wamp\\www\\App-database\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation' . '/start.php';
+        return '/Applications/XAMPP/xamppfiles/htdocs/Visual/vendor/laravel/framework/src/Illuminate/Foundation' . '/start.php';
     }
     public function startExceptionHandling()
     {
@@ -675,7 +675,7 @@ class Application extends Container implements HttpKernelInterface, TerminableIn
     }
     protected function registerBaseMiddlewares()
     {
-        
+
     }
     public function middleware($class, array $parameters = array())
     {
@@ -1939,7 +1939,7 @@ class Request
                 \Locale::setDefault($locale);
             }
         } catch (\Exception $e) {
-            
+
         }
     }
     private function getUrlencodedPrefix($string, $prefix)
@@ -2516,7 +2516,7 @@ class MetadataBag implements SessionBagInterface
     }
     public function clear()
     {
-        
+
     }
     public function getName()
     {
@@ -2572,8 +2572,8 @@ class AcceptHeaderItem
         $string = $this->value . ($this->quality < 1 ? ';q=' . $this->quality : '');
         if (count($this->attributes) > 0) {
             $string .= ';' . implode(';', array_map(function ($name, $value) {
-                return sprintf(preg_match('/[,;=]/', $value) ? '%s="%s"' : '%s=%s', $name, $value);
-            }, array_keys($this->attributes), $this->attributes));
+                    return sprintf(preg_match('/[,;=]/', $value) ? '%s="%s"' : '%s=%s', $name, $value);
+                }, array_keys($this->attributes), $this->attributes));
         }
         return $string;
     }
@@ -2741,7 +2741,7 @@ class ExceptionHandler
         ob_start(array($this, 'catchOutput'));
         $this->failSafeHandle($exception);
         while (null === $this->caughtBuffer && ob_end_flush()) {
-            
+
         }
         if (isset($this->caughtBuffer[0])) {
             ob_start(array($this, 'cleanOutput'));
@@ -2896,7 +2896,7 @@ class ExceptionHandler
     }
     private function decorate($content, $css)
     {
-        return "<!DOCTYPE html>\n<html>\n    <head>\n        <meta charset=\"UTF-8\" />\n        <meta name=\"robots\" content=\"noindex,nofollow\" />\n        <style>\n            /* Copyright (c) 2010, Yahoo! Inc. All rights reserved. Code licensed under the BSD License: http://developer.yahoo.com/yui/license.html */\n            html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:text-top;}sub{vertical-align:text-bottom;}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}input,textarea,select{*font-size:100%;}legend{color:#000;}\n\n            html { background: #eee; padding: 10px }\n            img { border: 0; }\n            #sf-resetcontent { width:970px; margin:0 auto; }\n            {$css}\n        </style>\n    </head>\n    <body>\n        {$content}\n    </body>\n</html>";
+        return "<!DOCTYPE html>\n<html>\n    <head>\n        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"/>\n        <meta name=\"robots\" content=\"noindex,nofollow\" />\n        <style>\n            /* Copyright (c) 2010, Yahoo! Inc. All rights reserved. Code licensed under the BSD License: http://developer.yahoo.com/yui/license.html */\n            html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:text-top;}sub{vertical-align:text-bottom;}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}input,textarea,select{*font-size:100%;}legend{color:#000;}\n\n            html { background: #eee; padding: 10px }\n            img { border: 0; }\n            #sf-resetcontent { width:970px; margin:0 auto; }\n            {$css}\n        </style>\n    </head>\n    <body>\n        {$content}\n    </body>\n</html>";
     }
     private function abbrClass($class)
     {
@@ -2956,7 +2956,7 @@ abstract class ServiceProvider
     }
     public function boot()
     {
-        
+
     }
     public abstract function register();
     public function package($package, $namespace = null, $path = null)
@@ -3779,7 +3779,7 @@ namespace Symfony\Component\HttpKernel\Debug;
 use Symfony\Component\Debug\ErrorHandler as DebugErrorHandler;
 class ErrorHandler extends DebugErrorHandler
 {
-    
+
 }
 namespace Illuminate\Config;
 
@@ -7248,7 +7248,7 @@ abstract class Model implements ArrayAccess, ArrayableInterface, JsonableInterfa
     {
         $format = $this->getDateFormat();
         if ($value instanceof DateTime) {
-            
+
         } elseif (is_numeric($value)) {
             $value = Carbon::createFromTimestamp($value);
         } elseif (preg_match('/^(\\d{4})-(\\d{2})-(\\d{2})$/', $value)) {
@@ -8883,7 +8883,7 @@ abstract class AbstractHandler implements HandlerInterface
     }
     public function close()
     {
-        
+
     }
     public function pushProcessor($callback)
     {
@@ -8935,7 +8935,7 @@ abstract class AbstractHandler implements HandlerInterface
         try {
             $this->close();
         } catch (\Exception $e) {
-            
+
         }
     }
     protected function getDefaultFormatter()
@@ -10536,7 +10536,7 @@ class Cookie
     protected $httpOnly;
     public function __construct($name, $value = null, $expire = 0, $path = '/', $domain = null, $secure = false, $httpOnly = true)
     {
-        if (preg_match('/[=,; 	
+        if (preg_match('/[=,;
 ]/', $name)) {
             throw new \InvalidArgumentException(sprintf('The cookie name "%s" contains invalid characters.', $name));
         }
