@@ -34,6 +34,7 @@
  */
 @section("css")
 	{{HTML::style("/css/template/home/home.css")}}
+	{{HTML::style("/css")}}
 @stop
 
 @section("script")

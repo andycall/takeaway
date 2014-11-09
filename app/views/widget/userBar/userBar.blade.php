@@ -1,5 +1,7 @@
 <div class="userBar">
-
+    <div class="user_content">
+        <div class="ui-helper-clearfix"></div>
+    </div>
 </div>
 
 @section("css")
