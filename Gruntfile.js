@@ -18,7 +18,7 @@ module.exports = function(grunt) {
        options: {
         spawn: false
       },
-      files: ['<%= config.js %>','<%= config.css %>']
+      files: ['<%= config.js %>','<%= config.css %>', '<%= config.image %>']
     }
   });
 
@@ -32,6 +32,8 @@ module.exports = function(grunt) {
           isJ = ["js","json"].indexOf(ext) != -1,
           isC = "css" === ext,
           runMap = [];
+
+      console.log(imgDir);
 
       if((isJ || isC) & needTag)
       {
