@@ -4,10 +4,10 @@
 
 @section("css")
 	@parent
-	{{HTML::style(public_path()."/css/views/widget/homeRight/homeRight.css")}}
+	{{HTML::style("/css/widget/homeRight/homeRight.css")}}
 @stop
 
 @section("script")
 	@parent
-	{{HTML::script(public_path()."/js/views/widget/homeRight/homeRight.js")}}
+	{{HTML::script("/js/widget/homeRight/homeRight.js")}}
 @stop

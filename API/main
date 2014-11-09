@@ -1,0 +1,186 @@
+主页参考文档
+------------- Blade ZONE ----------------
+类型为blade就是后端blade输出
+
+    type:"blade"//提交类型
+    output:{
+        // 顶部用户栏这块
+        $userbar : {
+            $url : { // 所有的地址
+                $logo : "" // 网站主页地址
+                $mobile : "" // 跳转到下载手机APP的地址
+                $my_ticket : "" // 我的饿单的地址
+                $my_gift  : "" // 礼品中心地址
+                $feedback : "" // 反馈留言地址
+                $nearby   : "" // 附近团购的地址
+                $shop_chart : "" // 购物车地址
+                $user_mail : "" // 用户提醒的地址
+                $personal : "" //个人中心地址
+                $my_collection : "" // 我的收藏地址
+                $my_place : "" // 我的地址
+                $my_secure : "" // 安全设置的地址
+                $loginout : "" // 退出登录的地址
+                $switch_place : "" // 切换当前地址的地址
+            },
+            $data : {
+                $username : "" // 当前用户的姓名
+                $user_place : "" // 当前用户的地理位置
+            }
+        }
+
+        // 顶部图片轮播
+        $pic_swap : [
+            {
+                image_url : "a.jpg"  // 图片文件地址
+                jump_url  :  ""      // 点击图片跳转地址
+            },
+            {
+                image_url : "b.jpg"  // 图片文件地址
+                jump_url  :  ""      // 点击图片跳转地址
+            }
+        ]
+
+        // 我收藏的店铺 (这个商家内容与下面的不一样.. →_→)
+        $my_store : {
+            $url : {
+                $settings : "" // 跳转到设置我的收藏的页面(在个人中心里)
+            },
+
+            // 注意, 显示最多就5个, 筛选出最近的5个
+            $data : [
+                {
+                    shop_id : "" // 商家id
+                    place_id : "" // 商家位置id
+                    shop_url : "" // 点击跳转到相应商家
+                    shop_logo : "" // 商家的logo图片地址
+                    deliver_time : "" // 送货时间
+                    shop_name : "" // 商家名称
+                    shop_type : "" // 商家类型
+                    shop_level : "9" // 总共10个等级, 1个半星一个等级
+                    order_count : "20" // 订单数量
+                }
+            ]
+        }
+
+        // 品牌餐馆
+        $good_band : {
+            $url : {
+                $good_band : "" // 跳转到品牌餐馆的地址
+            }
+            $data : {
+                $band_count : "1" // 餐馆数量
+                $shops : [
+                    {
+                        shop_id : "" // 商家id
+                        place_id : "" // 商家位置id
+                        shop_url : "" // 点击跳转到相应商家
+                        shop_logo : "" // 商家的logo图片地址
+                        deliver_time : "" // 送货时间
+                        shop_name : "" // 商家名称
+                        shop_type : "" // 商家类型
+                        shop_level : "9" // 总共10个等级, 1个半星一个等级
+                        shop_announce : "" // 商家公告
+                        deliver_start: "" // 起送价描述, 注意,这是一段话
+                        shop_address : "" // 商家地址
+                        business_hours : "" // 营业时间
+                        shop_summary : "" // 商家简介
+                        order_count : "20" // 订单数量
+                        is_collected : "" // 是否被收藏了
+                        additions : [ // 额外的内容
+                            {
+                                add_img : "" // 额外内容的图片地址, 这里会显示一个配字样的图片
+                                add_content : "配送费3元" // 额外内容
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+
+
+        // 餐厅列表
+
+        $shop_list : {
+
+        }
+    }
+
+
+
+------------------- Blade END -------------------------------
+
+
+
+------------------- AJAX ZONE -------------------------------
+    // 注意: 购物车里面只能添加一家商店内的商品
+
+    // 用户点击购物车发送的ajax
+    type : "get"
+    url  : ""
+    output : {
+        success : "true" // 成功
+        state  : 200 // HTTP 状态码
+        errMsg  : ""  // 如果出现错误, 错误信息就出现在这, 如果没有, 那内容为空.
+        no      : 0  // 错误号 ,错误号就出现在这, 如果没有, 那内容为空.
+        data : {
+            url : {
+               shop_url : "" // 点击商家, 跳转到相应的商家页面
+            },
+            shop_name : "" // "商店名称"
+            all_value : "16" // 商品总价格
+            goods : [
+                {
+                    good_name : "泡椒鸡胗煲仔饭",
+                    good_value : "8",  // 价格
+                    good_count : "1"   // 数量
+                }
+            ],
+            shop_state : "0" // 0 是可以付款买外卖, 1 是由于某种原因, 买不了外卖
+            state_msg : "" // 为啥买不了, 如果能买, 就位空
+        }
+    }
+
+
+    // 点击用户信息 (尚不清楚其作用... )
+    type : "get"
+    url  : ""
+    output : {
+        success : "true" // 成功
+        state  : 200 // HTTP 状态码
+        errMsg  : ""  // 如果出现错误, 错误信息就出现在这, 如果没有, 那内容为空.
+        no      : 0  // 错误号 ,错误号就出现在这, 如果没有, 那内容为空.
+        data : {
+
+        }
+    }
+
+
+    // 收藏商家
+    type : "get"
+    url  : "",
+    input : { // 会放在queryString里面
+        shop_id : "123213",
+        place_id : "123213123"
+    }
+    output:{
+        success : "true" // 成功返回true, 失败返回false
+        state   : 200  // HTTP 状态码
+        nextSrc : ""  // 登录成功后的跳转地址
+        errMsg  : ""  // 如果出现错误, 错误信息就出现在这, 如果没有, 那内容为空.
+        no      : 0  // 错误号 ,错误号就出现在这, 如果没有, 那内容为空.
+    }
+
+    // 取消收藏
+    type : "get"
+    url  : "",
+    input : { // 会放在queryString里面
+        shop_id : "123213",
+        place_id : "123213123"
+    }
+    output:{
+        success : "true" // 成功返回true, 失败返回false
+        state   : 200  // HTTP 状态码
+        nextSrc : ""  // 登录成功后的跳转地址
+        errMsg  : ""  // 如果出现错误, 错误信息就出现在这, 如果没有, 那内容为空.
+        no      : 0  // 错误号 ,错误号就出现在这, 如果没有, 那内容为空.
+    }
