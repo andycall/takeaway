@@ -4,10 +4,10 @@
 
 @section("css")
 	@parent
-	{{HTML::style(public_path()."/views/widget/footer/footer.css")}}
+	{{HTML::style("/css/widget/footer/footer.css")}}
 @stop
 
 @section("script")
 	@parent
-	{{HTML::script(public_path()."/js/views/widget/footer/footer.js")}}
+	{{HTML::script("/js/widget/footer/footer.js")}}
 @stop

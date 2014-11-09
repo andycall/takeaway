@@ -33,10 +33,10 @@
  * 并且非常好维护（模板、JS、CSS都在一块，他们就是标准的最佳体现）
  */
 @section("css")
-	{{HTML::style(public_path()."/css/template/home/home.css")}}
+	{{HTML::style("/css/template/home/home.css")}}
 @stop
 
 @section("script")
-	{{HTML::script(public_path()."/js/template/home/home.js")}}
+	{{HTML::script("/js/template/home/home.js")}}
 @stop
 
