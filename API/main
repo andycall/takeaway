@@ -40,6 +40,13 @@
             }
         ]
 
+        // 右边功能栏
+        $side_bar : {
+            QR_code : "" // 二维码图片路径
+            open_shop : "" // 我要开店的地址
+            hot_question : "" // 热门问题的地址
+        }
+
         // 我收藏的店铺 (这个商家内容与下面的不一样.. →_→)
         $my_store : {
             $url : {
@@ -71,7 +78,7 @@
             $data : {
                 $band_count : "1" // 餐馆数量
                 $shops : [
-                    {git
+                    {
                         shop_id : "" // 商家id
                         place_id : "" // 商家位置id
                         shop_url : "" // 点击跳转到相应商家
@@ -177,7 +184,29 @@
         $more_shop : {
             $data : [
                 {
-                    
+                    shop_id : "" // 商家id
+                    place_id : "" // 商家位置id
+                    shop_url : "" // 点击跳转到相应商家
+                    shop_logo : "" // 商家的logo图片地址
+                    deliver_time : "" // 送货时间间隔
+                    shop_name : "" // 商家名称
+                    shop_type : "" // 商家类型
+                    shop_level : "9" // 总共10个等级, 1个半星一个等级
+                    shop_announce : "" // 商家公告
+                    deliver_state_start: "" // 起送价描述, 注意,这是一段话
+                    shop_address : "" // 商家地址
+                    business_hours : "" // 营业时间
+                    shop_summary : "" // 商家简介
+                    order_count : "20" // 订单数量
+                    is_collected : "" // 是否被收藏了
+                    is_opening : "0" // 0 是正在营业, 1是打烊了
+                    close_msg : "" // 关门信息..
+                    additions : [ // 额外的内容
+                        {
+                            add_img : "" // 额外内容的图片地址, 这里会显示一个配字样的图片
+                            add_content : "配送费3元" // 额外内容
+                        }
+                    ]
 
                 }
             ]
