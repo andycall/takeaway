@@ -1,0 +1,79 @@
+商家页面参考文档
+
+----------------------- Blade Start ---------------------------
+
+// 商家菜单页
+
+    type : "blade"
+    output : {
+        // 顶部栏
+        $top_bar : {
+            $url : {
+                $return_back : "" // 返回主页的地址
+                $shop_url :   ""  // 当前商家的地址
+                $comment_url : "" // 商家评论页的地址
+                $menu_url  : ""   // 商家菜单的地址
+                $photo_url : ""   // 美食墙的地址
+                $message_url : "" // 商家留言的地址
+            }
+
+            $data : {
+                shop_id : ""      // 商家id
+                place_id : ""     // 商家位置id
+                shop_logo : ""    // 商家的logo图片地址
+                shop_name : ""    // 商家名称
+                shop_type : ""    // 商家类型
+                shop_level : "9"  // 总共10个等级, 1个半星一个等级
+                is_collected : "" // 是否被收藏了
+                is_opening : "0"  // 0 是正在营业, 1是打烊了
+
+            }
+        }
+    }
+
+// 商家美食墙页
+
+
+
+// 商家评价页
+
+
+// 商家留言页
+
+----------------------- Blade End -----------------------------
+
+
+----------------------- Ajax  Start -----------------------------
+
+    // 收藏商家
+    type : "get"
+    url  : "",
+    input : { // 会放在queryString里面
+        shop_id : "123213",
+        place_id : "123213123"
+    }
+    output:{
+        success : "true" // 成功返回true, 失败返回false
+        state   : 200  // HTTP 状态码
+        nextSrc : ""  // 登录成功后的跳转地址
+        errMsg  : ""  // 如果出现错误, 错误信息就出现在这, 如果没有, 那内容为空.
+        no      : 0  // 错误号 ,错误号就出现在这, 如果没有, 那内容为空.
+    }
+
+    // 取消收藏
+    type : "get"
+    url  : "",
+    input : { // 会放在queryString里面
+        shop_id : "123213",
+        place_id : "123213123"
+    }
+    output:{
+        success : "true" // 成功返回true, 失败返回false
+        state   : 200  // HTTP 状态码
+        nextSrc : ""  // 登录成功后的跳转地址
+        errMsg  : ""  // 如果出现错误, 错误信息就出现在这, 如果没有, 那内容为空.
+        no      : 0  // 错误号 ,错误号就出现在这, 如果没有, 那内容为空.
+    }
+
+
+----------------------- Ajax  End   -----------------------------
