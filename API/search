@@ -12,11 +12,14 @@
         errMsg  : ""  // 如果出现错误, 错误信息就出现在这, 如果没有, 那内容为空.
         no      : 0  // 错误号 ,错误号就出现在这, 如果没有, 那内容为空.
         data    : {
-            goods_category : "种类"
+            goods_category : "美食" // 商品种类
             shop_result : [
                 {
-                    goods_name : "小包才肉汤"
-                    shop_name : "XXX商店"
+                    goods_name : "小包才肉汤" // 商品名称
+                    goods_id : ""             // 商品的id
+                    shop_name : "XXX商店"    // 商家名称(如果是本店搜索, 这个为空)
+                    goods_value: "16"        // 商品价格
+                    goods_url : ""          // 跳转到这个商家的某个商品 (商品定位采用hash路径表示, 页面中id元素可以用hash来进行定位, 后端只需将对应的id拼接到相应的路径中去)
                 }
             ]
         }
