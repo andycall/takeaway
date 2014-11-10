@@ -55,16 +55,16 @@
             // 注意, 显示最多就5个, 筛选出最近的5个
             $data : [
                 {
-                    shop_id : "" // 商家id
-                    place_id : "" // 商家位置id
-                    shop_url : "" // 点击跳转到相应商家
-                    shop_logo : "" // 商家的logo图片地址
-                    deliver_time : "" // 送货时间间隔
-                    deliver_start: "" // 送货开始时间
-                    shop_name : "" // 商家名称
-                    shop_type : "" // 商家类型
-                    shop_level : "9" // 总共10个等级, 1个半星一个等级
-                    order_count : "20" // 订单数量
+                    shop_id : ""                    // 商家id
+                    place_id : ""                   // 商家位置id
+                    shop_url : ""                   // 点击跳转到相应商家
+                    shop_logo : ""                  // 商家的logo图片地址
+                    deliver_time : ""               // 送货时间间隔
+                    deliver_start: ""               // 送货开始时间
+                    shop_name : ""                  // 商家名称
+                    shop_type : ""                  // 商家类型
+                    shop_level : "9"                // 总共10个等级, 1个半星一个等级
+                    order_count : "20"              // 订单数量
                 }
             ]
         }
