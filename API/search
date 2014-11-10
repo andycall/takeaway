@@ -6,9 +6,21 @@
     type : "post"
     url :  ""
     output : {
-        result : [
-            {}
-        ]
+        success : "true" // 成功返回true, 失败返回false
+        state   : 200  // HTTP 状态码
+        nextSrc : ""  // 登录成功后的跳转地址
+        errMsg  : ""  // 如果出现错误, 错误信息就出现在这, 如果没有, 那内容为空.
+        no      : 0  // 错误号 ,错误号就出现在这, 如果没有, 那内容为空.
+        data    : {
+            goods_category : "种类"
+            shop_result : [
+                {
+                    goods_name : "小包才肉汤"
+                    shop_name : "XXX商店"
+                }
+            ]
+        }
+
     }
     input : {
         string : "db",
