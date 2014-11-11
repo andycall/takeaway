@@ -5,5 +5,3 @@ takeaway
 
 API 参考文档见API目录
 
-
-
