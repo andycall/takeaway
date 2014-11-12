@@ -1,6 +1,7 @@
 页面顶部栏接口文档
 
 ------------- Blade ZONE ----------------
+// 顶部栏
 type : "blade"
 output : {
      $userbar : {
@@ -26,6 +27,15 @@ output : {
         }
     }
 }
+
+// 隐藏的顶部通知栏(用户通知信息)
+
+type : "blade"
+output : {
+    $need_to_show : "true" // 是否要显示
+    $message      : ""     // 显示的信息
+}
+
 
 ------------- Blade End ----------------
 
