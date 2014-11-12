@@ -28,4 +28,5 @@
     input : {
         string : "db",
         isLocal : "true" // 是否搜索本店
+        shop_id : ""     // 如果是本店, 则会带上shop_id
     }
