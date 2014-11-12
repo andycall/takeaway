@@ -1,0 +1,351 @@
+商家页面参考文档
+
+----------------------- Blade Start ---------------------------
+
+
+    // 个人中心
+    type : "blade"
+    output : {
+        $user_place : ""    // 用户选择的位置
+        $switch_place : ""  // 更改位置的地址
+        $personal : {       // 个人中心
+            $user_image : "" // 用户头像
+            $user_name  : "" // 用户姓名
+            $user_level : "" // 用户安全等级
+            $user_balance : "" // 用户余额
+            $charge :   ""   // 跳转到充值的地址
+            $user_score : "" // 用户积分
+            $user_collect: {
+                restaurant : ""   // 餐厅数量
+                cate       : ""   // 美食数量
+            }
+            $user_order    : ""  // 用户订单数量
+            $recent_order  : [
+                {
+                    order_number : ""  // 订单号
+                    order_time   : ""  // 下单时间
+                    order_restaurant : "" // 订单餐厅
+                    order_details : "" // 订单详情
+                    order_state : ""   // 订单状态
+                }
+            ]
+
+            $recent_deal :  {
+                deal_time  : ""     // 交易时间
+                deal_type  : ""     // 交易类型
+                deal_details : ""   // 交易详情
+                deal_money : {
+                    money_type : "0"  // 0是增加 1 是减少
+                    money_sum  : ""   // 金额数额
+                }
+                deal_status  : ""     // 交易状态
+            }
+            $more_deal : ""     // 收支明细的地址
+        }
+    }
+
+        // 最近一个月 (最近一个月, 一个月之前, 未点评订单, 退单中订单 采用相同的结构)
+        type : "blade"
+        output : {
+            $user_place : ""    // 用户选择的位置
+            $switch_place : ""  // 更改位置的地址
+            $recent_month : {
+                $deal_count :  ""        // 最近一个月的订单数量
+                $deal : [
+                    {
+                        $shop_id     :  ""  // 商店id
+                        $deal_id     :  ""  // 订单id
+                        $deal_statue :  ""  // 交易状态
+                        $deal_return :  ""  // 退单链接
+                        $deal_again  :  ""  // 商品的地址
+                        $shop_name   :  ""  // 商店的名称
+                        $deal_number :  ""  // 订单号
+                        $deal_time   :  ""  // 订单时间
+                        $deal_phone  :  ""  // 餐厅电话
+                        $deliver_address : "" // 订单送往地址
+                        $deliver_phone : "" // 订单联系电话
+                        $deliver_remark :  "" // 订单备注
+                        $deal_speed  :  "" // 送餐速度
+                        $deal_satisfied : "" // 订单满意度
+                        $goods : [  // 购买的所有商品
+                            {
+                                goods_id    : ""       // 商品id
+                                goods_name : "红烧肉"  // 商品名称
+                                goods_value : ""       // 商品价格
+                                goods_amount : ""      // 商品数量
+                                goods_total  : ""      // 商品价格总计
+                            }
+                        ]
+                        $others : [  // 其他费用
+                            {
+                                item_name  : "11元管饱又管好（重庆）"        // 其他费用名称
+                                item_value : ""                              // 其他费用单价
+                                item_amount : ""                             // 其他费用数量
+                                item_total : ""                              // 其他费用小计
+                            }
+                        ]
+
+                        $total : ""         // 价格总计
+                    }
+                ]
+            }
+
+        }
+
+
+    // 我收藏的商家
+
+    type : "blade"
+    output : {
+        $shop_count : ""    // 收藏的商家数量
+        $shop_area  : ""    // 商店区域
+        $shops : [
+            {
+                $shop_id   : ""     // 商店id
+                $shop_name : ""     // 商店名称
+                $shop_logo : ""     // 商店logo
+                $shop_type : ""     // 商店类型
+                $shop_level : ""    // 商店等级
+                $deliver_time : ""  // 送货时间
+                $shop_statue : ""   // 商店状态 (是否打烊)
+            }
+        ]
+    }
+
+    // 我收藏的商品
+
+    type : "blade"
+    output : {
+        $good_count : ""     // 收藏的商品数量
+        $goods : [
+            {
+                $good_id : ""   // 商品id
+                $good_name : "" // 商品名称
+                $shop_name : "" // 商品归属的商店的名称
+                $shop_id   : "" // 商品归属的商店的id
+                $good_price : "" // 商品的价格
+                $shop_status : "" // 商店的状态
+                $shop_hot : ""   // 商店人气(也就是所有商品的销量)
+            }
+        ]
+    }
+
+
+    // 我的地址
+    type : "blade"
+    method : "post"
+    output : {
+        $deliver_address : [  // 送餐地址
+            {
+                $address_details  : ""      // 送餐详细地址
+                $deliver_phone    : ""      // 送餐联系电话
+                $address_state    : ""      // 是否是默认地址
+                $edit_address     : ""      // 编辑地址的链接 (不用ajax  →_→)
+                $delete_address   : ""      // 删除地址的链接
+                $set_default      : ""      // 设为默认的地址
+            }
+        ]
+    }
+    input : { // 表单提交
+        $address_details : ""  // 送餐地址
+        $deliver_phone   : ""  // 送餐联系电话
+    }
+
+    // 修改密码
+    type : "blade"
+    method : "post"
+    output : {
+        $change_password : ""    // 更改密码的地址
+        $state           : ""    // 修改状态
+        $success         : "true" // 是否修改成功
+    }
+    input : { // 表单提交
+         $original_password : "" // 原密码
+         $new_password      : "" // 新密码
+    }
+
+    // 安全设置页面
+
+    type: "blade"
+    output : {
+        $secure_level : ""  // 安全等级
+        $secure_phone : ""  // 用户的手机号码
+        $change_phone : ""  // 更换手机号码的链接
+        $change_email : ""  // 更换邮箱的链接
+        $cancel_phone : ""  // 解除绑定的地址
+        $secure_email : ""  // 用户邮箱地址
+        $email_state  : ""  // 邮箱状态
+        $phone_state  : ""  // 手机状态
+    }
+
+    // 验证手机解绑
+    type : "blade"
+    output : {
+        $now_phone  : ""  // 当前手机号码
+        $get_auth   : ""  // 获取手机验证码的链接
+    }
+    input : {
+        $auth_num   : ""  // 手机验证码
+    }
+
+    // 验证邮箱解绑和更换邮箱
+    type : "blade"
+    output : {
+        $now_email : ""  // 当前邮箱号码
+        $get_auth  : ""  // 获取邮箱验证的链接
+    }
+    input : {
+        $auth_nuk   : "" // 邮件验证码
+    }
+
+    // 修改手机号码
+    type : "blade"
+    method : "post"
+    output : {
+        auth_url       : "" // 表单提交的地址
+    }
+    input : {
+        original_phone : "" // 原手机号码
+        new_phone      : ""   // 新手机号码
+        auth_num       : ""  // 验证码
+    }
+
+
+    // 收支明细 (这里没有ajax ..→_→)
+    type : "blade"
+    output : {
+        $url : {
+            $all : ""   // 全部收支的链接
+            $takeout : "" // 外卖收支的链接
+            $charge : ""  // 用户充值收支的链接
+            $refund : ""  // 退款收支的链接
+        }
+
+        $data : [
+            {
+                $create_time : ""   // 创建时间
+                $deal_type   : ""   // 交易类型
+                $deal_details : ""  // 交易详情
+                $deal_money  : ""   // 交易金额
+                $deal_state : ""    // 交易状态
+            }
+        ]
+    }
+
+
+
+
+
+----------------------- Blade End -----------------------------
+
+
+----------------------- Ajax  Start -----------------------------
+// 发送手机验证码
+
+    type : "post"
+    url  : ""
+    output : {
+        success : "true" // 成功返回true, 失败返回false
+        state   : 200  // HTTP 状态码
+        nextSrc : ""  // 登录成功后的跳转地址
+        errMsg  : ""  // 如果出现错误, 错误信息就出现在这, 如果没有, 那内容为空.
+        no      : 0  // 错误号 ,错误号就出现在这, 如果没有, 那内容为空.
+        data    : {
+            auth_num_state      : ""  // 验证码状态
+        }
+    }
+    input : {
+        original_phone : "" // 原手机号码
+        new_phone      : "" // 新手机号码
+    }
+
+
+// 点评送餐速度
+    type : "post"
+    url : ""
+    input : {
+        shop_id : "12323" // 商家id
+        deal_id : "1213"  // 订单id
+        deal_speed : ""   // 送餐速度
+    }
+    output : {
+        success : "true" // 成功返回true, 失败返回false
+        state   : 200  // HTTP 状态码
+        nextSrc : ""  // 登录成功后的跳转地址
+        errMsg  : ""  // 如果出现错误, 错误信息就出现在这, 如果没有, 那内容为空.
+        no      : 0  // 错误号 ,错误号就出现在这, 如果没有, 那内容为空.
+    }
+
+
+// 点评订单满意度
+    type : "post"
+    url : ""
+    input : {
+        shop_id : "12323" // 商家id
+        deal_id : "1213"  // 订单id
+        deal_satisfied : ""   // 送餐满意度
+        deal_satisfied_comment : "" // 送餐满意度评论
+    }
+    output : {
+        success : "true" // 成功返回true, 失败返回false
+        state   : 200  // HTTP 状态码
+        nextSrc : ""  // 登录成功后的跳转地址
+        errMsg  : ""  // 如果出现错误, 错误信息就出现在这, 如果没有, 那内容为空.
+        no      : 0  // 错误号 ,错误号就出现在这, 如果没有, 那内容为空.
+    }
+
+
+
+// 点评商品等级
+    type : "post"
+    url : ""
+    input : {
+        shop_id : "12323" // 商家id
+        deal_id : "1213"  // 订单id
+        goods_id : ""     // 商品id
+        goods_level : ""   // 商品等级
+    }
+    output : {
+        success : "true" // 成功返回true, 失败返回false
+        state   : 200  // HTTP 状态码
+        nextSrc : ""  // 登录成功后的跳转地址
+        errMsg  : ""  // 如果出现错误, 错误信息就出现在这, 如果没有, 那内容为空.
+        no      : 0  // 错误号 ,错误号就出现在这, 如果没有, 那内容为空.
+    }
+
+
+
+// 删除收藏的商家
+
+    type : "post"
+    url  : ""
+    input : {
+        shop_id : ""  // 商家id
+    }
+    output : {
+        success : "true" // 成功返回true, 失败返回false
+        state   : 200  // HTTP 状态码
+        nextSrc : ""  // 登录成功后的跳转地址
+        errMsg  : ""  // 如果出现错误, 错误信息就出现在这, 如果没有, 那内容为空.
+        no      : 0  // 错误号 ,错误号就出现在这, 如果没有, 那内容为空.
+    }
+
+
+// 删除收藏的商品
+    type : "post"
+    url  : ""
+    input : {
+        shop_id : ""  // 商家id
+        good_id : ""  // 商品id
+    }
+    output : {
+        success : "true" // 成功返回true, 失败返回false
+        state   : 200  // HTTP 状态码
+        nextSrc : ""  // 登录成功后的跳转地址
+        errMsg  : ""  // 如果出现错误, 错误信息就出现在这, 如果没有, 那内容为空.
+        no      : 0  // 错误号 ,错误号就出现在这, 如果没有, 那内容为空.
+    }
+
+
+
+----------------------- Ajax  End   -----------------------------
