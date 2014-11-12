@@ -1,1 +1,1 @@
-console.log("userBar widget loaded");
+!function(a){{var b=a(".tb-search-form"),c=a(".tb-search-input"),d=a(".icon-loading");a(".icon-clear")}c.on("focus",function(){b.css({background:"#FFF"})}).on("keydown",function(){a.ajax("http://baidu.com/",{beforeSend:function(){d.removeClass("hide")},success:function(a){if("true"==a.success){a.data}else alert(123)},complete:function(){d.addClass("hide")}})})}(jQuery);

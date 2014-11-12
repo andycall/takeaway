@@ -1,5 +1,5 @@
 {
-	"name": "Vector",
+	"name": "ZeroLing",
 	"js": ["app/views/**/*.js"],
 	"css": ["app/views/**/*.css"],
     "image" : ["app/views/**/*.{jpg,png,gif}"],

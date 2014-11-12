@@ -1,4 +1,3 @@
-<!--layout定义了整个页面的结构，是前端模板的抽象-->
 <!Doctype html>
 	<html>
 		<head>
