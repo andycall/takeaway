@@ -1,12 +1,10 @@
 !function($) {
-    {
         var $sForm = $(".tb-search-form"), $sInput = $(".tb-search-input"), $iLoading = $(".icon-loading");
         $(".icon-clear");
-    }
     $sInput.on("focus", function() {
-        $sForm.css({
-            background: "#FFF"
-        });
+//        $sForm.css({
+//            background: "#FFF"
+//        });
     }).on("keydown", function() {
         $.ajax("http://baidu.com/", {
             beforeSend: function() {
@@ -14,7 +12,7 @@
             },
             success: function(res) {
                 if ("true" == res.success) {
-                    res.data;
+
                 } else alert(123);
             },
             complete: function() {
