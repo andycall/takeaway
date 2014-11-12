@@ -224,7 +224,7 @@
 ----------------------- Ajax  Start -----------------------------
 
     // 收藏商家
-    type : "get"
+    type : "post"
     url  : "",
     input : { // 会放在queryString里面
         shop_id : "123213",
@@ -239,7 +239,7 @@
     }
 
     // 取消收藏商家
-    type : "get"
+    type : "post"
     url  : "",
     input : { // 会放在queryString里面
         shop_id : "123213",
@@ -254,7 +254,7 @@
     }
 
     // 收藏商品
-        type : "get"
+        type : "post"
         url  : "",
         input : { // 会放在queryString里面
             shop_id : "123213",
@@ -269,7 +269,7 @@
         }
 
     // 取消收藏商品
-    type : "get"
+    type : "post"
     url  : "",
     input : { // 会放在queryString里面
         shop_id : "123213",
@@ -285,7 +285,7 @@
 
     // 注意: 购物车里面只能添加一家商店内的商品
     // 清空购物车
-    type : "get"
+    type : "post"
     url  : ""
     input : {
         shop_id : "12323"
@@ -300,7 +300,7 @@
 
     // 注意: 购物车里面只能添加一家商店内的商品
     // 在购物车内删除商品
-    type : "get"
+    type : "post"
     url  : ""
     input : {
         shop_id : "123213"      // 商家id
@@ -316,7 +316,7 @@
 
     // 注意: 购物车里面只能添加一家商店内的商品
     // 添加商品进购物车
-    type : "get"
+    type : "post"
     url  : ""
     input : {
         shop_id : "12323"

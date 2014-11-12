@@ -3,7 +3,7 @@
 
 
    // 顶部栏搜索
-    type : "post"
+    type : "get"
     url :  ""
     output : {
         success : "true" // 成功返回true, 失败返回false
