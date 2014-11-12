@@ -4,14 +4,6 @@
 	@include("widget.userBar.userBar")
 @stop
 
-@section("left_content")
-	@include("widget.homeLeft.homeLeft")
-@stop
-
-@section("right_content")
-	@include("widget.homeRight.homeRight")
-@stop
-
 @section("footer")
 	@include("widget.footer.footer")
 @stop
