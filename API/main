@@ -151,7 +151,7 @@
 
 
     // 收藏商家
-    type : "get"
+    type : "post"
     url  : "",
     input : { // 会放在queryString里面
         shop_id : "123213",
@@ -166,7 +166,7 @@
     }
 
     // 取消收藏
-    type : "get"
+    type : "post"
     url  : "",
     input : {                                           // 会放在queryString里面
         shop_id : "123213",
