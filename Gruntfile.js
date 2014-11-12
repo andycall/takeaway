@@ -73,18 +73,18 @@ module.exports = function(grunt) {
               }
             ]
           },
-          beatify: {
-            options: {
-              beautify: true,
-              mangle: false
-            },
-            files: [
-              {
-                expand: true,
-                filter: 'isFile',
-                src: src
-              }]
-          }
+          //beatify: {
+          //  options: {
+          //    beautify: true,
+          //    mangle: false
+          //  },
+          //  files: [
+          //    {
+          //      expand: true,
+          //      filter: 'isFile',
+          //      src: src
+          //    }]
+          //}
         };
 
         runMap.push("jshint");
