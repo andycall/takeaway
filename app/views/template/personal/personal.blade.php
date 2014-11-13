@@ -1,7 +1,12 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: andycall
- * Date: 14-11-13
- * Time: 10:27
- */ 
+@extends("layout.common")
+
+
+@section("header")
+    @include('widget.userBar.userBar')
+@stop
+
+
+@section("footer")
+
+
+@stop

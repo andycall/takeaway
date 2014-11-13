@@ -7,6 +7,7 @@
     }).on("keydown", function() {
         $.ajax("/takeaway/app/views/ling.mock.php?s=userBarSearch", {
             beforeSend: function() {
+                $iClear.addClass("hide");
                 $iLoading.removeClass("hide");
             },
             success: function(res) {
@@ -15,6 +16,7 @@
                         _tpl = _.template($('#tpl-tb-search').html())({data: data});
                     $sResult.html(_tpl).show();
 //                    $sResult.show();
+                    $iLoading.addClass("hide");
                     $iClear.removeClass('hide');
                 } else {
                     alert(123);

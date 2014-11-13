@@ -15,10 +15,10 @@ module.exports = function(grunt) {
 
     //文件修改监控
     watch: {
-       options: {
-        spawn: false
-      },
-      files: ['<%= config.js %>','<%= config.css %>', '<%= config.image %>']
+        options: {
+            spawn: false
+        },
+        files: ['<%= config.js %>', '<%= config.css %>', '<%= config.image %>']
     }
   });
 
@@ -32,8 +32,6 @@ module.exports = function(grunt) {
           isJ = ["js","json"].indexOf(ext) != -1,
           isC = "css" === ext,
           runMap = [];
-
-      console.log(imgDir);
 
       if((isJ || isC) & needTag)
       {
@@ -147,6 +145,7 @@ module.exports = function(grunt) {
           time = +new Date(),
           iIndex,lIndex,tag;
 
+       console.log(sep);
       //去除头尾的空格
       src = src.replace(/^[\/\\]|[\/\\]$/g,'');
 
@@ -157,7 +156,6 @@ module.exports = function(grunt) {
           if(iIndex == -1){
             break;
           }
-          console.log(src);
           src = src.slice(iIndex+1);
 
       }
@@ -168,6 +166,7 @@ module.exports = function(grunt) {
       tag = needTag ? "-" + time : '';
       src = src.slice(0,lIndex) + tag + src.slice(lIndex);
 
+        //console.log("dest + sep + src", dest + sep  + src);
       return dest + sep + src;
     }
   }
@@ -194,7 +193,6 @@ module.exports = function(grunt) {
     src = src.replace(/[\/\\ ]+$/g,'');
     lIndex = src.lastIndexOf(sep);
 
-    console.log(src.slice(0,lIndex+1));
 
     return lIndex != -1 ? src.slice(0,lIndex+1) : "/";
   }
