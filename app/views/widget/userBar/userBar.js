@@ -1,4 +1,5 @@
 define(['jquery'], function($){
+
         var $sForm = $(".tb-search-form"), $sInput = $(".tb-search-input"), $iLoading = $(".icon-loading"), $iClear = $('.icon-clear'), $sResult = $('.search-result');
         $sInput.on("focus", function() {
             $sForm.css({
@@ -35,5 +36,7 @@ define(['jquery'], function($){
             $iClear.addClass('hide');
             $sInput.val('');
         });
+
+    return {};
 });
 

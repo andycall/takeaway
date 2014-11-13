@@ -78,5 +78,5 @@
 
 @section("script")
     @parent
-    {{--{{HTML::script("/js/widget/userBar/userBar.js")}}--}}
+    {{HTML::script("/js/widget/userBar/userBar.js")}}
 @stop
