@@ -9,12 +9,7 @@
 				@yield("header")
 			</div>
 			<div id="content">
-				<div id="left_content">
-					@yield("left_content")
-				</div>
-				<div id="right_content">
-					@yield("right_content")
-				</div>
+                @yied
 			</div>
 			<div id="footer">
 				@yield("footer")
