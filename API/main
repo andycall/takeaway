@@ -4,6 +4,7 @@
 
     type:"blade"//提交类型
     output:{
+
         // 顶部图片轮播
         $pic_swap : [
             {

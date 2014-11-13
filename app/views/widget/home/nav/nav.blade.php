@@ -1,4 +1,4 @@
-<div>地点与切换地区</div>
+<div></div>
 
 @section("css")
     @parent
