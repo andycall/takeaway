@@ -1,16 +1,26 @@
 require.config({
-    baseUrl : "/js/lib",
+    baseUrl : "js/lib/",
     shim : {
         "underscore" : {
             exports : "_"
         }
     },
-    path : {
+    paths : {
+        home : "../template/home",
         nav : "../widget/home/nav",
         ads : "../widget/home/ads",
         collection: "../widget/home/collection",
         more_shops : "../widget/home/more_shops",
         shops : "../widget/home/shops",
-        swipe : "../widget/home/swipe"
+        swipe : "../widget/home/swipe",
+        userBar : "../widget/userBar"
     }
+});
+
+
+// 加载项目所需的所有依赖项
+define([
+    'userBar/userBar'
+], function($){
+    console.log("init");
 });

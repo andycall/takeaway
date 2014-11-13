@@ -23,6 +23,7 @@ define(['jquery'], function($){
                     alert(123);
                 }
             }
+
         });
 
         $iClear.on("click", function () {
@@ -36,6 +37,8 @@ define(['jquery'], function($){
         });
     });
 
-    return {};
+    return {
+
+    };
 });
 
