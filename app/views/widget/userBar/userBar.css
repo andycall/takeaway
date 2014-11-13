@@ -135,15 +135,66 @@
   top: 30px;
   display: none;
   width: 365px;
-  background: #FFF;
+  background: #ECECEC;
   border-radius: 2px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
   overflow: hidden;
+}
+.tb-search .search-result .search-item {
+  list-style: none;
+  *zoom: 1;
+  padding: 5px 0;
+  padding-left: 10px;
+}
+.tb-search .search-result .search-item:hover {
+  background-color: #f3f3f3;
+  cursor: pointer;
+}
+.tb-search .search-result .search-item:before,
+.tb-search .search-result .search-item:after {
+  display: table;
+  content: "";
+}
+.tb-search .search-result .search-item:after {
+  clear: both;
+}
+.tb-search .search-result .search-item .sr-logo {
+  float: left;
+  height: 32px;
+  width: 32px;
+}
+.tb-search .search-result .search-item .sr-name,
+.tb-search .search-result .search-item .sr-price {
+  float: left;
+  line-height: 32px;
+  display: block;
+  padding: 0 10px;
+  font-size: 14px;
+  font-size: 0.875rem;
 }
 .tb-search .search-result .search-no-result {
   padding: 15px 20px;
   font-size: 14px;
   font-size: 0.875rem;
+}
+.tb-search .search-result .search-cate {
+  float: left;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 55px;
+  padding: 20px 0 20px 20px;
+  color: #555;
+  font-size: 13px;
+}
+.tb-search .search-result .search-list {
+  float: left;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 310px;
+  margin: 0;
+  padding: 10px 0;
+  background: #FFF;
+  border-left: 1px solid #D7D7D7;
 }
 .tb-nav {
   float: right;

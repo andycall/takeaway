@@ -54,16 +54,21 @@
 </div>
 <script type="text/template" id="tpl-tb-search">
     <div class="tb-search-autocomplete">
+        <% data.forEach(function(val){ %>
         <div class="clearfix">
-            <span class="tsearch-cate">{}</span>
-            <ul id="tsDish_list" class="tsearch-list ts-dish-list">
-               <li class="tsearch_item tsearch-item ts-dish">
-                <a class="tsd-name" href="##" target="_blank">自家尖椒鸡</a>
+            <span class="search-cate"><%= val.goods_category %></span>
+            <ul class="search-list">
+                <% val.shop_result.forEach(function(_val){ %>
+                <li class="search-item">
+                    <img class="sr-logo" src="<%= _val.img_url %>" alt="<%= _val.goods_name %>">
+                    <a class="sr-name" href="<%= _val.goods_url %>" target="_blank"><%= _val.goods_name %></a>
 
-                <span class="tsd-price"><span class="symbol-rmb">¥</span> 38</span>
-              </li>
+                    <span class="sr-price"><span class="symbol-rmb">¥</span> <%= _val.goods_value %></span>
+                </li>
+                <% }) %>
             </ul>
-      </div>
+        </div>
+        <% }) %>
     </div>
 </script>
 @section("css")

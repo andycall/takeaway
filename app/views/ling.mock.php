@@ -14,14 +14,16 @@ switch($_GET['s']){
             "errMsg" => "",
             "no" => "",
             "data" => [
-                "goods_category" => "美食",
-                "shop_result" => [
-                    [
-                        "goods_name" => "小包才肉汤",
-                        "goods_id" => "123",
-                        "shop_name" => "XXX商店",
-                        "goods_value" => "16",
-                        "goods_url" => "http://baidu.com"
+                0 => [
+                    "goods_category" => "美食",
+                     "shop_result" => [
+                        [
+                            "goods_name" => "小包才肉汤",
+                            "goods_id" => "123",
+                            "shop_name" => "XXX商店",
+                            "goods_value" => "16",
+                            "goods_url" => "http://baidu.com"
+                        ]
                     ]
                 ]
             ]
