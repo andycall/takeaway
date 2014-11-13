@@ -19,10 +19,10 @@
             <li><a class="tb-site-nav-link" href="##">我的饿单</a></li>
             <li><a class="tb-site-nav-link" href="##">礼品中心</a></li>
             <li><a class="tb-site-nav-link" href="##">反馈留言</a></li>
-            <li class="tb-hr"><a class="tb-site-nav-link" href="##">附近团购</a></li>
+            <li class="tb-hr"><a class="tb-site-nav-link last" href="##">附近团购</a></li>
         </ul>
         <div class="tb-cart">
-            <a class="">
+            <a href="##" class="tb-cart-link">
                 <i class="icon-cart"></i>
             </a>
             <div class="">
@@ -31,7 +31,7 @@
             </div>
         </div>
         <div class="tb-msg">
-            <a class="">
+            <a href="##" class="tb-msg-link">
                 <i class="icon-msg"></i>
             </a>
             <div class="tb-msg-dropdown">
@@ -52,6 +52,8 @@
         </div>
     </nav>
 </div>
+
+
 <script type="text/template" id="tpl-tb-search">
     <div class="tb-search-autocomplete">
         <% data.forEach(function(val){ %>

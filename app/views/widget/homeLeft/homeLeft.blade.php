@@ -2,6 +2,9 @@
 	This is HomeLeft Widget!
 </div>
 
+
+
+
 @section("css")
 	@parent
 	{{HTML::style("/css/widget/homeLeft/homeLeft.css")}}

@@ -203,7 +203,7 @@
 .tb-nav .tb-site-nav {
   float: left;
   margin: 10px 0;
-  margin-right: 13px;
+  margin-right: 25px;
 }
 .tb-nav .tb-site-nav li {
   float: left;
@@ -224,6 +224,9 @@
   text-decoration: none;
   -webkit-font-smoothing: antialiased;
   padding: 0 12px;
+}
+.tb-nav .tb-site-nav .tb-site-nav-link.last {
+  margin-right: 10px;
 }
 .tb-nav .icon-cart {
   background: url("../../../images/topbar.png") no-repeat rgba(0, 0, 0, 0) 0 -80px;
@@ -246,6 +249,10 @@
   display: inline-block;
   width: 20px;
   height: 20px;
+}
+.tb-cart-link,
+.tb-msg-link {
+  padding-right: 8px;
 }
 .topbar-user-nav .caret {
   display: inline-block;
