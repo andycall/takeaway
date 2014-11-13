@@ -20,7 +20,13 @@ require.config({
 
 // 加载项目所需的所有依赖项
 define([
-    'userBar/userBar'
+    'userBar/userBar',
+    "nav/nav",
+    "ads/ads",
+    "collection/collection",
+    "more_shops/more_shops",
+    "shops/shops",
+    "swipe/swipe"
 ], function($){
     console.log("init");
 });
