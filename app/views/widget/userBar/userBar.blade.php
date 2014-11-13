@@ -52,7 +52,20 @@
         </div>
     </nav>
 </div>
+<script type="text/template" id="tpl-tb-search">
+    <div class="tb-search-autocomplete">
+        <div class="clearfix">
+            <span class="tsearch-cate">{}</span>
+            <ul id="tsDish_list" class="tsearch-list ts-dish-list">
+               <li class="tsearch_item tsearch-item ts-dish">
+                <a class="tsd-name" href="##" target="_blank">自家尖椒鸡</a>
 
+                <span class="tsd-price"><span class="symbol-rmb">¥</span> 38</span>
+              </li>
+            </ul>
+      </div>
+    </div>
+</script>
 @section("css")
     @parent
     {{HTML::style("/css/widget/userBar/userBar.css")}}
