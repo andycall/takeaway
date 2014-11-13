@@ -11,7 +11,7 @@ switch($_GET['s']){
         $json = [
             "success" => "true",
             "state" => 200,
-            "errMsg" => "",
+            "errMsg" => "test",
             "no" => "",
             "data" => [
                 0 => [
