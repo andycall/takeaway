@@ -81,7 +81,7 @@
                         shop_type : ""                          // 商家类型
                         shop_level : "9"                        // 总共10个等级, 1个半星一个等级
                         shop_announce : ""                      // 商家公告
-                        deliver_start: ""                       // 起送价描述, 注意,这是一段话
+                        deliver_start_statement: ""                       // 起送价描述, 注意,这是一段话
                         shop_address : ""                       // 商家地址
                         is_opening  : ""                        // 0 是正在营业, 1是打烊了
                         close_msg   : ""                        // 关门信息
