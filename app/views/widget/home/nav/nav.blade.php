@@ -1,4 +1,9 @@
-<div>地点与切换地区</div>
+<nav class="breadcrumb">
+    <p>
+        <span>这里是地址</span>
+        <a href="##">[切换地址]</a>
+    </p>
+</nav>
 
 @section("css")
     @parent
