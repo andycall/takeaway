@@ -11,6 +11,27 @@
 |
 */
 
+
 Route::get('/', function(){
-	return View::make('template.home.home');
+    $data = [
+        "pic_swap" => [
+            0 => [
+                "image_url" => "a.jpg",
+                "jump_url" => ""
+            ],
+            1 => [
+                "image_url" => "b.jpg",
+                "jump_url" => ""
+            ]
+        ],
+
+        "side_bar" => [
+            "QR_code" => "http://db.jpg",
+            "open_shop" => "http://shop",
+            "hot_question" => "http://hot_question"
+        ]
+
+    ];
+
+	return View::make('template.home.home')->with($data);
 });

@@ -4,7 +4,6 @@
 	@include("widget.userBar.userBar")
 @stop
 
-
 {{-- 地点与切换地区 --}}
 @section("nav")
     @include("widget.home.nav.nav")
@@ -46,8 +45,6 @@
 @stop
 
 @section("script")
-    {{HTML::script("http://hongyan.cqupt.edu.cn/cdn/js/underscore-1.7.0.min.js")}}
-    {{HTML::script("/js/lib/jquery.js")}}
-    {{HTML::script("/js/template/home/home.js")}}
+    {{HTML::script("/js/lib/require.js", ["data-main"=> "/js/template/home/home.js"])}}
 @stop
 

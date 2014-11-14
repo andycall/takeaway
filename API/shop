@@ -7,17 +7,17 @@
     type : "blade"
     output : {
         // 顶部栏
-        $top_bar : {
-            $url : {
-                $return_back : ""               // 返回主页的地址
-                $shop_url :   ""                // 当前商家的地址
-                $comment_url : ""               // 商家评论页的地址
-                $menu_url  : ""                 // 商家菜单的地址
-                $photo_url : ""                 // 美食墙的地址
-                $message_url : ""               // 商家留言的地址
+        top_bar : {
+            url : {
+                return_back : ""               // 返回主页的地址
+                shop_url :   ""                // 当前商家的地址
+                comment_url : ""               // 商家评论页的地址
+                menu_url  : ""                 // 商家菜单的地址
+                photo_url : ""                 // 美食墙的地址
+                message_url : ""               // 商家留言的地址
             }
 
-            $data : {
+            data : {
                 shop_id : ""                    // 商家id
                 place_id : ""                   // 商家位置id
                 shop_logo : ""                  // 商家的logo图片地址
@@ -45,8 +45,8 @@
 
         // 美食分类 (主页的活动与商家添加的分类放在一起)
 
-        $good_category : {
-            $data : {
+        good_category : {
+            data : {
                 goods_category : [
                     {
                         classify_name : "10元管饱"  // 类别名称
@@ -63,8 +63,8 @@
 
         // 分类内容
 
-        $category : {
-            $data : {
+        category : {
+            data : {
                 classify_sec : [
                     {
                          classify_name : "10元管饱"  // 类别名称
@@ -105,11 +105,11 @@
 
         // 餐厅公告
 
-        $announcement : {
-            $data : {
-                $announce_content : ""              // 餐厅公告内容
-                $start_price      : ""              // 起送价
-                $activities       : [               // 商家活动
+        announcement : {
+            data : {
+                announce_content : ""              // 餐厅公告内容
+                start_price      : ""              // 起送价
+                activities       : [               // 商家活动
                     {
                         activity_name : "10元管饱", // 活动标题
                         activity_icon : ""          // 活动图标
@@ -120,8 +120,8 @@
         }
 
         // 本周热卖
-        $best_seller :  {
-            $data : {
+        best_seller :  {
+            data : {
                 goods_id : ""        // 商品id
                 goods_name : ""      // 商品名称
                 goods_level : ""     // 商品等级, 总共10个等级
@@ -133,8 +133,8 @@
         }
 
         // 位置地图
-        $shop_map :   {
-            $data : {
+        shop_map :   {
+            data : {
                 map_url : ""         // 地图地址
             }
         }
@@ -146,17 +146,17 @@
     type : "blade"
     output : {
         // 顶部栏
-        $top_bar : {
-            $url : {
-                $return_back : ""               // 返回主页的地址
-                $shop_url :   ""                // 当前商家的地址
-                $comment_url : ""               // 商家评论页的地址
-                $menu_url  : ""                 // 商家菜单的地址
-                $photo_url : ""                 // 美食墙的地址
-                $message_url : ""               // 商家留言的地址
+        top_bar : {
+            url : {
+                return_back : ""               // 返回主页的地址
+                shop_url :   ""                // 当前商家的地址
+                comment_url : ""               // 商家评论页的地址
+                menu_url  : ""                 // 商家菜单的地址
+                photo_url : ""                 // 美食墙的地址
+                message_url : ""               // 商家留言的地址
             }
 
-            $data : {
+            data : {
                 shop_id : ""                    // 商家id
                 place_id : ""                   // 商家位置id
                 shop_logo : ""                  // 商家的logo图片地址
@@ -182,11 +182,11 @@
         }
 
         // 商家评论页
-        $comment : {
-            $comment_all : {
-                $comment_pages : "0"             // 评论的页数
-                $comment_count : ""              // 所有评论的数量
-                $comment_body : [                // 一次只取16个
+        comment : {
+            comment_all : {
+                comment_pages : "0"             // 评论的页数
+                comment_count : ""              // 所有评论的数量
+                comment_body : [                // 一次只取16个
                     {
                         goods_name : ""                 // 商品名称
                         goods_price : ""                // 商品价格
@@ -200,7 +200,7 @@
         }
 
         // 总评价
-        $comment_summary : {
+        comment_summary : {
             shop_level : {                  // 总共10个等级, 1个半星一个等级
                 level_5 : "66"              // 评论为5星的比例
                 level_4 : "17"              // 评论为4星的比例

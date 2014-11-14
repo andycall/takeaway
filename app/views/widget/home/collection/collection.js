@@ -1,1 +1,3 @@
-var test = "test";
+define(['jquery'], function($){
+
+});
