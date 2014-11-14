@@ -6,7 +6,7 @@
     output:{
 
         // 顶部图片轮播
-        $pic_swap : [
+        pic_swap : [
             {
                 image_url : "a.jpg"                 // 图片文件地址
                 jump_url  :  ""                     // 点击图片跳转地址
@@ -18,20 +18,20 @@
         ]
 
         // 右边功能栏
-        $side_bar : {
+        side_bar : {
             QR_code : ""                            // 二维码图片路径
             open_shop : ""                          // 我要开店的地址
             hot_question : ""                       // 热门问题的地址
         }
 
         // 我收藏的店铺 (这个商家内容与下面的不一样.. →_→)
-        $my_store : {
-            $url : {
-                $settings : ""                      // 跳转到设置我的收藏的页面(在个人中心里)
+        my_store : {
+            url : {
+                settings : ""                      // 跳转到设置我的收藏的页面(在个人中心里)
             },
 
             // 注意, 显示最多就5个, 筛选出最近的5个
-            $data : [
+            data : [
                 {
                     shop_id : ""                    // 商家id
                     place_id : ""                   // 商家位置id
@@ -49,10 +49,10 @@
 
 
         // 餐厅列表
-        $shop_list : {
-            $data : {
+        shop_list : {
+            data : {
                 // 考虑到以后活动会换， 在前端进行筛选的时候， 会通过activity_id 进行筛选
-                $activity : [
+                activity : [
                     {
                         activity_id : "123",
                         activity_name : "11元管饱又管好(重庆)"
@@ -62,7 +62,7 @@
                         activity_name : "10元管饱"
                     }
                 ],
-                $shops : [
+                shops : [
                     {
                         support_activity : ["123", "456"]       // 所有支持的活动的id
                         isHot : "true"                          // 是否是热门餐厅
@@ -97,8 +97,8 @@
         }
 
         // 5个广告图片
-        $add_image : {
-            $data : [
+        add_image : {
+            data : [
                 {
                     image_url : ""          // 图片地址
                     jump_url : ""           // 跳转地址
@@ -107,8 +107,8 @@
         }
 
         // 更多餐厅
-        $more_shop : {
-            $data : [
+        more_shop : {
+            data : [
                 {
                     shop_id : ""            // 商家id
                     place_id : ""           // 商家位置id
