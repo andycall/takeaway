@@ -41,7 +41,7 @@
         </div>
         <div class="topbar-user-nav">
             <a class="tb-username">这是用户名<i class="caret"></i></a>
-            <ul class="tb-dropdown">
+            <ul class="tb-dropdown" style="display: none;">
                 <li><a rel="nofollow" href="##"><i class="icon-profile"></i>个人中心</a></li>
                 <li><a rel="nofollow" href="##"><i class="icon-fav"></i>我的收藏</a></li>
                 <li><a rel="nofollow" href="##"><i class="icon-address"></i>我的地址</a></li>
