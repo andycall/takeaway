@@ -1,4 +1,7 @@
-<div>图片轮播</div>
+<div class="swipe">
+
+
+</div>
 
 @section("css")
     @parent
