@@ -4,7 +4,6 @@
 	@include("widget.userBar.userBar")
 @stop
 
-
 {{-- 地点与切换地区 --}}
 @section("nav")
     @include("widget.home.nav.nav")
