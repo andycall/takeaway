@@ -43,7 +43,7 @@
                     shop_type : ""                  // 商家类型
                     shop_level : "9"                // 总共10个等级, 1个半星一个等级
                     order_count : "20"              // 订单数量
-                    is_opening : "0"                // 0 是正在营业, 1是打烊了
+                    is_opening : "0"                // 0 是正在营业, 1是打烊了 2 是太忙
                     is_ready_for_order : ""         // 是否接受预定
                 }
             ]
