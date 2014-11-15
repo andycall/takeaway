@@ -18,7 +18,7 @@ module.exports = function(grunt) {
         options: {
             spawn: false
         },
-        files: ['<%= config.js %>', '<%= config.css %>', '<%= config.image %>']
+        files: ['<%= config.js %>', '<%= config.css %>', '<%= config.image %>', '<%= config.css_map %>', "<%= config.js_map %>"]
     }
   });
 
@@ -31,7 +31,11 @@ module.exports = function(grunt) {
           ext = getExtFromSrc(src),
           isJ = ["js","json"].indexOf(ext) != -1,
           isC = "css" === ext,
+          isJ_M ="js.map" === ext,
+          isC_M = "css.map" === ext,
           runMap = [];
+
+
 
       if((isJ || isC) & needTag)
       {
@@ -89,6 +93,21 @@ module.exports = function(grunt) {
         runMap.push("uglify");
       }
 
+	  if(isJ_M){
+		  data.copy = {
+			  main : {
+				  files : [
+					  {
+						  expand : true,
+						  filter: "isFile",
+						  src : src,
+						  rename : getPathFromDepth('public/css', src, depth)
+					  }
+				  ]
+			  }
+		  };
+	  }
+
       if(isC)
       {
         data.cssmin = {
@@ -103,6 +122,30 @@ module.exports = function(grunt) {
           }
         };
         runMap.push("cssmin");
+      }
+
+      if(isC_M){
+		  var destSrc = getPathFromDepth("public/css", src, depth)();
+		  console.log(destSrc, src);
+
+          data.copy = {
+              main : {
+                  files : [
+                      {
+                          filter: "isFile",
+						  src :  src,
+						  dest : destSrc,
+						  options: {
+							  process: function (content, srcpath) {
+								  return content.replace(/[sad ]/g,"_");
+							  }
+						  }
+                      }
+                  ]
+              }
+          };
+
+		  runMap.push("copy");
       }
 
       data.imagemin = {                          
@@ -127,14 +170,15 @@ module.exports = function(grunt) {
       grunt.task.run(runMap);
   });
   
-  grunt.loadNpmTasks('grunt-contrib-imagemin');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-contrib-imagemin');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-jshint');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-contrib-copy');
 
-  grunt.registerTask('default', ['watch']);
+	grunt.registerTask('default', ['watch']);
 
   /**---------------下面是辅助函数，不要随意修改--------------**/
   function getPathFromDepth(dest,src,depth,needTag)
@@ -171,19 +215,26 @@ module.exports = function(grunt) {
     }
   }
 
-  function getExtFromSrc(src)
-  {
-    var lIndex;
+	function getExtFromSrc(src)
+	{
+		var lIndex,
+			ext;
 
-    //去除多余干扰字符
-    src = src.replace(/[\/\\ ]+$/g,'');
-    lIndex = src.lastIndexOf(".");
+		//去除多余干扰字符
+		src = src.replace(/[\/\\ ]+$/g,'');
+		lIndex = src.lastIndexOf(".");
 
-    if(lIndex != -1)
-    {
-      return src.slice(lIndex+1);
-    }
-  }
+		ext = src.slice(lIndex + 1);
+
+		if(ext === "map"){
+			return src.slice(lIndex -3);
+		}
+		else if(lIndex != -1)
+		{
+		  return ext;
+		}
+
+	}
 
   function getDirPathFromSrc(src)
   {
