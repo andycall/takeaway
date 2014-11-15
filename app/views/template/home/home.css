@@ -470,9 +470,3 @@ input[type="search"]::-webkit-search-decoration {
 a {
   text-decoration: none;
 }
-
-
-#content {
-    width: 960px;
-    margin: 0 auto;
-}
