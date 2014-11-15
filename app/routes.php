@@ -40,10 +40,17 @@ Route::get('/', function(){
 
         "my_store" => [
             "url" => "###",
+<<<<<<< HEAD
+            "data" => [
+                [
+                    "shop_url" => "http://www.baidu.com",
+                    "shop_logo" => "/takeaway/public/images/5c81fa9884117928491470659e18djpeg.jpeg",
+=======
             "date" => [
                 0 => [
                     "shop_url" => "##",
                     "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
+>>>>>>> d57872d9059c90332e0fc854869b66c0fc50edbd
                     "deliver_time" => "22",
                     "deliver_start" => "17=>00",
                     "shop_name" => "三顾冒菜",
@@ -53,21 +60,29 @@ Route::get('/', function(){
                     "is_opening" => "0",
                     "is_ready_for_order" => "1"
                 ],
-                1 => [
+                [
                     "shop_url" => "##",
+<<<<<<< HEAD
+                    "shop_logo" => "/takeaway/public/images/5c81fa9884117928491470659e18djpeg.jpeg",
+=======
                     "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
+>>>>>>> d57872d9059c90332e0fc854869b66c0fc50edbd
                     "deliver_time" => "45",
                     "deliver_start" => "",
                     "shop_name" => "乐堡王",
                     "shop_type" => "中式，西式",
-                    "shop_level" => "4.7",
+                    "shop_level" => "4.3",
                     "order_count" => "5134",
                     "is_opening" => "0",
                     "is_ready_for_order" => "0"
                 ],
-                2 => [
+                [
                     "shop_url" => "##",
+<<<<<<< HEAD
+                    "shop_logo" => "",
+=======
                     "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
+>>>>>>> d57872d9059c90332e0fc854869b66c0fc50edbd
                     "deliver_time" => "",
                     "deliver_start" => "",
                     "shop_name" => "铁板牛肉",
