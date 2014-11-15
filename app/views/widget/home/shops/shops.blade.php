@@ -57,17 +57,31 @@
             </span>
         </div>
     </div>
-    <div class="shop_container">
-        <table>
-            <tr>
-                <td>
-                    <div class="shop_sec">
-
+    <table class="shop_container">
+        <tr>
+            <td>
+                <div class="shop_sec">
+                    <div class="flavour_collection"></div>
+                    <div class="shop_content">
+                        <div class="logo_wrapper">
+                            <div class="logo"><a href="#"><img src="" alt=""/></a></div>
+                            <div class="deliver_time" data-deliver-time="45分钟">
+                                45分钟
+                            </div>
+                        </div>
+                        <div class="info">
+                            <div class="name">
+                               <a class="restaurant-link" href="http://r.ele.me/cqlzbfwmsg" target="_blank">【710】劉仔煲..</a>
+                            </div>
+                            <div class="states_lable"><span>接受预定</span></div>
+                            <div class="status_desc"><span>送餐时间17:00开始</span></div>
+                        </div>
                     </div>
-                </td>
-            </tr>
-        </table>
-    </div>
+                    <div class="shop_statement"></div>
+                </div>
+            </td>
+        </tr>
+    </table>
 </div>
 
 
