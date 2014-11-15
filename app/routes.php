@@ -133,3 +133,59 @@ Route::get('/', function(){
 
 	return View::make('template.home.home')->with($data);
 });
+
+Route::get('/userBarSearch', function(){
+    $data = [
+                "success" => "true", // 成功返回true, 失败返回false
+                "state"   => 200,  // HTTP 状态码
+                "nextSrc" => "",  // 登录成功后的跳转地址
+                "errMsg"  => "",  // 如果出现错误, 错误信息就出现在这, 如果没有, 那内容为空.
+                "no"      => 0,  // 错误号 ,错误号就出现在这, 如果没有, 那内容为空.
+                "data"    => [
+                               [
+                                    "goods_category" => "美食", // 商品种类
+                                    "shop_result" => [
+                                                        [
+                                                            "goods_name" => "小包才肉汤", // 商品名称
+                                                            "goods_id" => "",             // 商品的id
+                                                            "shop_name" => "XXX商店",    // 商家名称(如果是本店搜索, 这个为空)
+                                                            "goods_value" => "16",        // 商品价格
+                                                            "goods_url" => "",          // 跳转到这个商家的某个商品 (商品定位采用hash路径表示, 页面中id元素可以用hash来进行定位, 后端只需将对应的id拼接到相应的路径中去)
+                                                            "img_url" => "",            // 商家logo地址 , 如果是种类是商家的话
+                                                        ]
+                                                    ]
+                               ]
+                            ]
+        ];
+
+
+    return Response::json($data);
+});
+
+Route::get("/userBarCart", function(){
+   $data = [
+        "success" => "true"  ,                              // 成功
+        "state"  => 200     ,                               // HTTP 状态码
+        "errMsg"  => ""    ,                                // 如果出现错误, 错误信息就出现在这, 如果没有, 那内容为空.
+        "no"      => 0      ,                               // 错误号 ,错误号就出现在这, 如果没有, 那内容为空.
+        "data" => [
+            "url" => [
+                "shop_url" => ""   ,                         // 点击商家, 跳转到相应的商家页面
+            ],
+            "shop_name" => ""     ,                         // "商店名称"
+            "all_value" => "16"   ,                         // 商品总价格
+            "goods" => [
+                [
+                   "good_name" => "泡椒鸡胗煲仔饭",       // 名称
+                   "good_value" => "8",                   // 价格
+                   "good_count" => "1"                    // 数量
+                ]
+            ],
+            "shop_state" => "0"  ,                          // 0 是可以付款买外卖, 1 是由于某种原因, 买不了外卖
+            "state_msg" => ""  ,                            // 为啥买不了, 如果能买, 就位空
+        ]
+    ];
+
+    return Response::json($data);
+
+});
