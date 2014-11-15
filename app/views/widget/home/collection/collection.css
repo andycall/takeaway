@@ -41,7 +41,7 @@
   padding: 10px;
   border-left: 1px solid #ddd;
 }
-.collection .collection-row a:first-child div {
+.collection .collection-row a:first-child div.more_shops-row-book {
   border: 0;
 }
 .collection .collection-row .collection-row-book {
@@ -154,7 +154,7 @@
   margin-right: 2px;
 }
 .collection .collection-row .collection-row-book:hover {
-  background-color: #f9f9f9;
+  background: #f9f9f9 !important;
 }
 .collection .collection-row .collection-row-book:hover .title p {
   color: #08c !important;

@@ -70,7 +70,6 @@
                         isHot : "true"                          // 是否是热门餐厅
                         isOnline : "true"                       // 是否营业
                         isSupportPay : "true"                   // 是否支持在线支付
-                        flavor : "中式"                         // 餐厅口味
                         shop_id : ""                            // 商家id
                         place_id : ""                           // 商家位置id
                         shop_url : ""                           // 点击跳转到相应商家
@@ -84,6 +83,7 @@
                         deliver_start_statement: ""             // 起送价描述, 注意,这是一段话
                         shop_address : ""                       // 商家地址
                         is_opening  : ""                        // 0 是正在营业, 1是打烊了 2 是太忙
+                        is_ready_for_order : ""                 // 是否接受预定
                         close_msg   : ""                        // 关门信息
                         business_hours : ""                     // 营业时间
                         shop_summary : ""                       // 商家简介
@@ -114,6 +114,9 @@
         more_shop : {
             data : [
                 {
+                    support_activity : ["123", "456"]       // 所有支持的活动的id
+                    isHot : "true"                          // 是否是热门餐厅
+                    isSupportPay : "true"                   // 是否支持在线支付
                     shop_id : ""            // 商家id
                     place_id : ""           // 商家位置id
                     shop_url : ""           // 点击跳转到相应商家
@@ -130,6 +133,7 @@
                     order_count : "20"      // 订单数量
                     is_collected : ""       // 是否被收藏了
                     is_opening : "0"        // 0 是正在营业, 1是打烊了 2 是太忙
+                    is_ready_for_order : "" // 是否接受预定
                     close_msg : ""          // 关门信息..
                     additions : [           // 额外的内容
                         {

@@ -58,7 +58,7 @@ Route::get('/', function(){
                     "shop_url" => "http://www.baidu.com",
                     "shop_logo" => "/takeaway/public/images/5c81fa9884117928491470659e18djpeg.jpeg",
                     "deliver_time" => "22",
-                    "deliver_start" => "17:g00",
+                    "deliver_start" => "17:00",
                     "shop_name" => "三顾冒菜",
                     "shop_type" => "中餐",
                     "shop_level" => "4.3",
@@ -139,6 +139,116 @@ Route::get('/', function(){
                             ]
                         ]
                     ]
+                ]
+            ]
+        ],
+
+        "more_shop" => [
+
+
+            "data" => [
+
+                [
+                    "support_activity" => [
+
+                    ],
+                    "isHot" => "1",
+                    "isOnline" => "1",
+                    "isSupportPay" => "1",
+                    "shop_url" => "http://www.baidu.com",
+                    "shop_logo" => "/takeaway/public/images/5c81fa9884117928491470659e18djpeg.jpeg",
+                    "deliver_time" => "22",
+                    "deliver_start" => "17:00",
+                    "shop_name" => "三顾冒菜",
+                    "shop_type" => "中餐",
+                    "shop_level" => "4.3",
+                    "shop_announce" => "吃吃吃，吃个屁",
+                    "deliver_state_start" => "100块都不送",
+                    "shop_address" => "堕落街",
+                    "business_hours" => "24小时",
+                    "shop_summary"  => "吃吃吃",
+                    "order_count" => "202",
+                    "is_collected" => "0",
+                    "is_opening" => "0",
+                    "is_ready_for_order" => "1"
+                ],
+                [
+                    "support_activity" => [
+
+                    ],
+                    "isHot" => "1",
+                    "isOnline" => "1",
+                    "isSupportPay" => "1",
+                    "shop_url" => "##",
+                    "shop_logo" => "/takeaway/public/images/5c81fa9884117928491470659e18djpeg.jpeg",
+                    "deliver_time" => "45",
+                    "deliver_start" => "",
+                    "shop_name" => "乐堡王",
+                    "shop_type" => "中式，西式",
+                    "shop_level" => "4.3",
+                    "shop_announce" => "吃吃吃，吃个屁",
+                    "deliver_state_start" => "100块都不送",
+                    "shop_address" => "堕落街A区",
+                    "business_hours" => "24小时",
+                    "shop_summary"  => "吃",
+                    "is_collected" => "0",
+                    "order_count" => "5134",
+                    "is_opening" => "0",
+                    "is_ready_for_order" => "0"
+                ],
+                [
+                    "shop_url" => "##",
+                    "shop_logo" => "",
+                    "deliver_time" => "",
+                    "deliver_start" => "",
+                    "shop_name" => "铁板牛肉",
+                    "shop_type" => "中餐",
+                    "shop_level" => "3.8",
+                    "shop_announce" => "吃吃吃，吃个屁",
+                    "deliver_state_start" => "送送送",
+                    "shop_address" => "堕落街B区",
+                    "business_hours" => "6：00 - 10：00",
+                    "shop_summary"  => "吃个屁",
+                    "is_collected" => "0",
+                    "order_count" => "202",
+                    "is_opening" => "2",
+                    "is_ready_for_order" => "0"
+                ],
+                [
+                    "shop_url" => "##",
+                    "shop_logo" => "",
+                    "deliver_time" => "",
+                    "deliver_start" => "",
+                    "shop_name" => "铁板牛肉",
+                    "shop_type" => "中餐",
+                    "shop_level" => "3.8",
+                    "shop_announce" => "吃吃吃，吃个屁",
+                    "deliver_state_start" => "送送送",
+                    "shop_address" => "堕落街B区",
+                    "business_hours" => "6：00 - 10：00",
+                    "shop_summary"  => "吃个屁",
+                    "is_collected" => "0",
+                    "order_count" => "202",
+                    "is_opening" => "2",
+                    "is_ready_for_order" => "0"
+                ],
+                [
+                    "shop_url" => "##",
+                    "shop_logo" => "",
+                    "deliver_time" => "",
+                    "deliver_start" => "",
+                    "shop_name" => "铁板牛肉",
+                    "shop_type" => "中餐",
+                    "shop_level" => "3.8",
+                    "shop_announce" => "吃吃吃，吃个屁",
+                    "deliver_state_start" => "送送送",
+                    "shop_address" => "堕落街B区",
+                    "business_hours" => "6：00 - 10：00",
+                    "shop_summary"  => "吃个屁",
+                    "is_collected" => "0",
+                    "order_count" => "202",
+                    "is_opening" => "2",
+                    "is_ready_for_order" => "0"
                 ]
             ]
         ]

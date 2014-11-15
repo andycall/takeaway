@@ -6,7 +6,8 @@
 
     <div class="collection-row">
 @for ($i = 0; $i < count($my_store['data']); $i++)
-<a href="{{$my_store['data'][$i]['shop_url']}}">
+
+    <a href="{{$my_store['data'][$i]['shop_url']}}">
 @if($my_store['data'][$i]['is_opening'])
         <div class="collection-row-book collection-row-colse">
 @else
@@ -66,23 +67,20 @@
                 </div>
                 <div class="remark">
                     <div class="star" title="餐厅评价：{{$my_store['data'][$i]['shop_level']}}星" style="background-position: -1px {{-334+15.5*ceil($my_store['data'][$i]['shop_level']*2)}}px"></div>
+@if($my_store['data'][$i]['order_count'])
                     <span>{{$my_store['data'][$i]['order_count']}}订单</span>
+@endif
+                </div>
+                <div class="icon">
+
+
                 </div>
 @endif
 @endif
             </div>
         </div>
-</a>
+    </a>
 @endfor
-
-@if(count($my_store['data'] < 5))
-@for ($i = count($my_store['data']); $i < 5; $i++)
-        <div class="collection-row-none">
-            <div class="add"></div>
-        </div>
-@endfor
-@endif
-
     </div>
 </div>
 
