@@ -40,24 +40,58 @@ define(['jquery', 'underscore'], function($, _){
         $.ajax('/takeaway/public/index.php/userBarCart', {
             beforeSend: function () {
                 $('.tb-cart-dropdown-wrapper').show();
+                $('.tb-msg-dropdown-wrapper').hide();
+                $iClear.click();
             },
 
             success: function(res){
-                console.log(res);
                 if("true" == res.success){
                     var data = res.data;
-                    if(!data.goods || !data.goods.length){
-                        var _tpl = _.template($('#tpl-tb-loading').html())();
-                    }else{
-                        var _tpl = _.template($('#tpl-tb-loading').html())();
+                    var _tpl;
+                    if(0 === data.goods.length){
+                        _tpl = _.template($('#tpl-tb-cart-empty').html())();
+                    }else {
+                        _tpl = _.template($('#tpl-tb-cart').html())({data: data});
                     }
                     $('.tb-cart-dropdown').html(_tpl);
+                }
+            }
+        });
+    });
+
+    $('.icon-msg').on('click', function(){
+        $.ajax('/takeaway/public/index.php/userBarMsg', {
+            beforeSend: function () {
+                $('.tb-msg-dropdown-wrapper').show();
+                $('.tb-cart-dropdown-wrapper').hide();
+                $iClear.click();
+            },
+
+            success: function(res){
+                if("true" == res.success){
+                    var data = res.data;
+                    var _tpl;
+                    if(!data.goods || !data.goods.length){
+                        _tpl = _.template($('#tpl-tb-msg-empty').html())();
+                    }else{
+                        _tpl = _.template($('#tpl-tb-msg-empty').html())();
+                    }
+                    $('.tb-msg-dropdown').html(_tpl);
                 }else{
 
                 }
             }
         });
-        $('#tpl-tb-loading').show();
+    });
+
+    $('.tb-username').on('click', function(){
+        if($('.tb-user-dropdown').css('display') == 'block'){
+            return $('.tb-user-dropdown').hide();
+        }
+        $('.tb-cart-dropdown-wrapper').hide();
+        $('.tb-msg-dropdown-wrapper').hide();
+        $iClear.click();
+        $('.tb-user-dropdown').show();
     });
 
     return {

@@ -33,8 +33,21 @@ Route::get('/', function(){
 
         "userbar" => [
             "url" => [
-                "my_place" => "这里是地址",
-                "switch_palce" => "##"
+                 "my_place" => "这里是地址",
+                 "switch_palce" => "##",
+                 "logo" => "123" ,                         // 网站主页地址
+                 "mobile" => "123",                 // 跳转到下载手机APP的地址
+                 "my_ticket" => "123",                 // 我的饿单的地址
+                 "my_gift"  => "123",                // 礼品中心地址
+                 "feedback" => "123",                // 反馈留言地址
+                 "shop_chart" => "123",                // 购物车地址
+                 "user_mail" => "123",                // 用户提醒的地址
+                 "personal" => "123",                // 个人中心地址
+                 "my_collection" => "123",               // 我的收藏地址
+                 "my_place" => "123",                // 我的地址
+                 "my_secure" => "123",              // 安全设置的地址
+                 "loginout" => "123",              // 退出登录的地址
+                 "switch_place" => "123"                  // 切换当前地址的地址
             ]
         ],
 
@@ -170,20 +183,39 @@ Route::get("/userBarCart", function(){
         "no"      => 0      ,                               // 错误号 ,错误号就出现在这, 如果没有, 那内容为空.
         "data" => [
             "url" => [
-                "shop_url" => ""   ,                         // 点击商家, 跳转到相应的商家页面
+                "shop_url" => "商店URL"   ,                         // 点击商家, 跳转到相应的商家页面
             ],
-            "shop_name" => ""     ,                         // "商店名称"
+            "shop_name" => "商店名称"     ,                         // "商店名称"
             "all_value" => "16"   ,                         // 商品总价格
             "goods" => [
                 [
                    "good_name" => "泡椒鸡胗煲仔饭",       // 名称
                    "good_value" => "8",                   // 价格
                    "good_count" => "1"                    // 数量
+                ],
+                [
+                    "good_name" => "泡椒鸡-=仔饭",       // 名称
+                    "good_value" => "222",                   // 价格
+                    "good_count" => "12"                    // 数量
                 ]
             ],
             "shop_state" => "0"  ,                          // 0 是可以付款买外卖, 1 是由于某种原因, 买不了外卖
             "state_msg" => ""  ,                            // 为啥买不了, 如果能买, 就位空
         ]
+    ];
+
+    return Response::json($data);
+
+});
+
+
+Route::get("/userBarMsg", function(){
+    $data = [
+        "success" => "true"  ,                              // 成功
+        "state"  => 200     ,                               // HTTP 状态码
+        "errMsg"  => ""    ,                                // 如果出现错误, 错误信息就出现在这, 如果没有, 那内容为空.
+        "no"      => 0      ,                               // 错误号 ,错误号就出现在这, 如果没有, 那内容为空.
+        "data" => []
     ];
 
     return Response::json($data);

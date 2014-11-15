@@ -2,7 +2,7 @@
     <a class="logo" href="/" title="饿了么" alt="饿了么" role="logo">
         <i class="default-logo"></i>
     </a>
-    <a class="m-apps" href="##"><i class="icon-mobile"></i>手机客户端</a>
+    <a class="m-apps" href="{{{$userbar['url']['mobile']}}}"><i class="icon-mobile"></i>手机客户端</a>
     <div class="tb-search" role="search">
         <form class="tb-search-form">
             <i class="icon-search"></i>
@@ -16,9 +16,9 @@
     </div>
     <nav class="tb-nav">
         <ul class="tb-site-nav" role="navigation">
-            <li><a class="tb-site-nav-link" href="##">我的饿单</a></li>
-            <li><a class="tb-site-nav-link" href="##">礼品中心</a></li>
-            <li><a class="tb-site-nav-link" href="##">反馈留言</a></li>
+            <li><a class="tb-site-nav-link" href="{{{$userbar['url']['my_ticket']}}}">我的饿单</a></li>
+            <li><a class="tb-site-nav-link" href="{{{$userbar['url']['my_gift']}}}">礼品中心</a></li>
+            <li><a class="tb-site-nav-link" href="{{{$userbar['url']['feedback']}}}">反馈留言</a></li>
             <li class="tb-hr"><a class="tb-site-nav-link last" href="##">附近团购</a></li>
         </ul>
         <div class="tb-cart">
@@ -33,22 +33,23 @@
         </div>
         <div class="tb-msg">
             <a href="##" class="tb-msg-link">
-                <i class="icon-msg"></i>
+               <i class="icon-msg"></i>
             </a>
-            <!--<div class="tb-msg-dropdown">-->
-                <!--<div class="f-loading"></div>-->
-                <!--<div></div>-->
-            <!--</div>-->
+            <div class="tb-msg-dropdown-wrapper">
+               <div class="tb-msg-dropdown">
+                   <div class="f-loading"></div>
+               </div>
+            </div>
         </div>
         <div class="topbar-user-nav">
-            <a class="tb-username">这是用户名<i class="caret"></i></a>
-            <ul class="tb-dropdown" style="display: none;">
-                <li><a rel="nofollow" href="##"><i class="icon-profile"></i>个人中心</a></li>
-                <li><a rel="nofollow" href="##"><i class="icon-fav"></i>我的收藏</a></li>
-                <li><a rel="nofollow" href="##"><i class="icon-address"></i>我的地址</a></li>
-                <li><a rel="nofollow" href="##"><i class="icon-config"></i>安全设置</a></li>
+            <a href="##" class="tb-username">这是用户名<i class="caret"></i></a>
+            <ul class="tb-user-dropdown">
+                <li><a rel="nofollow" href="{{{$userbar['url']['personal']}}}"><i class="icon-profile"></i>个人中心</a></li>
+                <li><a rel="nofollow" href="{{{$userbar['url']['my_collection']}}}"><i class="icon-fav"></i>我的收藏</a></li>
+                <li><a rel="nofollow" href="{{{$userbar['url']['my_place']}}}"><i class="icon-address"></i>我的地址</a></li>
+                <li><a rel="nofollow" href="{{{$userbar['url']['my_secure']}}}"><i class="icon-config"></i>安全设置</a></li>
                 <li class="divider"></li>
-                <li><a rel="nofollow" href="/logout"><i class="icon-logout"></i>退出登录</a></li>
+                <li><a rel="nofollow" href="{{{$userbar['url']['loginout']}}}"><i class="icon-logout"></i>退出登录</a></li>
             </ul>
         </div>
     </nav>
@@ -74,8 +75,43 @@
         <% }) %>
     </div>
 </script>
-<script type="text/template" id="tpl-tb-loading">
+<script type="text/template" id="tpl-tb-cart-empty">
     <div class="tb-widget-empty">篮子空空，肚子空空，快去订餐吧~</div>
+</script>
+
+<script type="text/template" id="tpl-tb-msg-empty">
+    <div class="tb-widget-empty">没有新信息~</div>
+</script>
+
+<script type="text/template" id="tpl-tb-cart">
+<div class="twidget-dropdown">
+          <div id="tcart_wrapper">
+          <h3 class="tcart-title clearfix">
+             <a class="tcart-restaurant" href="<%= data.url.shop_url %>"><%= data.shop_name %></a>
+             <span class="tcart-cost"><span class="symbol-rmb">¥ </span><%= data.all_value %></span>
+             <span id="tcart_total_hidden" class="hide">1</span>
+          </h3>
+
+    <div class="tcart-content">
+
+    <ul class="tcart-list">
+    <% data.goods.forEach(function(item){ %>
+        <li class="tcart-item">
+             <span class="tcart-dish"><%= item.good_name %></span>
+             <span class="tcart-amount">× <%= item.good_count %></span>
+             <span class="tcart-price"><span class="symbol-rmb">¥ </span><%= item.good_value %></span>
+         </li>
+
+    <% }); %>
+
+     </ul>
+  </div>
+
+<div class="twidget-footer">
+    <a id="tcart_checkout" class="twidget-btn" href="/cart2/checkout">去结算</a>
+  </div>
+</div>
+        </div>
 </script>
 @section("css")
     @parent

@@ -469,4 +469,5 @@ input[type="search"]::-webkit-search-decoration {
 }
 a {
   text-decoration: none;
+  outline: none;
 }
