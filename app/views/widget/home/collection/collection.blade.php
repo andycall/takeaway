@@ -6,24 +6,24 @@
 
     <div class="collection-row">
 @for ($i = 0; $i < count($my_store['data']); $i++)
-
+<a href="{{$my_store['data'][$i]['shop_url']}}">
 @if($my_store['data'][$i]['is_opening'])
         <div class="collection-row-book collection-row-colse">
 @else
         <div class="collection-row-book">
 @endif
+
             <div class="collection-row-book-close">
-                <a href="##" class="close"></a>
+                <i href="##" class="close"></i>
             </div>
+
             <div class="collection-row-book-left">
                 <div class="logo">
-                    <a href="{{$my_store['data'][$i]['shop_url']}}">
 @if($my_store['data'][$i]['shop_logo'])
-                        <img src="{{$my_store['data'][$i]['shop_logo']}}"/>
+                    <img src="{{$my_store['data'][$i]['shop_logo']}}"/>
 @else
-                        <img src="/takeaway/public/images/eleme_restaurant_logo.jpg"/>
+                    <img src="/takeaway/public/images/eleme_restaurant_logo.jpg"/>
 @endif
-                    </a>
                 </div>
 @if (!$my_store['data'][$i]['deliver_time'])
                 <span title="该餐厅刚开张，暂无送餐时间数据"></span>
@@ -35,7 +35,7 @@
             </div>
             <div class="collection-row-book-right">
                 <div class="title">
-                    <a href="{{$my_store['data'][$i]['shop_url']}}">{{$my_store['data'][$i]['shop_name']}}</a>
+                    <p>{{$my_store['data'][$i]['shop_name']}}</p>
                 </div>
 @if($my_store['data'][$i]['is_opening'])
                 <div class="busy">
@@ -72,12 +72,12 @@
 @endif
             </div>
         </div>
-
+</a>
 @endfor
 
 @if(count($my_store['data'] < 5))
 @for ($i = count($my_store['data']); $i < 5; $i++)
-        <div class="collection-row-none collection-row-border">
+        <div class="collection-row-none">
             <div class="add"></div>
         </div>
 @endfor
