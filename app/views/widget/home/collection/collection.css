@@ -6,6 +6,7 @@
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   height: 125px;
   overflow: hidden;
+  margin-bottom: 15px;
 }
 .collection .collection-header {
   font-size: 14px;
@@ -38,6 +39,10 @@
   height: 72px;
   float: left;
   padding: 10px;
+  border-left: 1px solid #ddd;
+}
+.collection .collection-row a:first-child div {
+  border: 0;
 }
 .collection .collection-row .collection-row-book {
   position: relative;
@@ -51,7 +56,7 @@
   display: none;
   background: url("../../../../images/bg.gif") no-repeat -550px -773px;
 }
-.collection .collection-row .collection-row-book .collection-row-book-close a {
+.collection .collection-row .collection-row-book .collection-row-book-close i {
   width: 14px;
   height: 14px;
 }
@@ -66,12 +71,7 @@
   width: 44px;
   border: 1px solid #ddd;
 }
-.collection .collection-row .collection-row-book .collection-row-book-left .logo a {
-  float: left;
-  height: 44px;
-  width: 44px;
-}
-.collection .collection-row .collection-row-book .collection-row-book-left .logo a img {
+.collection .collection-row .collection-row-book .collection-row-book-left .logo img {
   height: 40px;
   width: 40px;
   margin: 2px;
@@ -100,12 +100,14 @@
 .collection .collection-row .collection-row-book .collection-row-book-right div.title {
   margin-bottom: 7px;
 }
-.collection .collection-row .collection-row-book .collection-row-book-right div.title a {
+.collection .collection-row .collection-row-book .collection-row-book-right div.title p {
   font-size: 15px;
   line-height: 18px;
   color: #444;
+  margin: 0;
+  margin-top: 2px;
 }
-.collection .collection-row .collection-row-book .collection-row-book-right div.title a:hover {
+.collection .collection-row .collection-row-book .collection-row-book-right div.title p:hover {
   text-decoration: underline;
 }
 .collection .collection-row .collection-row-book .collection-row-book-right div span {
@@ -154,7 +156,7 @@
 .collection .collection-row .collection-row-book:hover {
   background-color: #f9f9f9;
 }
-.collection .collection-row .collection-row-book:hover .title a {
+.collection .collection-row .collection-row-book:hover .title p {
   color: #08c !important;
 }
 .collection .collection-row .collection-row-book:hover .collection-row-book-close {
@@ -167,7 +169,7 @@
 .collection .collection-row .collection-row-colse span {
   color: #999 !important;
 }
-.collection .collection-row .collection-row-colse a {
+.collection .collection-row .collection-row-colse p {
   color: #999 !important;
 }
 .collection .collection-row .collection-row-colse div.logo img {
@@ -190,7 +192,4 @@
 }
 .collection .collection-row .collection-row-none .add:hover {
   background: #ffffff url("../../../../images/bg.gif") no-repeat -303px -94px;
-}
-.collection .collection-row .collection-row-border {
-  border-left: 1px solid #ddd;
 }

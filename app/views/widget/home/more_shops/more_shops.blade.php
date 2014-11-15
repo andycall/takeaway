@@ -1,4 +1,10 @@
-<div>更多餐厅</div>
+<div class="more_shops">
+    <div class="more_shops-header">
+        <span class="title">更多餐厅</span>
+    </div>
+
+
+</div>
 
 
 @section("css")
