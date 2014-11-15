@@ -25,19 +25,20 @@
             <a href="##" class="tb-cart-link">
                 <i class="icon-cart"></i>
             </a>
-            <div class="">
-                <div class="f-loading"></div>
-                <div></div>
+            <div class="tb-cart-dropdown-wrapper">
+                <div class="tb-cart-dropdown">
+                    <div class="f-loading"></div>
+                </div>
             </div>
         </div>
         <div class="tb-msg">
             <a href="##" class="tb-msg-link">
                 <i class="icon-msg"></i>
             </a>
-            <div class="tb-msg-dropdown">
-                <div class="f-loading"></div>
-                <div></div>
-            </div>
+            <!--<div class="tb-msg-dropdown">-->
+                <!--<div class="f-loading"></div>-->
+                <!--<div></div>-->
+            <!--</div>-->
         </div>
         <div class="topbar-user-nav">
             <a class="tb-username">这是用户名<i class="caret"></i></a>
@@ -72,6 +73,9 @@
         </div>
         <% }) %>
     </div>
+</script>
+<script type="text/template" id="tpl-tb-loading">
+    <div class="tb-widget-empty">篮子空空，肚子空空，快去订餐吧~</div>
 </script>
 @section("css")
     @parent
