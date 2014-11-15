@@ -3,6 +3,8 @@
 	"js": ["app/views/**/*.js"],
 	"css": ["app/views/**/*.css"],
     "js_map" : ["app/views/**/*.js.map"],
+	"scss"   : ["app/views/**/*.scss"],
+	"less"   : ["app/views/**/*.less"],
     "css_map" : ["app/views/**/*.css.map"],
     "image" : ["app/views/**/*.{jpg,png,gif}"],
 	"needTag": false,

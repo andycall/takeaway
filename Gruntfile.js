@@ -18,7 +18,7 @@ module.exports = function(grunt) {
         options: {
             spawn: false
         },
-        files: ['<%= config.js %>', '<%= config.css %>', '<%= config.image %>', '<%= config.css_map %>', "<%= config.js_map %>"]
+        files: ['<%= config.js %>', '<%= config.css %>', '<%= config.image %>', '<%= config.css_map %>', "<%= config.js_map %>", "<%= config.scss %>", "<%= config.less %>" ]
     }
   });
 
@@ -33,6 +33,8 @@ module.exports = function(grunt) {
           isC = "css" === ext,
           isJ_M ="js.map" === ext,
           isC_M = "css.map" === ext,
+		  isScss = "scss" === ext,
+		  isLess = "less" === ext,
           runMap = [];
 
 
@@ -124,9 +126,8 @@ module.exports = function(grunt) {
         runMap.push("cssmin");
       }
 
-      if(isC_M){
+      if(isC_M || isLess || isScss){
 		  var destSrc = getPathFromDepth("public/css", src, depth)();
-		  console.log(destSrc, src);
 
           data.copy = {
               main : {
