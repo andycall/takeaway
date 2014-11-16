@@ -28,7 +28,7 @@
   {{-- 5个广告图片 --}}
 
 @section("ads")
-    <div> 5个广告图片</div>
+    @include("widget/ads/ads")
 @stop
 
   {{-- 更多餐厅 --}}

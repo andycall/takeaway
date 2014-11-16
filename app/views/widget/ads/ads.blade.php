@@ -1,12 +1,15 @@
 <div class="ads">
-    @for($i = 0, $i < 5, $i++)
-        <a href="{{$add_image[$i]['jump_url']}}">
-            <img src="{{$add_image[$i]['image_url']}}"/>
+    @for($i = 0; $i < 5; $i++)
+        <a href="{{$add_image['data'][$i]['jump_url']}}">
+            <img src="{{$add_image['data'][$i]['image_url']}}"/>
         </a>
     @endfor
+
+    <div class="clearfix"></div>
+
 </div>
 
 @section("css")
     @parent
-    {{HTML::style("/css/widget/home/ads/ads.css")}}
+    {{HTML::style("/css/widget/ads/ads.css")}}
 @stop
