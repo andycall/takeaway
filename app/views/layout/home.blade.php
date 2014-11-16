@@ -14,9 +14,9 @@
                 {{-- 广告图片轮播 --}}
                 @yield("swipe")
                 {{-- 我的收藏 --}}
-                @yield("collection")
+                @yield("my_collection")
                 {{-- 餐厅列表 --}}
-                @yield("shops")
+                @yield("shop_list")
                 {{-- 5个广告图片 --}}
                 @yield("ads")
                 {{-- 更多餐厅 --}}

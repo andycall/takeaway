@@ -20,9 +20,9 @@
                 <div class="more_shops-row-book-left">
                     <div class="logo">
 @if($shops[$i]['shop_logo'])
-                        <img src="{{$shops[$i]['shop_logo']}}"/>
+                        <img src="{{url($shops[$i]['shop_logo'])}}"/>
 @else
-                        <img src="/takeaway/public/images/eleme_restaurant_logo.jpg"/>
+                        <img src={{url("/takeaway/public/images/eleme_restaurant_logo.jpg")}}/>
 @endif
                     </div>
 @if (!$shops[$i]['deliver_time'])

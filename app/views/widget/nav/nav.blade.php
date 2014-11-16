@@ -9,6 +9,6 @@
 
 @section("css")
     @parent
-    {{HTML::style("/css/widget/home/nav/nav.css")}}
+    {{HTML::style("/css/widget/nav/nav.css")}}
 @stop
 
