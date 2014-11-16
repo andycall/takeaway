@@ -12,7 +12,3 @@
 	{{HTML::style("/css/widget/footer/footer.css")}}
 @stop
 
-@section("script")
-	@parent
-	{{HTML::script("/js/widget/footer/footer.js")}}
-@stop

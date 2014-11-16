@@ -1,1 +1,1 @@
-define(["jquery"],function(){console.log("shop_list loaded")});
+define(["jquery"],function(a){var b=a(".drop_button"),c=a(".drop_list"),d=a(".activities-btn"),e=a(".shops_func");b.on("click",function(){c.toggle()}),d.on("click",function(){var b=a(this).find("input")[0].checked;a(this).find("input")[0].checked=b?!1:!0}),e.on("click",function(){var b=a(this).find("input")[0].checked;a(this).find("input")[0].checked=b?!1:!0}),c.on("click","li",function(a){{var b=a.currentTarget;b.innerHTML}c.toggle()})});
