@@ -123,7 +123,7 @@ define(['jquery'], function($){
 
    };
     $('#m-slider').slideBox({
-//        direction : 'top',
+        direction : 'top',
         width: "960",
         height: "80",
         duration : 0.3,//滚动持续时间，单位：秒
