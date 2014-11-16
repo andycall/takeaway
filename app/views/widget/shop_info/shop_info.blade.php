@@ -78,11 +78,11 @@
 @if($shops[$i]['order_count'])
                         <span>{{$shops[$i]['order_count']}}订单</span>
 @endif
-                        <div class="icon">
-
-
-                        </div>
-
+                    </div>
+                    <div class="icon">
+@for($m = 0; $m < count($shops[$i]['support_activity']); $m++)
+                        <span  style="background-position: 0 {{20-$shops[$i]['support_activity'][$m]*20}}px"></span>
+@endfor
                     </div>
 @endif
 @endif
