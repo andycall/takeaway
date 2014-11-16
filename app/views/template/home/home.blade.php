@@ -28,7 +28,7 @@
   {{-- 5个广告图片 --}}
 
 @section("ads")
-    <div> 5个广告图片</div>
+    @include("widget/ads/ads")
 @stop
 
   {{-- 更多餐厅 --}}
@@ -46,6 +46,6 @@
 @stop
 
 @section("script")
-    {{HTML::script("/js/lib/require.js", ["data-main" => "/takeaway/public/js/template/home/home.js"])}}
+    {{HTML::script("/js/lib/require.js", ["data-main" => url("js/template/home/home.js")])}}
 @stop
 

@@ -7,13 +7,17 @@ require.config({
     },
     paths : {
         home : "../template/home",
-        nav : "../widget/home/nav",
-        ads : "../widget/home/ads",
-        collection: "../widget/home/collection",
-        more_shops : "../widget/home/more_shops",
-        shops : "../widget/home/shops",
-        swipe : "../widget/swipe",
-        userBar : "../widget/userBar"
+		widget : "../widget",
+		ads   : "../widget/ads",
+		footer  :"../widget/footer",
+		more_shops : "../widget/more_shops",
+		my_collection : "../widget/my_collection",
+		nav : "../widget/nav",
+		shop_list : "../widget/shop_list",
+		shop_sec : "../widget/shop_sec",
+		shop_uncollected : "../widget/shop_uncollected",
+		swipe : "../widget/swipe",
+		userBar : "../widget/userBar"
     }
 });
 
