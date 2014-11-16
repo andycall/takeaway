@@ -119,6 +119,7 @@ Route::get('/', function(){
                         "shop_type" => "美食"        ,                  // 商家类型
                         "shop_level" => "3.8"       ,                 // 总共10个等级, 1个半星一个等级
                         "shop_announce" => "臭脚丫专卖店"      ,                // 商家公告
+                        "deliver_state_start" => "100块都不送",
                         "deliver_start_statement" => "顺丰快递,耶"        ,               // 起送价描述, 注意,这是一段话
                         "shop_address" => "黄脚丫"          ,             // 商家地址
                         "is_opening"  => "0"            ,            // 0 是正在营业, 1是打烊了
@@ -150,6 +151,7 @@ Route::get('/', function(){
                         "shop_type" => "美食"        ,                  // 商家类型
                         "shop_level" => "3.8"       ,                 // 总共10个等级, 1个半星一个等级
                         "shop_announce" => "臭脚丫专卖店"      ,                // 商家公告
+                        "deliver_state_start" => "100块都不送",
                         "deliver_start_statement" => "顺丰快递,耶"        ,               // 起送价描述, 注意,这是一段话
                         "shop_address" => "黄脚丫"          ,             // 商家地址
                         "is_opening"  => "0"            ,            // 0 是正在营业, 1是打烊了
@@ -181,6 +183,7 @@ Route::get('/', function(){
                         "shop_type" => "美食"        ,                  // 商家类型
                         "shop_level" => "3.8"       ,                 // 总共10个等级, 1个半星一个等级
                         "shop_announce" => "臭脚丫专卖店"      ,                // 商家公告
+                        "deliver_state_start" => "100块都不送",
                         "deliver_start_statement" => "顺丰快递,耶"        ,               // 起送价描述, 注意,这是一段话
                         "shop_address" => "黄脚丫"          ,             // 商家地址
                         "is_opening"  => "0"            ,            // 0 是正在营业, 1是打烊了
@@ -212,6 +215,7 @@ Route::get('/', function(){
                         "shop_type" => "美食"        ,                  // 商家类型
                         "shop_level" => "3.8"       ,                 // 总共10个等级, 1个半星一个等级
                         "shop_announce" => "臭脚丫专卖店"      ,                // 商家公告
+                        "deliver_state_start" => "100块都不送",
                         "deliver_start_statement" => "顺丰快递,耶"        ,               // 起送价描述, 注意,这是一段话
                         "shop_address" => "黄脚丫"          ,             // 商家地址
                         "is_opening"  => "0"            ,            // 0 是正在营业, 1是打烊了
@@ -243,6 +247,7 @@ Route::get('/', function(){
                         "shop_type" => "美食"        ,                  // 商家类型
                         "shop_level" => "3.8"       ,                 // 总共10个等级, 1个半星一个等级
                         "shop_announce" => "臭脚丫专卖店"      ,                // 商家公告
+                        "deliver_state_start" => "100块都不送",
                         "deliver_start_statement" => "顺丰快递,耶"        ,               // 起送价描述, 注意,这是一段话
                         "shop_address" => "黄脚丫"          ,             // 商家地址
                         "is_opening"  => "0"            ,            // 0 是正在营业, 1是打烊了

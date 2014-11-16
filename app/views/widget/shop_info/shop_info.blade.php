@@ -89,6 +89,33 @@
 @endif
 @endif
                 </div>
+
+                <div class="more_info more_info_right">
+                    <div class="tip"></div>
+                    <div style="font-size:15px; margin-left:10px;">
+                        {{$shops[$i]['shop_name']}}
+                    </div>
+@if($shops[$i]['is_opening']==1)
+                    <p class="close">已打烊，{{$shops[$i]['deliver_start']}}开始订餐</p>
+@elseif($shops[$i]['is_opening']==2)
+                    <p class="close">餐厅太忙，暂不接受订单</p>
+@endif
+                    <ul>
+@for($m = 0; $m < count($shops[$i]['support_activity']); $m++)
+                        <li>
+                            <span class="icon" style="background-position: 0 {{20-$shops[$i]['support_activity'][$m]*20}}px"></span>
+                            <span>{{$shop_list['data']['activity'][$shops[$i]['support_activity'][$m]]}}</span>
+                        </li>
+@endfor
+                    </ul>
+                    <div class="divider">
+                        <p class="ann"><strong>公告:</strong>&nbsp;{{$shops[$i]['shop_announce']}}</p>
+                        <p><strong>起送价:</strong>&nbsp;{{$shops[$i]['deliver_state_start']}}</p>
+                        <p><strong>地址:</strong>&nbsp;{{$shops[$i]['shop_address']}}</p>
+                        <p><strong>营业时间:</strong>&nbsp;{{$shops[$i]['business_hours']}}</p>
+                        <p><strong>简介:</strong>&nbsp;{{$shops[$i]['shop_summary']}}</p>
+                    </div>
+                </div>
             </div>
         </a>
 @endfor

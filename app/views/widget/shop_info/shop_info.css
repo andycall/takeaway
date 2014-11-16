@@ -49,10 +49,12 @@
 .more_shops-row .more_shops-row-book .collect {
   background: url("../../../images/bg.gif") no-repeat -121px -779px #f8f8f8;
   width: 40px;
+  color: #0088c8;
 }
 .more_shops-row .more_shops-row-book .uncollect {
   background: url("../../../images/bg.gif") no-repeat -202px -779px #f8f8f8;
   width: 60px;
+  color: #0088c8;
 }
 .more_shops-row .more_shops-row-book .more_shops-row-book-left {
   float: left;
@@ -177,10 +179,10 @@
   color: #999;
 }
 .more_shops-row .more_shops-row-colse span {
-  color: #999 !important;
+  color: #999;
 }
 .more_shops-row .more_shops-row-colse p {
-  color: #999 !important;
+  color: #999;
 }
 .more_shops-row .more_shops-row-colse div.logo img {
   opacity: 0.5;
