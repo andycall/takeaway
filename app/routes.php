@@ -55,6 +55,8 @@ Route::get('/', function(){
             "url" => "###",
             "data" => [
                 [
+                    "shop_id" => "123435",
+                    "place_id" => "589u65487945",
                     "shop_url" => "http://www.baidu.com",
                     "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
                     "deliver_time" => "22",
@@ -67,6 +69,8 @@ Route::get('/', function(){
                     "is_ready_for_order" => "1"
                 ],
                 [
+                    "shop_id" => "124124345",
+                    "place_id" => "234534",
                     "shop_url" => "##",
                     "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
                     "deliver_time" => "45",
@@ -79,6 +83,8 @@ Route::get('/', function(){
                     "is_ready_for_order" => "0"
                 ],
                 [
+                    "shop_id" => "45675656",
+                    "place_id" => "435456456436346346346",
                     "shop_url" => "##",
                     "shop_logo" => "",
                     "deliver_time" => "",
@@ -127,7 +133,7 @@ Route::get('/', function(){
                         "deliver_start_statement" => "顺丰快递,耶"        ,               // 起送价描述, 注意,这是一段话
                         "shop_address" => "黄脚丫"          ,             // 商家地址
                         "is_opening"  => "0"            ,            // 0 是正在营业, 1是打烊了
-                        "close_msg "  => "关门啦"             ,           // 关门信息
+                        "close_msg"  => "关门啦"             ,           // 关门信息
                         "business_hours" => "08:00"           ,          // 营业时间
                         "shop_summary" => "lalalal"              ,         // 商家简介
                         "order_count"=> "22"               ,       // 订单数量
@@ -297,6 +303,8 @@ Route::get('/', function(){
             "data" => [
 
                 [
+                    "shop_id" => "12423235235235",
+                    "place_id" => "12423235235235",
                     "support_activity" => [1,2,3],
                     "isHot" => "1",
                     "isOnline" => "1",
@@ -319,6 +327,8 @@ Route::get('/', function(){
                     "is_ready_for_order" => "1"
                 ],
                 [
+                    "shop_id" => "12423235235235",
+                    "place_id" => "12423235235235",
                     "support_activity" => [1,2,3],
                     "isHot" => "1",
                     "isOnline" => "1",
@@ -341,6 +351,8 @@ Route::get('/', function(){
                     "is_ready_for_order" => "0"
                 ],
                 [
+                    "shop_id" => "12423235235235",
+                    "place_id" => "12423235235235",
                     "shop_url" => "##",
                     "shop_logo" => "",
                     "deliver_time" => "",
@@ -359,6 +371,8 @@ Route::get('/', function(){
                     "is_ready_for_order" => "0"
                 ],
                 [
+                    "shop_id" => "12423235235235",
+                    "place_id" => "12423235235235",
                     "shop_url" => "##",
                     "shop_logo" => "",
                     "deliver_time" => "",
@@ -377,6 +391,8 @@ Route::get('/', function(){
                     "is_ready_for_order" => "0"
                 ],
                 [
+                    "shop_id" => "12423235235235",
+                    "place_id" => "12423235235235",
                     "shop_url" => "##",
                     "shop_logo" => "",
                     "deliver_time" => "",
