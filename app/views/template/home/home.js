@@ -12,7 +12,7 @@ require.config({
         collection: "../widget/home/collection",
         more_shops : "../widget/home/more_shops",
         shops : "../widget/home/shops",
-        swipe : "../widget/home/swipe",
+        swipe : "../widget/swipe",
         userBar : "../widget/userBar"
     }
 });
