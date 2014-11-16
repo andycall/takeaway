@@ -15,5 +15,5 @@
 
 @section("css")
     @parent
-    {{HTML::style("/css/widget/my_collection/my_collection.css")}}
+    {{HTML::style("/css/collection/collection.css")}}
 @stop
