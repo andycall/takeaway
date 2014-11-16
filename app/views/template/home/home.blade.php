@@ -11,28 +11,85 @@
 
 {{-- 广告图片轮播 --}}
 @section("swipe")
-    @include("widget.home.swipe.swipe")
+    @include("......widget.swipe.swipe")
 @stop
 
 {{-- 我的收藏 --}}
 @section("collection")
-    @include("widget.home.collection.collection")
+    <div class="collection">
+        <div class="collection-header">
+            <span class="title">我的收藏</span>
+            <a class="set" href="{{$my_store['url']}}">设置</a>
+        </div>
+
+        <div class="collection-row">
+            {{-- 获取商店widget --}}
+            @include("widget/shop_sec/shop_sec", array("shops" => $my_store['data']))
+
+            {{-- 填充剩余的块 --}}
+{{--            @include("widget/shop_uncollected/shop_uncollected"m)--}}
+        </div>
+    </div>
 @stop
 
   {{-- 餐厅列表 --}}
 @section("shops")
-    @include("widget.home.shops.shops")
+    <div class="shops">
+        <div class="shops-header">
+            <div class="ui-helper-clearfix">
+                @include("widget.shop_button.shop_button")
+                <span class="fliter"></span>
+                @include("widget.flavor_block.flavor_block")
+            </div>
+        </div>
+        <div class="shop_activities">
+            <div class="ui-helper-clearfix">
+                @include("widget.activites_button.activites_button")
+            </div>
+        </div>
+        <table class="shop_container">
+            <tr>
+                <td>
+                    {{--<div class="shop_sec">--}}
+                        {{--<div class="flavour_collection"></div>--}}
+                        {{--<div class="shop_content">--}}
+                            {{--<div class="logo_wrapper">--}}
+                                {{--<div class="logo"><a href="#"><img src="" alt=""/></a></div>--}}
+                                {{--<div class="deliver_time" data-deliver-time="45分钟">--}}
+                                    {{--45分钟--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            {{--<div class="info">--}}
+                                {{--<div class="name">--}}
+                                   {{--<a class="restaurant-link" href="http://r.ele.me/cqlzbfwmsg" target="_blank">【710】劉仔煲..</a>--}}
+                                {{--</div>--}}
+                                {{--<div class="states_lable"><span>接受预定</span></div>--}}
+                                {{--<div class="status_desc"><span>送餐时间17:00开始</span></div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="shop_statement"></div>--}}
+                    {{--</div>--}}
+                    @include("widget/shop_sec/shop_sec" , array("shops" => $shop_list['data']['shops']))
+                </td>
+            </tr>
+        </table>
+    </div>
 @stop
 
   {{-- 5个广告图片 --}}
 
 @section("ads")
-    @include("widget.home.ads.ads")
+    <div> 5个广告图片</div>
 @stop
 
   {{-- 更多餐厅 --}}
 @section("more_shops")
-    @include("widget.home.more_shops.more_shops")
+    <div class="more_shops">
+        <div class="more_shops-header">
+            <span class="title">更多餐厅</span>
+        </div>
+    </div>
+
 @stop
 
 @section("footer")
