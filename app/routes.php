@@ -16,12 +16,12 @@ Route::get('/', function(){
     $data = [
         "pic_swap" => [
             0 => [
-                "image_url" => "a.jpg",
-                "jump_url" => ""
+                "image_url" => "http://gtms02.alicdn.com/tps/i2/TB1OK_uGXXXXXXwXVXXnLSnFXXX-880-70.png",
+                "jump_url" => "1231"
             ],
             1 => [
-                "image_url" => "b.jpg",
-                "jump_url" => ""
+                "image_url" => "http://gtms02.alicdn.com/tps/i2/TB1OK_uGXXXXXXwXVXXnLSnFXXX-880-70.png",
+                "jump_url" => "1231231"
             ]
         ],
 
