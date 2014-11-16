@@ -1,4 +1,10 @@
-<div> 5个广告图片</div>
+<div class="ads">
+    @for($i = 0, $i < 5, $i++)
+        <a href="{{$add_image[$i]['jump_url']}}">
+            <img src="{{$add_image[$i]['image_url']}}"/>
+        </a>
+    @endfor
+</div>
 
 @section("css")
     @parent

@@ -142,7 +142,30 @@ Route::get('/', function(){
                 ]
             ]
         ],
-
+        "add_image" => [
+            "data" => [
+                [
+                    "image_url" => "###",
+                    "jump_url" => "##",
+                ],
+                [
+                    "image_url" => "###",
+                    "jump_url" => "##",
+                ],
+                [
+                    "image_url" => "###",
+                    "jump_url" => "##",
+                ],
+                [
+                    "image_url" => "###",
+                    "jump_url" => "##",
+                ],
+                [
+                    "image_url" => "###",
+                    "jump_url" => "##",
+                ]
+            ]
+        ],
         "more_shop" => [
 
 
