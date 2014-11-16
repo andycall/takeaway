@@ -348,6 +348,8 @@ Route::get('/', function(){
                 ],
                 [
                     "support_activity" => [1,2,3],
+	                "shop_id" => "12423235235235",
+	                "place_id" => "12423235235235",
                     "isHot" => "1",
                     "isOnline" => "1",
                     "isSupportPay" => "1",
