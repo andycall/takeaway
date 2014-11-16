@@ -9,11 +9,11 @@
             @include("widget/shop_sec/shop_sec", array("shops" => $my_store['data']))
 
             {{-- 填充剩余的块 --}}
-{{--            @include("widget/shop_uncollected/shop_uncollected"m)--}}
+            @include("widget/shop_uncollected/shop_uncollected")
         </div>
     </div>
 
 @section("css")
     @parent
-    {{HTML::style("/css/widget/my_collection/my_collection.css")}}
+    {{HTML::style("/css/collection/collection.css")}}
 @stop

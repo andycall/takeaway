@@ -3,6 +3,7 @@
   width: 960px;
   height: 80px;
   overflow: hidden;
+  margin: 0 auto 15px;
 }
 .slideBox ul.items {
   position: absolute;

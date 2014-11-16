@@ -120,7 +120,7 @@
   margin-right: 2px;
 }
 .collection-row-book:hover {
-  background-color: #f9f9f9;
+  background: #f9f9f9 !important;
 }
  .collection-row-book:hover .title p {
   color: #08c !important;
@@ -159,5 +159,4 @@
  .collection .collection-row .collection-row-none .add:hover {
      background: #ffffff url("../../../images/bg.gif") no-repeat -303px -94px;
  }
-
 

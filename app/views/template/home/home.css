@@ -471,15 +471,3 @@ a {
   text-decoration: none;
   outline: none;
 }
-
-
-#content {
-	width: 960px;
-	margin: 0 auto;
-}
-
-.restaurant-list-table {
-	border-collapse: separate;
-}
-
-
