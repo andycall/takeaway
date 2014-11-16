@@ -37,9 +37,9 @@
       float: left;
       padding: 10px;
       border-left: 1px solid #ddd;
-      &:first-child{
-        border:0;
-      }
+    }
+    a:first-child div.more_shops-row-book{
+      border:0;
     }
     .collection-row-book{
       position: relative;
@@ -51,7 +51,7 @@
         height: 14px;
         display: none;
         background: url("../../../../images/bg.gif") no-repeat -550px -773px;
-        a{
+        i{
             width: 14px;
             height: 14px;
         }
@@ -65,15 +65,10 @@
           height: 44px;
           width: 44px;
           border: 1px solid #ddd;
-          a{
-            float: left;
-            height: 44px;
-            width: 44px;
-            img{
-              height: 40px;
-              width: 40px;
-              margin: 2px;
-            }
+          img{
+            height: 40px;
+            width: 40px;
+            margin: 2px;
           }
         }
         span{
@@ -98,10 +93,12 @@
           max-width: 115px;
           &.title{
             margin-bottom: 7px;
-            a{
+            p{
               font-size: 15px;
               line-height: 18px;
               color: #444;
+              margin: 0;
+              margin-top: 2px;
               &:hover {
                 text-decoration: underline;
               }
@@ -153,8 +150,8 @@
         }
       }
       &:hover{
-        background-color: #f9f9f9;
-        .title a{
+        background: #f9f9f9 !important;
+        .title p{
           color: #08c !important;
         }
         .collection-row-book-close{
@@ -168,7 +165,7 @@
       span{
         color: #999 !important;
       }
-      a{
+      p{
         color: #999 !important;
       }
       div.logo img{

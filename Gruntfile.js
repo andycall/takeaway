@@ -18,7 +18,7 @@ module.exports = function(grunt) {
         options: {
             spawn: false
         },
-        files: ['<%= config.js %>', '<%= config.css %>', '<%= config.image %>', '<%= config.css_map %>', "<%= config.js_map %>", "<%= config.scss %>", "<%= config.less %>" ]
+        files: ['<%= config.js %>', '<%= config.css %>', '<%= config.image %>', '<%= config.css_map %>', "<%= config.js_map %>", "<%= config.scss %>" ]
     }
   });
 
