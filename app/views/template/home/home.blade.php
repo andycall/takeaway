@@ -46,6 +46,6 @@
 @stop
 
 @section("script")
-    {{HTML::script("/js/lib/require.js", ["data-main" => url("/js/template/home/home.js")])}}
+    {{HTML::script("/js/lib/require.js", ["data-main" => "/takeaway/public/js/template/home/home.js"])}}
 @stop
 
