@@ -11,3 +11,4 @@
 	@parent
 	{{HTML::style("/css/widget/footer/footer.css")}}
 @stop
+

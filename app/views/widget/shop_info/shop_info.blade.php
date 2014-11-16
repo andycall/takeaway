@@ -4,9 +4,9 @@
 @for ($i = 0; $i < 5; $i++)
         <a href="{{$shops[$i]['shop_url']}}">
 @if($shops[$i]['is_opening'])
-            <div class="more_shops-row-book more_shops-row-colse">
+            <div class="more_shops-row-book more_shops-row-colse" data-shop_id="{{$shops[$i]['shop_id']}}" data-place_id="{{$shops[$i]['place_id']}}">
 @else
-            <div class="more_shops-row-book">
+            <div class="more_shops-row-book" data-shop_id="{{$shops[$i]['shop_id']}}" data-place_id="{{$shops[$i]['place_id']}}">
 @endif
 @if($shops[$i]['is_collected'])
                 <div class="collect_star">
@@ -34,7 +34,7 @@
 @if($shops[$i]['shop_logo'])
                         <img src="{{url($shops[$i]['shop_logo'])}}"/>
 @else
-                        <img src={{url("/takeaway/public/images/eleme_restaurant_logo.jpg")}}/>
+                        <img src='{{url("images/eleme_restaurant_logo.jpg")}}'/>
 @endif
                     </div>
 @if (!$shops[$i]['deliver_time'])
