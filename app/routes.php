@@ -97,14 +97,9 @@ Route::get('/', function(){
             "data" =>  [
                 // 考虑到以后活动会换， 在前端进行筛选的时候， 会通过activity_id 进行筛选
                 "activity" => [
-                    0 => [
-                        "activity_id" => "123",
-                        "activity_name"  => "11元管饱又管好(重庆)"
-                    ],
-                    1 => [
-                        "activity_id" => "456",
-                        "activity_name" => "10元管饱"
-                    ]
+                    0 => "新店开张，欢迎光临",
+                    1 => "首单立减8元",
+                    2 => "在线支付，10元减5元"
                 ],
 
                 "shops" => [

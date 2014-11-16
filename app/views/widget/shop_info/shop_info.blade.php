@@ -19,6 +19,9 @@
                     取消收藏
                 </div>
 @else
+                <div class="collect_star" style="display: none">
+
+                </div>
                 <div class="collect change">
                     收藏
                 </div>
@@ -81,7 +84,7 @@
                     </div>
                     <div class="icon">
 @for($m = 0; $m < count($shops[$i]['support_activity']); $m++)
-                        <span  style="background-position: 0 {{20-$shops[$i]['support_activity'][$m]*20}}px"></span>
+                        <span title="{{$shop_list['data']['activity'][$m]}}" style="background-position: 0 {{20-$shops[$i]['support_activity'][$m]*20}}px"></span>
 @endfor
                     </div>
 @endif
