@@ -69,13 +69,6 @@
 
  @endfor
 
- @for ($i = count($shops); $i < 5; $i++)
-        <a href="##">
-             <div class="collection-row-book collection-row-none">
-                <div class="add"></div>
-             </div>
-        </a>
- @endfor
 @section("css")
 	@parent
 	{{HTML::style("/css/widget/shop_sec/shop_sec.css")}}
