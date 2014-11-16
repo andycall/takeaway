@@ -72,12 +72,18 @@
 	top: 100%;
 	left: 0;
 	background: #F0F0F0;
+	z-index: 1000;
 }
 .shops .shops-header .flavor_block li {
 	list-style: none;
 	width: 59px;
 	height: 30px;
 	text-align: center;
+	cursor: pointer;
+}
+
+.shops .shops-header .flavor_block li:hover {
+	background: #fff;
 }
 
 
