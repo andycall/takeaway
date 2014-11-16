@@ -8,15 +8,24 @@
 @else
             <div class="more_shops-row-book">
 @endif
+@if($shops[$i]['is_collected'])
                 <div class="collect_star">
 
                 </div>
                 <div class="collect">
-
+                    收藏
+                </div>
+                <div class="uncollect change">
+                    取消收藏
+                </div>
+@else
+                <div class="collect change">
+                    收藏
                 </div>
                 <div class="uncollect">
-
+                    取消收藏
                 </div>
+@endif
                 <div class="more_shops-row-book-left">
                     <div class="logo">
 @if($shops[$i]['shop_logo'])
@@ -42,13 +51,13 @@
 @if($shops[$i]['is_opening']==1)
                         <span>休息中</span>
                     </div>
-                    <div class="remark">
+                    <div class="time">
                         <span title="休息中，暂不接受订单">休息中暂不接受订单</span>
                     </div>
 @else
                         <span>太忙了</span>
                     </div>
-                    <div class="remark">
+                    <div class="time">
                         <span title="太忙了，暂不接受订单">太忙了暂不接受订单</span>
                     </div>
 @endif
@@ -57,7 +66,7 @@
                     <div class="reserve">
                         <span>接受预定</span>
                     </div>
-                    <div class="remark">
+                    <div class="time">
                         <span title="接受预定，送餐时间{{$shops[$i]['deliver_start']}}开始">送餐时间{{$shops[$i]['deliver_start']}}开始</span>
                     </div>
 @else
@@ -69,7 +78,11 @@
 @if($shops[$i]['order_count'])
                         <span>{{$shops[$i]['order_count']}}订单</span>
 @endif
-                    <div class="icon"></div>
+                        <div class="icon">
+
+
+                        </div>
+
                     </div>
 @endif
 @endif

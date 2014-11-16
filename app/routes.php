@@ -335,7 +335,7 @@ Route::get('/', function(){
                     "shop_address" => "堕落街A区",
                     "business_hours" => "24小时",
                     "shop_summary"  => "吃",
-                    "is_collected" => "0",
+                    "is_collected" => "1",
                     "order_count" => "5134",
                     "is_opening" => "0",
                     "is_ready_for_order" => "0"
