@@ -107,270 +107,292 @@ Route::get('/', function(){
 					2 => "首单立减8元",
 					3 => "在线支付，10元减5元"
 				],
-
-				"shops" => [
-					[
-						"support_activity" => [1,3],       // 所有支持的活动的id
-						"isHot" => true,                  // 是否是热门餐厅
-						"isOnline" => true,                    // 是否营业
-						"isSupportPay" => true,                   // 是否支持在线支付
-						"flavor" => "中式" ,                  // 餐厅口味
-						"shop_id" => "456"    ,                         // 商家id
-						"place_id" => "123"   ,                        // 商家位置id
-						"shop_url" => "http://baidu.com"   ,                       // 点击跳转到相应商家
-						"shop_logo" => ""  ,                      // 商家的logo图片地址
-						"deliver_time" => "22",                     // 送货时间间隔
-						"deliver_start" => "10:00" ,                    // 送货开始时间
-						"shop_name" => "臭脚丫"       ,                   // 商家名称
-						"shop_type" => "美食"        ,                  // 商家类型
-						"shop_level" => "3.8"       ,                 // 总共10个等级, 1个半星一个等级
-						"shop_announce" => "臭脚丫专卖店"      ,                // 商家公告
-						"deliver_start_statement" => "顺丰快递,耶"        ,               // 起送价描述, 注意,这是一段话
-						"shop_address" => "黄脚丫"          ,             // 商家地址
-						"is_opening"  => "0"            ,            // 0 是正在营业, 1是打烊了
-						"close_msg"  => "关门啦"             ,           // 关门信息
-						"business_hours" => "08:00"           ,          // 营业时间
-						"shop_summary" => "lalalal"              ,         // 商家简介
-						"order_count"=> "22"               ,       // 订单数量
-						"is_collected" => ""                 ,      // 是否被收藏了
-						"is_ready_for_order" => "1",
-						"additions" => [                          // 额外的内容
-							0 => [
-								"add_img" => ""   ,                 // 额外内容的图片地址, 这里会显示一个配字样的图片
-								"add_content" => "配送费3元"  ,     // 额外内容
-							]
-						]
-					],[
-						"support_activity" => [1,2],       // 所有支持的活动的id
-						"isHot" => true,                  // 是否是热门餐厅
-						"isOnline" => true,                    // 是否营业
-						"isSupportPay" => true,                   // 是否支持在线支付
-						"flavor" => "中式" ,                  // 餐厅口味
-						"shop_id" => "456"    ,                         // 商家id
-						"place_id" => "123"   ,                        // 商家位置id
-						"shop_url" => "http://baidu.com"   ,                       // 点击跳转到相应商家
-						"shop_logo" => ""  ,                      // 商家的logo图片地址
-						"deliver_time" => "22",                     // 送货时间间隔
-						"deliver_start" => "10:00" ,                    // 送货开始时间
-						"shop_name" => "臭脚丫"       ,                   // 商家名称
-						"shop_type" => "美食"        ,                  // 商家类型
-						"shop_level" => "3.8"       ,                 // 总共10个等级, 1个半星一个等级
-						"shop_announce" => "臭脚丫专卖店"      ,                // 商家公告
-						"deliver_start_statement" => "顺丰快递,耶"        ,               // 起送价描述, 注意,这是一段话
-						"shop_address" => "黄脚丫"          ,             // 商家地址
-						"is_opening"  => "0"            ,            // 0 是正在营业, 1是打烊了
-						"close_msg "  => "关门啦"             ,           // 关门信息
-						"business_hours" => "08:00"           ,          // 营业时间
-						"shop_summary" => "lalalal"              ,         // 商家简介
-						"order_count"=> "22"               ,       // 订单数量
-						"is_collected" => ""                 ,      // 是否被收藏了
-						"is_ready_for_order" => "1",
-						"additions" => [                          // 额外的内容
-							0 => [
-								"add_img" => ""   ,                 // 额外内容的图片地址, 这里会显示一个配字样的图片
-								"add_content" => "配送费3元"  ,     // 额外内容
-							]
-						]
-					],[
-						"support_activity" => [1,2],       // 所有支持的活动的id
-						"isHot" => true,                  // 是否是热门餐厅
-						"isOnline" => true,                    // 是否营业
-						"isSupportPay" => true,                   // 是否支持在线支付
-						"flavor" => "中式" ,                  // 餐厅口味
-						"shop_id" => "456"    ,                         // 商家id
-						"place_id" => "123"   ,                        // 商家位置id
-						"shop_url" => "http://baidu.com"   ,                       // 点击跳转到相应商家
-						"shop_logo" => ""  ,                      // 商家的logo图片地址
-						"deliver_time" => "22",                     // 送货时间间隔
-						"deliver_start" => "10:00" ,                    // 送货开始时间
-						"shop_name" => "臭脚丫"       ,                   // 商家名称
-						"shop_type" => "美食"        ,                  // 商家类型
-						"shop_level" => "3.8"       ,                 // 总共10个等级, 1个半星一个等级
-						"shop_announce" => "臭脚丫专卖店"      ,                // 商家公告
-						"deliver_start_statement" => "顺丰快递,耶"        ,               // 起送价描述, 注意,这是一段话
-						"shop_address" => "黄脚丫"          ,             // 商家地址
-						"is_opening"  => "0"            ,            // 0 是正在营业, 1是打烊了
-						"close_msg "  => "关门啦"             ,           // 关门信息
-						"business_hours" => "08:00"           ,          // 营业时间
-						"shop_summary" => "lalalal"              ,         // 商家简介
-						"order_count"=> "22"               ,       // 订单数量
-						"is_collected" => ""                 ,      // 是否被收藏了
-						"is_ready_for_order" => "1",
-						"additions" => [                          // 额外的内容
-							0 => [
-								"add_img" => ""   ,                 // 额外内容的图片地址, 这里会显示一个配字样的图片
-								"add_content" => "配送费3元"  ,     // 额外内容
-							]
-						]
-					],[
-						"support_activity" => [1,3],       // 所有支持的活动的id
-						"isHot" => true,                  // 是否是热门餐厅
-						"isOnline" => true,                    // 是否营业
-						"isSupportPay" => true,                   // 是否支持在线支付
-						"flavor" => "中式" ,                  // 餐厅口味
-						"shop_id" => "456"    ,                         // 商家id
-						"place_id" => "123"   ,                        // 商家位置id
-						"shop_url" => "http://baidu.com"   ,                       // 点击跳转到相应商家
-						"shop_logo" => ""  ,                      // 商家的logo图片地址
-						"deliver_time" => "22",                     // 送货时间间隔
-						"deliver_start" => "10:00" ,                    // 送货开始时间
-						"shop_name" => "臭脚丫"       ,                   // 商家名称
-						"shop_type" => "美食"        ,                  // 商家类型
-						"shop_level" => "3.8"       ,                 // 总共10个等级, 1个半星一个等级
-						"shop_announce" => "臭脚丫专卖店"      ,                // 商家公告
-						"deliver_start_statement" => "顺丰快递,耶"        ,               // 起送价描述, 注意,这是一段话
-						"shop_address" => "黄脚丫"          ,             // 商家地址
-						"is_opening"  => "0"            ,            // 0 是正在营业, 1是打烊了
-						"close_msg "  => "关门啦"             ,           // 关门信息
-						"business_hours" => "08:00"           ,          // 营业时间
-						"shop_summary" => "lalalal"              ,         // 商家简介
-						"order_count"=> "22"               ,       // 订单数量
-						"is_collected" => ""                 ,      // 是否被收藏了
-						"is_ready_for_order" => "1",
-						"additions" => [                          // 额外的内容
-							0 => [
-								"add_img" => ""   ,                 // 额外内容的图片地址, 这里会显示一个配字样的图片
-								"add_content" => "配送费3元"  ,     // 额外内容
-							]
-						]
-					],[
-						"support_activity" => [2,3],       // 所有支持的活动的id
-						"isHot" => true,                  // 是否是热门餐厅
-						"isOnline" => true,                    // 是否营业
-						"isSupportPay" => true,                   // 是否支持在线支付
-						"flavor" => "中式" ,                  // 餐厅口味
-						"shop_id" => "456"    ,                         // 商家id
-						"place_id" => "123"   ,                        // 商家位置id
-						"shop_url" => "http://baidu.com"   ,                       // 点击跳转到相应商家
-						"shop_logo" => ""  ,                      // 商家的logo图片地址
-						"deliver_time" => "22",                     // 送货时间间隔
-						"deliver_start" => "10:00" ,                    // 送货开始时间
-						"shop_name" => "臭脚丫"       ,                   // 商家名称
-						"shop_type" => "美食"        ,                  // 商家类型
-						"shop_level" => "3.8"       ,                 // 总共10个等级, 1个半星一个等级
-						"shop_announce" => "臭脚丫专卖店"      ,                // 商家公告
-						"deliver_start_statement" => "顺丰快递,耶"        ,               // 起送价描述, 注意,这是一段话
-						"shop_address" => "黄脚丫"          ,             // 商家地址
-						"is_opening"  => "0"            ,            // 0 是正在营业, 1是打烊了
-						"close_msg "  => "关门啦"             ,           // 关门信息
-						"business_hours" => "08:00"           ,          // 营业时间
-						"shop_summary" => "lalalal"              ,         // 商家简介
-						"order_count"=> "22"               ,       // 订单数量
-						"is_collected" => ""                 ,      // 是否被收藏了
-						"is_ready_for_order" => "1",
-						"additions" => [                          // 额外的内容
-							0 => [
-								"add_img" => ""   ,                 // 额外内容的图片地址, 这里会显示一个配字样的图片
-								"add_content" => "配送费3元"  ,     // 额外内容
-							]
-						]
-					]
-				]
-			]
-		],
-		"add_image" => [
+                "shops" => [
+                    [
+                        "support_activity" => [2,3],       // 所有支持的活动的id
+                        "isHot" => true,                  // 是否是热门餐厅
+                        "isOnline" => true,                    // 是否营业
+                        "isSupportPay" => true,                   // 是否支持在线支付
+                        "flavor" => "中式" ,                  // 餐厅口味
+                        "shop_id" => "456"    ,                         // 商家id
+                        "place_id" => "123"   ,                        // 商家位置id
+                        "shop_url" => "http://baidu.com"   ,                       // 点击跳转到相应商家
+                        "shop_logo" => ""  ,                      // 商家的logo图片地址
+                        "deliver_time" => "22",                     // 送货时间间隔
+                        "deliver_start" => "10:00" ,                    // 送货开始时间
+                        "shop_name" => "臭脚丫"       ,                   // 商家名称
+                        "shop_type" => "美食"        ,                  // 商家类型
+                        "shop_level" => "3.8"       ,                 // 总共10个等级, 1个半星一个等级
+                        "shop_announce" => "臭脚丫专卖店"      ,                // 商家公告
+                        "deliver_state_start" => "100块都不送",
+                        "deliver_start_statement" => "顺丰快递,耶"        ,               // 起送价描述, 注意,这是一段话
+                        "shop_address" => "黄脚丫"          ,             // 商家地址
+                        "is_opening"  => "0"            ,            // 0 是正在营业, 1是打烊了
+                        "close_msg"  => "关门啦"             ,           // 关门信息
+                        "business_hours" => "08:00"           ,          // 营业时间
+                        "shop_summary" => "lalalal"              ,         // 商家简介
+                        "order_count"=> "22"               ,       // 订单数量
+                        "is_collected" => ""                 ,      // 是否被收藏了
+                        "is_ready_for_order" => "1",
+                        "additions" => [                          // 额外的内容
+                            0 => [
+                                "add_img" => ""   ,                 // 额外内容的图片地址, 这里会显示一个配字样的图片
+                                "add_content" => "配送费3元"  ,     // 额外内容
+                            ]
+                        ]
+                    ],[
+                        "support_activity" => [1,2],       // 所有支持的活动的id
+                        "isHot" => true,                  // 是否是热门餐厅
+                        "isOnline" => true,                    // 是否营业
+                        "isSupportPay" => true,                   // 是否支持在线支付
+                        "flavor" => "中式" ,                  // 餐厅口味
+                        "shop_id" => "456"    ,                         // 商家id
+                        "place_id" => "123"   ,                        // 商家位置id
+                        "shop_url" => "http://baidu.com"   ,                       // 点击跳转到相应商家
+                        "shop_logo" => ""  ,                      // 商家的logo图片地址
+                        "deliver_time" => "22",                     // 送货时间间隔
+                        "deliver_start" => "10:00" ,                    // 送货开始时间
+                        "shop_name" => "臭脚丫"       ,                   // 商家名称
+                        "shop_type" => "美食"        ,                  // 商家类型
+                        "shop_level" => "3.8"       ,                 // 总共10个等级, 1个半星一个等级
+                        "shop_announce" => "臭脚丫专卖店"      ,                // 商家公告
+                        "deliver_state_start" => "100块都不送",
+                        "deliver_start_statement" => "顺丰快递,耶"        ,               // 起送价描述, 注意,这是一段话
+                        "shop_address" => "黄脚丫"          ,             // 商家地址
+                        "is_opening"  => "0"            ,            // 0 是正在营业, 1是打烊了
+                        "close_msg "  => "关门啦"             ,           // 关门信息
+                        "business_hours" => "08:00"           ,          // 营业时间
+                        "shop_summary" => "lalalal"              ,         // 商家简介
+                        "order_count"=> "22"               ,       // 订单数量
+                        "is_collected" => ""                 ,      // 是否被收藏了
+                        "is_ready_for_order" => "1",
+                        "additions" => [                          // 额外的内容
+                            0 => [
+                                "add_img" => ""   ,                 // 额外内容的图片地址, 这里会显示一个配字样的图片
+                                "add_content" => "配送费3元"  ,     // 额外内容
+                            ]
+                        ]
+                    ],[
+                        "support_activity" => [1,2],       // 所有支持的活动的id
+                        "isHot" => true,                  // 是否是热门餐厅
+                        "isOnline" => true,                    // 是否营业
+                        "isSupportPay" => true,                   // 是否支持在线支付
+                        "flavor" => "中式" ,                  // 餐厅口味
+                        "shop_id" => "456"    ,                         // 商家id
+                        "place_id" => "123"   ,                        // 商家位置id
+                        "shop_url" => "http://baidu.com"   ,                       // 点击跳转到相应商家
+                        "shop_logo" => ""  ,                      // 商家的logo图片地址
+                        "deliver_time" => "22",                     // 送货时间间隔
+                        "deliver_start" => "10:00" ,                    // 送货开始时间
+                        "shop_name" => "臭脚丫"       ,                   // 商家名称
+                        "shop_type" => "美食"        ,                  // 商家类型
+                        "shop_level" => "3.8"       ,                 // 总共10个等级, 1个半星一个等级
+                        "shop_announce" => "臭脚丫专卖店"      ,                // 商家公告
+                        "deliver_state_start" => "100块都不送",
+                        "deliver_start_statement" => "顺丰快递,耶"        ,               // 起送价描述, 注意,这是一段话
+                        "shop_address" => "黄脚丫"          ,             // 商家地址
+                        "is_opening"  => "0"            ,            // 0 是正在营业, 1是打烊了
+                        "close_msg "  => "关门啦"             ,           // 关门信息
+                        "business_hours" => "08:00"           ,          // 营业时间
+                        "shop_summary" => "lalalal"              ,         // 商家简介
+                        "order_count"=> "22"               ,       // 订单数量
+                        "is_collected" => ""                 ,      // 是否被收藏了
+                        "is_ready_for_order" => "1",
+                        "additions" => [                          // 额外的内容
+                            0 => [
+                                "add_img" => ""   ,                 // 额外内容的图片地址, 这里会显示一个配字样的图片
+                                "add_content" => "配送费3元"  ,     // 额外内容
+                            ]
+                        ]
+                    ],[
+                        "support_activity" => [1,3],       // 所有支持的活动的id
+                        "isHot" => true,                  // 是否是热门餐厅
+                        "isOnline" => true,                    // 是否营业
+                        "isSupportPay" => true,                   // 是否支持在线支付
+                        "flavor" => "中式" ,                  // 餐厅口味
+                        "shop_id" => "456"    ,                         // 商家id
+                        "place_id" => "123"   ,                        // 商家位置id
+                        "shop_url" => "http://baidu.com"   ,                       // 点击跳转到相应商家
+                        "shop_logo" => ""  ,                      // 商家的logo图片地址
+                        "deliver_time" => "22",                     // 送货时间间隔
+                        "deliver_start" => "10:00" ,                    // 送货开始时间
+                        "shop_name" => "臭脚丫"       ,                   // 商家名称
+                        "shop_type" => "美食"        ,                  // 商家类型
+                        "shop_level" => "3.8"       ,                 // 总共10个等级, 1个半星一个等级
+                        "shop_announce" => "臭脚丫专卖店"      ,                // 商家公告
+                        "deliver_state_start" => "100块都不送",
+                        "deliver_start_statement" => "顺丰快递,耶"        ,               // 起送价描述, 注意,这是一段话
+                        "shop_address" => "黄脚丫"          ,             // 商家地址
+                        "is_opening"  => "0"            ,            // 0 是正在营业, 1是打烊了
+                        "close_msg "  => "关门啦"             ,           // 关门信息
+                        "business_hours" => "08:00"           ,          // 营业时间
+                        "shop_summary" => "lalalal"              ,         // 商家简介
+                        "order_count"=> "22"               ,       // 订单数量
+                        "is_collected" => ""                 ,      // 是否被收藏了
+                        "is_ready_for_order" => "1",
+                        "additions" => [                          // 额外的内容
+                            0 => [
+                                "add_img" => ""   ,                 // 额外内容的图片地址, 这里会显示一个配字样的图片
+                                "add_content" => "配送费3元"  ,     // 额外内容
+                            ]
+                        ]
+                    ],[
+                        "support_activity" => [2,3],       // 所有支持的活动的id
+                        "isHot" => true,                  // 是否是热门餐厅
+                        "isOnline" => true,                    // 是否营业
+                        "isSupportPay" => true,                   // 是否支持在线支付
+                        "flavor" => "中式" ,                  // 餐厅口味
+                        "shop_id" => "456"    ,                         // 商家id
+                        "place_id" => "123"   ,                        // 商家位置id
+                        "shop_url" => "http://baidu.com"   ,                       // 点击跳转到相应商家
+                        "shop_logo" => ""  ,                      // 商家的logo图片地址
+                        "deliver_time" => "22",                     // 送货时间间隔
+                        "deliver_start" => "10:00" ,                    // 送货开始时间
+                        "shop_name" => "臭脚丫"       ,                   // 商家名称
+                        "shop_type" => "美食"        ,                  // 商家类型
+                        "shop_level" => "3.8"       ,                 // 总共10个等级, 1个半星一个等级
+                        "shop_announce" => "臭脚丫专卖店"      ,                // 商家公告
+                        "deliver_state_start" => "100块都不送",
+                        "deliver_start_statement" => "顺丰快递,耶"        ,               // 起送价描述, 注意,这是一段话
+                        "shop_address" => "黄脚丫"          ,             // 商家地址
+                        "is_opening"  => "0"            ,            // 0 是正在营业, 1是打烊了
+                        "close_msg "  => "关门啦"             ,           // 关门信息
+                        "business_hours" => "08:00"           ,          // 营业时间
+                        "shop_summary" => "lalalal"              ,         // 商家简介
+                        "order_count"=> "22"               ,       // 订单数量
+                        "is_collected" => ""                 ,      // 是否被收藏了
+                        "is_ready_for_order" => "1",
+                        "additions" => [                          // 额外的内容
+                            0 => [
+                                "add_img" => ""   ,                 // 额外内容的图片地址, 这里会显示一个配字样的图片
+                                "add_content" => "配送费3元"  ,     // 额外内容
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ],
+        "add_image" => [
+            "data" => [
+                [
+                    "image_url" => "###",
+                    "jump_url" => "##",
+                ],
+                [
+                    "image_url" => "###",
+                    "jump_url" => "##",
+                ],
+                [
+                    "image_url" => "###",
+                    "jump_url" => "##",
+                ],
+                [
+                    "image_url" => "###",
+                    "jump_url" => "##",
+                ],
+                [
+                    "image_url" => "###",
+                    "jump_url" => "##",
+                ]
+            ]
+        ],
+        "more_shop" => [
 			"data" => [
-				[
-					"image_url" => "###",
-					"jump_url" => "##",
-				],
-				[
-					"image_url" => "###",
-					"jump_url" => "##",
-				],
-				[
-					"image_url" => "###",
-					"jump_url" => "##",
-				],
-				[
-					"image_url" => "###",
-					"jump_url" => "##",
-				],
-				[
-					"image_url" => "###",
-					"jump_url" => "##",
-				]
-			]
-		],
-		"more_shop" => [
-
-
-			"data" => [
-
-				[
-					"shop_id" => "12423235235235",
-					"place_id" => "12423235235235",
-					"support_activity" => [1,2,3],
-					"isHot" => "1",
-					"isOnline" => "1",
-					"isSupportPay" => "1",
-					"shop_url" => "http://www.baidu.com",
-					"shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
-					"deliver_time" => "22",
-					"deliver_start" => "17:00",
-					"shop_name" => "三顾冒菜",
-					"shop_type" => "中餐",
-					"shop_level" => "4.3",
-					"shop_announce" => "吃吃吃，吃个屁",
-					"deliver_state_start" => "100块都不送",
-					"shop_address" => "堕落街",
-					"business_hours" => "24小时",
-					"shop_summary"  => "吃吃吃",
-					"order_count" => "202",
-					"is_collected" => "0",
-					"is_opening" => "0",
-					"is_ready_for_order" => "1"
-				],
-				[
-					"shop_id" => "12423235235235",
-					"place_id" => "12423235235235",
-					"support_activity" => [1,2,3],
-					"isHot" => "1",
-					"isOnline" => "1",
-					"isSupportPay" => "1",
-					"shop_url" => "##",
-					"shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
-					"deliver_time" => "45",
-					"deliver_start" => "",
-					"shop_name" => "乐堡王",
-					"shop_type" => "中式，西式",
-					"shop_level" => "4.3",
-					"shop_announce" => "吃吃吃，吃个屁",
-					"deliver_state_start" => "100块都不送",
-					"shop_address" => "堕落街A区",
-					"business_hours" => "24小时",
-					"shop_summary"  => "吃",
-					"is_collected" => "1",
-					"order_count" => "5134",
-					"is_opening" => "0",
-					"is_ready_for_order" => "0"
-				],
-				[
-					"shop_id" => "12423235235235",
-					"place_id" => "12423235235235",
-					"support_activity" => [1,2,3],
-					"isHot" => "1",
-					"isOnline" => "1",
-					"isSupportPay" => "1",
-					"shop_url" => "##",
-					"shop_logo" => "",
-					"deliver_time" => "",
-					"deliver_start" => "",
-					"shop_name" => "铁板牛肉",
-					"shop_type" => "中餐",
-					"shop_level" => "3.8",
-					"shop_announce" => "吃吃吃，吃个屁",
-					"deliver_state_start" => "送送送",
-					"shop_address" => "堕落街B区",
-					"business_hours" => "6：00 - 10：00",
-					"shop_summary"  => "吃个屁",
-					"is_collected" => "0",
-					"order_count" => "202",
-					"is_opening" => "2",
-					"is_ready_for_order" => "0"
-				],
-				[
-
+                [
+                    "shop_id" => "12423235235235",
+                    "place_id" => "12423235235235",
+                    "support_activity" => [1,2,3],
+                    "isHot" => "1",
+                    "isOnline" => "1",
+                    "isSupportPay" => "1",
+                    "shop_url" => "http://www.baidu.com",
+                    "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
+                    "deliver_time" => "22",
+                    "deliver_start" => "17:00",
+                    "shop_name" => "三顾冒菜",
+                    "shop_type" => "中餐",
+                    "shop_level" => "4.3",
+                    "shop_announce" => "吃吃吃，吃个屁",
+                    "deliver_state_start" => "100块都不送",
+                    "shop_address" => "堕落街",
+                    "business_hours" => "24小时",
+                    "shop_summary"  => "吃吃吃",
+                    "order_count" => "202",
+                    "is_collected" => "0",
+                    "is_opening" => "0",
+                    "is_ready_for_order" => "1"
+                ],
+                [
+                    "shop_id" => "12423235235235",
+                    "place_id" => "12423235235235",
+                    "support_activity" => [1,2,3],
+                    "isHot" => "1",
+                    "isOnline" => "1",
+                    "isSupportPay" => "1",
+                    "shop_url" => "http://www.baidu.com",
+                    "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
+                    "deliver_time" => "22",
+                    "deliver_start" => "17:00",
+                    "shop_name" => "三顾冒菜",
+                    "shop_type" => "中餐",
+                    "shop_level" => "4.3",
+                    "shop_announce" => "吃吃吃，吃个屁",
+                    "deliver_state_start" => "100块都不送",
+                    "shop_address" => "堕落街",
+                    "business_hours" => "24小时",
+                    "shop_summary"  => "吃吃吃",
+                    "order_count" => "202",
+                    "is_collected" => "0",
+                    "is_opening" => "0",
+                    "is_ready_for_order" => "1"
+                ],
+                [
+                    "support_activity" => [1,2,3],
+                    "isHot" => "1",
+                    "isOnline" => "1",
+                    "isSupportPay" => "1",
+                    "shop_url" => "##",
+                    "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
+                    "deliver_time" => "45",
+                    "deliver_start" => "",
+                    "shop_name" => "乐堡王",
+                    "shop_type" => "中式，西式",
+                    "shop_level" => "4.3",
+                    "shop_announce" => "吃吃吃，吃个屁",
+                    "deliver_state_start" => "100块都不送",
+                    "shop_address" => "堕落街A区",
+                    "business_hours" => "24小时",
+                    "shop_summary"  => "吃",
+                    "is_collected" => "1",
+                    "order_count" => "5134",
+                    "is_opening" => "0",
+                    "is_ready_for_order" => "0"
+                ],
+                [
+                    "shop_id" => "12423235235235",
+                    "place_id" => "12423235235235",
+                    "support_activity" => [1,2,3],
+                    "isHot" => "1",
+                    "isOnline" => "1",
+                    "isSupportPay" => "1",
+                    "shop_url" => "##",
+                    "shop_logo" => "",
+                    "deliver_time" => "",
+                    "deliver_start" => "",
+                    "shop_name" => "铁板牛肉",
+                    "shop_type" => "中餐",
+                    "shop_level" => "3.8",
+                    "shop_announce" => "吃吃吃，吃个屁",
+                    "deliver_state_start" => "送送送",
+                    "shop_address" => "堕落街B区",
+                    "business_hours" => "6：00 - 10：00",
+                    "shop_summary"  => "吃个屁",
+                    "is_collected" => "0",
+                    "order_count" => "202",
+                    "is_opening" => "2",
+                    "is_ready_for_order" => "0"
+                ],
+                [
 					"shop_id" => "12423235235235",
 					"place_id" => "12423235235235",
 					"support_activity" => [1,2,3],

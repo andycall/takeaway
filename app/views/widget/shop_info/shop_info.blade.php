@@ -1,7 +1,6 @@
-@for ($n = 0; $n < 2; $n++)
-
+@for ($n = 0; $n < ceil(count($shops)/5); $n++)
     <div class="more_shops-row">
-@for ($i = 0; $i < 5; $i++)
+@for ($i = $n * 5 ; $i < $n * 5 + 5 & $i < count($shops); $i++)
         <a href="{{$shops[$i]['shop_url']}}">
 @if($shops[$i]['is_opening'])
             <div class="more_shops-row-book more_shops-row-colse" data-support_activity="{{ implode(",", $shops[$i]['support_activity']) }}" data-isHot="{{$shops[$i]['isHot']}}" data-isOnline="{{$shops[$i]['isOnline']}}" data-isSupportPay="{{$shops[$i]['isSupportPay']}}" data-flavor="{{ isset($shops[$i]['flavor']) ? $shops[$i]['flavor'] : ""  }}" data-shop_id="{{$shops[$i]['shop_id']}}" data-place_id="{{$shops[$i]['place_id']}}">
@@ -89,6 +88,33 @@
                     </div>
 @endif
 @endif
+                </div>
+
+                <div class="more_info more_info_right">
+                    <div class="tip"></div>
+                    <div style="font-size:15px; margin-left:10px;">
+                        {{$shops[$i]['shop_name']}}
+                    </div>
+@if($shops[$i]['is_opening']==1)
+                    <p class="close">已打烊，{{$shops[$i]['deliver_start']}}开始订餐</p>
+@elseif($shops[$i]['is_opening']==2)
+                    <p class="close">餐厅太忙，暂不接受订单</p>
+@endif
+                    <ul>
+@for($m = 0; $m < count($shops[$i]['support_activity']); $m++)
+                        <li>
+                            <span class="icon" style="background-position: 0 {{20-$shops[$i]['support_activity'][$m]*20}}px"></span>
+                            <span>{{$shop_list['data']['activity'][$shops[$i]['support_activity'][$m]]}}</span>
+                        </li>
+@endfor
+                    </ul>
+                    <div class="divider">
+                        <p class="ann"><strong>公告:</strong>&nbsp;{{$shops[$i]['shop_announce']}}</p>
+                        <p><strong>起送价:</strong>&nbsp;{{$shops[$i]['deliver_state_start']}}</p>
+                        <p><strong>地址:</strong>&nbsp;{{$shops[$i]['shop_address']}}</p>
+                        <p><strong>营业时间:</strong>&nbsp;{{$shops[$i]['business_hours']}}</p>
+                        <p><strong>简介:</strong>&nbsp;{{$shops[$i]['shop_summary']}}</p>
+                    </div>
                 </div>
             </div>
         </a>
