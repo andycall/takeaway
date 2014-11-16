@@ -26,7 +26,7 @@
         <table class="shop_container">
             <tr>
                 <td>
-                    @include("widget/shop_sec/shop_sec" , array("shops" => $shop_list['data']['shops']))
+                    @include("widget/shop_info/shop_info" , array("shops" => $shop_list['data']['shops']))
                 </td>
             </tr>
         </table>
