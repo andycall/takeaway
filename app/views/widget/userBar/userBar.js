@@ -37,33 +37,45 @@ define(['jquery', 'underscore'], function($, _){
     });
 
     $('.icon-cart').on('click', function(){
+        if($('.tb-cart-dropdown-wrapper').css('display') == 'block'){
+            return $('.tb-cart-dropdown-wrapper').hide();
+        }
         $.ajax('/takeaway/public/index.php/userBarCart', {
             beforeSend: function () {
                 $('.tb-cart-dropdown-wrapper').show();
                 $('.tb-msg-dropdown-wrapper').hide();
+                $('.tb-user-dropdown').hide();
                 $iClear.click();
             },
 
             success: function(res){
-                if("true" == res.success){
-                    var data = res.data;
-                    var _tpl;
-                    if(0 === data.goods.length){
-                        _tpl = _.template($('#tpl-tb-cart-empty').html())();
-                    }else {
-                        _tpl = _.template($('#tpl-tb-cart').html())({data: data});
-                    }
-                    $('.tb-cart-dropdown').html(_tpl);
+                var data = res.data;
+                var _tpl;
+                if(res && "true" == res.success && 0 !== data.goods.length){
+                    _tpl = _.template($('#tpl-tb-cart').html())({data: data});
+                }else{
+                    _tpl = _.template($('#tpl-tb-cart-empty').html())();
                 }
+                $('.tb-cart-dropdown').html(_tpl);
+            },
+
+            error: function(){
+                var _tpl = _.template($('#tpl-tb-cart-empty').html())();
+                $('.tb-cart-dropdown').html(_tpl);
             }
+
         });
     });
 
     $('.icon-msg').on('click', function(){
+        if($('.tb-msg-dropdown-wrapper').css('display') == 'block'){
+            return $('.tb-msg-dropdown-wrapper').hide();
+        }
         $.ajax('/takeaway/public/index.php/userBarMsg', {
             beforeSend: function () {
                 $('.tb-msg-dropdown-wrapper').show();
                 $('.tb-cart-dropdown-wrapper').hide();
+                $('.tb-user-dropdown').hide();
                 $iClear.click();
             },
 
@@ -80,6 +92,11 @@ define(['jquery', 'underscore'], function($, _){
                 }else{
 
                 }
+            },
+
+            error: function(){
+                var _tpl = _.template($('#tpl-tb-msg-empty').html())();
+                $('.tb-msg-dropdown').html(_tpl);
             }
         });
     });
