@@ -15,13 +15,12 @@
 @stop
 
 {{-- 我的收藏 --}}
-@section("collection")
-
+@section("my_collection")
     @include("widget/my_collection/my_collection")
 @stop
 
   {{-- 餐厅列表 --}}
-@section("shops")
+@section("shop_list")
     @include("widget/shop_list/shop_list")
 @stop
 
@@ -46,6 +45,6 @@
 @stop
 
 @section("script")
-    {{HTML::script("/js/lib/require.js", ["data-main" => "/takeaway/public/js/template/home/home.js"])}}
+    {{HTML::script("/js/lib/require.js", ["data-main" => url("js/template/home/home.js")])}}
 @stop
 

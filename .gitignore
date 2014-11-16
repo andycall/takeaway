@@ -38,6 +38,5 @@ node_modules
 # laravel
 vendor
 
-
-# public builds
+# public
 public/**

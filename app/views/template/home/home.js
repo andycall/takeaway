@@ -7,26 +7,34 @@ require.config({
     },
     paths : {
         home : "../template/home",
-        nav : "../widget/home/nav",
-        ads : "../widget/home/ads",
-        collection: "../widget/home/collection",
-        more_shops : "../widget/home/more_shops",
-        shops : "../widget/home/shops",
-        swipe : "../widget/swipe",
-        userBar : "../widget/userBar"
+		ads   : "../widget/ads",
+		footer  :"../widget/footer",
+		more_shops : "../widget/more_shops",
+		my_collection : "../widget/my_collection",
+		nav : "../widget/nav",
+		shop_list : "../widget/shop_list",
+		shop_sec : "../widget/shop_sec",
+		shop_uncollected : "../widget/shop_uncollected",
+		swipe : "../widget/swipe",
+		userBar : "../widget/userBar",
+		shop_info : "../widget/shop_info"
     }
 });
-
 
 // 加载项目所需的所有依赖项
 define([
     'userBar/userBar',
     "nav/nav",
     "ads/ads",
-    "collection/collection",
+	"my_collection/my_collection",
+	"footer/footer",
     "more_shops/more_shops",
-    "shops/shops",
-    "swipe/swipe"
+    "shop_list/shop_list",
+    "swipe/swipe",
+	"nav/nav",
+	"shop_sec/shop_sec",
+	"shop_uncollected/shop_uncollected",
+	"shop_info/shop_info"
 ], function($){
     console.log("init");
 });

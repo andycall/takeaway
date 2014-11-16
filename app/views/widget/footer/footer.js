@@ -1,1 +1,3 @@
-console.log("footer widget loaded");
+define(['jquery'], function($){
+	console.log("footer loaded");
+});
