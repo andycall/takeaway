@@ -17,7 +17,8 @@ require.config({
 		shop_uncollected : "../widget/shop_uncollected",
 		swipe : "../widget/swipe",
 		userBar : "../widget/userBar",
-		shop_info : "../widget/shop_info"
+		shop_info : "../widget/shop_info",
+	    tool : "../tools"
     }
 });
 
