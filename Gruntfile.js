@@ -14,12 +14,31 @@ module.exports = function(grunt) {
   	config: grunt.file.readJSON('grunt.config.json'),
 
     //文件修改监控
-    watch: {
+    watch : {
         options: {
             spawn: false
         },
         files: ['<%= config.js %>', '<%= config.css %>', '<%= config.image %>']
-    }
+    },
+
+	imagemin : {
+		static: {
+			files: [{
+				expand: true,
+				filter: 'isFile',
+				src: ["app/views/**/*.{jpg,png,gif}"],
+				dest: "public/images/",
+				rename: function(dest,src){
+					var lIndex = src.lastIndexOf("/");
+					lIndex = lIndex == -1 ? 0 : lIndex+1;
+
+					return dest + src.slice(lIndex);
+				}
+			}]
+		}
+	}
+
+
   });
 
   //对watch插件的watch事件进行监听，进行针对处理

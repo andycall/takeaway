@@ -56,7 +56,7 @@ Route::get('/', function(){
             "data" => [
                 [
                     "shop_url" => "http://www.baidu.com",
-                    "shop_logo" => "/takeaway/public/images/5c81fa9884117928491470659e18djpeg.jpeg",
+                    "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
                     "deliver_time" => "22",
                     "deliver_start" => "17:00",
                     "shop_name" => "三顾冒菜",
@@ -68,7 +68,7 @@ Route::get('/', function(){
                 ],
                 [
                     "shop_url" => "##",
-                    "shop_logo" => "/takeaway/public/images/5c81fa9884117928491470659e18djpeg.jpeg",
+                    "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
                     "deliver_time" => "45",
                     "deliver_start" => "",
                     "shop_name" => "乐堡王",
@@ -302,7 +302,7 @@ Route::get('/', function(){
                     "isOnline" => "1",
                     "isSupportPay" => "1",
                     "shop_url" => "http://www.baidu.com",
-                    "shop_logo" => "/takeaway/public/images/5c81fa9884117928491470659e18djpeg.jpeg",
+                    "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
                     "deliver_time" => "22",
                     "deliver_start" => "17:00",
                     "shop_name" => "三顾冒菜",
@@ -324,7 +324,7 @@ Route::get('/', function(){
                     "isOnline" => "1",
                     "isSupportPay" => "1",
                     "shop_url" => "##",
-                    "shop_logo" => "/takeaway/public/images/5c81fa9884117928491470659e18djpeg.jpeg",
+                    "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
                     "deliver_time" => "45",
                     "deliver_start" => "",
                     "shop_name" => "乐堡王",
