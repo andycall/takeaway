@@ -1,31 +1,29 @@
-
-  @for ($i = 0; $i < count($shops); $i++)
-        <a href="{{$shops[$i]['shop_url']}}">
-            @if($shops[$i]['is_opening'])
-                <div class="collection-row-book collection-row-colse"  data-shop_id="{{$shops[$i]['shop_id']}}" data-place_id="{{$shops[$i]['place_id']}}">
-            @else
-                <div class="collection-row-book"  data-shop_id="{{$shops[$i]['shop_id']}}" data-place_id="{{$shops[$i]['place_id']}}">
-            @endif
-
-            <div class="collection-row-book-close">
-                <i class="close"></i>
-            </div>
-            <div class="collection-row-book-left">
-                <div class="logo">
-                    @if($shops[$i]['shop_logo'])
-                        <img src="{{url($shops[$i]['shop_logo'])}}"/>
+@for ($i = 0; $i < count($shops); $i++)
+    <a href="{{$shops[$i]['shop_url']}}">
+        @if($shops[$i]['is_opening'])
+            <div class="collection-row-book collection-row-colse" data-shop_id="{{$shops[$i]['shop_id']}}" data-place_id="{{$shops[$i]['place_id']}}">
+        @else
+            <div class="collection-row-book" data-shop_id="{{$shops[$i]['shop_id']}}" data-place_id="{{$shops[$i]['place_id']}}">
+        @endif
+                <div class="collection-row-book-close">
+                    <i href="##" class="close"></i>
+                </div>
+                <div class="collection-row-book-left">
+                    <div class="logo">
+                        @if($shops[$i]['shop_logo'])
+                            <img src="{{url($shops[$i]['shop_logo'])}}"/>
+                        @else
+                            <img src="{{url("images/eleme_restaurant_logo.jpg")}}"/>
+                        @endif
+                    </div>
+                    @if (!$shops[$i]['deliver_time'])
+                        <span title="该餐厅刚开张，暂无送餐时间数据"></span>
+                    @elseif ($shops[$i]['deliver_time'] < 45)
+                    <span title="平均送餐时间{{$shops[$i]['deliver_time']}}分钟">{{$shops[$i]['deliver_time']}}分钟</span>
                     @else
-                        <img src="{{url("images/eleme_restaurant_logo.jpg")}}"/>
+                        <span class="long_time" title="当前餐厅送餐较慢">45+分钟</span>
                     @endif
                 </div>
-                @if (!$shops[$i]['deliver_time'])
-                    <span title="该餐厅刚开张，暂无送餐时间数据"></span>
-                @elseif ($shops[$i]['deliver_time'] < 45)
-                <span title="平均送餐时间{{$shops[$i]['deliver_time']}}分钟">{{$shops[$i]['deliver_time']}}分钟</span>
-                @else
-                    <span class="long_time" title="当前餐厅送餐较慢">45+分钟</span>
-                @endif
-            </div>
             <div class="collection-row-book-right">
                 <div class="title">
                     <p>{{$shops[$i]['shop_name']}}</p>

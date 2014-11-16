@@ -54,16 +54,9 @@
         shop_list : {
             data : {
                 // 考虑到以后活动会换， 在前端进行筛选的时候， 会通过activity_id 进行筛选
-                activity : [
-                    {
-                        activity_id : "123",
-                        activity_name : "11元管饱又管好(重庆)"
-                    }
-                    {
-                        activity_id : "456",
-                        activity_name : "10元管饱"
-                    }
-                ],
+                activity : {
+                    activity_id :  activity_name
+                },
                 shops : [
                     {
                         support_activity : ["123", "456"]       // 所有支持的活动的id

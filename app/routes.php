@@ -103,19 +103,14 @@ Route::get('/', function(){
             "data" =>  [
                 // 考虑到以后活动会换， 在前端进行筛选的时候， 会通过activity_id 进行筛选
                 "activity" => [
-                    0 => [
-                        "activity_id" => "123",
-                        "activity_name"  => "11元管饱又管好(重庆)"
-                    ],
-                    1 => [
-                        "activity_id" => "456",
-                        "activity_name" => "10元管饱"
-                    ]
+                    1 => "新店开张，欢迎光临",
+                    2 => "首单立减8元",
+                    3 => "在线支付，10元减5元"
                 ],
 
                 "shops" => [
                     [
-                        "support_activity" => ["123", "456"],       // 所有支持的活动的id
+                        "support_activity" => [2,3],       // 所有支持的活动的id
                         "isHot" => true,                  // 是否是热门餐厅
                         "isOnline" => true,                    // 是否营业
                         "isSupportPay" => true,                   // 是否支持在线支付
@@ -146,7 +141,7 @@ Route::get('/', function(){
                             ]
                         ]
                     ],[
-                        "support_activity" => ["123", "456"],       // 所有支持的活动的id
+                        "support_activity" => [1,2],       // 所有支持的活动的id
                         "isHot" => true,                  // 是否是热门餐厅
                         "isOnline" => true,                    // 是否营业
                         "isSupportPay" => true,                   // 是否支持在线支付
@@ -177,7 +172,7 @@ Route::get('/', function(){
                             ]
                         ]
                     ],[
-                        "support_activity" => ["123", "456"],       // 所有支持的活动的id
+                        "support_activity" => [1,2],       // 所有支持的活动的id
                         "isHot" => true,                  // 是否是热门餐厅
                         "isOnline" => true,                    // 是否营业
                         "isSupportPay" => true,                   // 是否支持在线支付
@@ -208,7 +203,7 @@ Route::get('/', function(){
                             ]
                         ]
                     ],[
-                        "support_activity" => ["123", "456"],       // 所有支持的活动的id
+                        "support_activity" => [1,3],       // 所有支持的活动的id
                         "isHot" => true,                  // 是否是热门餐厅
                         "isOnline" => true,                    // 是否营业
                         "isSupportPay" => true,                   // 是否支持在线支付
@@ -239,7 +234,7 @@ Route::get('/', function(){
                             ]
                         ]
                     ],[
-                        "support_activity" => ["123", "456"],       // 所有支持的活动的id
+                        "support_activity" => [2,3],       // 所有支持的活动的id
                         "isHot" => true,                  // 是否是热门餐厅
                         "isOnline" => true,                    // 是否营业
                         "isSupportPay" => true,                   // 是否支持在线支付
@@ -353,6 +348,35 @@ Route::get('/', function(){
                 [
                     "shop_id" => "12423235235235",
                     "place_id" => "12423235235235",
+                    "support_activity" => [1,2,3],
+                    "isHot" => "1",
+                    "isOnline" => "1",
+                    "isSupportPay" => "1",
+                    "shop_url" => "##",
+                    "shop_logo" => "",
+                    "deliver_time" => "",
+                    "deliver_start" => "",
+                    "shop_name" => "铁板牛肉",
+                    "shop_type" => "中餐",
+                    "shop_level" => "3.8",
+                    "shop_announce" => "吃吃吃，吃个屁",
+                    "deliver_state_start" => "送送送",
+                    "shop_address" => "堕落街B区",
+                    "business_hours" => "6：00 - 10：00",
+                    "shop_summary"  => "吃个屁",
+                    "is_collected" => "0",
+                    "order_count" => "202",
+                    "is_opening" => "2",
+                    "is_ready_for_order" => "0"
+                ],
+                [
+
+                    "shop_id" => "12423235235235",
+                    "place_id" => "12423235235235",
+                    "support_activity" => [1,2,3],
+                    "isHot" => "1",
+                    "isOnline" => "1",
+                    "isSupportPay" => "1",
                     "shop_url" => "##",
                     "shop_logo" => "",
                     "deliver_time" => "",
@@ -373,26 +397,10 @@ Route::get('/', function(){
                 [
                     "shop_id" => "12423235235235",
                     "place_id" => "12423235235235",
-                    "shop_url" => "##",
-                    "shop_logo" => "",
-                    "deliver_time" => "",
-                    "deliver_start" => "",
-                    "shop_name" => "铁板牛肉",
-                    "shop_type" => "中餐",
-                    "shop_level" => "3.8",
-                    "shop_announce" => "吃吃吃，吃个屁",
-                    "deliver_state_start" => "送送送",
-                    "shop_address" => "堕落街B区",
-                    "business_hours" => "6：00 - 10：00",
-                    "shop_summary"  => "吃个屁",
-                    "is_collected" => "0",
-                    "order_count" => "202",
-                    "is_opening" => "2",
-                    "is_ready_for_order" => "0"
-                ],
-                [
-                    "shop_id" => "12423235235235",
-                    "place_id" => "12423235235235",
+                    "support_activity" => [1,2,3],
+                    "isHot" => "1",
+                    "isOnline" => "1",
+                    "isSupportPay" => "1",
                     "shop_url" => "##",
                     "shop_logo" => "",
                     "deliver_time" => "",
