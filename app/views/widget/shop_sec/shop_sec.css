@@ -20,14 +20,14 @@
   width: 14px;
   height: 14px;
   display: none;
-  background: url("../../../../images/bg.gif") no-repeat -550px -773px;
+  background: url("../../../images/bg.gif") no-repeat -550px -773px;
 }
 .collection-row-book .collection-row-book-close i {
   width: 14px;
   height: 14px;
 }
  .collection-row-book .collection-row-book-close:hover {
-  background: url("../../../../images/bg.gif") no-repeat -148px -1019px;
+  background: url("../../../images/bg.gif") no-repeat -148px -1019px;
 }
 .collection-row-book .collection-row-book-left {
   float: left;
@@ -82,7 +82,6 @@
  .collection-row-book .collection-row-book-right div.reserve {
   margin-bottom: 7px;
 }
-
 .collection-row-book .collection-row-book-right div.reserve span {
   color: #59b170;
   background: #f8f8ee;
@@ -116,7 +115,7 @@
   float: left;
   width: 61px;
   height: 14px;
-  background: url("../../../../images/bg.gif") no-repeat;
+  background: url("../../../images/bg.gif") no-repeat;
   margin-top: 2px;
   margin-right: 2px;
 }
