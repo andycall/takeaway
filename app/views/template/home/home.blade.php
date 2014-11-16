@@ -24,21 +24,12 @@
 
         <div class="collection-row">
             {{-- 获取商店widget --}}
-            @include("widget/shop_sec/shop_sec")
+            @include("widget/shop_sec/shop_sec", array("shops" => $my_store['data']))
 
             {{-- 填充剩余的块 --}}
-            @if(count($my_store['data'] < 5))
-            @for ($i = count($my_store['data']); $i < 5; $i++)
-                    <div class="collection-row-none">
-                        <div class="add"></div>
-                    </div>
-            @endfor
-            @endif
+{{--            @include("widget/shop_uncollected/shop_uncollected"m)--}}
         </div>
     </div>
-
-
-
 @stop
 
   {{-- 餐厅列表 --}}
@@ -78,7 +69,7 @@
                         {{--</div>--}}
                         {{--<div class="shop_statement"></div>--}}
                     {{--</div>--}}
-                    @include("widget/shop_sec/shop_sec")
+                    @include("widget/shop_sec/shop_sec" , array("shops" => $shop_list['data']['shops']))
                 </td>
             </tr>
         </table>
