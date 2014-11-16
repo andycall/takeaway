@@ -2,9 +2,9 @@
 	"name": "ZeroLing",
 	"js": ["app/views/**/*.js"],
 	"css": ["app/views/**/*.css"],
-    "js_map" : ["app/views/**/*.js.map"],
-	"scss"   : ["app/views/**/*.scss"],
-    "css_map" : ["app/views/**/*.css.map"],
+    //"js_map" : ["app/views/**/*.js.map"],
+	//"scss"   : ["app/views/**/*.scss"],
+    //"css_map" : ["app/views/**/*.css.map"],
     "image" : ["app/views/**/*.{jpg,png,gif}"],
 	"needTag": false,
 	"depth": 2
