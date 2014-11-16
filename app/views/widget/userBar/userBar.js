@@ -1,5 +1,5 @@
 define(['jquery', 'underscore'], function($, _){
-
+	console.log("userBar loaded");
     var $sForm = $(".tb-search-form"), $sInput = $(".tb-search-input"), $iLoading = $(".icon-loading"), $iClear = $('.icon-clear'), $sResult = $('.search-result');
     $sInput.on("focus", function() {
         $sForm.css({

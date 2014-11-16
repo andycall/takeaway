@@ -1,4 +1,5 @@
 define(['jquery'], function($){
+	console.log("swipe loaded");
    $.fn.slideBox = function(options) {
        //默认参数
        var defaults = {

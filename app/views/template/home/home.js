@@ -7,7 +7,6 @@ require.config({
     },
     paths : {
         home : "../template/home",
-		widget : "../widget",
 		ads   : "../widget/ads",
 		footer  :"../widget/footer",
 		more_shops : "../widget/more_shops",
@@ -17,7 +16,8 @@ require.config({
 		shop_sec : "../widget/shop_sec",
 		shop_uncollected : "../widget/shop_uncollected",
 		swipe : "../widget/swipe",
-		userBar : "../widget/userBar"
+		userBar : "../widget/userBar",
+		shop_info : "../widget/shop_info"
     }
 });
 
@@ -27,10 +27,15 @@ define([
     'userBar/userBar',
     "nav/nav",
     "ads/ads",
-    "collection/collection",
+	"my_collection/my_collection",
+	"footer/footer",
     "more_shops/more_shops",
-    "shops/shops",
-    "swipe/swipe"
+    "shop_list/shop_list",
+    "swipe/swipe",
+	"nav/nav",
+	"shop_sec/shop_sec",
+	"shop_uncollected/shop_uncollected",
+	"shop_info/shop_info"
 ], function($){
     console.log("init");
 });
