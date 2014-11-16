@@ -29,7 +29,31 @@
   top: 0;
   right: 0;
 }
-
+.more_shops-row .more_shops-row-book .collect,
+.more_shops-row .more_shops-row-book .uncollect {
+  display: none;
+  color: #999;
+  position: absolute;
+  top: 65px;
+  line-height: 13px;
+  padding: 1px 0 0 25px;
+  margin-top: -1px;
+  right: 0;
+  height: 15px;
+}
+.more_shops-row .more_shops-row-book .collect:hover,
+.more_shops-row .more_shops-row-book .uncollect:hover {
+  color: #0088c8;
+  text-decoration: underline;
+}
+.more_shops-row .more_shops-row-book .collect {
+  background: url("../../../images/bg.gif") no-repeat -121px -779px #f8f8f8;
+  width: 40px;
+}
+.more_shops-row .more_shops-row-book .uncollect {
+  background: url("../../../images/bg.gif") no-repeat -202px -779px #f8f8f8;
+  width: 60px;
+}
 .more_shops-row .more_shops-row-book .more_shops-row-book-left {
   float: left;
 }
@@ -92,9 +116,16 @@
   margin-top: 2px;
 }
 .more_shops-row .more_shops-row-book .more_shops-row-book-right div.remark {
+  margin-top: -2px;
   height: 19px;
 }
 .more_shops-row .more_shops-row-book .more_shops-row-book-right div.remark span {
+  color: #999;
+}
+.more_shops-row .more_shops-row-book .more_shops-row-book-right div.time {
+  height: 19px;
+}
+.more_shops-row .more_shops-row-book .more_shops-row-book-right div.time span {
   color: #999;
 }
 .more_shops-row .more_shops-row-book .more_shops-row-book-right div.busy {
@@ -106,6 +137,17 @@
   background: #f5f5f5;
   border: 1px solid #ddd;
   padding: 2px 4px;
+}
+.more_shops-row .more_shops-row-book .more_shops-row-book-right div.icon {
+  margin-top: -2px;
+}
+.more_shops-row .more_shops-row-book .more_shops-row-book-right div.icon span {
+  display: block;
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+  float: left;
+  background: url("../../../images/service-icons.png") transparent 0 0 no-repeat;
 }
 .more_shops-row .more_shops-row-book .more_shops-row-book-right div div.star {
   float: left;
@@ -123,6 +165,12 @@
 }
 .more_shops-row .more_shops-row-book:hover .more_shops-row-book-close {
   display: block;
+}
+.more_shops-row .more_shops-row-book:hover .change {
+  display: block;
+}
+.more_shops-row .more_shops-row-book:hover .time {
+  display: none;
 }
 .more_shops-row .more_shops-row-colse {
   background: url("../../../images/restaurant_closed_bg.png");
