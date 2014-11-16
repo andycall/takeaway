@@ -1,7 +1,6 @@
-@for ($n = 0; $n < 2; $n++)
-
+@for ($n = 0; $n < ceil(count($shops)/5); $n++)
     <div class="more_shops-row">
-@for ($i = 0; $i < 5; $i++)
+@for ($i = $n * 5 ; $i < $n * 5 + 5 & $i < count($shops); $i++)
         <a href="{{$shops[$i]['shop_url']}}">
 @if($shops[$i]['is_opening'])
             <div class="more_shops-row-book more_shops-row-colse">
