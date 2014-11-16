@@ -97,14 +97,14 @@ Route::get('/', function(){
             "data" =>  [
                 // 考虑到以后活动会换， 在前端进行筛选的时候， 会通过activity_id 进行筛选
                 "activity" => [
-                    0 => "新店开张，欢迎光临",
-                    1 => "首单立减8元",
-                    2 => "在线支付，10元减5元"
+                    1 => "新店开张，欢迎光临",
+                    2 => "首单立减8元",
+                    3 => "在线支付，10元减5元"
                 ],
 
                 "shops" => [
                     [
-                        "support_activity" => ["123", "456"],       // 所有支持的活动的id
+                        "support_activity" => [2,3],       // 所有支持的活动的id
                         "isHot" => true,                  // 是否是热门餐厅
                         "isOnline" => true,                    // 是否营业
                         "isSupportPay" => true,                   // 是否支持在线支付
@@ -135,7 +135,7 @@ Route::get('/', function(){
                             ]
                         ]
                     ],[
-                        "support_activity" => ["123", "456"],       // 所有支持的活动的id
+                        "support_activity" => [1,2],       // 所有支持的活动的id
                         "isHot" => true,                  // 是否是热门餐厅
                         "isOnline" => true,                    // 是否营业
                         "isSupportPay" => true,                   // 是否支持在线支付
@@ -166,7 +166,7 @@ Route::get('/', function(){
                             ]
                         ]
                     ],[
-                        "support_activity" => ["123", "456"],       // 所有支持的活动的id
+                        "support_activity" => [1,2],       // 所有支持的活动的id
                         "isHot" => true,                  // 是否是热门餐厅
                         "isOnline" => true,                    // 是否营业
                         "isSupportPay" => true,                   // 是否支持在线支付
@@ -197,7 +197,7 @@ Route::get('/', function(){
                             ]
                         ]
                     ],[
-                        "support_activity" => ["123", "456"],       // 所有支持的活动的id
+                        "support_activity" => [1,3],       // 所有支持的活动的id
                         "isHot" => true,                  // 是否是热门餐厅
                         "isOnline" => true,                    // 是否营业
                         "isSupportPay" => true,                   // 是否支持在线支付
@@ -228,7 +228,7 @@ Route::get('/', function(){
                             ]
                         ]
                     ],[
-                        "support_activity" => ["123", "456"],       // 所有支持的活动的id
+                        "support_activity" => [2,3],       // 所有支持的活动的id
                         "isHot" => true,                  // 是否是热门餐厅
                         "isOnline" => true,                    // 是否营业
                         "isSupportPay" => true,                   // 是否支持在线支付
@@ -336,6 +336,10 @@ Route::get('/', function(){
                     "is_ready_for_order" => "0"
                 ],
                 [
+                    "support_activity" => [1,2,3],
+                    "isHot" => "1",
+                    "isOnline" => "1",
+                    "isSupportPay" => "1",
                     "shop_url" => "##",
                     "shop_logo" => "",
                     "deliver_time" => "",
@@ -354,6 +358,10 @@ Route::get('/', function(){
                     "is_ready_for_order" => "0"
                 ],
                 [
+                    "support_activity" => [1,2,3],
+                    "isHot" => "1",
+                    "isOnline" => "1",
+                    "isSupportPay" => "1",
                     "shop_url" => "##",
                     "shop_logo" => "",
                     "deliver_time" => "",
@@ -372,6 +380,10 @@ Route::get('/', function(){
                     "is_ready_for_order" => "0"
                 ],
                 [
+                    "support_activity" => [1,2,3],
+                    "isHot" => "1",
+                    "isOnline" => "1",
+                    "isSupportPay" => "1",
                     "shop_url" => "##",
                     "shop_logo" => "",
                     "deliver_time" => "",

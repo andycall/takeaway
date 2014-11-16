@@ -3,6 +3,9 @@
   height: 92px;
   border-top: 1px solid #DDD;
 }
+.more_shops-row:first-child {
+  border: 0;
+}
 .more_shops-row .more_shops-row-book,
 .more_shops-row .more_shops-row-none {
   cursor: pointer;
@@ -11,9 +14,6 @@
   float: left;
   padding: 10px;
   border-left: 1px solid #ddd;
-}
-.more_shops-row:first-child {
-  border: 0;
 }
 .more_shops-row a:first-child div.more_shops-row-book {
   border: 0;
