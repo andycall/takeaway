@@ -4,9 +4,9 @@
 @for ($i = 0; $i < 5; $i++)
         <a href="{{$shops[$i]['shop_url']}}">
 @if($shops[$i]['is_opening'])
-            <div class="more_shops-row-book more_shops-row-colse" data-shop_id="{{$shops[$i]['shop_id']}}" data-place_id="{{$shops[$i]['place_id']}}">
+            <div class="more_shops-row-book more_shops-row-colse" data-support_activity="{{ implode(",", $shops[$i]['support_activity']) }}" data-isHot="{{$shops[$i]['isHot']}}" data-isOnline="{{$shops[$i]['isOnline']}}" data-isSupportPay="{{$shops[$i]['isSupportPay']}}" data-flavor="{{ isset($shops[$i]['flavor']) ? $shops[$i]['flavor'] : ""  }}" data-shop_id="{{$shops[$i]['shop_id']}}" data-place_id="{{$shops[$i]['place_id']}}">
 @else
-            <div class="more_shops-row-book" data-shop_id="{{$shops[$i]['shop_id']}}" data-place_id="{{$shops[$i]['place_id']}}">
+            <div class="more_shops-row-book" data-support_activity="{{ implode(",", $shops[$i]['support_activity']) }}" data-isHot="{{$shops[$i]['isHot']}}" data-isOnline="{{$shops[$i]['isOnline']}}" data-isSupportPay="{{$shops[$i]['isSupportPay']}}" data-flavor="{{ isset($shops[$i]['flavor']) ? $shops[$i]['flavor'] : ""  }}" data-shop_id="{{$shops[$i]['shop_id']}}" data-place_id="{{$shops[$i]['place_id']}}">
 @endif
 @if($shops[$i]['is_collected'])
                 <div class="collect_star">

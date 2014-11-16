@@ -34,9 +34,9 @@
         <div class="shop_activities">
             <div class="ui-helper-clearfix">
             @foreach($shop_list['data']['activity'] as $key=>$value)
-                    <span class="activities-btn">
+                    <span class="activities-btn" data-activity-id="{{$key}}">
                        <input name="filter" type="checkbox">
-                       <span data-activity-id="{{$key}}"  >{{$value}}</span>
+                       <span>{{$value}}</span>
                    </span>
             @endforeach
             </div>

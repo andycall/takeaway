@@ -18,7 +18,7 @@ require.config({
 		swipe : "../widget/swipe",
 		userBar : "../widget/userBar",
 		shop_info : "../widget/shop_info",
-	    tool : "../tools"
+	    tools : "../tools"
     }
 });
 
