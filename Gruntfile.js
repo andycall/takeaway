@@ -91,7 +91,7 @@ module.exports = function(grunt) {
           //}
         };
 
-        runMap.push("jshint");
+//        runMap.push("jshint");
         runMap.push("uglify");
       }
 

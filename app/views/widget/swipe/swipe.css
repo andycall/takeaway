@@ -1,7 +1,7 @@
 .slideBox {
   position: relative;
-  width: 670px;
-  height: 300px;
+  width: 960px;
+  height: 80px;
   overflow: hidden;
 }
 .slideBox ul.items {
@@ -63,4 +63,11 @@
 }
 .slideBox div.tips div.nums a.active {
   background-color: #093;
+}
+#m-slider .tips {
+  height: 20px;
+  background: none;
+}
+#m-slider .nums a {
+  padding: 2px 3px 0;
 }
