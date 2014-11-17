@@ -1,12 +1,12 @@
 require.config({
-    baseUrl : "js/lib/",
-    shim : {
-        "underscore" : {
-            exports : "_"
-        }
-    },
-    paths : {
-        home : "../template/home",
+	baseUrl : "js/lib/",
+	shim : {
+		"underscore" : {
+			exports : "_"
+		}
+	},
+	paths : {
+		home : "../template/home",
 		ads   : "../widget/ads",
 		footer  :"../widget/footer",
 		more_shops : "../widget/more_shops",
@@ -18,25 +18,24 @@ require.config({
 		swipe : "../widget/swipe",
 		userBar : "../widget/userBar",
 		shop_info : "../widget/shop_info",
-	    tools : "../tools"
-    }
+		tools : "../tools"
+	}
 });
 
 // 加载项目所需的所有依赖项
 define([
-    'userBar/userBar',
-    "nav/nav",
-    "ads/ads",
+	'userBar/userBar',
+	"nav/nav",
+	"ads/ads",
 	"my_collection/my_collection",
 	"footer/footer",
-    "more_shops/more_shops",
-    "shop_list/shop_list",
-    "swipe/swipe",
-	"nav/nav",
+	"more_shops/more_shops",
+	"shop_list/shop_list",
+	"swipe/swipe",
 	"shop_sec/shop_sec",
 	"shop_uncollected/shop_uncollected",
 	"shop_info/shop_info"
 ], function($){
-    console.log("init");
+	console.log("init");
 });
 

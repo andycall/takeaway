@@ -1,0 +1,1 @@
+require.config({baseUrl:"js/lib/",shim:{underscore:{exports:"_"}},paths:{shop:"../template/shop",userBar:"../widget/userBar"}}),define(["userBar/userBar"],function(){console.log("init")});
