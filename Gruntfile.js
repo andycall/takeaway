@@ -86,14 +86,14 @@ module.exports = function(grunt) {
           };
 
         data.uglify = {
-          compress: {
-           files: [
-              {
-                expand: true,
-                filter: 'isFile',
-                src: src,
-                rename: getPathFromDepth("public/js", src, depth,needTag)
-              }
+            compress: {
+                files: [
+                {
+	                expand: true,
+	                filter: 'isFile',
+	                src: src,
+	                rename: getPathFromDepth("public/js", src, depth,needTag)
+	              }
             ]
           },
           //beatify: {

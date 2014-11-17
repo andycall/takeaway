@@ -1,18 +1,18 @@
 <div class="shops">
         <div class="shops-header">
             <div class="ui-helper-clearfix">
-               <span class="shops_func">
+               <span class="shops_func choice_click">
                     <input type="checkbox" class="sh_hot_shops" name="hot_shops" checked="checked"/>
-                    <span>热门餐厅</span>
+                    <b>热门餐厅</b>
                </span>
-               <span class="shops_func">
+               <span class="shops_func choice_click">
                     <input type="checkbox" class="sh_hot_shops" name="hot_shops" />
-                   <span>营业中</span>
+                   <b>营业中</b>
                 </span>
                 <span class="fliter"></span>
-               <span class="shops_func">
+               <span class="shops_func choice_click">
                     <input type="checkbox" class="sh_hot_shops" name="hot_shops" />
-                    <span>在线支付</span>
+                    <b>在线支付</b>
                 </span>
                 <div class="flavor_block">
                     <div class="drop_button"><a>口味</a></div>
@@ -34,9 +34,9 @@
         <div class="shop_activities">
             <div class="ui-helper-clearfix">
             @foreach($shop_list['data']['activity'] as $key=>$value)
-                    <span class="activities-btn" data-activity-id="{{$key}}">
+                    <span class="choice_click activities-btn" data-activity-id="{{$key}}">
                        <input name="filter" type="checkbox">
-                       <span>{{$value}}</span>
+                       <b>{{$value}}</b>
                    </span>
             @endforeach
             </div>

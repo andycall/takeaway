@@ -102,6 +102,9 @@
 	margin-right: 5px;
 	word-break: break-all;
 }
+.shops b{
+	font-weight: normal;
+}
 
 .shops .shops-header input {
 	vertical-align: 2px;
