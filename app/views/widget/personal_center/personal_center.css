@@ -1,3 +1,101 @@
-body{
-	font-weight: normal;
+.content_header h2{
+	font: bold 18px/1.5 tahoma,sans-serif;
+	float: left;
+	margin: 0;
+}
+.content_header:before, .content-header:after {
+	display: table;
+	content: " ";
+	line-height: 0;
+}
+
+.content_header{
+	border-bottom: 1px solid #E8E8E8;
+	padding: 10px 15px;
+	overflow: hidden;
+}
+
+.content_inner{
+	padding: 15px;
+}
+
+.content_inner .account_state {
+	padding: 15px 20px;
+	background-color: #F2F2F2;
+	border: 1px solid #BDBDBD;
+	border-radius: 3px;
+}
+.account_state .col_left{
+	float: left;
+	width: 284px;
+}
+
+.account_state .col_left .avatar{
+	position: relative;
+	float: left;
+	margin-right: 15px;
+	width: 48px;
+	height: 48px;
+	border: 1px solid #CCC;
+	background: url("/images/sprites.png") no-repeat scroll 0px -230px transparent;
+}
+
+.account_state .col_left .ava_wrapper{
+	margin-left: 65px;
+	width: 235px;
+}
+.account_state .col_left .ava_wrapper h5{
+	font-size: 18px;
+	line-height: 1.5;
+	margin: 0;
+	margin-bottom: 5px;
+}
+
+.account_state .col_left .ava_wrapper p{
+	margin:0;
+}
+
+.account_state .user-level{
+	display: inline-block;
+	padding-left: 82px;
+	height: 10px;
+	line-height: 10px;
+	background: url("/images/sprites.png") no-repeat scroll 0px 0px transparent;
+}
+
+.account_state .col_right{
+	float: left;
+	margin-left: 10px;
+	padding-left: 37px;
+	border-left: 1px solid #CCC;
+	box-shadow: -1px 0px 0px #FFF;
+	width: 296px;
+}
+
+
+
+
+
+.account_state .relate_info{
+	margin: 30px 0px 0px;
+}
+
+.content_inner .last_order{
+	margin: 15px 0px;
+}
+.user-level.full{
+	background-position:0 -120px;
+	color:#5aab04
+}
+.user-level.high{
+	background-position:0 -110px;
+	color:#5aab04
+}
+.user-level.middle{
+	background-position:0 -100px;
+	color:#fb7823
+}
+.user-level.low{
+	background-position:0 -90px;
+	color:#f00
 }
