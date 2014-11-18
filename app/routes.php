@@ -826,7 +826,11 @@ Route::get("/personal_recent_month", function(){
                     "shop_id" => "123",
                     "deal_id" => "123",
                     "deal_statue" => "1",
+                    "same_again" => "##",
+                    "deal_is_retrun" => "1",
                     "deal_return" => "##",
+                    "deal_is_pre" => "0",
+                    "deal_pre_time" => "2014-11-17 11:45:00",
                     "deal_again" => "##",
                     "shop_name" => "臭脚丫",
                     "deal_number" => "1234567345678",
@@ -866,7 +870,11 @@ Route::get("/personal_recent_month", function(){
                     "shop_id" => "123",
                     "deal_id" => "123",
                     "deal_statue" => "0",
+                    "same_again" => "##",
+                    "deal_is_retrun" => "0",
                     "deal_return" => "##",
+                    "deal_is_pre" => "1",
+                    "deal_pre_time" => "2014-11-17 11:45:00",
                     "deal_again" => "##",
                     "shop_name" => "臭脚丫",
                     "deal_number" => "1234567345678",
@@ -894,7 +902,7 @@ Route::get("/personal_recent_month", function(){
                     ],
                     "others" => [
                         [
-                            "item_name" => "红烧肉",
+                            "在线支付立减优惠" => "红烧肉",
                             "item_value" => "-5",
                             "item_amount" => "1",
                             "item_total" => "-5"

@@ -16,7 +16,23 @@
 @else
                     <div class="order_title unfinish">交易失败</div>
 @endif
+@if($value['deal_is_retrun'])
+                    <div class="retrun">
+                        <a href="{{$value['deal_return']}}">我要退单</a>
+                    </div>
+@endif
+                    <div class="same_again">
+                        <a href="{{$value['same_again']}}">
+                            <i></i>
+                            <span>再来一份</span>
+                        </a>
+                    </div>
                 </div>
+@if($value['deal_is_pre'])
+                <div class="order_pre">
+                    <p>此订单为预订单，送餐时间：{{$value['deal_pre_time']}}</p>
+                </div>
+@endif
             </div>
 
         </div>
