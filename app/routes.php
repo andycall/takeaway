@@ -44,12 +44,12 @@ Route::get('/', function(){
 				"user_mail" => "123",                // 用户提醒的地址
 				"personal" => "123",                // 个人中心地址
 				"my_collection" => "123",               // 我的收藏地址
-				"my_place" => "123",                // 我的地址
 				"my_secure" => "123",              // 安全设置的地址
 				"loginout" => "123",              // 退出登录的地址
 				"switch_place" => "123"                  // 切换当前地址的地址
 			]
 		],
+
 
 		"my_store" => [
 			"url" => "###",
@@ -98,6 +98,8 @@ Route::get('/', function(){
 				]
 			]
 		],
+
+
 
 		"shop_list" => [
 			"data" =>  [
@@ -464,7 +466,6 @@ Route::get("shop", function() {
 				"user_mail" => "123",                // 用户提醒的地址
 				"personal" => "123",                // 个人中心地址
 				"my_collection" => "123",               // 我的收藏地址
-				"my_place" => "123",                // 我的地址
 				"my_secure" => "123",              // 安全设置的地址
 				"loginout" => "123",              // 退出登录的地址
 				"switch_place" => "123"                  // 切换当前地址的地址
@@ -491,7 +492,6 @@ Route::get("/personal_center", function(){
 				"user_mail" => "123",                // 用户提醒的地址
 				"personal" => "123",                // 个人中心地址
 				"my_collection" => "123",               // 我的收藏地址
-				"my_place" => "123",                // 我的地址
 				"my_secure" => "123",              // 安全设置的地址
 				"loginout" => "123",              // 退出登录的地址
 				"switch_place" => "123"                  // 切换当前地址的地址
@@ -530,7 +530,6 @@ Route::get("/personal_after_month", function(){
 				"user_mail" => "123",                // 用户提醒的地址
 				"personal" => "123",                // 个人中心地址
 				"my_collection" => "123",               // 我的收藏地址
-				"my_place" => "123",                // 我的地址
 				"my_secure" => "123",              // 安全设置的地址
 				"loginout" => "123",              // 退出登录的地址
 				"switch_place" => "123"                  // 切换当前地址的地址
@@ -569,7 +568,6 @@ Route::get("/personal_change_password", function(){
 				"user_mail" => "123",                // 用户提醒的地址
 				"personal" => "123",                // 个人中心地址
 				"my_collection" => "123",               // 我的收藏地址
-				"my_place" => "123",                // 我的地址
 				"my_secure" => "123",              // 安全设置的地址
 				"loginout" => "123",              // 退出登录的地址
 				"switch_place" => "123"                  // 切换当前地址的地址
@@ -610,7 +608,6 @@ Route::get("/personal_change_password", function(){
 				"user_mail" => "123",                // 用户提醒的地址
 				"personal" => "123",                // 个人中心地址
 				"my_collection" => "123",               // 我的收藏地址
-				"my_place" => "123",                // 我的地址
 				"my_secure" => "123",              // 安全设置的地址
 				"loginout" => "123",              // 退出登录的地址
 				"switch_place" => "123"                  // 切换当前地址的地址
@@ -650,7 +647,6 @@ Route::get("/personal_collection_goods", function(){
 				"user_mail" => "123",                // 用户提醒的地址
 				"personal" => "123",                // 个人中心地址
 				"my_collection" => "123",               // 我的收藏地址
-				"my_place" => "123",                // 我的地址
 				"my_secure" => "123",              // 安全设置的地址
 				"loginout" => "123",              // 退出登录的地址
 				"switch_place" => "123"                  // 切换当前地址的地址
@@ -689,7 +685,6 @@ Route::get("/personal_collection_shop", function(){
 				"user_mail" => "123",                // 用户提醒的地址
 				"personal" => "123",                // 个人中心地址
 				"my_collection" => "123",               // 我的收藏地址
-				"my_place" => "123",                // 我的地址
 				"my_secure" => "123",              // 安全设置的地址
 				"loginout" => "123",              // 退出登录的地址
 				"switch_place" => "123"                  // 切换当前地址的地址
@@ -728,7 +723,6 @@ Route::get("/personal_details", function(){
 				"user_mail" => "123",                // 用户提醒的地址
 				"personal" => "123",                // 个人中心地址
 				"my_collection" => "123",               // 我的收藏地址
-				"my_place" => "123",                // 我的地址
 				"my_secure" => "123",              // 安全设置的地址
 				"loginout" => "123",              // 退出登录的地址
 				"switch_place" => "123"                  // 切换当前地址的地址
@@ -767,7 +761,6 @@ Route::get("/personal_my_site", function(){
 				"user_mail" => "123",                // 用户提醒的地址
 				"personal" => "123",                // 个人中心地址
 				"my_collection" => "123",               // 我的收藏地址
-				"my_place" => "123",                // 我的地址
 				"my_secure" => "123",              // 安全设置的地址
 				"loginout" => "123",              // 退出登录的地址
 				"switch_place" => "123"                  // 切换当前地址的地址
@@ -808,7 +801,6 @@ Route::get("/personal_recent_month", function(){
 				"user_mail" => "123",                // 用户提醒的地址
 				"personal" => "123",                // 个人中心地址
 				"my_collection" => "123",               // 我的收藏地址
-				"my_place" => "123",                // 我的地址
 				"my_secure" => "123",              // 安全设置的地址
 				"loginout" => "123",              // 退出登录的地址
 				"switch_place" => "123"                  // 切换当前地址的地址
@@ -826,7 +818,52 @@ Route::get("/personal_recent_month", function(){
 			"personal_change_password" => url("personal_change_password"), // 修改密码
 			"personal_secure"=> url("personal_secure"),        // 安全设置
 			"personal_details" => url("personal_details")       // 收支明细
-		]
+		],
+        "recent_month" => [
+            "deal_count" => "11",
+            "deal" => [
+                [
+                    "shop_id" => "123",
+                    "deal_id" => "123",
+                    "deal_statue" => "1",
+                    "deal_return" => "##",
+                    "deal_again" => "##",
+                    "shop_name" => "臭脚丫",
+                    "deal_number" => "1234567345678",
+                    "deal_time" => "2014-11-18 11:11:27",
+                    "deal_phone" => "15340525659 15340525659",
+                    "deliver_address" => "邮电大学太极操场西6门",
+                    "deliver_phone" => "18716625394",
+                    "deliver_remark" => "吃吃吃！",
+                    "deal_satisfied" => "0",
+                    "good" => [
+                        [
+                            "goods_id" => "123",
+                            "goods_name" => "红烧肉",
+                            "goods_value" => "12",
+                            "goods_amount" => "1",
+                            "goods_total" => "12"
+                        ],
+                        [
+                            "goods_id" => "123",
+                            "goods_name" => "红烧肉",
+                            "goods_value" => "12",
+                            "goods_amount" => "1",
+                            "goods_total" => "12"
+                        ]
+                    ],
+                    "others" => [
+                        [
+                            "item_name" => "红烧肉",
+                            "item_value" => "-5",
+                            "item_amount" => "1",
+                            "item_total" => "-5"
+                        ]
+                    ],
+                    "total" => "19"
+                ]
+            ]
+        ]
 	];
 
 	return View::make("template.personal.personal_recent_month")->with($data);
@@ -847,7 +884,6 @@ Route::get("/personal_return", function(){
 				"user_mail" => "123",                // 用户提醒的地址
 				"personal" => "123",                // 个人中心地址
 				"my_collection" => "123",               // 我的收藏地址
-				"my_place" => "123",                // 我的地址
 				"my_secure" => "123",              // 安全设置的地址
 				"loginout" => "123",              // 退出登录的地址
 				"switch_place" => "123"                  // 切换当前地址的地址
@@ -887,7 +923,6 @@ Route::get("/personal_secure", function(){
 				"user_mail" => "123",                // 用户提醒的地址
 				"personal" => "123",                // 个人中心地址
 				"my_collection" => "123",               // 我的收藏地址
-				"my_place" => "123",                // 我的地址
 				"my_secure" => "123",              // 安全设置的地址
 				"loginout" => "123",              // 退出登录的地址
 				"switch_place" => "123"                  // 切换当前地址的地址
@@ -927,7 +962,6 @@ Route::get("/personal_uncomment", function(){
 				"user_mail" => "123",                // 用户提醒的地址
 				"personal" => "123",                // 个人中心地址
 				"my_collection" => "123",               // 我的收藏地址
-				"my_place" => "123",                // 我的地址
 				"my_secure" => "123",              // 安全设置的地址
 				"loginout" => "123",              // 退出登录的地址
 				"switch_place" => "123"                  // 切换当前地址的地址
@@ -966,7 +1000,6 @@ Route::get("/personal_verify_email", function(){
 				"user_mail" => "123",                // 用户提醒的地址
 				"personal" => "123",                // 个人中心地址
 				"my_collection" => "123",               // 我的收藏地址
-				"my_place" => "123",                // 我的地址
 				"my_secure" => "123",              // 安全设置的地址
 				"loginout" => "123",              // 退出登录的地址
 				"switch_place" => "123"                  // 切换当前地址的地址
@@ -1007,7 +1040,6 @@ Route::get("/personal_verify_phone", function(){
 				"user_mail" => "123",                // 用户提醒的地址
 				"personal" => "123",                // 个人中心地址
 				"my_collection" => "123",               // 我的收藏地址
-				"my_place" => "123",                // 我的地址
 				"my_secure" => "123",              // 安全设置的地址
 				"loginout" => "123",              // 退出登录的地址
 				"switch_place" => "123"                  // 切换当前地址的地址

@@ -1,4 +1,5 @@
-<div>最近一个月</div>
+
+@include("widget/order_form/order_form", array("form" => $recent_month, "title" => "最近一个月"))
 
 @section("css")
     @parent
