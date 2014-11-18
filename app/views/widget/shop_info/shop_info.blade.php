@@ -92,7 +92,7 @@
 
                 <div class="more_info more_info_right">
                     <div class="tip"></div>
-                    <div style="font-size:15px; margin-left:10px;">
+                    <div style="font-size:15px; margin-left:10px;margin-bottom: 10px;">
                         {{$shops[$i]['shop_name']}}
                     </div>
 @if($shops[$i]['is_opening']==1)
