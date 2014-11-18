@@ -4,7 +4,7 @@
     <li class="nav-header">订单中心</li>
     <li><a href="#"><i class="icon icon-calendar"></i>最近一个月</a></li>
     <li><a href=""><i class="icon icon-list-alt"></i>一个月之前</a></li>
-    <li><a href=""><i class="icon icon-star-empty"></i>微点评订单</a></li>
+    <li><a href=""><i class="icon icon-star-empty"></i>未点评订单</a></li>
     <li><a href=""><i class="icon icon-file"></i>退单中的订单</a></li>
     <li class="divider"></li>
     <li class="nav-header">我的收藏</li>
