@@ -44,3 +44,11 @@ goods_collection 我的收藏(商品)
 hot_sails 本周热卖
 
 shop_map 商店地图
+
+#### personal
+
+sidebar 侧边栏
+
+personal_center 个人中心
+
+after_month 一个月之前
