@@ -1,13 +1,30 @@
-商家页面参考文档
+个人中心参考文档
 
 ----------------------- Blade Start ---------------------------
+
+
 
 
     // 个人中心
     type : "blade"
     output : {
-        user_place : ""    // 用户选择的位置
+        user_place : ""    // 用户j选择的位置
         switch_place : ""  // 更改位置的地址
+
+        sidebar : {  // 左侧栏地址
+            personal_center : ""  // 个人中心的地址
+            personal_recent_month : "" // 最近一个月的地址
+            personal_after_month : "" // 一个月之前
+            personal_uncomment : ""   // 未点评的订单
+            personal_return : ""     // 退单中的订单
+            personal_collection_shop : ""// 我收藏的餐厅的地址
+            personal_collection_goods : "// 我收藏的商品的地址
+            personal_my_site : ""   // 我的地址
+            personal_change_password : ""// 修改密码
+            personal_secure : ""        // 安全设置
+            personal_details : ""       // 收支明细
+        }
+
         personal : {       // 个人中心
             user_image : "" // 用户头像
             user_name  : "" // 用户姓名
@@ -55,7 +72,7 @@
                     {
                         shop_id     :  ""  // 商店id
                         deal_id     :  ""  // 订单id
-                        deal_statue :  ""  // 交易状态
+                        deal_statue :  ""  // 交易状态 布尔值 1 交易成功 0 交易失败
                         deal_return :  ""  // 退单链接
                         deal_again  :  ""  // 商品的地址
                         shop_name   :  ""  // 商店的名称
@@ -66,7 +83,7 @@
                         deliver_phone : "" // 订单联系电话
                         deliver_remark :  "" // 订单备注
                         deal_speed  :  "" // 送餐速度
-                        deal_satisfied : "" // 订单满意度
+                        deal_satisfied : "" // 订单满意度 0 没有评价 1 不满意 2 一般般 3 满意
                         goods : [  // 购买的所有商品
                             {
                                 goods_id    : ""       // 商品id
@@ -304,6 +321,7 @@
         deal_id : "1213"  // 订单id
         goods_id : ""     // 商品id
         goods_level : ""   // 商品等级
+        goods_comment : "" // 商品评论
     }
     output : {
         success : "true" // 成功返回true, 失败返回false

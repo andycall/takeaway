@@ -1,4 +1,4 @@
-@extends("layout.shop_main")
+@extends("layout.shop")
 
 @section("header")
 	@include("widget.userBar.userBar")
