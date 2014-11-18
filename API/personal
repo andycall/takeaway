@@ -1,6 +1,8 @@
-商家页面参考文档
+个人中心参考文档
 
 ----------------------- Blade Start ---------------------------
+
+
 
 
     // 个人中心
@@ -8,6 +10,21 @@
     output : {
         user_place : ""    // 用户j选择的位置
         switch_place : ""  // 更改位置的地址
+
+        sidebar : {  // 左侧栏地址
+            personal_center : ""  // 个人中心的地址
+            personal_recent_month : "" // 最近一个月的地址
+            personal_after_month : "" // 一个月之前
+            personal_uncomment : ""   // 未点评的订单
+            personal_return : ""     // 退单中的订单
+            personal_collection_shop : ""// 我收藏的餐厅的地址
+            personal_collection_goods : "// 我收藏的商品的地址
+            personal_my_site : ""   // 我的地址
+            personal_change_password : ""// 修改密码
+            personal_secure : ""        // 安全设置
+            personal_details : ""       // 收支明细
+        }
+
         personal : {       // 个人中心
             user_image : "" // 用户头像
             user_name  : "" // 用户姓名
