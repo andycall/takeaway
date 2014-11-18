@@ -497,6 +497,7 @@ Route::get("/personal_center", function(){
 				"switch_place" => "123"                  // 切换当前地址的地址
 			]
 		],
+
 	];
 
 	return View::make("template.personal.personal_center")->with($data);

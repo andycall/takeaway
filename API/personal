@@ -6,7 +6,7 @@
     // 个人中心
     type : "blade"
     output : {
-        user_place : ""    // 用户选择的位置
+        user_place : ""    // 用户j选择的位置
         switch_place : ""  // 更改位置的地址
         personal : {       // 个人中心
             user_image : "" // 用户头像
