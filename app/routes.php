@@ -746,6 +746,46 @@ Route::get("/personal_recent_month", function(){
                         ]
                     ],
                     "total" => "19"
+                ],
+                [
+                    "shop_id" => "123",
+                    "deal_id" => "123",
+                    "deal_statue" => "0",
+                    "deal_return" => "##",
+                    "deal_again" => "##",
+                    "shop_name" => "臭脚丫",
+                    "deal_number" => "1234567345678",
+                    "deal_time" => "2014-11-18 11:11:27",
+                    "deal_phone" => "15340525659 15340525659",
+                    "deliver_address" => "邮电大学太极操场西6门",
+                    "deliver_phone" => "18716625394",
+                    "deliver_remark" => "吃吃吃！",
+                    "deal_satisfied" => "0",
+                    "good" => [
+                        [
+                            "goods_id" => "123",
+                            "goods_name" => "红烧肉",
+                            "goods_value" => "12",
+                            "goods_amount" => "1",
+                            "goods_total" => "12"
+                        ],
+                        [
+                            "goods_id" => "123",
+                            "goods_name" => "红烧肉",
+                            "goods_value" => "12",
+                            "goods_amount" => "1",
+                            "goods_total" => "12"
+                        ]
+                    ],
+                    "others" => [
+                        [
+                            "item_name" => "红烧肉",
+                            "item_value" => "-5",
+                            "item_amount" => "1",
+                            "item_total" => "-5"
+                        ]
+                    ],
+                    "total" => "19"
                 ]
             ]
         ]
