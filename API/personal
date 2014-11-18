@@ -55,7 +55,7 @@
                     {
                         shop_id     :  ""  // 商店id
                         deal_id     :  ""  // 订单id
-                        deal_statue :  ""  // 交易状态
+                        deal_statue :  ""  // 交易状态 布尔值 1 交易成功 0 交易失败
                         deal_return :  ""  // 退单链接
                         deal_again  :  ""  // 商品的地址
                         shop_name   :  ""  // 商店的名称
@@ -66,7 +66,7 @@
                         deliver_phone : "" // 订单联系电话
                         deliver_remark :  "" // 订单备注
                         deal_speed  :  "" // 送餐速度
-                        deal_satisfied : "" // 订单满意度
+                        deal_satisfied : "" // 订单满意度 0 没有评价 1 不满意 2 一般般 3 满意
                         goods : [  // 购买的所有商品
                             {
                                 goods_id    : ""       // 商品id
