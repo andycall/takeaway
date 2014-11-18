@@ -9,11 +9,11 @@
 @stop
 
 @section("sidebar")
-    @include("widget.sideBar.sideBar", array("active" => "change_password"))
+    @include("widget.sideBar.sideBar", array("active" => "verify_email"))
 @stop
 
 @section("rightContent")
-    @include("widget.personal_change_password.personal_change_password")
+    @include("widget.personal_change_phone.personal_change_phone")
 @stop
 
 @section("footer")
@@ -27,6 +27,6 @@
 @stop
 
 @section("script")
-    {{HTML::script("/js/lib/require.js", ["data-main" => url("js/template/personal/personal_change_phone.js")])}}
+    {{HTML::script("/js/lib/require.js", ["data-main" => url("js/template/personal/personal_verify_email.js")])}}
 @stop
 
