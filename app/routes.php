@@ -497,7 +497,19 @@ Route::get("/personal_center", function(){
 				"switch_place" => "123"                  // 切换当前地址的地址
 			]
 		],
-
+		"sidebar" => [  // 左侧栏地址
+			"personal_center" => url("/personal_center"),  // 个人中心的地址
+            "personal_recent_month" => url("personal_recent_month"), // 最近一个月的地址
+            "personal_after_month" => url("personal_after_month") , // 一个月之前
+            "personal_uncomment" => url("personal_uncomment") ,  // 未点评的订单
+            "personal_return" => url("personal_return"),     // 退单中的订单
+            "personal_collection_shop" => url("personal_collection_shop"),// 我收藏的餐厅的地址
+            "personal_collection_goods" => url("personal_collection_goods"), // 我收藏的商品的地址
+            "personal_my_site" => url("personal_my_site") ,  // 我的地址
+            "personal_change_password" => url("personal_change_password"), // 修改密码
+            "personal_secure"=> url("personal_secure"),        // 安全设置
+            "personal_details" => url("personal_details")       // 收支明细
+        ]
 	];
 
 	return View::make("template.personal.personal_center")->with($data);
@@ -524,6 +536,19 @@ Route::get("/personal_after_month", function(){
 				"switch_place" => "123"                  // 切换当前地址的地址
 			]
 		],
+		"sidebar" => [  // 左侧栏地址
+			"personal_center" => url("/personal_center"),  // 个人中心的地址
+			"personal_recent_month" => url("personal_recent_month"), // 最近一个月的地址
+			"personal_after_month" => url("personal_after_month") , // 一个月之前
+			"personal_uncomment" => url("personal_uncomment") ,  // 未点评的订单
+			"personal_return" => url("personal_return"),     // 退单中的订单
+			"personal_collection_shop" => url("personal_collection_shop"),// 我收藏的餐厅的地址
+			"personal_collection_goods" => url("personal_collection_goods"), // 我收藏的商品的地址
+			"personal_my_site" => url("personal_my_site") ,  // 我的地址
+			"personal_change_password" => url("personal_change_password"), // 修改密码
+			"personal_secure"=> url("personal_secure"),        // 安全设置
+			"personal_details" => url("personal_details")       // 收支明细
+		]
 	];
 
 	return View::make("template.personal.personal_after_month")->with($data);
@@ -550,6 +575,19 @@ Route::get("/personal_change_password", function(){
 				"switch_place" => "123"                  // 切换当前地址的地址
 			]
 		],
+		"sidebar" => [  // 左侧栏地址
+			"personal_center" => url("/personal_center"),  // 个人中心的地址
+			"personal_recent_month" => url("personal_recent_month"), // 最近一个月的地址
+			"personal_after_month" => url("personal_after_month") , // 一个月之前
+			"personal_uncomment" => url("personal_uncomment") ,  // 未点评的订单
+			"personal_return" => url("personal_return"),     // 退单中的订单
+			"personal_collection_shop" => url("personal_collection_shop"),// 我收藏的餐厅的地址
+			"personal_collection_goods" => url("personal_collection_goods"), // 我收藏的商品的地址
+			"personal_my_site" => url("personal_my_site") ,  // 我的地址
+			"personal_change_password" => url("personal_change_password"), // 修改密码
+			"personal_secure"=> url("personal_secure"),        // 安全设置
+			"personal_details" => url("personal_details")       // 收支明细
+		]
 	];
 
 	return View::make("template.personal.personal_change_password")->with($data);
@@ -578,6 +616,19 @@ Route::get("/personal_change_password", function(){
 				"switch_place" => "123"                  // 切换当前地址的地址
 			]
 		],
+		"sidebar" => [  // 左侧栏地址
+			"personal_center" => url("/personal_center"),  // 个人中心的地址
+			"personal_recent_month" => url("personal_recent_month"), // 最近一个月的地址
+			"personal_after_month" => url("personal_after_month") , // 一个月之前
+			"personal_uncomment" => url("personal_uncomment") ,  // 未点评的订单
+			"personal_return" => url("personal_return"),     // 退单中的订单
+			"personal_collection_shop" => url("personal_collection_shop"),// 我收藏的餐厅的地址
+			"personal_collection_goods" => url("personal_collection_goods"), // 我收藏的商品的地址
+			"personal_my_site" => url("personal_my_site") ,  // 我的地址
+			"personal_change_password" => url("personal_change_password"), // 修改密码
+			"personal_secure"=> url("personal_secure"),        // 安全设置
+			"personal_details" => url("personal_details")       // 收支明细
+		]
 	];
 
 	return View::make("template.personal.personal_change_password")->with($data);
@@ -605,6 +656,19 @@ Route::get("/personal_collection_goods", function(){
 				"switch_place" => "123"                  // 切换当前地址的地址
 			]
 		],
+		"sidebar" => [  // 左侧栏地址
+			"personal_center" => url("/personal_center"),  // 个人中心的地址
+			"personal_recent_month" => url("personal_recent_month"), // 最近一个月的地址
+			"personal_after_month" => url("personal_after_month") , // 一个月之前
+			"personal_uncomment" => url("personal_uncomment") ,  // 未点评的订单
+			"personal_return" => url("personal_return"),     // 退单中的订单
+			"personal_collection_shop" => url("personal_collection_shop"),// 我收藏的餐厅的地址
+			"personal_collection_goods" => url("personal_collection_goods"), // 我收藏的商品的地址
+			"personal_my_site" => url("personal_my_site") ,  // 我的地址
+			"personal_change_password" => url("personal_change_password"), // 修改密码
+			"personal_secure"=> url("personal_secure"),        // 安全设置
+			"personal_details" => url("personal_details")       // 收支明细
+		]
 	];
 
 	return View::make("template.personal.personal_collection_goods")->with($data);
@@ -631,6 +695,19 @@ Route::get("/personal_collection_shop", function(){
 				"switch_place" => "123"                  // 切换当前地址的地址
 			]
 		],
+		"sidebar" => [  // 左侧栏地址
+			"personal_center" => url("/personal_center"),  // 个人中心的地址
+			"personal_recent_month" => url("personal_recent_month"), // 最近一个月的地址
+			"personal_after_month" => url("personal_after_month") , // 一个月之前
+			"personal_uncomment" => url("personal_uncomment") ,  // 未点评的订单
+			"personal_return" => url("personal_return"),     // 退单中的订单
+			"personal_collection_shop" => url("personal_collection_shop"),// 我收藏的餐厅的地址
+			"personal_collection_goods" => url("personal_collection_goods"), // 我收藏的商品的地址
+			"personal_my_site" => url("personal_my_site") ,  // 我的地址
+			"personal_change_password" => url("personal_change_password"), // 修改密码
+			"personal_secure"=> url("personal_secure"),        // 安全设置
+			"personal_details" => url("personal_details")       // 收支明细
+		]
 	];
 
 	return View::make("template.personal.personal_collection_shop")->with($data);
@@ -657,6 +734,19 @@ Route::get("/personal_details", function(){
 				"switch_place" => "123"                  // 切换当前地址的地址
 			]
 		],
+		"sidebar" => [  // 左侧栏地址
+			"personal_center" => url("/personal_center"),  // 个人中心的地址
+			"personal_recent_month" => url("personal_recent_month"), // 最近一个月的地址
+			"personal_after_month" => url("personal_after_month") , // 一个月之前
+			"personal_uncomment" => url("personal_uncomment") ,  // 未点评的订单
+			"personal_return" => url("personal_return"),     // 退单中的订单
+			"personal_collection_shop" => url("personal_collection_shop"),// 我收藏的餐厅的地址
+			"personal_collection_goods" => url("personal_collection_goods"), // 我收藏的商品的地址
+			"personal_my_site" => url("personal_my_site") ,  // 我的地址
+			"personal_change_password" => url("personal_change_password"), // 修改密码
+			"personal_secure"=> url("personal_secure"),        // 安全设置
+			"personal_details" => url("personal_details")       // 收支明细
+		]
 	];
 
 	return View::make("template.personal.personal_details")->with($data);
@@ -683,6 +773,19 @@ Route::get("/personal_my_site", function(){
 				"switch_place" => "123"                  // 切换当前地址的地址
 			]
 		],
+		"sidebar" => [  // 左侧栏地址
+			"personal_center" => url("/personal_center"),  // 个人中心的地址
+			"personal_recent_month" => url("personal_recent_month"), // 最近一个月的地址
+			"personal_after_month" => url("personal_after_month") , // 一个月之前
+			"personal_uncomment" => url("personal_uncomment") ,  // 未点评的订单
+			"personal_return" => url("personal_return"),     // 退单中的订单
+			"personal_collection_shop" => url("personal_collection_shop"),// 我收藏的餐厅的地址
+			"personal_collection_goods" => url("personal_collection_goods"), // 我收藏的商品的地址
+			"personal_my_site" => url("personal_my_site") ,  // 我的地址
+			"personal_change_password" => url("personal_change_password"), // 修改密码
+			"personal_secure"=> url("personal_secure"),        // 安全设置
+			"personal_details" => url("personal_details")       // 收支明细
+		]
 	];
 
 	return View::make("template.personal.personal_my_site")->with($data);
@@ -711,6 +814,19 @@ Route::get("/personal_recent_month", function(){
 				"switch_place" => "123"                  // 切换当前地址的地址
 			]
 		],
+		"sidebar" => [  // 左侧栏地址
+			"personal_center" => url("/personal_center"),  // 个人中心的地址
+			"personal_recent_month" => url("personal_recent_month"), // 最近一个月的地址
+			"personal_after_month" => url("personal_after_month") , // 一个月之前
+			"personal_uncomment" => url("personal_uncomment") ,  // 未点评的订单
+			"personal_return" => url("personal_return"),     // 退单中的订单
+			"personal_collection_shop" => url("personal_collection_shop"),// 我收藏的餐厅的地址
+			"personal_collection_goods" => url("personal_collection_goods"), // 我收藏的商品的地址
+			"personal_my_site" => url("personal_my_site") ,  // 我的地址
+			"personal_change_password" => url("personal_change_password"), // 修改密码
+			"personal_secure"=> url("personal_secure"),        // 安全设置
+			"personal_details" => url("personal_details")       // 收支明细
+		]
 	];
 
 	return View::make("template.personal.personal_recent_month")->with($data);
@@ -737,6 +853,19 @@ Route::get("/personal_return", function(){
 				"switch_place" => "123"                  // 切换当前地址的地址
 			]
 		],
+		"sidebar" => [  // 左侧栏地址
+			"personal_center" => url("/personal_center"),  // 个人中心的地址
+			"personal_recent_month" => url("personal_recent_month"), // 最近一个月的地址
+			"personal_after_month" => url("personal_after_month") , // 一个月之前
+			"personal_uncomment" => url("personal_uncomment") ,  // 未点评的订单
+			"personal_return" => url("personal_return"),     // 退单中的订单
+			"personal_collection_shop" => url("personal_collection_shop"),// 我收藏的餐厅的地址
+			"personal_collection_goods" => url("personal_collection_goods"), // 我收藏的商品的地址
+			"personal_my_site" => url("personal_my_site") ,  // 我的地址
+			"personal_change_password" => url("personal_change_password"), // 修改密码
+			"personal_secure"=> url("personal_secure"),        // 安全设置
+			"personal_details" => url("personal_details")       // 收支明细
+		]
 	];
 
 	return View::make("template.personal.personal_return")->with($data);
@@ -764,6 +893,19 @@ Route::get("/personal_secure", function(){
 				"switch_place" => "123"                  // 切换当前地址的地址
 			]
 		],
+		"sidebar" => [  // 左侧栏地址
+			"personal_center" => url("/personal_center"),  // 个人中心的地址
+			"personal_recent_month" => url("personal_recent_month"), // 最近一个月的地址
+			"personal_after_month" => url("personal_after_month") , // 一个月之前
+			"personal_uncomment" => url("personal_uncomment") ,  // 未点评的订单
+			"personal_return" => url("personal_return"),     // 退单中的订单
+			"personal_collection_shop" => url("personal_collection_shop"),// 我收藏的餐厅的地址
+			"personal_collection_goods" => url("personal_collection_goods"), // 我收藏的商品的地址
+			"personal_my_site" => url("personal_my_site") ,  // 我的地址
+			"personal_change_password" => url("personal_change_password"), // 修改密码
+			"personal_secure"=> url("personal_secure"),        // 安全设置
+			"personal_details" => url("personal_details")       // 收支明细
+		]
 	];
 
 	return View::make("template.personal.personal_secure")->with($data);
@@ -791,6 +933,19 @@ Route::get("/personal_uncomment", function(){
 				"switch_place" => "123"                  // 切换当前地址的地址
 			]
 		],
+		"sidebar" => [  // 左侧栏地址
+			"personal_center" => url("/personal_center"),  // 个人中心的地址
+			"personal_recent_month" => url("personal_recent_month"), // 最近一个月的地址
+			"personal_after_month" => url("personal_after_month") , // 一个月之前
+			"personal_uncomment" => url("personal_uncomment") ,  // 未点评的订单
+			"personal_return" => url("personal_return"),     // 退单中的订单
+			"personal_collection_shop" => url("personal_collection_shop"),// 我收藏的餐厅的地址
+			"personal_collection_goods" => url("personal_collection_goods"), // 我收藏的商品的地址
+			"personal_my_site" => url("personal_my_site") ,  // 我的地址
+			"personal_change_password" => url("personal_change_password"), // 修改密码
+			"personal_secure"=> url("personal_secure"),        // 安全设置
+			"personal_details" => url("personal_details")       // 收支明细
+		]
 	];
 
 	return View::make("template.personal.personal_uncomment")->with($data);
@@ -817,6 +972,19 @@ Route::get("/personal_verify_email", function(){
 				"switch_place" => "123"                  // 切换当前地址的地址
 			]
 		],
+		"sidebar" => [  // 左侧栏地址
+			"personal_center" => url("/personal_center"),  // 个人中心的地址
+			"personal_recent_month" => url("personal_recent_month"), // 最近一个月的地址
+			"personal_after_month" => url("personal_after_month") , // 一个月之前
+			"personal_uncomment" => url("personal_uncomment") ,  // 未点评的订单
+			"personal_return" => url("personal_return"),     // 退单中的订单
+			"personal_collection_shop" => url("personal_collection_shop"),// 我收藏的餐厅的地址
+			"personal_collection_goods" => url("personal_collection_goods"), // 我收藏的商品的地址
+			"personal_my_site" => url("personal_my_site") ,  // 我的地址
+			"personal_change_password" => url("personal_change_password"), // 修改密码
+			"personal_secure"=> url("personal_secure"),        // 安全设置
+			"personal_details" => url("personal_details")       // 收支明细
+		]
 	];
 
 	return View::make("template.personal.personal_verify_email")->with($data);
@@ -845,6 +1013,19 @@ Route::get("/personal_verify_phone", function(){
 				"switch_place" => "123"                  // 切换当前地址的地址
 			]
 		],
+		"sidebar" => [  // 左侧栏地址
+			"personal_center" => url("/personal_center"),  // 个人中心的地址
+			"personal_recent_month" => url("personal_recent_month"), // 最近一个月的地址
+			"personal_after_month" => url("personal_after_month") , // 一个月之前
+			"personal_uncomment" => url("personal_uncomment") ,  // 未点评的订单
+			"personal_return" => url("personal_return"),     // 退单中的订单
+			"personal_collection_shop" => url("personal_collection_shop"),// 我收藏的餐厅的地址
+			"personal_collection_goods" => url("personal_collection_goods"), // 我收藏的商品的地址
+			"personal_my_site" => url("personal_my_site") ,  // 我的地址
+			"personal_change_password" => url("personal_change_password"), // 修改密码
+			"personal_secure"=> url("personal_secure"),        // 安全设置
+			"personal_details" => url("personal_details")       // 收支明细
+		]
 	];
 
 	return View::make("template.personal.personal_verify_phone")->with($data);
