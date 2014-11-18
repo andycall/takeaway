@@ -5,7 +5,7 @@
         </a>
     @endfor
 
-    <div class="clearfix"></div>
+    <div class="ui-helper-clearfix"></div>
 
 </div>
 
