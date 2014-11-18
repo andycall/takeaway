@@ -2,6 +2,7 @@
   width: 960px;
   height: 92px;
   border-top: 1px solid #DDD;
+  font-size: 13px;
 }
 .more_shops-row:first-child {
   border: 0;
@@ -105,7 +106,7 @@
 }
 .more_shops-row .more_shops-row-book .more_shops-row-book-right div.reserve {
   margin-top: 7px;
-  margin-bottom: 7px;
+  margin-bottom: 12px;
 }
 .more_shops-row .more_shops-row-book .more_shops-row-book-right div.reserve span {
   color: #59b170;
@@ -118,7 +119,6 @@
   margin-top: 2px;
 }
 .more_shops-row .more_shops-row-book .more_shops-row-book-right div.remark {
-  margin-top: -2px;
   height: 19px;
 }
 .more_shops-row .more_shops-row-book .more_shops-row-book-right div.remark span {
@@ -132,16 +132,13 @@
 }
 .more_shops-row .more_shops-row-book .more_shops-row-book-right div.busy {
   margin-top: 7px;
-  margin-bottom: 7px;
+  margin-bottom: 12px;
 }
 .more_shops-row .more_shops-row-book .more_shops-row-book-right div.busy span {
   color: #999;
   background: #f5f5f5;
   border: 1px solid #ddd;
   padding: 2px 4px;
-}
-.more_shops-row .more_shops-row-book .more_shops-row-book-right div.icon {
-  margin-top: -2px;
 }
 .more_shops-row .more_shops-row-book .more_shops-row-book-right div.icon span {
   display: block;
