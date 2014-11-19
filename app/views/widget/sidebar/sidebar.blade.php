@@ -15,8 +15,8 @@
     <li class="{{{ $active=="my_site" ? 'active' : "" }}}"><a href="{{$sidebar['personal_my_site']}}"><i class="{{{$active=="my_site" ? "icon-white" : "icon"}}} icon-list"></i>我的地址</a></li>
     <li class="divider"></li>
     <li class="nav-header">安全中心</li>
-    <li class="{{{ $active=="change_password ? 'active' : " }}}"><a href="{{$sidebar['personal_change_password']}}"><i class="{{{$active=="change_password" ? "icon-white" : "icon"}}} icon-cog"></i>修改密码</a></li>
-    <li class="{{{ $active=="secure ? 'active' : " }}}"><a href="{{$sidebar['personal_secure']}}"><i class="{{{$active=="secure" ? "icon-white" : "icon"}}} icon-lock"></i>安全设置</a></li>
+    <li class="{{{ $active=="change_password" ? 'active' : "" }}}"><a href="{{$sidebar['personal_change_password']}}"><i class="{{{$active=="change_password" ? "icon-white" : "icon"}}} icon-cog"></i>修改密码</a></li>
+    <li class="{{{ $active=="secure" ? 'active' : "" }}}"><a href="{{$sidebar['personal_secure']}}"><i class="{{{$active=="secure" ? "icon-white" : "icon"}}} icon-lock"></i>安全设置</a></li>
     <li class="divider"></li>
     <li class="nav-header">在线支付</li>
     <li class="{{{ $active=="details" ? 'active' : "" }}}"><a href="{{$sidebar['personal_details']}}"><i class="{{{$active=="details" ? "icon-white" : "icon"}}} icon-eye-open"></i>收支明细</a></li>

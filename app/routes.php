@@ -509,7 +509,43 @@ Route::get("/personal_center", function(){
             "personal_change_password" => url("personal_change_password"), // 修改密码
             "personal_secure"=> url("personal_secure"),        // 安全设置
             "personal_details" => url("personal_details")       // 收支明细
-        ]
+        ],
+
+		"personal" => [
+			"user_image" =>  "", // 用户头像
+            "user_name"  =>  "DB", // 用户姓名
+            "user_level" =>  "1", // 用户安全等级 0 是 low 1 是中等 2 是高 3 是满分
+            "user_balance" => "20", // 用户余额
+            "charge" =>   "http://baidu.com",   // 跳转到充值的地址
+            "user_collect" => [
+				"restaurant" => "123",   // 餐厅数量
+                "cate"       => "2"   // 美食数量
+            ],
+            "user_order"  => "22",  // 用户订单数量
+            "recent_order"  => [
+                 0 => [
+	                "order_number" => "123",  // 订单号
+                    "order_time"   => "2014-10-20",  // 下单时间
+                    "order_restaurant" =>  "DB", // 订单餐厅
+                    "order_details" => "XXXX 商店", // 订单详情
+                    "order_state" => "无效订单"   // 订单状态
+                ]
+            ],
+            "recent_deal" =>  [
+	            0 => [
+					"deal_time"  => "2014-10-22",     // 交易时间
+	                "deal_type"  => "充值",     // 交易类型
+	                "deal_details" => "2323232- 订单号: 23232323",   // 交易详情
+	                "deal_money" =>  [
+						"money_type" => "0",  // 0是增加 1 是减少
+	                    "money_sum"  => "23"   // 金额数额
+	                ],
+	                "deal_status"  => "成功"   // 交易状态
+	            ]
+            ],
+            "more_deal" => ""     // 收支明细的地址
+		]
+
 	];
 
 	return View::make("template.personal.personal_center")->with($data);
@@ -825,11 +861,11 @@ Route::get("/personal_recent_month", function(){
                 [
                     "shop_id" => "123",
                     "deal_id" => "123",
-                    "deal_statue" => "1",
+                    "deal_statue" => "3",
                     "same_again" => "##",
                     "deal_is_retrun" => "1",
                     "deal_return" => "##",
-                    "deal_is_pre" => "0",
+                    "deal_is_pre" => "1",
                     "deal_pre_time" => "2014-11-17 11:45:00",
                     "deal_again" => "##",
                     "shop_name" => "臭脚丫",
@@ -839,6 +875,7 @@ Route::get("/personal_recent_month", function(){
                     "deliver_address" => "邮电大学太极操场西6门",
                     "deliver_phone" => "18716625394",
                     "deliver_remark" => "吃吃吃！",
+                    "deal_speed" => "0",
                     "deal_satisfied" => "0",
                     "good" => [
                         [
@@ -883,6 +920,7 @@ Route::get("/personal_recent_month", function(){
                     "deliver_address" => "邮电大学太极操场西6门",
                     "deliver_phone" => "18716625394",
                     "deliver_remark" => "吃吃吃！",
+                    "deal_speed" => "75分钟",
                     "deal_satisfied" => "0",
                     "good" => [
                         [
@@ -902,7 +940,97 @@ Route::get("/personal_recent_month", function(){
                     ],
                     "others" => [
                         [
-                            "在线支付立减优惠" => "红烧肉",
+                            "item_name" => "减减减",
+                            "item_value" => "-5",
+                            "item_amount" => "1",
+                            "item_total" => "-5"
+                        ]
+                    ],
+                    "total" => "19"
+                ],
+                [
+                    "shop_id" => "123",
+                    "deal_id" => "123",
+                    "deal_statue" => "1",
+                    "same_again" => "##",
+                    "deal_is_retrun" => "1",
+                    "deal_return" => "##",
+                    "deal_is_pre" => "1",
+                    "deal_pre_time" => "2014-11-17 11:45:00",
+                    "deal_again" => "##",
+                    "shop_name" => "臭脚丫",
+                    "deal_number" => "1234567345678",
+                    "deal_time" => "2014-11-18 11:11:27",
+                    "deal_phone" => "15340525659 15340525659",
+                    "deliver_address" => "邮电大学太极操场西6门",
+                    "deliver_phone" => "18716625394",
+                    "deliver_remark" => "吃吃吃！",
+                    "deal_speed" => "0",
+                    "deal_satisfied" => "0",
+                    "good" => [
+                        [
+                            "goods_id" => "123",
+                            "goods_name" => "红烧肉",
+                            "goods_value" => "12",
+                            "goods_amount" => "1",
+                            "goods_total" => "12"
+                        ],
+                        [
+                            "goods_id" => "123",
+                            "goods_name" => "红烧肉",
+                            "goods_value" => "12",
+                            "goods_amount" => "1",
+                            "goods_total" => "12"
+                        ]
+                    ],
+                    "others" => [
+                        [
+                            "item_name" => "红烧肉",
+                            "item_value" => "-5",
+                            "item_amount" => "1",
+                            "item_total" => "-5"
+                        ]
+                    ],
+                    "total" => "19"
+                ],
+                [
+                    "shop_id" => "123",
+                    "deal_id" => "123",
+                    "deal_statue" => "2",
+                    "same_again" => "##",
+                    "deal_is_retrun" => "1",
+                    "deal_return" => "##",
+                    "deal_is_pre" => "1",
+                    "deal_pre_time" => "2014-11-17 11:45:00",
+                    "deal_again" => "##",
+                    "shop_name" => "臭脚丫",
+                    "deal_number" => "1234567345678",
+                    "deal_time" => "2014-11-18 11:11:27",
+                    "deal_phone" => "15340525659 15340525659",
+                    "deliver_address" => "邮电大学太极操场西6门",
+                    "deliver_phone" => "18716625394",
+                    "deliver_remark" => "吃吃吃！",
+                    "deal_speed" => "0",
+                    "deal_satisfied" => "1",
+                    "good" => [
+                        [
+                            "goods_id" => "123",
+                            "goods_name" => "红烧肉",
+                            "goods_value" => "12",
+                            "goods_amount" => "1",
+                            "goods_total" => "12"
+                        ],
+                        [
+                            "goods_id" => "123",
+                            "goods_name" => "红烧肉",
+                            "goods_value" => "12",
+                            "goods_amount" => "1",
+                            "goods_total" => "12"
+                        ]
+                    ],
+                    "others" => [
+                        [
+                            "item_name" => "红烧肉",
                             "item_value" => "-5",
                             "item_amount" => "1",
                             "item_total" => "-5"

@@ -1,3 +1,6 @@
+.rightContent{
+  margin-bottom: 30px;
+}
 .recent_month{
   font-size: 13px;
   float: right;
@@ -5,6 +8,7 @@
   width: 700px;
   min-height: 537px;
   background: white;
+  color: #555;
   .header{
     border-bottom: 1px solid #e8e8e8;
     padding: 10px 15px;
@@ -44,6 +48,31 @@
           .unfinish{
             border: 3px solid #ccc;
             color: #666;
+          }
+          .refund{
+            float: left;
+            border: 1px #cdcdcd solid;
+            background-color: #fffdd5;
+            font-size: 13px;
+            color: #ff2500;
+            margin: 3px 0 0 25px;
+            padding: 3px 8px;
+            position: relative;
+            left: -12px;
+            span{
+              position: absolute;
+              display: block;
+              width: 8px;
+              height: 8px;
+              transform: rotate(45deg);
+              -o-transform: rotate(45deg);
+              -webkit-transform: rotate(45deg);
+              -moz-transform: rotate(45deg);
+              border: 1px #cdcdcd solid;
+              border-width: 0 0 1px 1px;
+              background-color: #fffdd5;
+              margin: 4px -13px;
+            }
           }
           .retrun{
             float: left;
@@ -101,6 +130,192 @@
           p{
             color: #08c;
             font-size: 14px;
+          }
+        }
+        .order_table{
+          margin-top: 10px;
+          margin-left: 10px;
+          td{
+            background: 0;
+            border: 0;
+            padding: 4px 5px;
+            line-height: 18px;
+            text-align: left;
+            vertical-align: top;
+            width: 202px;
+            span{
+              font-weight: bold;
+              margin-right: 5px;
+            }
+            a{
+              color: #08c;
+              text-decoration: none;
+              &:hover{
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+      .order_evaluate{
+        background: #f9f9f9;
+        .content{
+          overflow: hidden;
+          p{
+            margin: 0;
+            padding: 0;
+            min-width: 170px;
+            float: left;
+            line-height: 45px;
+            margin-left: 25px;
+          }
+          .order_content{
+            overflow: hidden;
+            float: left;
+            line-height: 45px;
+            padding-right: 20px;
+            padding-left: 10px;
+            .order_label{
+              overflow: hidden;
+              float: left;
+              line-height: 45px;
+              label{
+                display: inline-block;
+                margin-right: 15px;
+                margin-bottom: 5px;
+                line-height: 18px;
+                input{
+                  display: inline-block;
+                  margin: 0 4px 0;
+                  vertical-align: middle;
+                }
+                i{
+                  background: url("../../../images/sprites.png") no-repeat;
+                  width: 18px;
+                  height: 18px;
+                  line-height: 14px;
+                  vertical-align: text-top;
+                  display: inline-block;
+                  margin-right: 5px;
+                  &.rank1{
+                    background-position: 0 -360px;
+                  }
+                  &.rank2{
+                    background-position: -20px -360px;
+                  }
+                  &.rank3{
+                    background-position: -40px -360px;
+                  }
+                }
+              }
+            }
+            .order_comment{
+              margin: 0 0 15px;
+              width: 370px;
+              textarea{
+                resize: none;
+                width: 360px;
+                padding: 4px;
+                margin-bottom: 9px;
+                font-size: 13px;
+                line-height: 18px;
+                color: #555;
+                border: 1px solid #ccc;
+                border-radius: 3px;
+                vertical-align: top;
+                &:focus{
+                  border-color: rgba(82,168,236,0.8);
+                  box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(82,168,236,0.6);
+                  outline: 0;
+                }
+              }
+              input{
+                display: none;
+              }
+              button{
+                display: inline-block;
+                padding: 4px 10px 4px;
+                margin-bottom: 0;
+                font-size: 13px;
+                line-height: 18px;
+                text-align: center;
+                text-shadow: 0 1px 1px rgba(255,255,255,0.75);
+                vertical-align: middle;
+                border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+                border: 1px solid #ccc;
+                border-bottom-color: #b3b3b3;
+                border-radius: 4px;
+                box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+                cursor: pointer;
+                background-color: #fff4ae;
+                background-image: -webkit-linear-gradient(270deg,#fff4ae,#fdef83);
+                background-image: linear-gradient(180deg,#fff4ae,#fdef83);
+                &:hover {
+                  background-color: #fee780;
+                  background-image: -webkit-linear-gradient(270deg, #fee780, #fff7c2);
+                  background-image: linear-gradient(180deg, #fee780, #fff7c2);
+                  background-position: 0 0;
+                  text-decoration: none;
+                }
+                &:active{
+
+                }
+                &:focus {
+                  outline: thin dotted #333;
+                  outline: 5px auto -webkit-focus-ring-color;
+                  outline-offset: -2px;
+                  text-decoration: none;
+
+                }
+              }
+            }
+          }
+        }
+      }
+      .order_wrpper{
+        margin: 10px 10px 10px 20px;
+        table{
+          width: 100%;
+          tbody tr{
+            &:nth-child(odd){
+              background-color: #F9F9F9;
+            }
+            &:hover{
+              background-color: #F5F5F5;
+            }
+          }
+          tr{
+            border-bottom: 1px solid #ddd;
+          }
+          th{
+            font-size: 14px;
+          }
+          tfoot tr{
+            border: 0;
+          }
+        }
+        th,td{
+          padding: 8px;
+          text-align: center;
+          line-height: 18px;
+          &.name{
+            width:35%;
+            text-align: left;
+          }
+          &.rating{
+            width:27%;
+            .content{
+              color: #999;
+            }
+          }
+          &.price{
+            width:13%;
+          }
+          &.num{
+            width:10%;
+          }
+          &.sub{
+            width:13%;
           }
         }
       }
