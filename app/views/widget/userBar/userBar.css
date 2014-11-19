@@ -7,15 +7,6 @@
   background-image: linear-gradient(180deg, #262626, #1a1a1a);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
-
-ul,li {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-a{
-	text-decoration: none;
-}
 #header .hide {
   display: none;
 }
@@ -216,7 +207,6 @@ a{
 }
 .tb-nav .tb-site-nav li {
   float: left;
-	list-style: none;
 }
 .tb-nav .tb-site-nav li.tb-hr:after {
   content: "";
@@ -328,7 +318,6 @@ a{
 }
 .tb-username {
   color: #CCC;
-	text-decoration: none;
 }
 .tb-user-dropdown {
   display: none;

@@ -1,6 +1,7 @@
 define(['jquery'], function($){
 	console.log("order form loaded");
 
+<<<<<<< HEAD
     $.fn.serializeObject = function(){
         var o = {};
         var a = this.serializeArray();
@@ -28,6 +29,8 @@ define(['jquery'], function($){
         $(this).parent().parent().find(".order_content_form")[0].reset();
     });
 
+=======
+>>>>>>> e16aac234ae7169048508d1c3297b67a80e9f741
 
     $(".order_comment_save").on('click',function(){
         var p = document.createElement("p");
