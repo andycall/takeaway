@@ -876,7 +876,7 @@ Route::get("/personal_recent_month", function(){
                     "deliver_phone" => "18716625394",
                     "deliver_remark" => "吃吃吃！",
                     "deal_speed" => "0",
-                    "deal_satisfied" => "1",
+                    "deal_satisfied" => "0",
                     "good" => [
                         [
                             "goods_id" => "123",
@@ -1270,7 +1270,8 @@ Route::get("/personal_change_phone", function(){
             "personal_my_site" => url("personal_my_site") ,  // 我的地址
             "personal_change_password" => url("personal_change_password"), // 修改密码
             "personal_secure"=> url("personal_secure"),        // 安全设置
-            "personal_details" => url("personal_details")       // 收支明细
+            "personal_details" => url("personal_details"),       // 收支明细
+            "personal_change_phone" => url("personal_change_phone")
         ]
     ];
     return View::make("template.personal.personal_change_phone")->with($data);

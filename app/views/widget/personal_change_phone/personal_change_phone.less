@@ -140,3 +140,14 @@
     background-position: 0 0;
   }
 }
+.btn.disabled, .btn[disabled] {
+  cursor: default;
+  background-image: none;
+  background-color: #E6E6E6;
+  opacity: .65;
+  filter: alpha(opacity=65);
+  box-shadow: none;
+}
+.btn:hover, .btn:active, .btn.active, .btn.disabled, .btn[disabled] {
+  background-color: #E6E6E6;
+}
