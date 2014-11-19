@@ -36,17 +36,18 @@
         </div>
         <div class="relate_info ui-helper-clearfix">
             <ul>
-                <li><i class="icon icon-order"></i> 完成订单: <a href="{{$sidebar['personal_recent_month']}}">{{$personal['user_order}}</a>张(1个月内完成)</li>
-                <li><i class="icon icon-star"></i> 收藏: <a href="{{$sidebar['personal_collection_shop']}}">{{$personal['user_collection']['restaurant']}}</a>家餐厅 <a href="{{$sidebar['personal_collection_goods']}}">{{$personal['user_collect']['cate']}}</a>份美食 </li>
+                <li><i class="icon icon-order"></i> 完成订单: <a href="{{$sidebar['personal_recent_month']}}">{{$personal['user_order']}}</a>张(1个月内完成)</li>
+                <li><i class="icon icon-star"></i> 收藏: <a href="{{$sidebar['personal_collection_shop']}}">{{$personal['user_collect']['restaurant']}}</a>家餐厅 <a href="{{$sidebar['personal_collection_goods']}}">{{$personal['user_collect']['cate']}}</a>份美食 </li>
             </ul>
         </div>
     </div>
     <div class="last_order">
         <ul class="tab_header ui-helper-clearfix">
-            <li class="active">最近饿单</li>
-            <li>最近在线交易</li>
+            <li class="active recent_order">最近饿单</li>
+            <li class="recent_deal">最近在线交易</li>
         </ul>
         <div class="tab_body">
+            <a href="{{$sidebar['personal_details']}}" class="more_deal">更多在线交易>>></a>
             <table class="recent_ticket">
                 <thead>
                     <tr>
@@ -58,33 +59,37 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach($personal['recent_order'] as $key=>$value)
                     <tr>
-                        <td class="sn"><a href="">123213213213</a></td>
-                        <td class="time">11-18 12:00</td>
-                        <td class="restaurant">脆皮鸡</td>
-                        <td>脆皮鸡一根, </td>
-                        <td class="status">交易完成</td>
+                        <td class="sn"><a href="">{{$value['order_number']}}</a></td>
+                        <td class="time">{{$value['order_time']}}</td>
+                        <td class="restaurant">{{$value['order_restaurant']}}</td>
+                        <td>{{$value['order_details']}}</td>
+                        <td class="status">{{$value['order_state']}}</td>
                     </tr>
+                    @endforeach
                 </tbody>
             </table>
-            <table class="recent_month" style="displat:none">
+            <table class="recent_month" style="display: none;">
                  <thead>
                     <tr>
-                        <th>订单号</th>
-                        <th>下单时间</th>
-                        <th>餐厅</th>
-                        <th>订单详情</th>
-                        <th>订单状态</th>
+                        <th>创建时间</th>
+                        <th>交易类型</th>
+                        <th>交易详情</th>
+                        <th>金额</th>
+                        <th>交易状态</th>
                     </tr>
                 </thead>
                 <tbody>
+                @foreach($personal['recent_deal'] as $key=>$value)
                     <tr>
-                        <td class="sn"><a href="">123213213213</a></td>
-                        <td class="time">11-18 12:00</td>
-                        <td class="restaurant">脆皮鸡</td>
-                        <td>脆皮鸡一根, </td>
-                        <td class="status">交易完成</td>
+                        <td class="sn"><a href="">{{$value['deal_time']}}</a></td>
+                        <td class="time">{{$value['deal_type']}}</td>
+                        <td>{{$value['deal_details']}}</td>
+                        <td class="{{$value['deal_money']['money_type'] == 0 ? "up" : "down"}}">{{$value['deal_money']['money_type'] == 0 ? "+" : "-"}}{{$value['deal_money']['money_sum']}}</td>
+                        <td class="status">{{$value['deal_status']}}</td>
                     </tr>
+                @endforeach
                 </tbody>
             </table>
         </div>

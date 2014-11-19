@@ -161,9 +161,11 @@
 .last_order {
 	margin: 15px 0px;
 }
+
 .last_order ul{
 	margin: 0px;
 }
+
 .last_order ul li{
 	position: relative;
 	float: left;
@@ -212,6 +214,28 @@
 
 .last_order tbody td.time {
 	width: 80px;
+}
+
+.last_order tbody td.up {
+	color: #5AAB04;
+	width: 70px;
+}
+.last_order tbody td.down {
+	color: #F60;
+	width: 70px;
+}
+
+.last_order {
+	position: relative;
+}
+
+.last_order .more_deal{
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.last_order .more_deal:hover{
+	text-decoration: underline;
 }
 
 .last_order tbody td.restaurant {

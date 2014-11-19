@@ -516,30 +516,32 @@ Route::get("/personal_center", function(){
             "user_name"  =>  "DB", // 用户姓名
             "user_level" =>  "1", // 用户安全等级 0 是 low 1 是中等 2 是高 3 是满分
             "user_balance" => "20", // 用户余额
-            "charge" =>   "",   // 跳转到充值的地址
+            "charge" =>   "http://baidu.com",   // 跳转到充值的地址
             "user_collect" => [
-				"restaurant" => "",   // 餐厅数量
-                "cate"       => ""   // 美食数量
+				"restaurant" => "123",   // 餐厅数量
+                "cate"       => "2"   // 美食数量
             ],
-            "user_order"  => "",  // 用户订单数量
+            "user_order"  => "22",  // 用户订单数量
             "recent_order"  => [
                  0 => [
-	                "order_number" => "",  // 订单号
-                    "order_time"   => "",  // 下单时间
-                    "order_restaurant" =>  "", // 订单餐厅
-                    "order_details" => "", // 订单详情
-                    "order_state" => ""   // 订单状态
+	                "order_number" => "123",  // 订单号
+                    "order_time"   => "2014-10-20",  // 下单时间
+                    "order_restaurant" =>  "DB", // 订单餐厅
+                    "order_details" => "XXXX 商店", // 订单详情
+                    "order_state" => "无效订单"   // 订单状态
                 ]
             ],
             "recent_deal" =>  [
-				"deal_time"  => "",     // 交易时间
-                "deal_type"  => "",     // 交易类型
-                "deal_details" => "",   // 交易详情
-                "deal_money" =>  [
-					"money_type" => "0",  // 0是增加 1 是减少
-                    "money_sum"  => ""   // 金额数额
-                ],
-                "deal_status"  => ""   // 交易状态
+	            0 => [
+					"deal_time"  => "2014-10-22",     // 交易时间
+	                "deal_type"  => "充值",     // 交易类型
+	                "deal_details" => "2323232- 订单号: 23232323",   // 交易详情
+	                "deal_money" =>  [
+						"money_type" => "0",  // 0是增加 1 是减少
+	                    "money_sum"  => "23"   // 金额数额
+	                ],
+	                "deal_status"  => "成功"   // 交易状态
+	            ]
             ],
             "more_deal" => ""     // 收支明细的地址
 		]

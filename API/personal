@@ -28,7 +28,7 @@
         personal : {       // 个人中心
             user_image : "" // 用户头像
             user_name  : "" // 用户姓名
-            user_level : "" // 用户安全等级
+            user_level : "" // 用户安全等级 0 是 low 1 是中等 2 是高 3 是满分
             user_balance : "" // 用户余额
             charge :   ""   // 跳转到充值的地址
             user_score : "" // 用户积分
