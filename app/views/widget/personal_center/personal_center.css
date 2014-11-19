@@ -1,53 +1,3 @@
-.content_header h2{
-	font: bold 18px/1.5 tahoma,sans-serif;
-	float: left;
-	margin: 0;
-}
-.btn {
-	display: inline-block;
-	padding: 4px 10px;
-	margin-bottom: 0px;
-	font-size: 13px;
-	line-height: 18px;
-	color: #333;
-	text-align: center;
-	text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.75);
-	vertical-align: middle;
-	background-color: #F5F5F5;
-	background-image: -moz-linear-gradient(center top , #FFF, #E6E6E6);
-	background-repeat: repeat-x;
-	border-width: 1px;
-	border-style: solid;
-	border-color: #CCC #CCC #B3B3B3;
-	-moz-border-top-colors: none;
-	-moz-border-right-colors: none;
-	-moz-border-bottom-colors: none;
-	-moz-border-left-colors: none;
-	border-image: none;
-	border-radius: 4px;
-	box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.2) inset, 0px 1px 2px rgba(0, 0, 0, 0.05);
-	cursor: pointer;
-}
-
-.btn-yellow{
-	background-color: #FFF4AE;
-	background-image: linear-gradient(180deg, #FFF4AE, #FDEF83);,
-}
-.content_header:before, .content-header:after {
-	display: table;
-	content: " ";
-	line-height: 0;
-}
-
-.content_header{
-	border-bottom: 1px solid #E8E8E8;
-	padding: 10px 15px;
-	overflow: hidden;
-}
-
-.content_inner{
-	padding: 15px;
-}
 
 .content_inner .account_state {
 	padding: 15px 20px;
@@ -161,9 +111,11 @@
 .last_order {
 	margin: 15px 0px;
 }
+
 .last_order ul{
 	margin: 0px;
 }
+
 .last_order ul li{
 	position: relative;
 	float: left;
@@ -180,6 +132,13 @@
 .last_order ul li.active{
 	background-color: #EEE;
 	border-bottom-color: #EEE;
+}
+
+.last_order table {
+	margin: 0px;
+	padding: 0px;
+	table-layout: auto;
+	width: 100%;
 }
 
 .last_order thead{
@@ -205,6 +164,28 @@
 
 .last_order tbody td.time {
 	width: 80px;
+}
+
+.last_order tbody td.up {
+	color: #5AAB04;
+	width: 70px;
+}
+.last_order tbody td.down {
+	color: #F60;
+	width: 70px;
+}
+
+.last_order {
+	position: relative;
+}
+
+.last_order .more_deal{
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.last_order .more_deal:hover{
+	text-decoration: underline;
 }
 
 .last_order tbody td.restaurant {
