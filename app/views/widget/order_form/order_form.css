@@ -5,6 +5,7 @@
   width: 700px;
   min-height: 537px;
   background: white;
+  color: #555;
 }
 .recent_month .header {
   border-bottom: 1px solid #e8e8e8;
@@ -106,4 +107,91 @@
 .recent_month .inner .order_form .order_header .order_pre p {
   color: #08c;
   font-size: 14px;
+}
+.recent_month .inner .order_form .order_header .order_table {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.recent_month .inner .order_form .order_header .order_table td {
+  background: 0;
+  border: 0;
+  padding: 4px 5px;
+  line-height: 18px;
+  text-align: left;
+  vertical-align: top;
+  width: 202px;
+}
+.recent_month .inner .order_form .order_header .order_table td span {
+  font-weight: bold;
+  margin-right: 5px;
+}
+.recent_month .inner .order_form .order_header .order_table td a {
+  color: #08c;
+  text-decoration: none;
+}
+.recent_month .inner .order_form .order_header .order_table td a:hover {
+  text-decoration: underline;
+}
+.recent_month .inner .order_form .order_evaluate {
+  background: #f9f9f9;
+}
+.recent_month .inner .order_form .order_evaluate .content {
+  height: 45px;
+  overflow: hidden;
+}
+.recent_month .inner .order_form .order_evaluate .content p {
+  margin: 0;
+  padding: 0;
+  min-width: 170px;
+  float: left;
+  line-height: 45px;
+  margin-left: 25px;
+}
+.recent_month .inner .order_form .order_wrpper {
+  margin: 10px 10px 10px 20px;
+}
+.recent_month .inner .order_form .order_wrpper table {
+  width: 100%;
+}
+.recent_month .inner .order_form .order_wrpper table tbody tr:nth-child(odd) {
+  background-color: #F9F9F9;
+}
+.recent_month .inner .order_form .order_wrpper table tbody tr:hover {
+  background-color: #F5F5F5;
+}
+.recent_month .inner .order_form .order_wrpper table tr {
+  border-bottom: 1px solid #ddd;
+}
+.recent_month .inner .order_form .order_wrpper table th {
+  font-size: 14px;
+}
+.recent_month .inner .order_form .order_wrpper table tfoot tr {
+  border: 0;
+}
+.recent_month .inner .order_form .order_wrpper th,
+.recent_month .inner .order_form .order_wrpper td {
+  padding: 8px;
+  text-align: center;
+  line-height: 18px;
+}
+.recent_month .inner .order_form .order_wrpper th.name,
+.recent_month .inner .order_form .order_wrpper td.name {
+  width: 35%;
+  text-align: left;
+}
+.recent_month .inner .order_form .order_wrpper th.rating,
+.recent_month .inner .order_form .order_wrpper td.rating {
+  width: 27%;
+}
+.recent_month .inner .order_form .order_wrpper th.price,
+.recent_month .inner .order_form .order_wrpper td.price {
+  width: 13%;
+}
+.recent_month .inner .order_form .order_wrpper th.num,
+.recent_month .inner .order_form .order_wrpper td.num {
+  width: 10%;
+}
+.recent_month .inner .order_form .order_wrpper th.sub,
+.recent_month .inner .order_form .order_wrpper td.sub {
+  width: 13%;
 }

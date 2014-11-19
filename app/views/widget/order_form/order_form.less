@@ -5,6 +5,7 @@
   width: 700px;
   min-height: 537px;
   background: white;
+  color: #555;
   .header{
     border-bottom: 1px solid #e8e8e8;
     padding: 10px 15px;
@@ -101,6 +102,89 @@
           p{
             color: #08c;
             font-size: 14px;
+          }
+        }
+        .order_table{
+          margin-top: 10px;
+          margin-left: 10px;
+          td{
+            background: 0;
+            border: 0;
+            padding: 4px 5px;
+            line-height: 18px;
+            text-align: left;
+            vertical-align: top;
+            width: 202px;
+            span{
+              font-weight: bold;
+              margin-right: 5px;
+            }
+            a{
+              color: #08c;
+              text-decoration: none;
+              &:hover{
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+      .order_evaluate{
+        background: #f9f9f9;
+        .content{
+          height: 45px;
+          overflow: hidden;
+          p{
+            margin: 0;
+            padding: 0;
+            min-width: 170px;
+            float: left;
+            line-height: 45px;
+            margin-left: 25px;
+          }
+        }
+      }
+      .order_wrpper{
+        margin: 10px 10px 10px 20px;
+        table{
+          width: 100%;
+          tbody tr{
+            &:nth-child(odd){
+              background-color: #F9F9F9;
+            }
+            &:hover{
+              background-color: #F5F5F5;
+            }
+          }
+          tr{
+            border-bottom: 1px solid #ddd;
+          }
+          th{
+            font-size: 14px;
+          }
+          tfoot tr{
+            border: 0;
+          }
+        }
+        th,td{
+          padding: 8px;
+          text-align: center;
+          line-height: 18px;
+          &.name{
+            width:35%;
+            text-align: left;
+          }
+          &.rating{
+            width:27%;
+          }
+          &.price{
+            width:13%;
+          }
+          &.num{
+            width:10%;
+          }
+          &.sub{
+            width:13%;
           }
         }
       }
