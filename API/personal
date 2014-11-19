@@ -118,19 +118,38 @@
 
     type : "blade"
     output : {
-        shop_count : ""    // 收藏的商家数量
-        shop_area  : ""    // 商店区域
-        shops : [
-            {
-                shop_id   : ""     // 商店id
-                shop_name : ""     // 商店名称
-                shop_logo : ""     // 商店logo
-                shop_type : ""     // 商店类型
-                shop_level : ""    // 商店等级
-                deliver_time : ""  // 送货时间
-                shop_statue : ""   // 商店状态 (是否打烊)
-            }
-        ]
+        now_shop_count : ""    // 收藏的商家数量
+        now_area  : ""    // 当前商店区域
+        other_shop_count : ""   // 其他地方收藏的数量
+        shops : {
+            now_place : [
+                {
+                    shop_id   : ""     // 商店id
+                    shop_name : ""     // 商店名称
+                    shop_logo : ""     // 商店logo
+                    shop_url :  ""     // 点击商店跳转的链接
+                    shop_type : ""     // 商店类型
+                    shop_level : ""    // 商店等级
+                    deliver_time : ""  // 送货时间
+                    shop_statue : ""   // 商店状态 (是否打烊) 0 是营业 1是关门
+                    goods_count : ""    // 订单数量
+                }
+            ],
+
+            other_place : [
+                {
+                    shop_id   : ""     // 商店id
+                    shop_name : ""     // 商店名称
+                    shop_logo : ""     // 商店logo
+                    shop_url :  ""     // 点击商店跳转的链接
+                    shop_type : ""     // 商店类型
+                    shop_level : ""    // 商店等级
+                    deliver_time : ""  // 送货时间
+                    shop_statue : ""   // 商店状态 (是否打烊) 0 是营业 1 是关门
+                    goods_count : ""    // 订单数量
+                }
+            ]
+        }
     }
 
     // 我收藏的商品

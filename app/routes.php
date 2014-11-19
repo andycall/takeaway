@@ -738,6 +738,48 @@ Route::get("/personal_collection_shop", function(){
 			"personal_change_password" => url("personal_change_password"), // 修改密码
 			"personal_secure"=> url("personal_secure"),        // 安全设置
 			"personal_details" => url("personal_details")       // 收支明细
+		],
+		"shops"	=> [
+			"now_shop_count" => "23",    // 收藏的商家数量
+            "now_area"  => "重庆",    // 当前商店区域
+            "other_shop_count" => "12",   // 其他地方收藏的数量
+			"now_place" => [
+                0 => [
+	                "shop_id"   =>  "sad",    // 商店id
+                    "shop_name" => "DB 店",     // 商店名称
+                    "shop_logo" => "" ,    // 商店logo
+                    "shop_type" => "傻逼" ,    // 商店类型
+	                "shop_url" => "http://baidu.com" ,     // 点击商店跳转的链接
+                    "shop_level" => "2.2",    // 商店等级
+                    "deliver_time" => "24",  // 送货时间
+                    "shop_statue" => "0" ,  // 商店状态 (是否打烊) 0 是营业 1 是关门
+	                "goods_count" => "12"    // 订单数量
+                ]
+            ],
+            "other_place" => [
+	            0 => [
+		            "shop_id"   =>  "sad",    // 商店id
+		            "shop_name" => "DB 店",     // 商店名称
+		            "shop_logo" => "" ,    // 商店logo
+		            "shop_type" => "傻逼" ,    // 商店类型
+		            "shop_url" => "http://baidu.com" ,     // 点击商店跳转的链接
+		            "shop_level" => "2.2",    // 商店等级
+		            "deliver_time" => "24",  // 送货时间
+		            "shop_statue" => "0" ,  // 商店状态 (是否打烊) 0 是营业 1 是关门
+		            "goods_count" => "12"    // 订单数量
+	            ],
+	            1 => [
+		            "shop_id"   =>  "sad",    // 商店id
+		            "shop_name" => "DB 店",     // 商店名称
+		            "shop_logo" => "" ,    // 商店logo
+		            "shop_type" => "傻逼" ,    // 商店类型
+		            "shop_url" => "http://baidu.com" ,     // 点击商店跳转的链接
+		            "shop_level" => "2.2",    // 商店等级
+		            "deliver_time" => "24",  // 送货时间
+		            "shop_statue" => "1" ,  // 商店状态 (是否打烊) 0 是营业 1 是关门
+		            "goods_count" => "12"    // 订单数量
+	            ]
+            ]
 		]
 	];
 
