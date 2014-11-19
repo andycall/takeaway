@@ -8,13 +8,17 @@
         <div class="ui-helper-clearfix">
             <div class="col_left">
                 <div class="avatar">
-
                 </div>
                 <div class="ava_wrapper">
-                    <h5>Lecion</h5>
+                    <h5>{{$personal['user_name']}}</h5>
                     <div>
                         <span>安全等级</span>
-                        <a class="user-level high">较高</a>
+                        <a class="user-level <?php
+                            if($personal['user_level'] == 0){ echo "low"; }
+                            else if($personal['user_level'] == 1){ echo "middle"; }
+                            else if($personal['user_level'] == 2){ echo "high";}
+                            else if($personal['user_level' == 3]) {echo "full";}
+                            ?>">较高</a>
                     </div>
                 </div>
             </div>
@@ -22,18 +26,18 @@
                 <div class="text_head">账户余额</div>
                 <div class="account_balance ui-helper-clearfix">
                     <div class="balance">
-                        <strong>0</strong>元
+                        <strong>{{$personal['user_balance']}}</strong>元
                     </div>
                     <div class="relative">
-                        <a href="" class="btn btn-yellow">立刻充值</a>
+                        <a href="{{$personal['charge']}}" class="btn btn-yellow">立刻充值</a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="relate_info ui-helper-clearfix">
             <ul>
-                <li><i class="icon icon-order"></i> 完成订单: <a href="">11</a>张(1个月内完成)</li>
-                <li><i class="icon icon-star"></i> 收藏: <a href="">3</a>家餐厅 <a href="">5</a>份美食 </li>
+                <li><i class="icon icon-order"></i> 完成订单: <a href="{{$sidebar['personal_recent_month']}}">{{$personal['user_order}}</a>张(1个月内完成)</li>
+                <li><i class="icon icon-star"></i> 收藏: <a href="{{$sidebar['personal_collection_shop']}}">{{$personal['user_collection']['restaurant']}}</a>家餐厅 <a href="{{$sidebar['personal_collection_goods']}}">{{$personal['user_collect']['cate']}}</a>份美食 </li>
             </ul>
         </div>
     </div>
@@ -43,8 +47,28 @@
             <li>最近在线交易</li>
         </ul>
         <div class="tab_body">
-            <table>
+            <table class="recent_ticket">
                 <thead>
+                    <tr>
+                        <th>订单号</th>
+                        <th>下单时间</th>
+                        <th>餐厅</th>
+                        <th>订单详情</th>
+                        <th>订单状态</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="sn"><a href="">123213213213</a></td>
+                        <td class="time">11-18 12:00</td>
+                        <td class="restaurant">脆皮鸡</td>
+                        <td>脆皮鸡一根, </td>
+                        <td class="status">交易完成</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="recent_month" style="displat:none">
+                 <thead>
                     <tr>
                         <th>订单号</th>
                         <th>下单时间</th>

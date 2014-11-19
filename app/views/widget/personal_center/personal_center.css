@@ -182,6 +182,13 @@
 	border-bottom-color: #EEE;
 }
 
+.last_order table {
+	margin: 0px;
+	padding: 0px;
+	table-layout: auto;
+	width: 100%;
+}
+
 .last_order thead{
 	background: none repeat scroll 0% 0% #EEE;
 }
