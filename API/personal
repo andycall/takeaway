@@ -72,8 +72,8 @@
                     {
                         shop_id     :  ""  // 商店id
                         deal_id     :  ""  // 订单id
-                        deal_statue :  ""  // 交易状态 布尔值 1 交易成功 0 交易失败
-                        same_again   :  ""  // 再来一份地址
+                        deal_statue :  ""  // 交易状态 0 付款失败 1 无效订单 2 餐厅已确认 3 交易已完成
+                        same_again  :  ""  // 再来一份地址
                         deal_is_retrun:""  // 是否能退单
                         deal_return :  ""  // 退单链接
                         deal_is_pre :  ""  // 是否是预订单

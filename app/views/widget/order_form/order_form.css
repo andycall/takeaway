@@ -51,6 +51,31 @@
   border: 3px solid #ccc;
   color: #666;
 }
+.recent_month .inner .order_form .order_header .order_wrapper .refund {
+  float: left;
+  border: 1px #cdcdcd solid;
+  background-color: #fffdd5;
+  font-size: 13px;
+  color: #ff2500;
+  margin: 3px 0 0 25px;
+  padding: 3px 8px;
+  position: relative;
+  left: -12px;
+}
+.recent_month .inner .order_form .order_header .order_wrapper .refund span {
+  position: absolute;
+  display: block;
+  width: 8px;
+  height: 8px;
+  transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  border: 1px #cdcdcd solid;
+  border-width: 0 0 1px 1px;
+  background-color: #fffdd5;
+  margin: 4px -13px;
+}
 .recent_month .inner .order_form .order_header .order_wrapper .retrun {
   float: left;
   margin-left: 20px;
@@ -182,6 +207,10 @@
 .recent_month .inner .order_form .order_wrpper th.rating,
 .recent_month .inner .order_form .order_wrpper td.rating {
   width: 27%;
+}
+.recent_month .inner .order_form .order_wrpper th.rating .content,
+.recent_month .inner .order_form .order_wrpper td.rating .content {
+  color: #999;
 }
 .recent_month .inner .order_form .order_wrpper th.price,
 .recent_month .inner .order_form .order_wrpper td.price {

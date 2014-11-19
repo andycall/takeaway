@@ -11,24 +11,30 @@
         <div class="order_form">
             <div class="order_header">
                 <div class="order_wrapper">
-@if($value['deal_statue'])
-                    <div class="order_title finish">交易已完成</div>
-@else
-                    <div class="order_title unfinish">交易失败</div>
-@endif
-@if($value['deal_is_retrun'])
+@if($value['deal_statue'] == 0)
+                    <div class="order_title unfinish">付款失败</div>
+@elseif($value['deal_statue'] == 1)
+                    <div class="order_title unfinish">无效订单</div>
+                    <div class="refund">
+                        <span></span>
+                        付款金额会在3-7个工作日内退回您支付时的账户。
+                    </div>
+@elseif($value['deal_statue'] == 2)
+                    <div class="order_title finish">餐厅已确认</div>
                     <div class="retrun">
                         <a href="{{$value['deal_return']}}">我要退单</a>
                     </div>
-@endif
+@else
+                    <div class="order_title finish">交易已完成</div>
                     <div class="same_again">
                         <a href="{{$value['same_again']}}">
                             <i></i>
                             <span>再来一份</span>
                         </a>
                     </div>
+@endif
                 </div>
-@if($value['deal_is_pre'])
+@if($value['deal_is_pre'] && $value['deal_statue'] == 3)
                 <div class="order_pre">
                     <p>此订单为预订单，送餐时间：{{$value['deal_pre_time']}}</p>
                 </div>
@@ -79,6 +85,8 @@
 
 
             <div class="order_evaluate">
+@if($value['deal_statue'] > 1)
+
 @if($value['deal_speed'])
                 <div class="content">
                     <p>点评送餐速度：</p>
@@ -89,6 +97,16 @@
                     <p>点评送餐速度：</p>
                 </div>
 @endif
+
+@else
+                <div class="content">
+                    <p>点评送餐速度：</p>
+                    <p>当前状态下不能点评</p>
+                </div>
+@endif
+
+@if($value['deal_statue'] > 1)
+
 @if($value['deal_satisfied'])
                 <div class="content">
                     <p>您对餐厅的服务是否满意：</p>
@@ -105,6 +123,13 @@
 @else
                 <div class="content">
                     <p>您对餐厅的服务是否满意：</p>
+                </div>
+@endif
+
+@else
+                <div class="content">
+                    <p>您对餐厅的服务是否满意：</p>
+                    <p>当前状态下不能点评</p>
                 </div>
 @endif
             </div>
@@ -134,7 +159,15 @@
                             <td class="name">
                                 {{$meun['goods_name']}}
                             </td>
-                            <td class="rating"></td>
+                            <td class="rating">
+@if($value['deal_statue'] > 1)
+
+@else
+                                <div class="content">
+                                    当前状态下不能点评
+                                </div>
+@endif
+                            </td>
                             <td class="price">
                                 ￥{{$meun['goods_value']}}
                             </td>
