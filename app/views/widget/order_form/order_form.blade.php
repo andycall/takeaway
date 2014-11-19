@@ -125,22 +125,25 @@
                     <p>您对餐厅的服务是否满意：</p>
                     <div class="order_content">
                       <div class="order_label">
-                        <label>
-                          <input class="order_radio" type="radio" title="满意" name="service-rate" value="3">
-                          <i class="rank3"></i>满意
-                        </label>
-                        <label>
-                          <input class="order_radio" type="radio" title="一般般" name="service-rate" value="2">
-                          <i class="rank2"></i>一般般
-                        </label>
-                        <label>
-                          <input class="order_radio" type="radio" title="不满意" name="service-rate" value="1">
-                          <i class="rank1"></i>不满意
-                        </label>
+                        <form class="order_content_form">
+                            <label>
+                              <input class="order_radio" type="radio" title="满意" name="service-rate" value="3">
+                              <i class="rank3"></i>满意
+                            </label>
+                            <label>
+                              <input class="order_radio" type="radio" title="一般般" name="service-rate" value="2">
+                              <i class="rank2"></i>一般般
+                            </label>
+                            <label>
+                              <input class="order_radio" type="radio" title="不满意" name="service-rate" value="1">
+                              <i class="rank1"></i>不满意
+                            </label>
+                        </form>
                       </div>
                       <div class="order_comment">
-                        <textarea placeholder="再说点什么吧~"></textarea>
-                        <input type="text" value="{{$value['deal_id']}}"/>
+                        <textarea class="text" placeholder="再说点什么吧~"></textarea>
+                        <input class="shop_id" type="text" value="{{$value['shop_id']}}"/>
+                        <input class="deal_id" type="text" value="{{$value['deal_id']}}"/>
                         <a class="btn btn-yellow order_comment_save">保存</a>
                         <a class="btn order_comment_cancel" role="button">取消</a>
                       </div>
