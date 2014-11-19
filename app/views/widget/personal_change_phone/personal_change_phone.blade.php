@@ -22,7 +22,7 @@
         </div><!--end clearfix-->
 
         <div class="form-actions">
-            <button type="button" class="btn btn-yellow">发送验证码</button>
+            <button type="button" id="sendVerifyCode" class="btn btn-yellow">发送验证码</button>
         </div>
     </form>
     <form class="form-horizontal" method="post">
