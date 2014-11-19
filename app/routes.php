@@ -840,7 +840,7 @@ Route::get("/personal_recent_month", function(){
                     "deliver_phone" => "18716625394",
                     "deliver_remark" => "吃吃吃！",
                     "deal_speed" => "0",
-                    "deal_satisfied" => "1",
+                    "deal_satisfied" => "0",
                     "good" => [
                         [
                             "goods_id" => "123",

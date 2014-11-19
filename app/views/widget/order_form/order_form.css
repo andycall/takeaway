@@ -164,7 +164,6 @@
   background: #f9f9f9;
 }
 .recent_month .inner .order_form .order_evaluate .content {
-  height: 45px;
   overflow: hidden;
 }
 .recent_month .inner .order_form .order_evaluate .content p {
@@ -174,6 +173,103 @@
   float: left;
   line-height: 45px;
   margin-left: 25px;
+}
+.recent_month .inner .order_form .order_evaluate .content .order_content {
+  overflow: hidden;
+  float: left;
+  line-height: 45px;
+  padding-right: 20px;
+  padding-left: 10px;
+}
+.recent_month .inner .order_form .order_evaluate .content .order_content .order_label {
+  overflow: hidden;
+  float: left;
+  line-height: 45px;
+}
+.recent_month .inner .order_form .order_evaluate .content .order_content .order_label label {
+  display: inline-block;
+  margin-right: 15px;
+  margin-bottom: 5px;
+  line-height: 18px;
+}
+.recent_month .inner .order_form .order_evaluate .content .order_content .order_label label input {
+  display: inline-block;
+  margin: 0 4px 0;
+  vertical-align: middle;
+}
+.recent_month .inner .order_form .order_evaluate .content .order_content .order_label label i {
+  background: url("../../../images/sprites.png") no-repeat;
+  width: 18px;
+  height: 18px;
+  line-height: 14px;
+  vertical-align: text-top;
+  display: inline-block;
+  margin-right: 5px;
+}
+.recent_month .inner .order_form .order_evaluate .content .order_content .order_label label i.rank1 {
+  background-position: 0 -360px;
+}
+.recent_month .inner .order_form .order_evaluate .content .order_content .order_label label i.rank2 {
+  background-position: -20px -360px;
+}
+.recent_month .inner .order_form .order_evaluate .content .order_content .order_label label i.rank3 {
+  background-position: -40px -360px;
+}
+.recent_month .inner .order_form .order_evaluate .content .order_content .order_comment {
+  margin: 0 0 15px;
+  width: 370px;
+}
+.recent_month .inner .order_form .order_evaluate .content .order_content .order_comment textarea {
+  resize: none;
+  width: 360px;
+  padding: 4px;
+  margin-bottom: 9px;
+  font-size: 13px;
+  line-height: 18px;
+  color: #555;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  vertical-align: top;
+}
+.recent_month .inner .order_form .order_evaluate .content .order_content .order_comment textarea:focus {
+  border-color: rgba(82, 168, 236, 0.8);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+  outline: 0;
+}
+.recent_month .inner .order_form .order_evaluate .content .order_content .order_comment input {
+  display: none;
+}
+.recent_month .inner .order_form .order_evaluate .content .order_content .order_comment button {
+  display: inline-block;
+  padding: 4px 10px 4px;
+  margin-bottom: 0;
+  font-size: 13px;
+  line-height: 18px;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  vertical-align: middle;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  border: 1px solid #ccc;
+  border-bottom-color: #b3b3b3;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  background-color: #fff4ae;
+  background-image: -webkit-linear-gradient(270deg, #fff4ae, #fdef83);
+  background-image: linear-gradient(180deg, #fff4ae, #fdef83);
+}
+.recent_month .inner .order_form .order_evaluate .content .order_content .order_comment button:hover {
+  background-color: #fee780;
+  background-image: -webkit-linear-gradient(270deg, #fee780, #fff7c2);
+  background-image: linear-gradient(180deg, #fee780, #fff7c2);
+  background-position: 0 0;
+  text-decoration: none;
+}
+.recent_month .inner .order_form .order_evaluate .content .order_content .order_comment button:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+  text-decoration: none;
 }
 .recent_month .inner .order_form .order_wrpper {
   margin: 10px 10px 10px 20px;

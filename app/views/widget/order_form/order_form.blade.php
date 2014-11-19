@@ -123,6 +123,28 @@
 @else
                 <div class="content">
                     <p>您对餐厅的服务是否满意：</p>
+                    <div class="order_content">
+                      <div class="order_label">
+                        <label>
+                          <input class="order_radio" type="radio" title="满意" name="service-rate" value="3">
+                          <i class="rank3"></i>满意
+                        </label>
+                        <label>
+                          <input class="order_radio" type="radio" title="一般般" name="service-rate" value="2">
+                          <i class="rank2"></i>一般般
+                        </label>
+                        <label>
+                          <input class="order_radio" type="radio" title="不满意" name="service-rate" value="1">
+                          <i class="rank1"></i>不满意
+                        </label>
+                      </div>
+                      <div class="order_comment">
+                        <textarea placeholder="再说点什么吧~"></textarea>
+                        <input type="text" value=""/>
+                        <button class="btn btn-yellow order_service_save">保存</button>
+                        <a class="btn order_service_cancel" role="button">取消</a>
+                      </div>
+                    </div>
                 </div>
 @endif
 
