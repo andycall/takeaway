@@ -140,9 +140,9 @@
                       </div>
                       <div class="order_comment">
                         <textarea placeholder="再说点什么吧~"></textarea>
-                        <input type="text" value=""/>
-                        <button class="btn btn-yellow order_service_save">保存</button>
-                        <a class="btn order_service_cancel" role="button">取消</a>
+                        <input type="text" value="{{$value['deal_id']}}"/>
+                        <a class="btn btn-yellow order_comment_save">保存</a>
+                        <a class="btn order_comment_cancel" role="button">取消</a>
                       </div>
                     </div>
                 </div>
