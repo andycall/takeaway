@@ -240,7 +240,15 @@
             takeout : "" // 外卖收支的链接
             charge : ""  // 用户充值收支的链接
             refund : ""  // 退款收支的链接
-        }
+            "today" => "__link_today__",  // 今天的链接
+            "sevenday" => "__link_sevenday__",  // 近七天的链接
+            "fifteenday" => "__link_fifteenday__",  // 近15天的链接
+            "onemonth" => "__link_onemonth__",  // 近一个月的链接
+            "state_all" => "__link_refund__",  // 全部状态的链接
+            "state_ing" => "__link_refund__",  // 进行中状态的链接
+            "state_success" => "__link_refund__",  // 成功状态的链接
+            "state_fail" => "__link_refund__",  // 失败状态的链接
+        },
 
         data : [
             {

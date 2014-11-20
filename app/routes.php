@@ -746,6 +746,68 @@ Route::get("/personal_collection_shop", function(){
 
 Route::get("/personal_details", function(){
 	$data = [
+        "personal_details"=>[
+            "url" => [
+                "all" => "__link_all__",   // 全部收支的链接
+                "takeout" => "__link_takeout__", // 外卖收支的链接
+                "charge" => "__link_charge__",  // 用户充值收支的链接
+                "refund" => "__link_refund__",  // 退款收支的链接
+                "today" => "__link_today__",  // 今天的链接
+                "sevenday" => "__link_sevenday__",  // 近七天的链接
+                "fifteenday" => "__link_fifteenday__",  // 近15天的链接
+                "onemonth" => "__link_onemonth__",  // 近一个月的链接
+                "state_all" => "__link_refund__",  // 全部状态的链接
+                "state_ing" => "__link_refund__",  // 进行中状态的链接
+                "state_success" => "__link_refund__",  // 成功状态的链接
+                "state_fail" => "__link_refund__",  // 失败状态的链接
+
+            ],
+
+            "data" => [
+                [
+                    "create_time" => "2014-11-19 12:12:03",   // 创建时间
+                    "deal_type"   => "充值",   // 交易类型
+                    "deal_details" => "3775552 <br> 订单号：45955399",  // 交易详情
+                    "deal_money"  => "+7.00",   // 交易金额
+                    "deal_state" => "成功"    // 交易状态
+                ],
+                [
+                    "create_time" => "2014-11-19 12:12:03",   // 创建时间
+                    "deal_type"   => "饿了么外卖",   // 交易类型
+                    "deal_details" => "神速便当 <br> 订单号：12560523614499832",  // 交易详情
+                    "deal_money"  => "-7.00",   // 交易金额
+                    "deal_state" => "成功"    // 交易状态
+                ],
+                [
+                    "create_time" => "2014-11-19 12:12:03",   // 创建时间
+                    "deal_type"   => "充值",   // 交易类型
+                    "deal_details" => "3775552 <br> 订单号：45955399",  // 交易详情
+                    "deal_money"  => "+7.00",   // 交易金额
+                    "deal_state" => "成功"    // 交易状态
+                    ],
+                [
+                    "create_time" => "2014-11-19 12:12:03",   // 创建时间
+                    "deal_type"   => "饿了么外卖",   // 交易类型
+                    "deal_details" => "神速便当 <br> 订单号：12560523614499832",  // 交易详情
+                    "deal_money"  => "-7.00",   // 交易金额
+                    "deal_state" => "成功"    // 交易状态
+                ],
+                [
+                    "create_time" => "2014-11-19 12:12:03",   // 创建时间
+                    "deal_type"   => "充值",   // 交易类型
+                    "deal_details" => "3775552 <br> 订单号：45955399",  // 交易详情
+                    "deal_money"  => "+7.00",   // 交易金额
+                    "deal_state" => "成功"    // 交易状态
+                ],
+                [
+                    "create_time" => "2014-11-19 12:12:03",   // 创建时间
+                    "deal_type"   => "饿了么外卖",   // 交易类型
+                    "deal_details" => "神速便当 <br> 订单号：12560523614499832",  // 交易详情
+                    "deal_money"  => "-7.00",   // 交易金额
+                    "deal_state" => "成功"    // 交易状态
+                ]
+            ]
+        ],
 		"userbar" => [
 			"url" => [
 				"my_place" => "这里是地址",
