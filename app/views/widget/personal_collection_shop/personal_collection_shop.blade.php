@@ -3,7 +3,7 @@
 </div>
 <div class="content_inner">
     <div class="favor-restaurants">
-        <h3>当前区域({{$shops['now_area']}})的餐厅 - 共{{$shops['now_shop_count']}}个</h3>
+        <h3>当前区域({{$shops['now_area']}})的餐厅 - 共<span class="restaurant_count">{{$shops['now_shop_count']}}</span>个</h3>
         <table class="favor_table table">
             <tbody>
                 <tr>
@@ -39,7 +39,7 @@
                     </td>
                     <td class="close">
                         <div class="close_box">
-                            <a class="close_btn" href=""><i class="icon icon-remove"></i></a>
+                            <a class="close_btn" href="#"><i class="icon icon-remove"></i></a>
                         </div>
                     </td>
                 @endforeach
@@ -48,7 +48,7 @@
         </table>
     </div>
     <div class="favor-restaurants">
-        <h3>我收藏的其他地区的餐厅  - 共{{$shops['other_shop_count']}}个</h3>
+        <h3>我收藏的其他地区的餐厅  - 共<span class="restaurant_count">{{$shops['other_shop_count']}}</span>个</h3>
         <table class="favor_table table">
             <tbody>
                    @foreach($shops['other_place'] as $key=>$value)

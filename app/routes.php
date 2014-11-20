@@ -700,7 +700,21 @@ Route::get("/personal_collection_goods", function(){
 			"personal_change_password" => url("personal_change_password"), // 修改密码
 			"personal_secure"=> url("personal_secure"),        // 安全设置
 			"personal_details" => url("personal_details")       // 收支明细
-		]
+		],
+		"good_count" => "",     // 收藏的商品数量
+        "goods" => [
+            0 => [
+	            "good_id" => "1",   // 商品id
+                "good_name" => "DB", // 商品名称
+                "shop_name" => "SB店", // 商品归属的商店的名称
+                "shop_id"   => "2", // 商品归属的商店的id
+	            "shop_href" => "http://baidu.com" , // 商品在商店的链接
+ 	            "order_href" => "http://baidu.com", // 商品订购按钮链接
+                "good_price" => "10090900", // 商品的价格
+	            "delete_good" => "http://baidu.com", // 删除商品的链接
+                "shop_hot" => "232"   // 商店人气(也就是所有商品的销量)
+            ]
+        ]
 	];
 
 	return View::make("template.personal.personal_collection_goods")->with($data);
@@ -745,9 +759,9 @@ Route::get("/personal_collection_shop", function(){
             "other_shop_count" => "12",   // 其他地方收藏的数量
 			"now_place" => [
                 0 => [
-	                "shop_id"   =>  "sad",    // 商店id
+	                "shop_id"   =>  "2323",    // 商店id
                     "shop_name" => "DB 店",     // 商店名称
-                    "shop_logo" => "" ,    // 商店logo
+                    "shop_logo" => url("/images/1ff6ee89a2f110f2f1c424eac9ef3jpeg.jpg") ,    // 商店logo
                     "shop_type" => "傻逼" ,    // 商店类型
 	                "shop_url" => "http://baidu.com" ,     // 点击商店跳转的链接
                     "shop_level" => "2.2",    // 商店等级
@@ -760,7 +774,7 @@ Route::get("/personal_collection_shop", function(){
 	            0 => [
 		            "shop_id"   =>  "sad",    // 商店id
 		            "shop_name" => "DB 店",     // 商店名称
-		            "shop_logo" => "" ,    // 商店logo
+		            "shop_logo" => url("/images/1ff6ee89a2f110f2f1c424eac9ef3jpeg.jpg") ,    // 商店logo
 		            "shop_type" => "傻逼" ,    // 商店类型
 		            "shop_url" => "http://baidu.com" ,     // 点击商店跳转的链接
 		            "shop_level" => "2.2",    // 商店等级
@@ -771,7 +785,7 @@ Route::get("/personal_collection_shop", function(){
 	            1 => [
 		            "shop_id"   =>  "sad",    // 商店id
 		            "shop_name" => "DB 店",     // 商店名称
-		            "shop_logo" => "" ,    // 商店logo
+		            "shop_logo" => url("/images/1ff6ee89a2f110f2f1c424eac9ef3jpeg.jpg") ,    // 商店logo
 		            "shop_type" => "傻逼" ,    // 商店类型
 		            "shop_url" => "http://baidu.com" ,     // 点击商店跳转的链接
 		            "shop_level" => "2.2",    // 商店等级
@@ -1393,4 +1407,16 @@ Route::get("/userBarMsg", function(){
 
 	return Response::json($data);
 
+});
+
+Route::post("/ajax_collection_shop", function(){
+	$data = [
+		"success" => "true"  ,                              // 成功
+		"state"  => 200     ,                               // HTTP 状态码
+		"errMsg"  => ""    ,                                // 如果出现错误, 错误信息就出现在这, 如果没有, 那内容为空.
+		"no"      => 0      ,                               // 错误号 ,错误号就出现在这, 如果没有, 那内容为空.
+		"data" => []
+	];
+
+	return Response::json($data);
 });

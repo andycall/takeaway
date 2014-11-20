@@ -163,8 +163,10 @@
                 good_name : "" // 商品名称
                 shop_name : "" // 商品归属的商店的名称
                 shop_id   : "" // 商品归属的商店的id
+                shop_href : "" , // 商品在商店的链接
+                order_href : "" // 商品订购链接
                 good_price : "" // 商品的价格
-                shop_status : "" // 商店的状态
+                delete_good : "" // 删除商品的链接
                 shop_hot : ""   // 商店人气(也就是所有商品的销量)
             }
         ]
