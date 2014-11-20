@@ -7,8 +7,8 @@ define([ "jquery" ], function($) {
         }), o;
     }, $("#order_form").on("submit", function() {
         var address_details = $("#address_details"), deliver_phone = $("#deliver_phone"), checkPlace = /\w+/, checkPhone = /\d{11}/, flag = !0;
-        return checkPlace.test(address_details.val()) ? checkPhone.test(deliver_phone.val()) || (deliver_phone.parent().find(".error_box").show(), 
-        deliver_phone.addClass("error"), flag = !1) : (address_details.parent().find(".error_box").show(), 
-        address_details.addClass("error"), flag = !1), flag ? void 0 : !1;
+        return checkPlace.test(address_details.val()) || (address_details.parent().find(".error_box").show(), 
+        address_details.addClass("error"), flag = !1), checkPhone.test(deliver_phone.val()) || (deliver_phone.parent().find(".error_box").show(), 
+        deliver_phone.addClass("error"), flag = !1), flag ? void 0 : !1;
     });
 });

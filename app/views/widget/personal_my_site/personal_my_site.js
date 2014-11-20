@@ -30,7 +30,7 @@ define(['jquery'], function($){
 			address_details.addClass("error");
 			flag = false;
 		}
-		else if(! checkPhone.test(deliver_phone.val())){
+		if(! checkPhone.test(deliver_phone.val())){
 			deliver_phone.parent().find(".error_box").show();
 			deliver_phone.addClass("error");
 			flag = false;
