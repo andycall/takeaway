@@ -29,6 +29,31 @@
   padding-bottom: 20px;
   margin-bottom: 20px;
 }
+.recent_month .inner .order_form .order_comment {
+  margin: 0 0 15px;
+  width: 370px;
+  display: none;
+}
+.recent_month .inner .order_form .order_comment textarea {
+  resize: none;
+  width: 360px;
+  padding: 4px;
+  margin-bottom: 9px;
+  font-size: 13px;
+  line-height: 18px;
+  color: #555;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  vertical-align: top;
+}
+.recent_month .inner .order_form .order_comment textarea:focus {
+  border-color: rgba(82, 168, 236, 0.8);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+  outline: 0;
+}
+.recent_month .inner .order_form .order_comment input {
+  display: none;
+}
 .recent_month .inner .order_form .order_header {
   background: #eff8ff;
   border-bottom: 1px solid #a6c9e2;
@@ -216,31 +241,6 @@
 .recent_month .inner .order_form .order_evaluate .content .order_content .order_label label i.rank3 {
   background-position: -40px -360px;
 }
-.recent_month .inner .order_form .order_evaluate .content .order_content .order_comment {
-  margin: 0 0 15px;
-  width: 370px;
-  display: none;
-}
-.recent_month .inner .order_form .order_evaluate .content .order_content .order_comment textarea {
-  resize: none;
-  width: 360px;
-  padding: 4px;
-  margin-bottom: 9px;
-  font-size: 13px;
-  line-height: 18px;
-  color: #555;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  vertical-align: top;
-}
-.recent_month .inner .order_form .order_evaluate .content .order_content .order_comment textarea:focus {
-  border-color: rgba(82, 168, 236, 0.8);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
-  outline: 0;
-}
-.recent_month .inner .order_form .order_evaluate .content .order_content .order_comment input {
-  display: none;
-}
 .recent_month .inner .order_form .order_wrpper {
   margin: 10px 10px 10px 20px;
 }
@@ -276,6 +276,33 @@
 .recent_month .inner .order_form .order_wrpper th.rating,
 .recent_month .inner .order_form .order_wrpper td.rating {
   width: 27%;
+}
+.recent_month .inner .order_form .order_wrpper th.rating div input,
+.recent_month .inner .order_form .order_wrpper td.rating div input {
+  display: none;
+}
+.recent_month .inner .order_form .order_wrpper th.rating div div,
+.recent_month .inner .order_form .order_wrpper td.rating div div {
+  cursor: pointer;
+  width: 16px;
+  height: 15px;
+  float: left;
+  text-indent: -999999px;
+  position: relative;
+  background: url("../../../images/star.gif") no-repeat 0 -32px;
+}
+.recent_month .inner .order_form .order_wrpper th.rating div div.mouseover div,
+.recent_month .inner .order_form .order_wrpper td.rating div div.mouseover div {
+  background-position: 0 0;
+}
+.recent_month .inner .order_form .order_wrpper th.rating div div div,
+.recent_month .inner .order_form .order_wrpper td.rating div div div {
+  left: 18px;
+}
+.recent_month .inner .order_form .order_wrpper th.rating .rating_text,
+.recent_month .inner .order_form .order_wrpper td.rating .rating_text {
+  margin-left: 95px;
+  text-align: left;
 }
 .recent_month .inner .order_form .order_wrpper th.rating .content,
 .recent_month .inner .order_form .order_wrpper td.rating .content {

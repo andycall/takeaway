@@ -26,6 +26,31 @@
       border: 1px solid #a6c9e2;
       padding-bottom: 20px;
       margin-bottom: 20px;
+      .order_comment{
+        margin: 0 0 15px;
+        width: 370px;
+        display: none;
+        textarea{
+          resize: none;
+          width: 360px;
+          padding: 4px;
+          margin-bottom: 9px;
+          font-size: 13px;
+          line-height: 18px;
+          color: #555;
+          border: 1px solid #ccc;
+          border-radius: 3px;
+          vertical-align: top;
+          &:focus{
+            border-color: rgba(82,168,236,0.8);
+            box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(82,168,236,0.6);
+            outline: 0;
+          }
+        }
+        input{
+          display: none;
+        }
+      }
       .order_header{
         background: #eff8ff;
         border-bottom: 1px solid #a6c9e2;
@@ -210,31 +235,7 @@
                 }
               }
             }
-            .order_comment{
-              margin: 0 0 15px;
-              width: 370px;
-              display: none;
-              textarea{
-                resize: none;
-                width: 360px;
-                padding: 4px;
-                margin-bottom: 9px;
-                font-size: 13px;
-                line-height: 18px;
-                color: #555;
-                border: 1px solid #ccc;
-                border-radius: 3px;
-                vertical-align: top;
-                &:focus{
-                  border-color: rgba(82,168,236,0.8);
-                  box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(82,168,236,0.6);
-                  outline: 0;
-                }
-              }
-              input{
-                display: none;
-              }
-            }
+
           }
         }
       }
@@ -270,6 +271,30 @@
           }
           &.rating{
             width:27%;
+            div {
+              input{
+                display: none;
+              }
+              div{
+                cursor: pointer;
+                width: 16px;
+                height: 15px;
+                float: left;
+                text-indent: -999999px;
+                position: relative;
+                background: url("../../../images/star.gif") no-repeat 0 -32px;
+                &.mouseover div{
+                  background-position: 0 0;
+                }
+                div {
+                  left: 18px;
+                }
+              }
+            }
+            .rating_text{
+              margin-left: 95px;
+              text-align: left;
+            }
             .content{
               color: #999;
             }

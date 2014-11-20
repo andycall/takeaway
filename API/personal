@@ -8,7 +8,7 @@
     // 个人中心
     type : "blade"
     output : {
-        user_place : ""    // 用户j选择的位置
+        user_place : ""    // 用户选择的位置
         switch_place : ""  // 更改位置的地址
 
         sidebar : {  // 左侧栏地址
@@ -95,6 +95,7 @@
                                 goods_value : ""       // 商品价格
                                 goods_amount : ""      // 商品数量
                                 goods_total  : ""      // 商品价格总计
+                                good_atisfied: ""      // 商品评价
                             }
                         ]
                         others : [  // 其他费用
@@ -344,7 +345,6 @@
         deal_id : "1213"  // 订单id
         goods_id : ""     // 商品id
         goods_level : ""   // 商品等级
-        goods_comment : "" // 商品评论
     }
     output : {
         success : "true" // 成功返回true, 失败返回false

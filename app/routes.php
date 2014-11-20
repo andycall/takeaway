@@ -901,7 +901,7 @@ Route::get("/personal_recent_month", function(){
             "deal_count" => "11",
             "deal" => [
                 [
-                    "shop_id" => "123",
+                    "shop_id" => "111123",
                     "deal_id" => "123",
                     "deal_statue" => "3",
                     "same_again" => "##",
@@ -921,18 +921,20 @@ Route::get("/personal_recent_month", function(){
                     "deal_satisfied" => "0",
                     "good" => [
                         [
-                            "goods_id" => "123",
+                            "goods_id" => "111123",
                             "goods_name" => "红烧肉",
                             "goods_value" => "12",
                             "goods_amount" => "1",
-                            "goods_total" => "12"
+                            "goods_total" => "12",
+                            "good_atisfied" => "0"
                         ],
                         [
-                            "goods_id" => "123",
+                            "goods_id" => "111123",
                             "goods_name" => "红烧肉",
                             "goods_value" => "12",
                             "goods_amount" => "1",
-                            "goods_total" => "12"
+                            "goods_total" => "12",
+                            "good_atisfied" => "2"
                         ]
                     ],
                     "others" => [
@@ -970,14 +972,16 @@ Route::get("/personal_recent_month", function(){
                             "goods_name" => "红烧肉",
                             "goods_value" => "12",
                             "goods_amount" => "1",
-                            "goods_total" => "12"
+                            "goods_total" => "12",
+                            "good_atisfied" => "0"
                         ],
                         [
                             "goods_id" => "123",
                             "goods_name" => "红烧肉",
                             "goods_value" => "12",
                             "goods_amount" => "1",
-                            "goods_total" => "12"
+                            "goods_total" => "12",
+                            "good_atisfied" => "0"
                         ]
                     ],
                     "others" => [
@@ -1015,14 +1019,16 @@ Route::get("/personal_recent_month", function(){
                             "goods_name" => "红烧肉",
                             "goods_value" => "12",
                             "goods_amount" => "1",
-                            "goods_total" => "12"
+                            "goods_total" => "12",
+                            "good_atisfied" => "0"
                         ],
                         [
                             "goods_id" => "123",
                             "goods_name" => "红烧肉",
                             "goods_value" => "12",
                             "goods_amount" => "1",
-                            "goods_total" => "12"
+                            "goods_total" => "12",
+                            "good_atisfied" => "0"
                         ]
                     ],
                     "others" => [
@@ -1060,14 +1066,16 @@ Route::get("/personal_recent_month", function(){
                             "goods_name" => "红烧肉",
                             "goods_value" => "12",
                             "goods_amount" => "1",
-                            "goods_total" => "12"
+                            "goods_total" => "12",
+                            "good_atisfied" => "0"
                         ],
                         [
                             "goods_id" => "123",
                             "goods_name" => "红烧肉",
                             "goods_value" => "12",
                             "goods_amount" => "1",
-                            "goods_total" => "12"
+                            "goods_total" => "12",
+                            "good_atisfied" => "0"
                         ]
                     ],
                     "others" => [

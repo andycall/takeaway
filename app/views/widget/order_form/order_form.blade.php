@@ -184,8 +184,108 @@
                             <td class="name">
                                 {{$meun['goods_name']}}
                             </td>
-                            <td class="rating">
+
 @if($value['deal_statue'] > 1)
+
+@if($meun['good_atisfied'])
+
+@if($meun['good_atisfied'] == 1)
+                            <td class="rating">
+                                <div class="comment">
+                                    <div title="差评" class="mouseover">
+                                        <div title="差点意思">
+                                            <div title="一般般">
+                                                <div title="有点滋味">
+                                                    <div title="我的最爱">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rating_text">差评</div>
+@elseif($meun['good_atisfied'] == 2)
+                            <td class="rating">
+                                <div class="comment">
+                                    <div title="差评">
+                                        <div title="差点意思" class="mouseover">
+                                            <div title="一般般">
+                                                <div title="有点滋味">
+                                                    <div title="我的最爱">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rating_text">差点意思</div>
+@elseif($meun['good_atisfied'] == 3)
+                            <td class="rating">
+                                <div class="comment">
+                                    <div title="差评">
+                                        <div title="差点意思">
+                                            <div title="一般般" class="mouseover">
+                                                <div title="有点滋味">
+                                                    <div title="我的最爱">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rating_text">一般般</div>
+@elseif($meun['good_atisfied'] == 4)
+                            <td class="rating">
+                                <div class="comment">
+                                    <div title="差评">
+                                        <div title="差点意思">
+                                            <div title="一般般">
+                                                <div title="有点滋味" class="mouseover">
+                                                    <div title="我的最爱">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rating_text">有点滋味</div>
+@else
+                            <td class="rating">
+                                <div class="comment">
+                                    <div title="差评">
+                                        <div title="差点意思">
+                                            <div title="一般般">
+                                                <div title="有点滋味">
+                                                    <div title="我的最爱" class="mouseover">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rating_text">我的最爱</div>
+@endif
+
+@else
+                            <td class="rating rating_comment">
+                                <div class="comment">
+                                    <input class="shop_id" type="text" value="{{$value['shop_id']}}"/>
+                                    <input class="deal_id" type="text" value="{{$value['deal_id']}}"/>
+                                    <input class="goods_id" type="text" value="{{$meun['goods_id']}}"/>
+                                    <div title="差评">1
+                                        <div title="差点意思">2
+                                            <div title="一般般">3
+                                                <div title="有点滋味">4
+                                                    <div title="我的最爱">5
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="rating_text"></div>
+@endif
 
 @else
                                 <div class="content">
