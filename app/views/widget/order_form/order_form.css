@@ -1,6 +1,13 @@
 .rightContent {
   margin-bottom: 30px;
 }
+div,
+p,
+td,
+th,
+li {
+  word-break: break-all;
+}
 .recent_month {
   font-size: 13px;
   float: right;
@@ -197,6 +204,41 @@
   float: left;
   line-height: 45px;
   margin-left: 25px;
+}
+.recent_month .inner .order_form .order_evaluate .content .col_content {
+  float: left;
+  width: 150px;
+  height: 20px;
+  margin: 15px 20px 0;
+}
+.recent_month .inner .order_form .order_evaluate .content .col_content .slider_wrapper .slider {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+  border: 1px solid #a6c9e2;
+  background: #fcfdfd 50% bottom repeat-x;
+  color: #222;
+  height: 12px;
+}
+.recent_month .inner .order_form .order_evaluate .content .col_content .slider_wrapper .slider .slider_wrapper_range {
+  border: 1px solid #4297d7;
+  background-color: #0099CC;
+  color: #fff;
+  font-weight: bold;
+  height: 10px;
+}
+.recent_month .inner .order_form .order_evaluate .content .col_value {
+  float: left;
+  line-height: 45px;
+}
+.recent_month .inner .order_form .order_evaluate .content .col_value span {
+  line-height: 45px;
+}
+.recent_month .inner .order_form .order_evaluate .content .col_btn {
+  float: left;
+  margin-left: 20px;
+  padding-top: 7px;
 }
 .recent_month .inner .order_form .order_evaluate .content .order_content {
   overflow: hidden;

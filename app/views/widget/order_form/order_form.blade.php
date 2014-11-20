@@ -90,12 +90,35 @@
 @if($value['deal_speed'])
                 <div class="content">
                     <p>点评送餐速度：</p>
-                    <p>已点评，{{$value['deal_speed']}}</p>
+                    <p>已点评， 时间： {{$value['deal_speed']}}</p>
                 </div>
 @else
                 <div class="content">
                     <p>点评送餐速度：</p>
+                    <div class="content_speed">
+                        <div class="col_content">
+                            <div class="slider-wrapper pretty-slider">
+@if($value['deal_is_pre'])
+                                <div class="slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" title="请打分" max="25" min="-25">
+@else
+                                <div class="slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" title="请打分" max="25" min="1">
+@endif
+                                    <div class="ui-slider-range ui-widget-header ui-slider-range-min" style="width: 100%;"></div>
+                                    <a class="ui-slider-handle ui-state-default ui-corner-all" style="left: 100%;"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col_value">
+                            <span>请点评</span>
+                        </div>
+                        <input class="shop_id" type="text" value="{{$value['shop_id']}}" style="display: none"/>
+                        <input class="deal_id" type="text" value="{{$value['deal_id']}}" style="display: none"/>
+                        <div class="col_btn" style="display:none">
+                            <a class="btn">保存</a>
+                        </div>
+                    </div>
                 </div>
+
 @endif
 
 @else
@@ -288,9 +311,8 @@
 @endif
 
 @else
-                                <div class="content">
-                                    当前状态下不能点评
-                                </div>
+                            <td class="content" style="color:#999;">
+                                当前状态下不能点评
 @endif
                             </td>
                             <td class="price">
@@ -367,4 +389,5 @@
 @section("css")
     @parent
     {{HTML::style("/css/widget/order_form/order_form.css")}}
+    {{HTML::style("/css/lib/ui-helper.css")}}
 @stop

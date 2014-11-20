@@ -1,5 +1,36 @@
-define(['jquery'], function($){
+define(['jquery', "jquery-ui"], function($){
 	console.log("order form loaded");
+
+    (function() {
+        var d = [];
+        for (i = -24; i < 25; i++) {
+            if (i == 0) {
+                d[i] = 1
+            } else {
+                d[i] = 5 * i
+            }
+        }
+        var e = ["正点", "5分钟", "10分钟", "15分钟", "20分钟", "25分钟", "30分钟", "35分钟", "40分钟", "45分钟", "50分钟", "55分钟", "1小时", "1小时5分钟", "1小时10分钟", "1小时15分钟", "1小时20分钟", "1小时25分钟", "1小时30分钟", "1小时35分钟", "1小时40分钟", "1小时45分钟", "1小时50分钟", "1小时55分钟", "2小时"];
+        e[-24] = "提前2小时";
+        for (i = -23; i < -12; i++) {
+            e[i] = "提前1小时" + (-i - 12) * 5 + "分钟"
+        }
+        e[-12] = "提前1小时";
+        for (i = -11; i < 0; i++) {
+            e[i] = "提前" + (-i) * 5 + "分钟"
+        }
+        $(".slider").slider({range: "min",min: 2,max: 100,value: 100,slide: function(g, h) {
+            var l = parseInt($(this).attr("max"));
+            var j = parseInt($(this).attr("min"));
+            var k = $(this).attr("rel");
+                $(this).slider("option", "disabled", false);
+            $(this).slider("option", "min", j);
+            $(this).slider("option", "max", l);
+            $(this).slider("option", "value", l);
+            $(this).parents(".content").find(".col_value span").html(e[h.value - 1]);
+            $(this).parents(".content").find(".col_btn").css("display","block");
+        }});
+    })();
 
     $.fn.serializeObject = function(){
         var o = {};
@@ -70,7 +101,7 @@ define(['jquery'], function($){
 
 
     $(".rating_comment .comment div").on('click',function(){
-        var rating_comment = $(this).parents(".rating_comment")
+        var rating_comment = $(this).parents(".rating_comment");
         var shop_id = rating_comment.find('.shop_id').val();
         var deal_id = rating_comment.find('.deal_id').val();
         var goods_id = rating_comment.find('.goods_id').val();
@@ -89,6 +120,7 @@ define(['jquery'], function($){
             success: function(res){
                 if(res.success == 'true'){
                     $_this.parents(".rating_comment").removeClass("rating_comment");
+                    $_this.parents(".comment").find("div").off('mouseover',star);
                 }else{
                     alert('评论失败，请重新评论!');
                 }
@@ -125,5 +157,33 @@ define(['jquery'], function($){
         return false;
     });
 
+    $(".col_btn").on('click',function(){
+        var p = document.createElement("p");
+        var $_this = $(this);
+        var content = $_this.parents(".content");
+        var shop_id = content.find('.shop_id').val();
+        var deal_id = content.find('.deal_id').val();
+        var deal_speed = content.find(".col_value span").html();
+
+        p.innerHTML = "已点评， 时间： " + deal_speed;
+
+        $.ajax({
+            url: "####qwertyui###",
+            type: "POST",
+            data: {
+                shop_id: shop_id,
+                deal_id: deal_id,
+                deal_speed: deal_speed,
+            },
+            success: function(res){
+                if(res.success == 'true'){
+                    content.append(p);
+                    content.find(".content_speed").css("display","none");
+                }else{
+                    alert('评论失败，请重新评论!');
+                }
+            }
+        });
+    });
 
 });
