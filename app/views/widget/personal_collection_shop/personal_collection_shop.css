@@ -55,7 +55,7 @@
 .restaurant-block.closed{
 	background: url("/images/restaurant_closed_bg.png") repeat scroll 0% 0% #FFF;
 }
-.restaurant-block.closed:hover {
+.restaurant-block:hover {
 	background: none repeat scroll 0% 0% #F8F8F8;
 }
 
@@ -118,6 +118,7 @@
 	height: 18px;
 	overflow: hidden;
 }
+
 
 .restaurant-block .line-one .name a:hover{
 	color: #0088C8;

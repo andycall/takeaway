@@ -1,1 +1,1 @@
-define(["jquery"],function(){console.log("personal_colletion_goods loaded")});
+define(["jquery"],function(){console.log("personal_colletion_goods loaded");var a=$(".restaurant-column");$(".close_btn").on("click",function(){var b=parseInt($(".restaurant_count").html()),c=this,d=a.data("shop_id");return $.post("/ajax_collection_shop",{shop_id:d}).done(function(){$(c).parents("tr").remove(),console.log($(c).parents(".favor-restaurants").find(".restaurant_count")),$(".restaurant_count").html(b-1)}).fail(function(){alert("服务器错误!")}),!1})});

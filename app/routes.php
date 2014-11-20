@@ -700,7 +700,21 @@ Route::get("/personal_collection_goods", function(){
 			"personal_change_password" => url("personal_change_password"), // 修改密码
 			"personal_secure"=> url("personal_secure"),        // 安全设置
 			"personal_details" => url("personal_details")       // 收支明细
-		]
+		],
+		"good_count" => "",     // 收藏的商品数量
+        "goods" => [
+            0 => [
+	            "good_id" => "1",   // 商品id
+                "good_name" => "DB", // 商品名称
+                "shop_name" => "SB店", // 商品归属的商店的名称
+                "shop_id"   => "2", // 商品归属的商店的id
+	            "shop_href" => "http://baidu.com" , // 商品在商店的链接
+ 	            "order_href" => "http://baidu.com", // 商品订购按钮链接
+                "good_price" => "10090900", // 商品的价格
+	            "delete_good" => "http://baidu.com", // 删除商品的链接
+                "shop_hot" => "232"   // 商店人气(也就是所有商品的销量)
+            ]
+        ]
 	];
 
 	return View::make("template.personal.personal_collection_goods")->with($data);
@@ -745,9 +759,9 @@ Route::get("/personal_collection_shop", function(){
             "other_shop_count" => "12",   // 其他地方收藏的数量
 			"now_place" => [
                 0 => [
-	                "shop_id"   =>  "sad",    // 商店id
+	                "shop_id"   =>  "2323",    // 商店id
                     "shop_name" => "DB 店",     // 商店名称
-                    "shop_logo" => "" ,    // 商店logo
+                    "shop_logo" => url("/images/1ff6ee89a2f110f2f1c424eac9ef3jpeg.jpg") ,    // 商店logo
                     "shop_type" => "傻逼" ,    // 商店类型
 	                "shop_url" => "http://baidu.com" ,     // 点击商店跳转的链接
                     "shop_level" => "2.2",    // 商店等级
@@ -760,7 +774,7 @@ Route::get("/personal_collection_shop", function(){
 	            0 => [
 		            "shop_id"   =>  "sad",    // 商店id
 		            "shop_name" => "DB 店",     // 商店名称
-		            "shop_logo" => "" ,    // 商店logo
+		            "shop_logo" => url("/images/1ff6ee89a2f110f2f1c424eac9ef3jpeg.jpg") ,    // 商店logo
 		            "shop_type" => "傻逼" ,    // 商店类型
 		            "shop_url" => "http://baidu.com" ,     // 点击商店跳转的链接
 		            "shop_level" => "2.2",    // 商店等级
@@ -771,7 +785,7 @@ Route::get("/personal_collection_shop", function(){
 	            1 => [
 		            "shop_id"   =>  "sad",    // 商店id
 		            "shop_name" => "DB 店",     // 商店名称
-		            "shop_logo" => "" ,    // 商店logo
+		            "shop_logo" => url("/images/1ff6ee89a2f110f2f1c424eac9ef3jpeg.jpg") ,    // 商店logo
 		            "shop_type" => "傻逼" ,    // 商店类型
 		            "shop_url" => "http://baidu.com" ,     // 点击商店跳转的链接
 		            "shop_level" => "2.2",    // 商店等级
@@ -788,6 +802,68 @@ Route::get("/personal_collection_shop", function(){
 
 Route::get("/personal_details", function(){
 	$data = [
+        "personal_details"=>[
+            "url" => [
+                "all" => "__link_all__",   // 全部收支的链接
+                "takeout" => "__link_takeout__", // 外卖收支的链接
+                "charge" => "__link_charge__",  // 用户充值收支的链接
+                "refund" => "__link_refund__",  // 退款收支的链接
+                "today" => "__link_today__",  // 今天的链接
+                "sevenday" => "__link_sevenday__",  // 近七天的链接
+                "fifteenday" => "__link_fifteenday__",  // 近15天的链接
+                "onemonth" => "__link_onemonth__",  // 近一个月的链接
+                "state_all" => "__link_refund__",  // 全部状态的链接
+                "state_ing" => "__link_refund__",  // 进行中状态的链接
+                "state_success" => "__link_refund__",  // 成功状态的链接
+                "state_fail" => "__link_refund__",  // 失败状态的链接
+
+            ],
+
+            "data" => [
+                [
+                    "create_time" => "2014-11-19 12:12:03",   // 创建时间
+                    "deal_type"   => "充值",   // 交易类型
+                    "deal_details" => "3775552 <br> 订单号：45955399",  // 交易详情
+                    "deal_money"  => "+7.00",   // 交易金额
+                    "deal_state" => "成功"    // 交易状态
+                ],
+                [
+                    "create_time" => "2014-11-19 12:12:03",   // 创建时间
+                    "deal_type"   => "饿了么外卖",   // 交易类型
+                    "deal_details" => "神速便当 <br> 订单号：12560523614499832",  // 交易详情
+                    "deal_money"  => "-7.00",   // 交易金额
+                    "deal_state" => "成功"    // 交易状态
+                ],
+                [
+                    "create_time" => "2014-11-19 12:12:03",   // 创建时间
+                    "deal_type"   => "充值",   // 交易类型
+                    "deal_details" => "3775552 <br> 订单号：45955399",  // 交易详情
+                    "deal_money"  => "+7.00",   // 交易金额
+                    "deal_state" => "成功"    // 交易状态
+                    ],
+                [
+                    "create_time" => "2014-11-19 12:12:03",   // 创建时间
+                    "deal_type"   => "饿了么外卖",   // 交易类型
+                    "deal_details" => "神速便当 <br> 订单号：12560523614499832",  // 交易详情
+                    "deal_money"  => "-7.00",   // 交易金额
+                    "deal_state" => "成功"    // 交易状态
+                ],
+                [
+                    "create_time" => "2014-11-19 12:12:03",   // 创建时间
+                    "deal_type"   => "充值",   // 交易类型
+                    "deal_details" => "3775552 <br> 订单号：45955399",  // 交易详情
+                    "deal_money"  => "+7.00",   // 交易金额
+                    "deal_state" => "成功"    // 交易状态
+                ],
+                [
+                    "create_time" => "2014-11-19 12:12:03",   // 创建时间
+                    "deal_type"   => "饿了么外卖",   // 交易类型
+                    "deal_details" => "神速便当 <br> 订单号：12560523614499832",  // 交易详情
+                    "deal_money"  => "-7.00",   // 交易金额
+                    "deal_state" => "成功"    // 交易状态
+                ]
+            ]
+        ],
 		"userbar" => [
 			"url" => [
 				"my_place" => "这里是地址",
@@ -1401,4 +1477,16 @@ Route::get("/userBarMsg", function(){
 
 	return Response::json($data);
 
+});
+
+Route::post("/ajax_collection_shop", function(){
+	$data = [
+		"success" => "true"  ,                              // 成功
+		"state"  => 200     ,                               // HTTP 状态码
+		"errMsg"  => ""    ,                                // 如果出现错误, 错误信息就出现在这, 如果没有, 那内容为空.
+		"no"      => 0      ,                               // 错误号 ,错误号就出现在这, 如果没有, 那内容为空.
+		"data" => []
+	];
+
+	return Response::json($data);
 });
