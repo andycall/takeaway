@@ -87,6 +87,11 @@ module.exports = function(grunt) {
 
         data.uglify = {
             compress: {
+	            options : {
+		            preserveComments : "all",
+		            mangle: false,
+		            beautify: true
+	            },
                 files: [
                 {
 	                expand: true,
