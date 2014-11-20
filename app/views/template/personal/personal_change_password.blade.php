@@ -27,6 +27,6 @@
 @stop
 
 @section("script")
-    {{HTML::script("/js/lib/require.js", ["data-main" => url("js/template/personal/personal_change_phone.js")])}}
+    {{HTML::script("/js/lib/require.js", ["data-main" => url("js/template/personal/personal_change_password.js")])}}
 @stop
 

@@ -1490,3 +1490,28 @@ Route::post("/ajax_collection_shop", function(){
 
 	return Response::json($data);
 });
+
+Route::post("/ajax_change_phone", function(){
+    $data = [
+        "success" => "true",                              // 成功
+        "state"  => 200,                               // HTTP 状态码
+        "errMsg"  => "",                                // 如果出现错误, 错误信息就出现在这, 如果没有, 那内容为空.
+        "no"      => 0,                               // 错误号 ,错误号就出现在这, 如果没有, 那内容为空.
+        "data" => []
+    ];
+
+    return Response::json($data);
+});
+
+Route::post("/ajax_change_password", function(){
+    $data = [
+        "success" => "true",                              // 成功
+        "state"  => 200,                               // HTTP 状态码
+        "errMsg"  => "",                                // 如果出现错误, 错误信息就出现在这, 如果没有, 那内容为空.
+        "no"      => 0,                               // 错误号 ,错误号就出现在这, 如果没有, 那内容为空.
+        "data" => []
+    ];
+
+    return Response::json($data);
+});
+

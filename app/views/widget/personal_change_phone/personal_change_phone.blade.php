@@ -34,7 +34,7 @@
         </div><!--end clearfix-->
 
         <div class="form-actions">
-            <button type="button" class="btn btn-yellow">验证</button>
+            <button type="submit" class="btn btn-yellow" id="verifyBtn">验证</button>
         </div>
     </form>
 </div>
