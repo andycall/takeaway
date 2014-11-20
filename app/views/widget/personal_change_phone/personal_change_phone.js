@@ -9,6 +9,10 @@ define(['jquery'], function($){
             $.ajax({
                 url: "####qwertyui###",
                 type: "POST",
+                data: {
+                    oriPhone: oriPhone,
+                    newPhone: newPhone
+                },
                 success: function(res){
                     if(res.success == 'true'){
                         alert('验证码已发送, 请注意查收.');
