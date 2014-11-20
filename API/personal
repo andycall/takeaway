@@ -192,6 +192,7 @@
     input : { // 表单提交
         address_details : ""  // 送餐地址
         deliver_phone   : ""  // 送餐联系电话
+        spare_phone     : ""  // 备用联系电话
     }
 
     // 修改密码

@@ -5,7 +5,6 @@
   word-break: break-all;
   *zoom: 1;
 }
-
 .content-header:before,
 .content-header:after {
   display: table;
