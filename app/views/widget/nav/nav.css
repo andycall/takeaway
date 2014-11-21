@@ -5,6 +5,7 @@
 .breadcrumb p{
     color:#0088c8;
     font-size: 13px;
+    margin: 13px 0 !important;
 }
 .breadcrumb p span{
     margin-right: 8px;
