@@ -42,6 +42,7 @@
     {{HTML::style("/css/lib/jquery-ui.css")}}
     {{HTML::style("/css/template/lib/normalize.css")}}
 	{{HTML::style("/css/template/shop/shop.css")}}
+	{{HTML::style("/css/lib/jquery-ui.min.css")}}
 @stop
 
 @section("script")
