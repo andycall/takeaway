@@ -9,7 +9,7 @@
         <div class="control-group clear-fix">
             <label class="control-label" for=""><span class="required">*</span>原密码:</label>
             <div class="controls">
-                <input id="oriPwd" name="ori_password" type="text" required>
+                <input id="oriPwd" name="original_password" type="text" required>
             </div><!--end input-->
         </div><!--end clearfix-->
 
@@ -28,7 +28,7 @@
         </div><!--end clearfix-->
 
         <div class="form-actions">
-            <button type="button" class="btn btn-yellow">修改密码</button>
+            <button type="submit" class="btn btn-yellow" id="changePwd">修改密码</button>
         </div>
     </form>
 </div>

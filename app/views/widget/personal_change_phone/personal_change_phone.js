@@ -1,5 +1,6 @@
 define(['jquery'], function($){
     var timer = 0;
+    window.$=$;
     $('#sendVerifyCode').on('click', sendVerify);
     function sendVerify(e){
         var oriPhone = $('#oriPhone').val();
@@ -7,11 +8,11 @@ define(['jquery'], function($){
         var reg = /^\d{11}$/;
         if(reg.test(oriPhone) && reg.test(newPhone)){
             $.ajax({
-                url: "####qwertyui###",
+                url: "/takeaway/public/ajax_change_phone",
                 type: "POST",
                 data: {
-                    oriPhone: oriPhone,
-                    newPhone: newPhone
+                    original_phone: oriPhone,
+                    new_phone: newPhone
                 },
                 success: function(res){
                     if(res.success == 'true'){
@@ -28,15 +29,19 @@ define(['jquery'], function($){
     }
     function codeInterval(){
         $('#sendVerifyCode').attr('disabled', 'disabled');
-        var i = 30;
+        var i = 61;
         function oneSec(){
             i--;
-            if(i == 0)return $('#sendVerifyCode').attr('disabled', '');
-            $('#sendVerifyCode').val('等待' + i + '秒重新获取验证码');
+            if(i == 0){
+                $('#sendVerifyCode').html('发送验证码');
+                return $('#sendVerifyCode').attr('disabled', false);
+            }
+            $('#sendVerifyCode').html('等待' + i + '秒重新获取验证码');
             setTimeout(oneSec, 1000);
         }
         oneSec();
     }
+
 	console.log("personal change phone loaded");
 
 });
