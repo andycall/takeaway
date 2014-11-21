@@ -932,7 +932,33 @@ Route::get("/personal_my_site", function(){
 			"personal_change_password" => url("personal_change_password"), // 修改密码
 			"personal_secure"=> url("personal_secure"),        // 安全设置
 			"personal_details" => url("personal_details")       // 收支明细
-		]
+		],
+
+		"deliver_address" => [  // 送餐地址
+            "sites" => [
+	            0 => [
+		            "address_details"  => "ddddd",      // 送餐详细地址
+	                "deliver_phone"    => "123232132",      // 送餐联系电话
+	                "spare_phone"      => "12321323" ,              // 备用电话
+		            "address_state"    => "0",      // 是否是默认地址 0 是默认地址 1不是默认地址
+	                "edit_address"     => "http://baidu.com",      // 编辑地址的链接 (不用ajax  →_→)
+	                "delete_address"   => "http://baidu.com",      // 删除地址的链接
+	                "set_default"      => "http://baidu.com" ,     // 设为默认的地址
+	            ],
+				1 => [
+					"address_details"  => "ddddd",      // 送餐详细地址
+					"deliver_phone"    => "123232132",      // 送餐联系电话
+					"spare_phone"      => "12321323" ,              // 备用电话
+					"address_state"    => "1",      // 是否是默认地址 0 是默认地址 1不是默认地址
+					"edit_address"     => "http://baidu.com",      // 编辑地址的链接 (不用ajax  →_→)
+					"delete_address"   => "http://baidu.com",      // 删除地址的链接
+					"set_default"      => "http://baidu.com"  ,    // 设为默认的地址
+				]
+            ],
+			"form_address_details"        => "asdasd" ,      // 表单中填入的送餐详细地址
+			"form_deliver_phone"          => "123123" ,      // 表单中填入的手机号码
+			"form_deliver_spare_phone"    => "12323"        // 表单中填入的备用号码
+        ]
 	];
 
 	return View::make("template.personal.personal_my_site")->with($data);

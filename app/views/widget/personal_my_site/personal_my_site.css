@@ -5,12 +5,16 @@ h3{
 	background: none repeat scroll 0% 0% #EFF8FF;
 	font: bold 14px/30px tahoma,sans-serif;
 }
+a:hover{
+	text-decoration: underline;
+}
 .table-bordered{
 
 	border-image: none;
 	border-collapse: separate;
 	border-radius: 4px;
 }
+
 
 
 table{
@@ -57,10 +61,10 @@ table{
 }
 
 .col-address{
-	width: 42%;
+	width: 35%;
 }
 .col_action{
-	width: 22%;
+	width: 24%;
 }
 
 .form_block{

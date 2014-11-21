@@ -178,16 +178,24 @@
     type : "blade"
     method : "post"
     output : {
-        deliver_address : [  // 送餐地址
-            {
-                address_details  : ""      // 送餐详细地址
-                deliver_phone    : ""      // 送餐联系电话
-                address_state    : ""      // 是否是默认地址
-                edit_address     : ""      // 编辑地址的链接 (不用ajax  →_→)
-                delete_address   : ""      // 删除地址的链接
-                set_default      : ""      // 设为默认的地址
-            }
-        ]
+        deliver_address : {
+           sites : [  // 送餐地址
+                {
+                    address_details  : ""      // 送餐详细地址
+                    deliver_phone    : ""      // 送餐联系电话
+                    spare_phone      : ""      // 备选电话
+                    address_state    : ""      // 是否是默认地址 0 是默认地址 1不是默认地址
+                    edit_address     : ""      // 编辑地址的链接 (不用ajax  →_→)
+                    delete_address   : ""      // 删除地址的链接
+                    set_default      : ""      // 设为默认的地址
+                    form_address_details        : "" ,      // 表单中填入的送餐详细地址
+                    form_deliver_phone  : ""         ,      // 表单中填入的手机号码
+                    form_deliver_spare_phone  : ""                 // 表单中填入的备用号码
+                }
+            ]
+        }
+        "form_deliver_phone"          => "" ,      // 表单中填入的手机号码
+        "form_deliver_spare_phone"    => ""        // 表单中填入的备用号码
     }
     input : { // 表单提交
         address_details : ""  // 送餐地址

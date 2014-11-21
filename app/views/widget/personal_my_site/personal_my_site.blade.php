@@ -14,12 +14,18 @@
             </tr>
         </thead>
         <tbody>
+        @foreach($deliver_address['sites'] as $key=>$value)
             <tr>
-                <td>南极操场西抠门</td>
-                <td>18545454546</td>
-                <td>54654654564</td>
-                <td><span>默认地址</span> | <a href="">编辑</a> | <a href="">删除</a></td>
+                <td>{{$value['address_details']}}</td>
+                <td>{{$value['deliver_phone']}}</td>
+                <td>{{$value['spare_phone']}}</td>
+                @if($value['address_state'] == 0)
+                <td><span>默认地址</span>  | <a href="{{$value["edit_address"]}}">编辑</a> | <a href="{{$value["delete_address"]}}">删除</a></td>
+                @else
+                <td><span><a href="{{$value['set_default']}}">设为默认地址</a></span> | <a href="{{$value["edit_address"]}}">编辑</a> | <a href="{{$value["delete_address"]}}">删除</a></td>
+                @endif
             </tr>
+        @endforeach
         </tbody>
 
     </table>
@@ -30,19 +36,19 @@
     {{ Form::open(array('url' => 'foo/bar', "method" => "post", "id" => "order_form")) }}
          <div class="form_block">
             <label for="address_details"><span class="required_mark">*</span>详细地址</label>
-            <input type="text" class="input_box" id="address_details" name="address_details"/>
+            <input type="text" class="input_box" id="address_details" name="address_details" value="{{$deliver_address['form_address_details']}}"/>
             <span class="error_box">请填写订单地址</span>
             <p>（请填写真实详细的送餐地址）</p>
         </div>
         <div class="form_block">
             <label for="deliver_phone"><span class="required_mark">*</span>手机号码</label>
-            <input type="text" class="input_box" name="deliver_phone" id="deliver_phone" />
+            <input type="text" class="input_box" name="deliver_phone" id="deliver_phone" value="{{$deliver_address['form_deliver_phone']}}" />
             <span class="error_box"> 请填写手机号</span>
             <p>（请保证外卖员能打通该号码）</p>
         </div>
         <div class="form_block">
             <label for="spare_phone">备用电话</label>
-            <input type="text" class="input_box" name="spare_phone" id="spare_phone" />
+            <input type="text" class="input_box" name="spare_phone" id="spare_phone" value="{{$deliver_address['form_deliver_spare_phone']}}" />
             <p>（备用电话方便外卖员能联系到您）</p>
         </div>
         <div class="form_block form_submit">
