@@ -34,7 +34,9 @@ a{
 	background: none repeat scroll 0% 0% #FFF;
 }
 
-
+.content_inner{
+	padding: 15px;
+}
 .content_header h2{
 	font: bold 18px/1.5 tahoma,sans-serif;
 	float: left;

@@ -124,9 +124,11 @@
 	padding: 5px 15px;
 	background: none repeat scroll 0% 0% #FFF;
 	border: 1px solid #BDBDBD;
-	border-radius: 3px 3px 0px 0px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
 	font-weight: bold;
 	cursor: pointer;
+	bottom: -1px;
 }
 
 .last_order ul li.active{
@@ -160,6 +162,11 @@
 	word-break: break-all;
 	width: 80px;
 	color: #08C;
+}
+
+.last_order .recent_ticket, .last_order .recent_month{
+	border: 1px solid #BDBDBD;
+	border-radius: 3px;
 }
 
 .last_order tbody td.time {
