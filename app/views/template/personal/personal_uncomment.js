@@ -22,16 +22,17 @@ require.config({
 		personal_secure : "../widget/personal_secure",
 		personal_uncomment : "../widget/personal_uncomment",
 		personal_verify_email : "../widget/personal_verify_email",
-		personal_verify_phone : "../widget/personal_verify_phone"
-	}
+		personal_verify_phone : "../widget/personal_verify_phone",
+        order_form : "../widget/order_form"
+    }
 });
-
 // 加载项目所需的所有依赖项
 define([
 	'userBar/userBar',
 	"footer/footer",
 	"sideBar/sideBar",
-	"personal_uncomment/personal_uncomment"
+	"personal_uncomment/personal_uncomment",
+    "order_form/order_form"
 ], function($){
 	console.log("init");
 });

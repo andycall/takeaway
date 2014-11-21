@@ -1,4 +1,4 @@
-<div>退单中的订单</div>
+@include("widget/order_form/order_form", array("form" => $return, "title" => "退单中的订单"))
 
 @section("css")
     @parent
