@@ -1,3 +1,1 @@
-define([ "jquery" ], function() {
-    console.log("login form loaded");
-});
+define([ "jquery" ], function() {});
