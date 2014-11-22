@@ -6,9 +6,9 @@
 		</head>
 		<body>
             <div id="header">
-                @yield("logo")
+                @yield("header")
             </div>
-            <div class="content">
+            <div class="content ui-helper-clearfix">
                 <div class="content_left">
                     @yield("product_image")
                 </div>
