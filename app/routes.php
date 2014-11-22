@@ -477,6 +477,20 @@ Route::get("shop", function() {
 	return View::make("template.shop.shop")->with($data);
 });
 
+Route::get("/login", function(){
+	$data = [];
+
+	return View::make("template.login_register.login")->with($data);
+});
+
+
+Route::get("/register", function(){
+	$data = [];
+
+	return View::make("template.login_register.register")->with($data);
+
+});
+
 Route::get("/personal_center", function(){
 	$data = [
 		"userbar" => [
