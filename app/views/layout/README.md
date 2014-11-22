@@ -13,4 +13,4 @@ shop_comment 商家页面-评论页
 
 
 ## 个人中心
-personal_after_month 一个月之后
+personal
