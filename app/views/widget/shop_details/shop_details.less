@@ -39,15 +39,23 @@ li{
         border: 1px solid #d8d8d8;
         border-radius: 5px;
         color: #888;
+        display:block;
+        margin-top: 20px;
+        line-height: 26px;
         i {
           display: block;
           font-size: 26px;
           font-family: 'eleme';
-          width: 26px;
-          height: 26px;
+          font-style: normal;
           &:before {
             content: "\e009";
           }
+        }
+        span{
+          font-size: 12px;
+          line-height: 20px;
+          position: relative;
+          top: -5px;
         }
       }
       &:hover a {
@@ -55,8 +63,9 @@ li{
         filter: alpha(opacity=50);
       }
       a:hover {
-        opacity: 1;
-        filter: alpha(opacity=1);
+        opacity: 1 !important;
+        filter: alpha(opacity=1) !important;
+        text-decoration: none;
       }
     }
     &:hover .return a {

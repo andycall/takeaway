@@ -40,24 +40,33 @@ li {
   border: 1px solid #d8d8d8;
   border-radius: 5px;
   color: #888;
+  display: block;
+  margin-top: 20px;
+  line-height: 26px;
 }
 .res_info .res_info_header .return a i {
   display: block;
   font-size: 26px;
   font-family: 'eleme';
-  width: 26px;
-  height: 26px;
+  font-style: normal;
 }
 .res_info .res_info_header .return a i:before {
   content: "\e009";
+}
+.res_info .res_info_header .return a span {
+  font-size: 12px;
+  line-height: 20px;
+  position: relative;
+  top: -5px;
 }
 .res_info .res_info_header .return:hover a {
   opacity: 0.5;
   filter: alpha(opacity=50);
 }
 .res_info .res_info_header .return a:hover {
-  opacity: 1;
-  filter: alpha(opacity=1);
+  opacity: 1 !important;
+  filter: alpha(opacity=1) !important;
+  text-decoration: none;
 }
 .res_info .res_info_header:hover .return a {
   opacity: 0.5;

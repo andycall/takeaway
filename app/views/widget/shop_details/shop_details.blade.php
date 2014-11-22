@@ -3,7 +3,7 @@
         <div class="return">
             <a href="{{$top_bar['url']['return_back']}}">
                 <i></i>
-                返回
+                <span>返回</span>
             </a>
         </div>
         <div class="res_info_right">
