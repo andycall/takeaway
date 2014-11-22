@@ -471,7 +471,39 @@ Route::get("shop", function() {
 				"switch_place" => "123"                  // 切换当前地址的地址
 			]
 		],
+        "top_bar" => [
+            "url" => [
+                "return_back" => "##",               // 返回主页的地址
+                "shop_url" =>  "###",                // 当前商家的地址
+                "comment_url" => "####",               // 商家评论页的地址
+                "menu_url"  => "#####",                 // 美食墙的地址
+                "message_url" => "#######",               // 商家留言的地址
+            ],
 
+            "data" => [
+                "shop_id" => "123",                    // 商家id
+                "place_id" => "12345",                   // 商家位置id
+                "shop_logo" => "http://localhost:8080/images/5c81fa9884117928491470659e18djpeg.jpeg",                  // 商家的logo图片地址
+                "shop_name" => "撒拉尔人家",                  // 商家名称
+                "shop_type" => "中式",                  // 商家类型
+                "shop_level" => [                  // 总共10个等级, 1个半星一个等级
+                    "level_5" => "66",              // 评论为5星的比例
+                    "level_4" => "17",              // 评论为4星的比例
+                    "level_3" => "7",               // 评论为3星的比例
+                    "level_2" => "2",               // 评论为2星的比例
+                    "level_1" => "8",               // 评论为1星的比例
+                ],
+                "shop_total"   => "4.5",                // 总评价
+                "comment_count" => "500",              // 评论人数
+                "shop_statement" => "叫外卖上饿了么",             // 商家简介
+                "shop_time"     => "09:50 - 13:30 / 16:00 - 19:30", // 商家开门时间 (纯字符串, 应该是商家自己写上去的)
+                "shop_address"  => "重庆邮电大学堕落街",              // 商家地址
+                "deliver_begin" => "19:30",         // 送餐开始时间
+                "shop_distance" => "400",           // 商家距离(米)
+                "price_begin"   => "15",              // 起送价
+                "is_collected" => "1"               // 是否被收藏了
+            ]
+        ]
 	];
 
 	return View::make("template.shop.shop")->with($data);
