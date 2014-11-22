@@ -16,9 +16,7 @@ body {
 a{
 	text-decoration: none;
 }
-a:hover{
-	text-decoration: underline;
-}
+
 
 .shop_header{
     margin-bottom: 14px;
@@ -31,13 +29,13 @@ a:hover{
 .shop_container{
 	position: relative;
 	margin: 0px auto;
-	width: 960px;
+	width: 1140px;
 }
 
 .shop_left {
 	float: left;
 	margin-right: 14px;
-	width: 666px;
+	width: 846px;
 }
 
 .shop_right{
