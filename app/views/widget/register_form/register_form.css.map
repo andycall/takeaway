@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,IAAI;EACH,MAAM,EAAE,YAAY",
+"sources": ["register_form.scss"],
+"names": [],
+"file": "register_form.css"
+}
