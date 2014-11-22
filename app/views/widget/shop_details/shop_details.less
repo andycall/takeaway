@@ -17,7 +17,7 @@ li{
 }
 
 .res_info{
-  width: 960px;
+  width: 1140px;
   margin: 0 auto;
   height: 92px;
   .res_info_header {
@@ -139,6 +139,11 @@ li{
       display: none;
       width: 348px;
       background-color: #fff;
+      z-index: 20;
+      float: left;
+      position: absolute;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+      border-radius: 0 0 3px 3px;
       .res_info_point {
         padding: 20px;
         border-top: 1px solid #eee;
@@ -177,7 +182,6 @@ li{
     }
     &:hover{
       box-shadow: 0 3px 6px rgba(0,0,0,0.3);
-      border-radius: 0 0 3px 3px;
       background: #fff;
       font-size: 14px;
       color: #666;
