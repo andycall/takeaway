@@ -19,6 +19,6 @@ define([
 	"product_image/product_image",
 	"login_form/login_form"
 ], function($){
-	console.log("init");
+	
 });
 

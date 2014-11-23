@@ -39,6 +39,12 @@
     @include("widget/shop_map/shop_map")
 @stop
 
+{{-- 购物车 --}}
+@section("shop_cart")
+    @include('widget.shop_cart.shop_cart')
+@stop
+
+
 @section("footer")
 	@include("widget.footer.footer")
 @stop

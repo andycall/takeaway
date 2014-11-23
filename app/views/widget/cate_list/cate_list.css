@@ -4,7 +4,10 @@
 
 a{
 	text-decoration: none;
+	cursor: pointer;
+	color: #08c;
 }
+
 
 ul, li{
 	list-style: outside none none;
@@ -107,17 +110,17 @@ ul, li{
 	margin-right: 8px;
 }
 
-.caret:after {
-	content: "";
-	display: inline-block;
-	margin-left: 5px;
-	width: 0;
-	height: 0;
-	vertical-align: middle;
-	border-left: 5px solid transparent;
-	border-right: 5px solid transparent;
-	border-top: 5px solid #666;
-}
+/*.caret:after {*/
+	/*content: "";*/
+	/*display: inline-block;*/
+	/*margin-left: 5px;*/
+	/*width: 0;*/
+	/*height: 0;*/
+	/*vertical-align: middle;*/
+	/*border-left: 5px solid transparent;*/
+	/*border-right: 5px solid transparent;*/
+	/*border-top: 5px solid #666;*/
+/*}*/
 .toolbar_category .drop_down_menu{
 	position: absolute;
 	z-index: 50;
@@ -159,6 +162,21 @@ ul, li{
 	overflow: hidden;
 }
 
+.cate_drop_down li a{
+	font-size: 14px;
+	margin: 0 4px 0 0;
+}
+
+.cate_drop_down li.activity a{
+	color: #eb6100;
+}
+
+.activity_drop_down li{
+	background: #f9f9f9;
+	color: #666;
+	font-size: 12px;
+	line-height: 1.8;
+}
 
 .menu_tool .toolbar_category .toolBar_toggle{
 	cursor: pointer;
@@ -417,7 +435,7 @@ img.icon-rst-badge{
 
 
 
-.symbol-rmb:before {
+.shop_left .symbol-rmb:before {
 	content: "¥";
 	margin-right: 1px;
 	font-family: arial,sans-serif;
@@ -452,17 +470,17 @@ img.icon-rst-badge{
 	border-right-width: 3px;
 	border-left-width: 3px;
 }
-.caret:after{
-	content: " ";
-	display: inline-block;
-	margin-left: 5px;
-	width: 0;
-	height: 0;
-	vertical-align: middle;
-	border-left: 5px solid transparent;
-	border-right: 5px solid transparent;
-	border-top: 5px solid #666;
-}
+/*.caret:after{*/
+	/*content: " ";*/
+	/*display: inline-block;*/
+	/*margin-left: 5px;*/
+	/*width: 0;*/
+	/*height: 0;*/
+	/*vertical-align: middle;*/
+	/*border-left: 5px solid transparent;*/
+	/*border-right: 5px solid transparent;*/
+	/*border-top: 5px solid #666;*/
+/*}*/
 
 .rst-d-rating{
 	display: inline-block;

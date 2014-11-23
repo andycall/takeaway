@@ -32,7 +32,10 @@
                     </div>
                 </div>
                 {{-- 餐厅购物车 --}}
-                <div class="shop_chart"></div>
+
+                <div class="shop_chart">
+                    @yield("shop_cart")
+                </div>
 			</div>
 			<div id="footer">
 				@yield("footer")
