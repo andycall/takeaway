@@ -506,6 +506,25 @@ Route::get("shop", function() {
                 "shop_remark" => "傻逼"               //额外说明
             ]
         ],
+
+
+        "announcement" => [
+            "data" => [
+                "announce_content" => "餐厅公告内容餐厅公告内容餐厅公告内容餐厅公告内容餐厅公告内容餐厅公告内容",              // 餐厅公告内容
+                "start_price"      => "99999",              // 起送价
+                "activities"       => [               // 商家活动
+                    [
+                        "activity_name" => "该餐厅支持在线支付", // 活动标题
+                        "activity_icon" => "online-payment"          // 活动图标
+                    ],
+                    [
+                        "activity_name" => "满10-3", // 活动标题
+                        "activity_icon" => "extra-discount"          // 活动图标
+                    ]
+                ]
+            ]
+        ],
+
 		"category" => [
 			"data" => [
 				"classify_sec" => [
