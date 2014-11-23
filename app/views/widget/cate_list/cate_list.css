@@ -435,7 +435,7 @@ img.icon-rst-badge{
 
 
 
-.symbol-rmb:before {
+.shop_left .symbol-rmb:before {
 	content: "¥";
 	margin-right: 1px;
 	font-family: arial,sans-serif;
