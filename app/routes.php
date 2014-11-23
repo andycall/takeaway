@@ -478,6 +478,7 @@ Route::get("shop", function() {
                 "comment_url" => "####",               // 商家评论页的地址
                 "menu_url"  => "#####",                 // 美食墙的地址
                 "message_url" => "#######",               // 商家留言的地址
+                "map_url" => "########",                //地图地址
             ],
 
             "data" => [
@@ -501,7 +502,8 @@ Route::get("shop", function() {
                 "deliver_begin" => "19:30",         // 送餐开始时间
                 "shop_distance" => "400",           // 商家距离(米)
                 "price_begin"   => "15",              // 起送价
-                "is_collected" => "1"               // 是否被收藏了
+                "is_collected" => "1",               // 是否被收藏了
+                "shop_remark" => "傻逼"               //额外说明
             ]
         ]
 	];

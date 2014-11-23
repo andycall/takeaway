@@ -6,7 +6,7 @@
 
 {{-- 商家顶部信息栏 --}}
 @section("shop_details")
-    @include("widget/shop_details/shop_details")
+    @include("widget/shop_details/shop_details",array("active" => "meun"))
 @stop
 
 {{-- 美食分类 --}}
