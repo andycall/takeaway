@@ -478,6 +478,7 @@ Route::get("shop", function() {
                 "comment_url" => "####",               // 商家评论页的地址
                 "menu_url"  => "#####",                 // 美食墙的地址
                 "message_url" => "#######",               // 商家留言的地址
+                "map_url" => "########",                //地图地址
             ],
 
             "data" => [
@@ -501,9 +502,29 @@ Route::get("shop", function() {
                 "deliver_begin" => "19:30",         // 送餐开始时间
                 "shop_distance" => "400",           // 商家距离(米)
                 "price_begin"   => "15",              // 起送价
-                "is_collected" => "1"               // 是否被收藏了
+                "is_collected" => "1",               // 是否被收藏了
+                "shop_remark" => "傻逼"               //额外说明
             ]
         ],
+
+
+        "announcement" => [
+            "data" => [
+                "announce_content" => "餐厅公告内容餐厅公告内容餐厅公告内容餐厅公告内容餐厅公告内容餐厅公告内容",              // 餐厅公告内容
+                "start_price"      => "99999",              // 起送价
+                "activities"       => [               // 商家活动
+                    [
+                        "activity_name" => "该餐厅支持在线支付", // 活动标题
+                        "activity_icon" => "online-payment"          // 活动图标
+                    ],
+                    [
+                        "activity_name" => "满10-3", // 活动标题
+                        "activity_icon" => "extra-discount"          // 活动图标
+                    ]
+                ]
+            ]
+        ],
+
 		"category" => [
 			"data" => [
 				"classify_sec" => [
@@ -542,7 +563,88 @@ Route::get("shop", function() {
 					]
 				]
 			]
-		]
+		],
+        "good_category" => [
+            "data" => [
+                "goods_category" => [
+                    [
+                        "classify_name" => "10元管饱",  // 类别名称
+                        "classify_name_abbr" => "点餐就包拿！没办…",  // 类别名称简写
+                        "classify_id"  => "",          // 类别id
+                        "classify_count" => "23",       // 类别中有多少商品
+                        "classify_icon" => "123",         // 类别图标地址
+                    ],
+                    [
+                        "classify_name" => "10元管饱",  // 类别名称
+                        "classify_name_abbr" => "点餐就包拿！没办…",  // 类别名称简写
+                        "classify_id"  => "",          // 类别id
+                        "classify_count" => "23",       // 类别中有多少商品
+                        "classify_icon" => "",         // 类别图标地址
+                    ],
+                    [
+                        "classify_name" => "10元管饱",  // 类别名称
+                        "classify_name_abbr" => "点就有红包拿！没办…",  // 类别名称简写
+                        "classify_id"  => "",          // 类别id
+                        "classify_count" => "23",       // 类别中有多少商品
+                        "classify_icon" => "",         // 类别图标地址
+                    ],
+                    [
+                        "classify_name" => "10元管饱",  // 类别名称
+                        "classify_name_abbr" => "点红包拿！办…",  // 类别名称简写
+                        "classify_id"  => "",          // 类别id
+                        "classify_count" => "23",       // 类别中有多少商品
+                        "classify_icon" => "",         // 类别图标地址
+                    ],
+                    [
+                        "classify_name" => "10元管饱",  // 类别名称
+                        "classify_name_abbr" => "点餐就有红包办…",  // 类别名称简写
+                        "classify_id"  => "",          // 类别id
+                        "classify_count" => "23",       // 类别中有多少商品
+                        "classify_icon" => "",         // 类别图标地址
+                    ],
+                    [
+                        "classify_name" => "10元管饱",  // 类别名称
+                        "classify_name_abbr" => "点餐有红包拿！没办…",  // 类别名称简写
+                        "classify_id"  => "",          // 类别id
+                        "classify_count" => "23",       // 类别中有多少商品
+                        "classify_icon" => "",         // 类别图标地址
+                    ],
+                    [
+                        "classify_name" => "10元管饱",  // 类别名称
+                        "classify_name_abbr" => "点餐…",  // 类别名称简写
+                        "classify_id"  => "",          // 类别id
+                        "classify_count" => "23",       // 类别中有多少商品
+                        "classify_icon" => "",         // 类别图标地址
+                    ]
+                ],
+                "good_activity" => [
+                    [
+                        "activity_name" => "1元秒杀（限新用户）重庆",  // 活动名称
+                        "activity_id" => "123",                      // 活动id
+                        "activity_icon" => "123",                       // 活动图标地址
+                        "activity_statement" => "1元秒杀爽到爆！"      // 活动简洁
+                    ],
+                    [
+                        "activity_name" => "1元秒杀（限新用户）重庆",  // 活动名称
+                        "activity_id" => "123",                      // 活动id
+                        "activity_icon" => "",                       // 活动图标地址
+                        "activity_statement" => "1元秒杀爽到爆！"      // 活动简洁
+                    ],
+                    [
+                        "activity_name" => "1元秒杀（限新用户）重庆",  // 活动名称
+                        "activity_id" => "123",                      // 活动id
+                        "activity_icon" => "",                       // 活动图标地址
+                        "activity_statement" => "1元秒杀爽到爆！"      // 活动简洁
+                    ],
+                    [
+                        "activity_name" => "1元秒杀（限新用户）重庆",  // 活动名称
+                        "activity_id" => "123",                      // 活动id
+                        "activity_icon" => "",                       // 活动图标地址
+                        "activity_statement" => "1元秒杀爽到爆！"      // 活动简洁
+                    ]
+                ]
+            ]
+        ]
 	];
 
 	return View::make("template.shop.shop")->with($data);

@@ -9,18 +9,19 @@ li{
   float: left;
   width: 61px;
   height: 14px;
-  background: url(../../../images/bg.gif) no-repeat;
+  background: url("../../../images/bg.gif") no-repeat;
   margin-top: 2px;
   margin-right: 2px;
   position: relative;
   top: 2px;
 }
 
-.res_info{
+.res_info {
   width: 1140px;
   margin: 0 auto;
   height: 92px;
-  .caret:after{
+  position: relative;
+  .caret:after {
     content: "";
     display: inline-block;
     margin-left: 5px;
@@ -29,7 +30,7 @@ li{
     vertical-align: middle;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-top: 5px solid rgb(170, 170, 170);;
+    border-top: 5px solid rgb(170, 170, 170);
   }
   .res_info_header {
     width: 348px;
@@ -50,7 +51,7 @@ li{
         border: 1px solid #d8d8d8;
         border-radius: 5px;
         color: #888;
-        display:block;
+        display: block;
         margin-top: 20px;
         line-height: 26px;
         i {
@@ -62,7 +63,7 @@ li{
             content: "\e009";
           }
         }
-        span{
+        span {
           font-size: 12px;
           line-height: 20px;
           position: relative;
@@ -142,7 +143,7 @@ li{
       z-index: 20;
       float: left;
       position: absolute;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
       border-radius: 0 0 3px 3px;
       .res_info_point {
         padding: 20px;
@@ -168,74 +169,131 @@ li{
         }
       }
     }
-    .res_info_intro,.res_info_list{
+    .res_info_intro, .res_info_list {
       padding: 13px 20px;
       border-top: 1px solid #eee;
       font-size: 14px;
       color: #666;
-      li{
+      li {
         margin: 5px 0;
       }
     }
-    &:hover .res_info_bottom{
+    &:hover .res_info_bottom {
       display: block;
     }
-    &:hover{
-      box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+    &:hover {
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
       background: #fff;
       font-size: 13px;
       color: #666;
     }
   }
-  .res_nav{
+  .res_nav {
     float: left;
     margin: 36px 0 0 15px;
     font-size: 16px;
-    a{
+    a {
       padding: 0 14px;
       display: inline-block;
       border-radius: 3px;
       text-align: center;
       line-height: 27px;
       color: #333;
-      &.onclick{
+      &.onclick {
         background: #3199e8;
         color: #fff;
       }
     }
   }
-  .res_panel{
+  .res_panel {
     float: right;
     width: 345px;
-    .res_data_block{
+    .res_data_block {
       box-sizing: border-box;
       float: right;
       width: 115px;
       height: 92px;
       padding-top: 21px;
-      .res_data{
+      .res_data {
         height: 50px;
         border-right: 1px solid #ededed;
         text-align: center;
-        b{
+        b {
           height: 30px;
-          font: bold 30px/1em arial,sans-serif;
+          font: bold 30px/1em arial, sans-serif;
           color: #666;
         }
-        span{
+        span {
           display: block;
           font-size: 12px;
           color: #999;
-          &.green{
+          &.green {
             color: #5bb06c;
           }
         }
       }
-      &:hover .caret:after{
+      &:hover .caret:after {
         -ms-transform: rotate(180deg);
         -webkit-transform: rotate(180deg);
         transform: rotate(180deg);
         border-top-color: #666;
+      }
+      .res_dropdown {
+        box-sizing: border-box;
+        position: absolute;
+        top: 92px;
+        right: 0;
+        z-index: 10;
+        color: #666;
+        .res_detail {
+          position: relative;
+          margin-top: 5px;
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+          border-radius: 3px;
+          background: #fff;
+          display: none;
+          &:before {
+            content: "";
+            position: absolute;
+            top: -5px;
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-bottom: 5px solid #fff;
+          }
+        }
+        .map {
+          width: 340px;
+          height: 240px;
+          padding: 5px;
+          &:before{
+            left:174px;
+          }
+          img{
+            display: block;
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .deliver{
+          width: 210px;
+          padding: 15px;
+          &:before{
+            left:180px;
+          }
+          h4{
+            font-weight: normal;
+            font-size: 14px;
+            margin-bottom: 10px;
+          }
+          P{
+            font-size: 12px;
+          }
+        }
+      }
+      &:hover .res_detail{
+        display: block;
       }
     }
   }
