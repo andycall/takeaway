@@ -1,3 +1,3 @@
-define("jquery", function() {
-    console.log("register form loaded");
+define([ "jquery" ], function() {
+    alert(578907890);
 });

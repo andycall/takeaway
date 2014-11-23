@@ -478,6 +478,7 @@ Route::get("shop", function() {
                 "comment_url" => "####",               // 商家评论页的地址
                 "menu_url"  => "#####",                 // 美食墙的地址
                 "message_url" => "#######",               // 商家留言的地址
+                "map_url" => "########",                //地图地址
             ],
 
             "data" => [
@@ -501,7 +502,147 @@ Route::get("shop", function() {
                 "deliver_begin" => "19:30",         // 送餐开始时间
                 "shop_distance" => "400",           // 商家距离(米)
                 "price_begin"   => "15",              // 起送价
-                "is_collected" => "1"               // 是否被收藏了
+                "is_collected" => "1",               // 是否被收藏了
+                "shop_remark" => "傻逼"               //额外说明
+            ]
+        ],
+
+
+        "announcement" => [
+            "data" => [
+                "announce_content" => "餐厅公告内容餐厅公告内容餐厅公告内容餐厅公告内容餐厅公告内容餐厅公告内容",              // 餐厅公告内容
+                "start_price"      => "99999",              // 起送价
+                "activities"       => [               // 商家活动
+                    [
+                        "activity_name" => "该餐厅支持在线支付", // 活动标题
+                        "activity_icon" => "online-payment"          // 活动图标
+                    ],
+                    [
+                        "activity_name" => "满10-3", // 活动标题
+                        "activity_icon" => "extra-discount"          // 活动图标
+                    ]
+                ]
+            ]
+        ],
+
+		"category" => [
+			"data" => [
+				"classify_sec" => [
+					0 => [
+						"classify_name" => "10元管饱",  // 类别名称
+						"classify_id"   => "123"  ,        // 类别id
+						"classify_icon"  => "http://fuss10.elemecdn.com/c/12/d2b0ed6e994997099e86581009d3bjpeg.jpeg"  ,       // 类别图标地址
+						"activity_ads" => [          // 这个种类是不是活动, 不是则为空
+							"activity_name" => "" ,      // 活动标题
+							"activity_statement" => ""  // 活动描述
+						],
+						"classify_images" => [           // 有的类别会有图片, 如果没有,这个为空数组
+							0 => [
+								"goods_id" => "",       // 商品id
+								"goods_image" => "",     // 商品图片地址
+								"goods_name" => "" ,    // 商品名称
+								"goods_level" => "" ,   // 商品等级, 总共10个等级
+								"comment_count" => "",  // 投票人数
+								"goods_sails" => ""   , // 商品销量
+								"goods_price" => ""    , // 商品价格
+								"goods_icon" => ""    , // 一些用户促销的图标
+								"goods_original" => "" // 如果是促销, 这个用于显示原价
+							]
+						],
+						"classify_goods" => [
+							0 => [
+								"goods_id" => ""    ,   // 商品id
+								"goods_name" => ""   ,  // 商品名称
+								"goods_level" => "" ,   // 商品等级, 总共10个等级
+								"comment_count" => "",  // 投票人数
+								"goods_price" => "",    // 商品价格
+								"goods_icon" =>  "",    // 一些用户促销的图标
+								"goods_original" => "" // 如果是促销, 这个用于显示原价
+							]
+						]
+					]
+				]
+			]
+		],
+        "good_category" => [
+            "data" => [
+                "goods_category" => [
+                    [
+                        "classify_name" => "10元管饱",  // 类别名称
+                        "classify_name_abbr" => "点餐就包拿！没办…",  // 类别名称简写
+                        "classify_id"  => "",          // 类别id
+                        "classify_count" => "23",       // 类别中有多少商品
+                        "classify_icon" => "123",         // 类别图标地址
+                    ],
+                    [
+                        "classify_name" => "10元管饱",  // 类别名称
+                        "classify_name_abbr" => "点餐就包拿！没办…",  // 类别名称简写
+                        "classify_id"  => "",          // 类别id
+                        "classify_count" => "23",       // 类别中有多少商品
+                        "classify_icon" => "",         // 类别图标地址
+                    ],
+                    [
+                        "classify_name" => "10元管饱",  // 类别名称
+                        "classify_name_abbr" => "点就有红包拿！没办…",  // 类别名称简写
+                        "classify_id"  => "",          // 类别id
+                        "classify_count" => "23",       // 类别中有多少商品
+                        "classify_icon" => "",         // 类别图标地址
+                    ],
+                    [
+                        "classify_name" => "10元管饱",  // 类别名称
+                        "classify_name_abbr" => "点红包拿！办…",  // 类别名称简写
+                        "classify_id"  => "",          // 类别id
+                        "classify_count" => "23",       // 类别中有多少商品
+                        "classify_icon" => "",         // 类别图标地址
+                    ],
+                    [
+                        "classify_name" => "10元管饱",  // 类别名称
+                        "classify_name_abbr" => "点餐就有红包办…",  // 类别名称简写
+                        "classify_id"  => "",          // 类别id
+                        "classify_count" => "23",       // 类别中有多少商品
+                        "classify_icon" => "",         // 类别图标地址
+                    ],
+                    [
+                        "classify_name" => "10元管饱",  // 类别名称
+                        "classify_name_abbr" => "点餐有红包拿！没办…",  // 类别名称简写
+                        "classify_id"  => "",          // 类别id
+                        "classify_count" => "23",       // 类别中有多少商品
+                        "classify_icon" => "",         // 类别图标地址
+                    ],
+                    [
+                        "classify_name" => "10元管饱",  // 类别名称
+                        "classify_name_abbr" => "点餐…",  // 类别名称简写
+                        "classify_id"  => "",          // 类别id
+                        "classify_count" => "23",       // 类别中有多少商品
+                        "classify_icon" => "",         // 类别图标地址
+                    ]
+                ],
+                "good_activity" => [
+                    [
+                        "activity_name" => "1元秒杀（限新用户）重庆",  // 活动名称
+                        "activity_id" => "123",                      // 活动id
+                        "activity_icon" => "123",                       // 活动图标地址
+                        "activity_statement" => "1元秒杀爽到爆！"      // 活动简洁
+                    ],
+                    [
+                        "activity_name" => "1元秒杀（限新用户）重庆",  // 活动名称
+                        "activity_id" => "123",                      // 活动id
+                        "activity_icon" => "",                       // 活动图标地址
+                        "activity_statement" => "1元秒杀爽到爆！"      // 活动简洁
+                    ],
+                    [
+                        "activity_name" => "1元秒杀（限新用户）重庆",  // 活动名称
+                        "activity_id" => "123",                      // 活动id
+                        "activity_icon" => "",                       // 活动图标地址
+                        "activity_statement" => "1元秒杀爽到爆！"      // 活动简洁
+                    ],
+                    [
+                        "activity_name" => "1元秒杀（限新用户）重庆",  // 活动名称
+                        "activity_id" => "123",                      // 活动id
+                        "activity_icon" => "",                       // 活动图标地址
+                        "activity_statement" => "1元秒杀爽到爆！"      // 活动简洁
+                    ]
+                ]
             ]
         ]
 	];
@@ -518,7 +659,6 @@ Route::get("/login", function(){
 	return View::make("template.login_register.login")->with($data);
 });
 
-
 Route::get("/register", function(){
 	$data = [
         "auth_image" => "http://t11.baidu.com/it/u=254287606,1076184673&fm=58"        //验证码
@@ -527,6 +667,9 @@ Route::get("/register", function(){
 	return View::make("template.login_register.register")->with($data);
 
 });
+
+
+
 
 Route::get("/personal_center", function(){
 	$data = [
@@ -872,8 +1015,6 @@ Route::get("/personal_change_password", function(){
 	return View::make("template.personal.personal_change_password")->with($data);
 });
 
-
-
 Route::get("/personal_change_password", function(){
 	$data = [
 		"userbar" => [
@@ -911,7 +1052,6 @@ Route::get("/personal_change_password", function(){
 
 	return View::make("template.personal.personal_change_password")->with($data);
 });
-
 
 Route::get("/personal_collection_goods", function(){
 	$data = [
@@ -1208,8 +1348,6 @@ Route::get("/personal_my_site", function(){
 
 	return View::make("template.personal.personal_my_site")->with($data);
 });
-
-
 
 Route::get("/personal_recent_month", function(){
 	$data = [
@@ -1673,7 +1811,6 @@ Route::get("/personal_return", function(){
 	return View::make("template.personal.personal_return")->with($data);
 });
 
-
 Route::get("/personal_secure", function(){
 	$data = [
 		"userbar" => [
@@ -1711,7 +1848,6 @@ Route::get("/personal_secure", function(){
 
 	return View::make("template.personal.personal_secure")->with($data);
 });
-
 
 Route::get("/personal_uncomment", function(){
 	$data = [
@@ -1981,8 +2117,6 @@ Route::get("/personal_verify_email", function(){
 
 	return View::make("template.personal.personal_verify_email")->with($data);
 });
-
-
 
 Route::get("/personal_verify_phone", function(){
 	$data = [

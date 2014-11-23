@@ -6,6 +6,7 @@
 body {
 	font: 13px Helvetica, Arial, sans-serif;
 	line-height: 1.62;
+    background: #e4e4e4;
 }
 .yahei {
 	font-family: STHeiti, "Microsoft Yahei", "微软雅黑", Arial, sans-serif;
@@ -15,9 +16,6 @@ body {
 }
 a{
 	text-decoration: none;
-}
-a:hover{
-	text-decoration: underline;
 }
 
 .shop_header{
@@ -31,13 +29,13 @@ a:hover{
 .shop_container{
 	position: relative;
 	margin: 0px auto;
-	width: 960px;
+	width: 1140px;
 }
 
 .shop_left {
 	float: left;
 	margin-right: 14px;
-	width: 666px;
+	width: 846px;
 }
 
 .shop_right{
@@ -45,9 +43,11 @@ a:hover{
 	width: 280px;
 }
 
+
 .shop_chart{
 	position: fixed;
-	right: 0px;
+	right: 50%;
+	margin-right: -585px;
 	bottom: 0px;
 	z-index: 10;
 	width: 310px;

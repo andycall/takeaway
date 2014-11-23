@@ -9,7 +9,7 @@
 				@yield("header")
 			</div>
 			<div id="content">
-			    <div class="shop_header">
+			    <div class="shop_header ui-helper-clearfix">
 			         {{-- 商家顶部信息栏 --}}
                     @yield("shop_details")
 			    </div>
@@ -32,7 +32,10 @@
                     </div>
                 </div>
                 {{-- 餐厅购物车 --}}
-                <div class="shop_chart"></div>
+
+                <div class="shop_chart">
+                    @yield("shop_cart")
+                </div>
 			</div>
 			<div id="footer">
 				@yield("footer")

@@ -50,15 +50,34 @@
                 goods_category : [
                     {
                         classify_name : "10元管饱"  // 类别名称
+                        classify_name_abbr : "点餐就有红包拿！没办…"  // 类别名称简写
                         classify_id   : ""          // 类别id
                         classify_count : "23"       // 类别中有多少商品
                         classify_icon  : ""         // 类别图标地址
-                        isActivity    : "true"      // 是不是活动
-                        activity_statement : ""     // 活动描述， 如果不是活动， 则为空
                     }
+                ],
+                "good_activity" => [
+                    [
+                        "activity_name" : "1元秒杀（限新用户）重庆",  // 活动名称
+                        "activity_id" : "123",                      // 活动id
+                        "activity_icon" : "",                       // 活动图标地址
+                        "activity_statement" : "1元秒杀爽到爆！"      // 活动简洁
+                    ]
                 ]
             }
-        }
+            "data" => [
+                "goods_category" => [
+                    [
+                        "classify_name" => "10元管饱",  // 类别名称
+                        "classify_name_abbr" => "点餐就有红包拿！没办…",  // 类别名称简写
+                        "classify_id"  => "",          // 类别id
+                        "classify_count" => "23",       // 类别中有多少商品
+                        "classify_icon" => "",         // 类别图标地址
+                    ]
+                ]
+            ]
+        ]
+    }
 
 
         // 分类内容
@@ -154,6 +173,7 @@
                 menu_url  : ""                 // 商家菜单的地址
                 photo_url : ""                 // 美食墙的地址
                 message_url : ""               // 商家留言的地址
+                map_url : ""                   // 地图地址
             }
 
             data : {
@@ -178,6 +198,7 @@
                 shop_distance : "400"           // 商家距离(米)
                 price_begin   : ""              // 起送价
                 is_collected : ""               // 是否被收藏了
+                shop_remark : ""                // 额外说明
             }
         }
 
