@@ -20,8 +20,10 @@
         </div>
         <div class="res_info_bottom">
             <div class="res_info_point">
-                <div class="point">{{$top_bar['data']['shop_total']}}</div>
-                <div class="comment">{{$top_bar['data']['comment_count']}}人 评价</div>
+                <div class="res_point">
+                    <div class="point">{{$top_bar['data']['shop_total']}}</div>
+                    <div class="comment">{{$top_bar['data']['comment_count']}}人 评价</div>
+                </div>
                 <ul class="rating-diagram">
 @for($i = 5; $i > 0 ; $i--)
                     <li>
@@ -31,6 +33,7 @@
                     </li>
 @endfor
                 </ul>
+                <div class="ui-helper-clearfix"></div>
             </div>
             <div class="res_info_intro">
                 {{$top_bar['data']['shop_statement']}}
