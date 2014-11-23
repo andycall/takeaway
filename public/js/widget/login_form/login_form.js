@@ -33,7 +33,7 @@ define([ "jquery" ], function($) {
                 } catch (err) {
                     alert("服务器异常，稍后再试");
                 }
-                "true" == res.success ? location.href = res.nextSrc : res.no && res.Msg;
+                "true" == res.success ? location.href = res.nextSrc : res.no && res.no >= 1 && res.no <= 4;
             }
         });
     }

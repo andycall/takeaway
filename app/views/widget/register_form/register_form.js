@@ -6,9 +6,28 @@ define(["jquery"], function($){
      *点击验证码切换
     */
 
-    //点击更换验证码
+    //验证码点击切换
+    $(".captcha-img").on("click",function(){
+        $.get("/switch_auth",function(res){
+            if( typeof res != object ){
+                try{
+                    res = $.parseJSON(res);
+                }catch(err){
+                    alert("服务器数据异常，稍后再试");
+                    return ;
+                }
+            }
 
-	var $divUserName = $("#register-user-name"),
+            if( res.success && res.nextSrc ){
+                $(".captcha-img").attrs("src",res.nextSrc);
+            }else if( !res.success && res.errMsg){
+                alert(res.errMsg);
+            }
+
+        });
+    });
+
+	var $divUserMobile = $("#register-user-mobile"),
         $divUserPwd  = $("#register-user-pwd"),
         $divUserTel  = $("#register-user-mobile"),
         $divUserEmail  = $("#register-user-email"),
@@ -16,8 +35,10 @@ define(["jquery"], function($){
   
     //验证所填数据
     function checkRegister(data){
-    	var regEmail = /^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+/,
-    	    regAuth  = 
+    	var regEmail   = /^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+/,
+    	    regAuth    = / /,
+    	    regMobile  = / /,
+
     }
 
     //ajax
@@ -55,7 +76,7 @@ define(["jquery"], function($){
     //提交表单
     $("#register-form").on("submit",function(){
     	var data = {
-    		'user_phone' : $divUserName.find("input").val(),   //电话号码
+    		'user_phone' : $divUserMobile.find("input").val(),   //电话号码
     		'user_psw'   : $divUserPwd.find("input").val(),    //密码
     		'user_email' : $divUserEmail.find("input").val(),  //邮箱
     		'user_name'  : $divUserName.find("input").val(),   //用户名

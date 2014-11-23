@@ -6,13 +6,25 @@ define([ "jquery" ], function($) {
     /*
      *验证
      *ajax
+     *点击验证码切换
     */
-    var $divUserName = $("#register-user-name"), $divUserPwd = $("#register-user-pwd"), $divUserEmail = ($("#register-user-mobile"), 
+    //验证码点击切换
+    $(".captcha-img").on("click", function() {
+        $.get("/switch_auth", function(res) {
+            if (typeof res != object) try {
+                res = $.parseJSON(res);
+            } catch (err) {
+                return void alert("服务器数据异常，稍后再试");
+            }
+            res.success && res.nextSrc ? $(".captcha-img").attrs("src", res.nextSrc) : !res.success && res.errMsg && alert(res.errMsg);
+        });
+    });
+    var $divUserMobile = $("#register-user-mobile"), $divUserPwd = $("#register-user-pwd"), $divUserEmail = ($("#register-user-mobile"), 
     $("#register-user-email")), $divAuth = $("#register-user-auth");
     //提交表单
     $("#register-form").on("submit", function() {
         var data = {
-            user_phone: $divUserName.find("input").val(),
+            user_phone: $divUserMobile.find("input").val(),
             //电话号码
             user_psw: $divUserPwd.find("input").val(),
             //密码
