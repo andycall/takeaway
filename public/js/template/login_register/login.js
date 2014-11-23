@@ -12,6 +12,4 @@ require.config({
         footer: "../widget/footer"
     }
 }), // 加载项目所需的所有依赖项
-define([ "footer/footer", "product_image/product_image", "login_form/login_form" ], function() {
-    console.log("init");
-});
+define([ "footer/footer", "product_image/product_image", "login_form/login_form" ], function() {});

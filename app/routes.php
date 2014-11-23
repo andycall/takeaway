@@ -510,14 +510,19 @@ Route::get("shop", function() {
 });
 
 Route::get("/login", function(){
-	$data = [];
+	$data = [
+        "find_password" => "http://www.hao123.com",
+        "auth_image" => "http://t11.baidu.com/it/u=254287606,1076184673&fm=58"
+    ];
 
 	return View::make("template.login_register.login")->with($data);
 });
 
 
 Route::get("/register", function(){
-	$data = [];
+	$data = [
+        "auth_image" => "http://t11.baidu.com/it/u=254287606,1076184673&fm=58"        //验证码
+    ];
 
 	return View::make("template.login_register.register")->with($data);
 
