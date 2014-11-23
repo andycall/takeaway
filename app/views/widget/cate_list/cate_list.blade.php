@@ -10,13 +10,17 @@
             <a href="#" class="toolBar_toggle caret">美食分类</a>
             <div class="drop_down_menu">
                 <ul class="cate_drop_down ui-helper-clearfix">
-                    <li class="cate_item"><a href=""></a></li>
-                    <li class="cate_item"></li>
-                    <li class="cate_item"></li>
-                    <li class="cate_item"></li>
-                    <li class="cate_item"></li>
+                    <li class="cate_item"><a href="#">点餐就有红包拿(0)
+                        <img class="icon-rst-badge" src="http://fuss10.elemecdn.com/c/12/d2b0ed6e994997099e86581009d3bjpeg.jpeg" title="1元秒杀爽到爆！" alt="1元秒杀爽到爆！">
+                    </a></li>
+                    <li class="cate_item activity"><a href="#">一元秒杀</a></li>
+                    <li class="cate_item"><a href="#">强烈推荐</a></li>
                 </ul>
-                <ul class="activity_drop_down"></ul>
+                <ul class="activity_drop_down">
+                    <li> <img class="icon-rst-badge" src="http://fuss10.elemecdn.com/c/12/d2b0ed6e994997099e86581009d3bjpeg.jpeg" title="1元秒杀爽到爆！" alt="1元秒杀爽到爆！">
+                          1元秒杀（限新用户）重庆：1元秒杀爽到爆！  </li>
+
+                </ul>
             </div>
         </div>
         <a href="" class="tool_item ui_on">默认排序</a>

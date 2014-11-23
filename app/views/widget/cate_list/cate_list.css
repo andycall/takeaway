@@ -4,7 +4,10 @@
 
 a{
 	text-decoration: none;
+	cursor: pointer;
+	color: #08c;
 }
+
 
 ul, li{
 	list-style: outside none none;
@@ -159,6 +162,21 @@ ul, li{
 	overflow: hidden;
 }
 
+.cate_drop_down li a{
+	font-size: 14px;
+	margin: 0 4px 0 0;
+}
+
+.cate_drop_down li.activity a{
+	color: #eb6100;
+}
+
+.activity_drop_down li{
+	background: #f9f9f9;
+	color: #666;
+	font-size: 12px;
+	line-height: 1.8;
+}
 
 .menu_tool .toolbar_category .toolBar_toggle{
 	cursor: pointer;
