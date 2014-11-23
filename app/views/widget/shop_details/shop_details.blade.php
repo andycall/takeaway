@@ -8,7 +8,7 @@
         </div>
         <div class="res_info_right">
             <img src="{{$top_bar['data']['shop_logo']}}"/>
-            <div class="res_info_title">
+            <div class="res_info_title caret">
                 <a href="{{$top_bar['url']['shop_url']}}">{{$top_bar['data']['shop_name']}}</a>
             </div>
             <div class="res_info_star">
@@ -45,6 +45,40 @@
                 </ul>
             </div>
         </div>
+    </div>
+    <div class="res_nav">
+        <a href="{{$top_bar['url']['shop_url']}}" class="onclick">菜单</a>
+        <a href="{{$top_bar['url']['comment_url']}}">评价</a>
+    </div>
+    <div class="res_panel">
+        <div class="res_data_block">
+            <div class="res_data caret" style="border: none">
+@if($top_bar['data']['price_begin'])
+                <b>{{$top_bar['data']['price_begin']}}</b>
+@else
+                <b>0</b>
+@endif
+                <span>起送价/元</span>
+            </div>
+        </div>
+        <div class="res_data_block">
+            <div class="res_data caret">
+@if($top_bar['data']['shop_distance'])
+                <b>{{$top_bar['data']['shop_distance']}}</b>
+@else
+                <b>0</b>
+@endif
+                <span>餐厅距离/米</span>
+            </div>
+        </div>
+@if($top_bar['data']['deliver_begin'])
+        <div class="res_data_block">
+            <div class="res_data">
+                <b>{{$top_bar['data']['deliver_begin']}}</b>
+                <span class="green">开始送餐时间</span>
+            </div>
+        </div>
+@endif
     </div>
 </div>
 
