@@ -19,6 +19,17 @@ li {
   margin: 0 auto;
   height: 92px;
 }
+.res_info .caret:after {
+  content: "";
+  display: inline-block;
+  margin-left: 5px;
+  width: 0;
+  height: 0;
+  vertical-align: middle;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #aaaaaa;
+}
 .res_info .res_info_header {
   width: 348px;
   float: left;
@@ -101,17 +112,6 @@ li {
   color: #08c;
   text-decoration: underline;
 }
-.res_info .res_info_header .res_info_right .res_info_title:after {
-  content: "";
-  display: inline-block;
-  margin-left: 5px;
-  width: 0;
-  height: 0;
-  vertical-align: middle;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 5px solid #aaaaaa;
-}
 .res_info .res_info_header .res_info_right .res_info_star {
   margin-top: 8px;
   float: left;
@@ -128,7 +128,7 @@ li {
 .res_info .res_info_header .res_info_right .res_info_star .gray {
   color: #999999;
 }
-.res_info .res_info_header:hover .res_info_title:after {
+.res_info .res_info_header:hover .caret:after {
   -ms-transform: rotate(180deg);
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
@@ -184,4 +184,56 @@ li {
   background: #fff;
   font-size: 14px;
   color: #666;
+}
+.res_info .res_nav {
+  float: left;
+  margin: 36px 0 0 15px;
+  font-size: 16px;
+}
+.res_info .res_nav a {
+  padding: 0 14px;
+  display: inline-block;
+  border-radius: 3px;
+  text-align: center;
+  line-height: 27px;
+  color: #333;
+}
+.res_info .res_nav a.onclick {
+  background: #3199e8;
+  color: #fff;
+}
+.res_info .res_panel {
+  float: right;
+  width: 345px;
+}
+.res_info .res_panel .res_data_block {
+  box-sizing: border-box;
+  float: right;
+  width: 115px;
+  height: 92px;
+  padding-top: 21px;
+}
+.res_info .res_panel .res_data_block .res_data {
+  height: 50px;
+  border-right: 1px solid #ededed;
+  text-align: center;
+}
+.res_info .res_panel .res_data_block .res_data b {
+  height: 30px;
+  font: bold 30px/1em arial, sans-serif;
+  color: #666;
+}
+.res_info .res_panel .res_data_block .res_data span {
+  display: block;
+  font-size: 12px;
+  color: #999;
+}
+.res_info .res_panel .res_data_block .res_data span.green {
+  color: #5bb06c;
+}
+.res_info .res_panel .res_data_block:hover .caret:after {
+  -ms-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  border-top-color: #666;
 }
