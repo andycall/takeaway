@@ -34,7 +34,7 @@
                 {{-- 餐厅购物车 --}}
 
                 <div class="shop_chart">
-                    @yield("shop_chart")
+                    @yield("shop_cart")
                 </div>
 			</div>
 			<div id="footer">
