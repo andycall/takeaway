@@ -1,4 +1,4 @@
-<div>购物车</div>
+<i class="aside-icon-cart"></i>
 
 
 @section("css")
