@@ -119,7 +119,44 @@ ul, li{
 	border-top: 5px solid #666;
 }
 .toolbar_category .drop_down_menu{
+	position: absolute;
+	z-index: 50;
+	top: 47px;
+	left: 20px;
+	width: 806px;
+	border-radius: 2px;
+	background: none repeat scroll 0% 0% #FFF;
+	box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
+}
 
+.drop_down_menu:before{
+	content: " ";
+	position: absolute;
+	top: -4px;
+	right: 310px;
+	width: 8px;
+	height: 8px;
+	background: none repeat scroll 0% 0% #FFF;
+	box-shadow: -2px -2px 1px rgba(0, 0, 0, 0.15);
+	transform: rotate(45deg);
+}
+
+.drop_down_menu .cate_drop_down{
+	padding: 17px 20px;
+}
+
+.drop_down_menu .activity_drop_down{
+	padding: 10px 20px;
+}
+
+.cate_drop_down li{
+	float: left;
+	width: 25%;
+	height: 30px;
+	color: #999;
+	font-size: 12px;
+	line-height: 30px;
+	overflow: hidden;
 }
 
 

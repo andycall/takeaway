@@ -9,10 +9,12 @@
         <div class="toolbar_category element_drop_down">
             <a href="#" class="toolBar_toggle caret">美食分类</a>
             <div class="drop_down_menu">
-                <ul class="cate_drop_down">
-
-
-
+                <ul class="cate_drop_down ui-helper-clearfix">
+                    <li class="cate_item"><a href=""></a></li>
+                    <li class="cate_item"></li>
+                    <li class="cate_item"></li>
+                    <li class="cate_item"></li>
+                    <li class="cate_item"></li>
                 </ul>
                 <ul class="activity_drop_down"></ul>
             </div>
