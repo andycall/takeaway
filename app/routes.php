@@ -563,7 +563,88 @@ Route::get("shop", function() {
 					]
 				]
 			]
-		]
+		],
+        "good_category" => [
+            "data" => [
+                "goods_category" => [
+                    [
+                        "classify_name" => "10元管饱",  // 类别名称
+                        "classify_name_abbr" => "点餐就包拿！没办…",  // 类别名称简写
+                        "classify_id"  => "",          // 类别id
+                        "classify_count" => "23",       // 类别中有多少商品
+                        "classify_icon" => "123",         // 类别图标地址
+                    ],
+                    [
+                        "classify_name" => "10元管饱",  // 类别名称
+                        "classify_name_abbr" => "点餐就包拿！没办…",  // 类别名称简写
+                        "classify_id"  => "",          // 类别id
+                        "classify_count" => "23",       // 类别中有多少商品
+                        "classify_icon" => "",         // 类别图标地址
+                    ],
+                    [
+                        "classify_name" => "10元管饱",  // 类别名称
+                        "classify_name_abbr" => "点就有红包拿！没办…",  // 类别名称简写
+                        "classify_id"  => "",          // 类别id
+                        "classify_count" => "23",       // 类别中有多少商品
+                        "classify_icon" => "",         // 类别图标地址
+                    ],
+                    [
+                        "classify_name" => "10元管饱",  // 类别名称
+                        "classify_name_abbr" => "点红包拿！办…",  // 类别名称简写
+                        "classify_id"  => "",          // 类别id
+                        "classify_count" => "23",       // 类别中有多少商品
+                        "classify_icon" => "",         // 类别图标地址
+                    ],
+                    [
+                        "classify_name" => "10元管饱",  // 类别名称
+                        "classify_name_abbr" => "点餐就有红包办…",  // 类别名称简写
+                        "classify_id"  => "",          // 类别id
+                        "classify_count" => "23",       // 类别中有多少商品
+                        "classify_icon" => "",         // 类别图标地址
+                    ],
+                    [
+                        "classify_name" => "10元管饱",  // 类别名称
+                        "classify_name_abbr" => "点餐有红包拿！没办…",  // 类别名称简写
+                        "classify_id"  => "",          // 类别id
+                        "classify_count" => "23",       // 类别中有多少商品
+                        "classify_icon" => "",         // 类别图标地址
+                    ],
+                    [
+                        "classify_name" => "10元管饱",  // 类别名称
+                        "classify_name_abbr" => "点餐…",  // 类别名称简写
+                        "classify_id"  => "",          // 类别id
+                        "classify_count" => "23",       // 类别中有多少商品
+                        "classify_icon" => "",         // 类别图标地址
+                    ]
+                ],
+                "good_activity" => [
+                    [
+                        "activity_name" => "1元秒杀（限新用户）重庆",  // 活动名称
+                        "activity_id" => "123",                      // 活动id
+                        "activity_icon" => "123",                       // 活动图标地址
+                        "activity_statement" => "1元秒杀爽到爆！"      // 活动简洁
+                    ],
+                    [
+                        "activity_name" => "1元秒杀（限新用户）重庆",  // 活动名称
+                        "activity_id" => "123",                      // 活动id
+                        "activity_icon" => "",                       // 活动图标地址
+                        "activity_statement" => "1元秒杀爽到爆！"      // 活动简洁
+                    ],
+                    [
+                        "activity_name" => "1元秒杀（限新用户）重庆",  // 活动名称
+                        "activity_id" => "123",                      // 活动id
+                        "activity_icon" => "",                       // 活动图标地址
+                        "activity_statement" => "1元秒杀爽到爆！"      // 活动简洁
+                    ],
+                    [
+                        "activity_name" => "1元秒杀（限新用户）重庆",  // 活动名称
+                        "activity_id" => "123",                      // 活动id
+                        "activity_icon" => "",                       // 活动图标地址
+                        "activity_statement" => "1元秒杀爽到爆！"      // 活动简洁
+                    ]
+                ]
+            ]
+        ]
 	];
 
 	return View::make("template.shop.shop")->with($data);
