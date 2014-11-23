@@ -22,23 +22,39 @@ output : {
 
 ------------------- Ajax ZONE   ----------------------------
 
+-------------切换验证码----------
+
+url:'/switch_auth'                          //为接口地址
+    type:"get"                              //提交类型
+    output:{
+        success : "true"                    // 成功返回true, 失败返回false
+        nextSrc : ""                        // 登录成功后的图片地址
+        errMsg  : ""                        // 如果出现错误, 错误信息就出现在这, 如果没有, 那内容为空.
+    }//后端返回数据
+input:{
+    //无
+}//前端提交数据
+
 -------------登录----------------
 
 
-    url:'/login'                            //为接口地址
-    type:"post"                             //提交类型
+    url:'/login'                    //为接口地址
+    type:"post"                     //提交类型
     output:{
-        success : "true"                    // 成功返回true, 失败返回false
-        state   : 200                       // HTTP 状态码
-        nextSrc : ""                        // 登录成功后的跳转地址
-        errMsg  : ""                        // 如果出现错误, 错误信息就出现在这, 如果没有, 那内容为空.
-        no      : 0                         // 错误号 ,错误号就出现在这, 如果没有, 那内容为空.
+        success : "true"            // 成功返回true, 失败返回false
+        state   : 200               // HTTP 状态码
+        nextSrc : ""                // 登录成功后的跳转地址 (绝对地址)
+        errMsg  : {
+            inputMsg : "",          //表单填写错误 dom上显示的信息(不要过长)
+            otherMsg : ""           //alert弹出的错误信息
+        }                           // 如果出现错误, 错误信息就出现在这, 如果没有, 那内容为空.
+        no      : 0                 //错误类型 1.用户名/邮箱填写错误2.密码错误3.验证码错误4.电话号码错误
     }//后端返回数据
     input:{
-        user_email : ""                     // 手机号码或者邮箱
-        user_psw   : ""                    // 用户秘密
-        user_auth  : ""                     // 用户验证码
-        user_remember : "true"              // 用户记住我
+        user_email : ""             // 手机号码或者邮箱
+        user_psw   : ""             // 用户密码
+        user_auth  : ""             // 用户验证码
+        user_remember : "true"      // 用户记住我
     }//前端提交数据
 
 
@@ -47,18 +63,19 @@ output : {
     url:'/register'//为接口地址
     type:"post"//提交类型
     output:{
-        success : "true"                // 成功返回true, 失败返回false
-        state   : 200                   // HTTP 状态码
-        nextSrc : ""                    // 登录成功后的跳转地址
-        errMsg  : ""                    // 如果出现错误, 错误信息就出现在这, 如果没有, 那内容为空.
-        no      : 0                     // 错误号 ,错误号就出现在这, 如果没有, 那内容为空.
+        success   : "true"           // 成功返回true, 失败返回false
+        state     : 200              // HTTP 状态码
+        nextSrc   : ""               // 登录成功后的跳转地址
+        no        : ""               //错误类型 1.邮箱填写错误(不存在这个邮箱)2.密码错误3.验证码错误4.电话号码错误
+        errMsg  : ""                // alert弹出的其他类型错误
     }//后端返回数据
     input:{
-        user_phone " ""                 // 用户手机号码
-        user_psw   : ""                 // 用户密码
-        user_email : ""                 // 用户邮箱
+        user_auth  : ""            // 用户验证码
+        user_phone : ""            // 用户手机号码
+        user_psw   : ""            // 用户密码
+        user_email : ""            // 用户邮箱
     }//前端提交数据
 
 
 
------------------- Ajax End ------------------------
+------------------ Ajax End -------------------

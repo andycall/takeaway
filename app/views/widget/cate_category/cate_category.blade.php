@@ -4,7 +4,7 @@
     <ul class="res-cate-list">
 @foreach($good_category['data']['goods_category'] as $list)
         <li>
-            <a href="##" title="{{$list['classify_name']}}" class="{{{$list['classify_icon']?"red":""}}}">{{$list['classify_name_abbr']}}</a>
+            <a data-cateid="{{$list['classify_id']}}" title="{{$list['classify_name']}}" class="{{{$list['classify_icon']?"red":""}}}">{{$list['classify_name_abbr']}}</a>
 @if($list['classify_icon'])
             <img src="{{$list['classify_icon']}}"/>
 @endif

@@ -149,18 +149,28 @@ li {
   padding: 20px;
   border-top: 1px solid #eee;
 }
-.res_info .res_info_header .res_info_bottom .res_info_point .point {
+.res_info .res_info_header .res_info_bottom .res_info_point .res_point {
+  width: 75px;
+  height: 82px;
+  padding-right: 14px;
+  float: left;
+}
+.res_info .res_info_header .res_info_bottom .res_info_point .res_point .point {
   color: #ff6c0f;
   font: 300 52px/1em "Helvetica Neue", arial, sans-serif;
 }
-.res_info .res_info_header .res_info_bottom .res_info_point .comment {
+.res_info .res_info_header .res_info_bottom .res_info_point .res_point .comment {
   margin-top: 10px;
   width: 75px;
   color: #999;
   text-align: center;
   font-size: 14px;
+  line-height: 30px;
 }
-.res_info .res_info_header .res_info_bottom .res_info_point ul li .bar {
+.res_info .res_info_header .res_info_bottom .res_info_point ul {
+  float: left;
+}
+.res_info .res_info_header .res_info_bottom .res_info_point ul .bar {
   display: inline-block;
   margin: 0 5px;
   height: 10px;

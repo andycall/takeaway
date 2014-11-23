@@ -570,7 +570,7 @@ Route::get("shop", function() {
                     [
                         "classify_name" => "10元管饱",  // 类别名称
                         "classify_name_abbr" => "点餐就包拿！没办…",  // 类别名称简写
-                        "classify_id"  => "",          // 类别id
+                        "classify_id"  => "1",          // 类别id
                         "classify_count" => "23",       // 类别中有多少商品
                         "classify_icon" => "123",         // 类别图标地址
                     ],
@@ -651,13 +651,18 @@ Route::get("shop", function() {
 });
 
 Route::get("/login", function(){
-	$data = [];
+	$data = [
+        "find_password" => "http://www.hao123.com",
+        "auth_image" => "http://t11.baidu.com/it/u=254287606,1076184673&fm=58"
+    ];
 
 	return View::make("template.login_register.login")->with($data);
 });
 
 Route::get("/register", function(){
-	$data = [];
+	$data = [
+        "auth_image" => "http://t11.baidu.com/it/u=254287606,1076184673&fm=58"        //验证码
+    ];
 
 	return View::make("template.login_register.register")->with($data);
 

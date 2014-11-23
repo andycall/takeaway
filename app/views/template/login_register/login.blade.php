@@ -19,7 +19,9 @@
 @section("css")
     {{HTML::style("/css/lib/jquery-ui.css")}}
     {{HTML::style("/css/template/lib/normalize.css")}}
+    {{HTML::style("/css/template/lib/function.css")}}
 	{{HTML::style("/css/template/login_register/login.css")}}
+	{{HTML::style("/css/template/login_register/login.register.css")}}
 @stop
 
 @section("script")
