@@ -148,8 +148,12 @@ define(['jquery'], function($){
                     }
                 }
 
-                if( res.success == 'true' ){
-                    location.href = location.href.origin.res.nextSrc;
+                if( res.success == 'true'){
+                    if(res.nextSrc){
+                        location.href = res.nextSrc;
+                    }else{
+                        alert("服务器异常，稍后再试");
+                    }
                 }else{
                     if( res.no || (res.no >= 1 && res.no <= 4) { //填写错误
 

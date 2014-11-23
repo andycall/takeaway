@@ -30,7 +30,7 @@
 
 		{{-- 重复密码 --}}
 		<div class="u-input-item">
-			<input type="password" name="user-re-pwd" id="user-re-pwd" class="user-re-pwd box f-pr" placeholder="密码" minlength="6" maxlength="20" required>
+			<input type="password" name="user-re-pwd" id="user-re-pwd" class="user-re-pwd box f-pr" placeholder="确认密码" minlength="6" maxlength="20" required>
 			<div class="u-error-tip f-dn">请填写确认密码</div>
 		</div>
 	        

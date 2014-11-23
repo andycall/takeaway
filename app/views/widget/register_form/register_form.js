@@ -27,17 +27,69 @@ define(["jquery"], function($){
         });
     });
 
-	var $divUserMobile = $("#register-user-mobile"),
-        $divUserPwd  = $("#register-user-pwd"),
-        $divUserTel  = $("#register-user-mobile"),
-        $divUserEmail  = $("#register-user-email"),
-        $divAuth    = $("#register-user-auth");
+	var $divUserMobile  = $("#register-user-mobile"),
+        $divUserPwd     = $("#user-pwd"),
+        $divUserRePwd   = $("#user-re-pwd"),
+        $divUserEmail   = $("#register-user-email"),
+        $divAuth        = $("#register-user-auth");
   
     //验证所填数据
     function checkRegister(data){
+        //normal err tip
+        var $errPwd      = $divUserPwd.find(".u-error-tip"),
+            $errMobile   = $divUserMobile.find(".u-error-tip"),
+            $errRePwd    = $div.UserRwd.find("u-error-tip"),
+            $errAuth     = $divAuth.find(".u-error-tip"),
+            $errEmail    = $divEmail.find(".u-error-tip");
+
+        //验证正则
     	var regEmail   = /^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+/,
     	    regAuth    = / /,
-    	    regMobile  = / /,
+    	    regTel  = / /,
+    	    regPwd     = / /;
+
+
+    	//验证电话号码
+    	if( !regTel.test(data.user_phone) ){
+            $errMobile.show();
+    		return false;
+    	}else{
+    		$errMobile.hide();
+    	}
+
+    	//验证邮箱
+    	if( !regEmail.test(data.user_email) ){
+            $errEmail.show();
+    		return false;
+    	}else{
+    		$errEmail.hide();
+    	}
+
+    	//验证验证密码
+    	if( !regPwd.test(data.user_psw) ){
+            $errPwd.show();
+    		return false;
+    	}else{
+    		$errPwd.hide();
+    	}
+
+    	//验证验证密码是否相同
+    	if( data.user_psw != $divUserRePwd.find("input").val() ){
+            $errRePwd.show();
+    		return false;
+    	}else{
+    		$errRePwd.hide();
+    	}
+
+    	//验证码
+    	if( !regAuth.test(data.user_auth) ){
+            $errAuth.show();
+    		return false;
+    	}else{
+    		$errAuth.hide();
+    	}
+
+    	return true;
 
     }
 
@@ -54,17 +106,50 @@ define(["jquery"], function($){
                     try{
                         res = $.parseJSON(res);
                     }catch(err){
-                            alert("服务器异常，稍后再试");
+                        alert("服务器异常，稍后再试");
+                        return;
                     }
                 }
 
-                if( res.success == 'true' ){
-                	if( res.nextSrc){
+                if( res.success == 'true'){
+                	if(res.nextSrc){
                 		location.href = res.nextSrc;
+                	}else{
+                		alert("服务器异常，稍后再试");
                 	}
+                    
                 }else{
-                    if( res.no && res.Msg){
+                    if( res.no || (res.no >= 1 && res.no <= 4) { //填写错误
 
+                        switch( res.no ){
+                            //用户名错误
+                            case 1: showInputError($divUserName,res.errMsg.inputMsg);
+                            break;
+                            
+                            //密码错误
+                            case 2: showInputError($divUserPWd,res.errMsg.inputMsg);
+                            break;
+
+                            //电话号码码错误
+                            case 3: (function(){
+                                if(loginWay == "mobile"){
+                                    showInputError($divUserTel,res.errMsg.inputMsg);
+                                }
+                            })();
+                            break;
+                            
+                            //验证码错误
+                            case 4: (function(){
+
+                                if( loginWay == "normal" ){ showInputError($divAuth1,res.errMsg.inputMsg);}
+                                 else if(loginWay == "mobile"){ showInputError($divAuth2,res.errMsg.inputMsg);}
+
+                            })();
+                            break;
+                        }
+
+                    }else if(res.errMsg && res.errMsg.otherMsg){ //其它错误
+                        alert(res.errMsg.otherMsg);
                     }
                 }
 
@@ -87,7 +172,7 @@ define(["jquery"], function($){
     		return false;
     	}
 
-
+    	ajaxForm(data);
 
     	return false;
     });
