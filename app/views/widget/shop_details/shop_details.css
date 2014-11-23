@@ -182,6 +182,6 @@ li {
 .res_info .res_info_header:hover {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
   background: #fff;
-  font-size: 14px;
+  font-size: 13px;
   color: #666;
 }
