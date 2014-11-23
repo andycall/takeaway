@@ -364,6 +364,7 @@
         deal_id : "1213"  // 订单id
         goods_id : ""     // 商品id
         goods_level : ""   // 商品等级
+        goods_comment : "" // 商品的评论
     }
     output : {
         success : "true" // 成功返回true, 失败返回false

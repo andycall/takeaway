@@ -48,6 +48,7 @@
     {{HTML::style("/css/template/lib/normalize.css")}}
 	{{HTML::style("/css/template/shop/shop.css")}}
 	{{HTML::style("/css/lib/jquery-ui.min.css")}}
+	{{HTML::style("/css/lib/ui-btn.css")}}
 	{{HTML::style("/css/lib/font.css") }}
 @stop
 

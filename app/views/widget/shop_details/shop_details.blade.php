@@ -6,6 +6,7 @@
                 <span>返回</span>
             </a>
         </div>
+
         <div class="res_info_right">
             <img src="{{$top_bar['data']['shop_logo']}}"/>
             <div class="res_info_title caret">
