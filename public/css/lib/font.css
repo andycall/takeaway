@@ -1,8 +1,8 @@
 @font-face {
 	font-family: 'eleme';
-	src: url('/css/fonts/eleme.eot');
-	src: url('/forward/fonts/eleme.eot?#iefix') format('embedded-opentype'),
-	url('/css/fonts/eleme.woff') format('woff');
+	src: url('../fonts/eleme.eot');
+	src: url('../fonts/eleme.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/eleme.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
 }

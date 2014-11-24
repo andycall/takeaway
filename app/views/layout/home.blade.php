@@ -5,9 +5,11 @@
 			@yield("css")
 		</head>
 		<body>
+			
 			<div id="header">
 				@yield("header")
 			</div>
+
 			<div id="content">
                 {{-- 地点与切换地区 --}}
                 @yield("nav")
@@ -22,6 +24,8 @@
                 {{-- 更多餐厅 --}}
                 @yield("more_shops")
 			</div>
+
+			{{-- footer --}}
 			<div id="footer">
 				@yield("footer")
 			</div>

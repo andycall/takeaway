@@ -18,11 +18,15 @@ more_shops 更多餐厅
 
 my_collection 我的收藏
 
+my_collection_alert 我的收藏弹出框
+
 shop_uncollected 我的收藏空白位置
 
 nav 显示我的地址的
 
-shop_sec 每一个餐厅的方块
+shop_sec 我的收藏中的每一个餐厅的方块
+
+shop_info 更多餐厅中的每一个餐厅的方块
 
 swipe 顶部图片轮播
 

@@ -19,13 +19,17 @@
     @include("widget/my_collection/my_collection")
 @stop
 
+{{-- 我的收藏弹出框 --}}
+@section("my_collection_alert")
+    @include("widget/my_collection_alert/my_collection_alert")
+@stop
+
   {{-- 餐厅列表 --}}
 @section("shop_list")
     @include("widget/shop_list/shop_list")
 @stop
 
   {{-- 5个广告图片 --}}
-
 @section("ads")
     @include("widget/ads/ads")
 @stop
