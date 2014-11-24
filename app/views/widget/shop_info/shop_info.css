@@ -114,6 +114,10 @@
   border: 1px solid #59b170;
   padding: 2px 4px;
 }
+.more_shops-row .more_shops-row-book .more_shops-row-book-right div.style {
+  margin-top: -3px;
+  margin-bottom: -3px;
+}
 .more_shops-row .more_shops-row-book .more_shops-row-book-right div.style span {
   color: #666;
   margin-top: 2px;
