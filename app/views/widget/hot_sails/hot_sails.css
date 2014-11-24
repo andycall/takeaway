@@ -1,3 +1,7 @@
-body{
-	font: normal;
+#rec_food .symbol-rmb:before{
+    content: "¥";
+    margin-right: 1px;
+    font-family: arial,sans-serif;
+    font-size: inherit;
+    line-height: inherit;
 }

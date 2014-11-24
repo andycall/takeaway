@@ -5,7 +5,29 @@ define(['jquery'], function($){
      * @inlude "切换登陆方式"
      * @inlude "验证表单"
      * @include "ajax 登陆"
+     * @include "验证码点击切换"
     */
+
+    //验证码点击切换
+    $(".captcha-img").on("click",function(){
+        $.get("/switch_auth",function(res){
+            if( typeof res != object ){
+                try{
+                    res = $.parseJSON(res);
+                }catch(err){
+                    alert("服务器数据异常，稍后再试");
+                    return ;
+                }
+            }
+
+            if( res.success && res.nextSrc ){
+                $(".captcha-img").attrs("src",res.nextSrc);
+            }else if( !res.success && res.errMsg){
+                alert(res.errMsg);
+            }
+
+        });
+    });
      
     //切换登陆方式
     //记录以哪种方式登陆(默认以正常方式登陆)
@@ -121,20 +143,65 @@ define(['jquery'], function($){
                     try{
                         res = $.parseJSON(res);
                     }catch(err){
-                            alert("服务器异常，稍后再试");
+                        alert("服务器异常，稍后再试");
+                        return;
                     }
                 }
 
-                if( res.success == 'true' ){
-                    location.href = res.nextSrc;
+                if( res.success == 'true'){
+                    if(res.nextSrc){
+                        location.href = res.nextSrc;
+                    }else{
+                        alert("服务器异常，稍后再试");
+                    }
                 }else{
-                    if( res.no && res.Msg){
+                    if( res.no || (res.no >= 1 && res.no <= 4) { //填写错误
 
+                        switch( res.no ){
+                            //用户名错误
+                            case 1: showInputError($divUserName,res.errMsg.inputMsg);
+                            break;
+                            
+                            //密码错误
+                            case 2: showInputError($divUserPWd,res.errMsg.inputMsg);
+                            break;
+
+                            //电话号码码错误
+                            case 3: (function(){
+                                if(loginWay == "mobile"){
+                                    showInputError($divUserTel,res.errMsg.inputMsg);
+                                }
+                            })();
+                            break;
+                            
+                            //验证码错误
+                            case 4: (function(){
+
+                                if( loginWay == "normal" ){ showInputError($divAuth1,res.errMsg.inputMsg);}
+                                 else if(loginWay == "mobile"){ showInputError($divAuth2,res.errMsg.inputMsg);}
+
+                            })();
+                            break;
+                        }
+
+                    }else if(res.errMsg && res.errMsg.otherMsg){ //其它错误
+                        alert(res.errMsg.otherMsg);
                     }
                 }
 
             }
         });
+    }
+    
+    //显示表单的错误
+    function showInputError($id,msg){
+        var $tip = $id.find(".u-error-tip");
+
+        if(msg){
+            $tip.text(msg);
+        }
+
+        $tip.show();
     }
 
     //表单提交

@@ -12,8 +12,8 @@
 
 		{{-- 用户名 --}}
 		<div class="u-input-item">
-			<input type="text" name="user-name" id="register-user-name" class="user-name box f-pr" placeholder="用户名" minlength="5" required>
-			<div class="u-error-tip f-dn">请填写用户名</div>
+			<input type="text" name="user-name" id="register-user-mobile" class="user-name box f-pr" placeholder="电话号码" minlength="5" required>
+			<div class="u-error-tip f-dn">请填写电话号码</div>
 		</div>
 
 		{{-- 电子邮箱 --}}
@@ -30,7 +30,7 @@
 
 		{{-- 重复密码 --}}
 		<div class="u-input-item">
-			<input type="password" name="user-re-pwd" id="user-re-pwd" class="user-re-pwd box f-pr" placeholder="密码" minlength="6" maxlength="20" required>
+			<input type="password" name="user-re-pwd" id="user-re-pwd" class="user-re-pwd box f-pr" placeholder="确认密码" minlength="6" maxlength="20" required>
 			<div class="u-error-tip f-dn">请填写确认密码</div>
 		</div>
 	        
