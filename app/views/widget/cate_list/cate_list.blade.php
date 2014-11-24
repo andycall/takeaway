@@ -1,25 +1,28 @@
 
-@foreach($category['data']['classify_sec'] as $key=>$value)
 <div class="menu_toolbar">
-    <div class="toolbar_text" data-classify_id="{{$value['classify_id']}}">
-        <span>{{$value['classify_name']}}</span>
-        <img class="icon-rst-badge" src="{{$value['classify_icon']}}" alt="" title="{{isset($value['activity_ads']) ? $value['activity_ads']['activity_name'] : "" }}" />
+    <div class="toolbar_text" data-classify_id="">
+        <span>逗比</span>
+        <img class="icon-rst-badge" src="" alt="" title=""/>
     </div>
     <div class="menu_tool">
         <div class="toolbar_category element_drop_down">
             <a href="#" class="toolBar_toggle caret">美食分类</a>
             <div class="drop_down_menu">
                 <ul class="cate_drop_down ui-helper-clearfix">
-                    <li class="cate_item"><a href="#">点餐就有红包拿(0)
-                        <img class="icon-rst-badge" src="http://fuss10.elemecdn.com/c/12/d2b0ed6e994997099e86581009d3bjpeg.jpeg" title="1元秒杀爽到爆！" alt="1元秒杀爽到爆！">
+                    @foreach($good_category['data']['goods_category'] as $key=>$value)
+                    <li class="cate_item" data-classify_id="{{$value['classify_id']}}">
+                    <a href="#" title="{{$value['classify_name']}}">{{$value['classify_name']}}
+                        {{--<img class="icon-rst-badge" src="http://fuss10.elemecdn.com/c/12/d2b0ed6e994997099e86581009d3bjpeg.jpeg" title="1元秒杀爽到爆！" alt="1元秒杀爽到爆！">--}}
                     </a></li>
-                    <li class="cate_item activity"><a href="#">一元秒杀</a></li>
-                    <li class="cate_item"><a href="#">强烈推荐</a></li>
+                    @endforeach
                 </ul>
                 <ul class="activity_drop_down">
-                    <li> <img class="icon-rst-badge" src="http://fuss10.elemecdn.com/c/12/d2b0ed6e994997099e86581009d3bjpeg.jpeg" title="1元秒杀爽到爆！" alt="1元秒杀爽到爆！">
-                          1元秒杀（限新用户）重庆：1元秒杀爽到爆！  </li>
-
+                    @foreach($good_category['data']['good_activity'] as $key=>$value)
+                    <li data-classify_id="{{$value['activity_id']}}">
+                    {{--<img class="icon-rst-badge" src="http://fuss10.elemecdn.com/c/12/d2b0ed6e994997099e86581009d3bjpeg.jpeg" title="1元秒杀爽到爆！" alt="1元秒杀爽到爆！">--}}
+                          {{$value['activity_name']}}
+                    </li>
+                    @endforeach
                 </ul>
             </div>
         </div>
@@ -35,11 +38,12 @@
         <h2 title="套餐类">套餐类</h2>
         <p  class="ad_sec" title="每天可享受两单优惠，每单可享受3份特价菜。">每天可享受两单优惠，每单可享受3份特价菜。</p>
         <ul class="menu_list">
+            @foreach($category['data']['classify_sec'] as $key=>$value)
             <li class="menu_list_block">
                 <div class="menu_sec_info">
                     <p class="menu_sec_title">
                         <a href="#" class="dish_flavor favor_btn">♥</a>
-                        <a href="#" class="dish_title">意大利披萨</a>
+                        <a href="#" class="dish_title">{{$value['classify_name']}}</a>
                     </p>
                     <p class="menu_sec_desc" title="麻辣李素">麻辣李素</p>
                 </div>
@@ -52,7 +56,7 @@
                             <span class="rst-d-act-glyph"></span>
                             <span class="price symbol-rmb">28</span>
                         </a>
-                        <a href="" class="rst-d-act-toggle caret add_main_btn"></a>
+                        {{--<a href="" class="rst-d-act-toggle caret add_main_btn"></a>--}}
                         <div class="rst-hint-modal clear-cart">
                             <p>篮子中已有「比格比萨」的美食，清空篮子后才能加入「土豆肉丝炒饭」</p>
                             <div class="btn-wrapper">
@@ -74,11 +78,10 @@
                     <span class="rst-d-sales">月售2份</span>
                 </div>
             </li>
+            @endforeach
         </ul>
     </section>
 </div>
-@endforeach
-
 @section("css")
     @parent
     {{HTML::style("/css/widget/cate_list/cate_list.css")}}
