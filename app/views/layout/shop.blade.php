@@ -19,7 +19,7 @@
                         @yield("pop_window")
                     </div>
                     <div class="shop_left">
-                        {{-- 美食分类 --}} t
+                        {{-- 美食分类 --}}
                         @yield("cate_category")
                         {{-- 美食列表--}}
                         @yield("cate_list")
@@ -44,6 +44,11 @@
 			<div id="footer">
 				@yield("footer")
 			</div>
+            
+            {{-- 玻璃罩 --}}
+            <div class="u-mask">
+                
+            </div>
 			@yield("script")
 		</body>
 	</html>
