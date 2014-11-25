@@ -8,25 +8,29 @@ define([ "jquery" ], function() {
             }, 30));
         };
     }
-    function getOffsetCached() {
-        var arr = [];
-        return classify_sec.each(function() {
-            arr.push($(this).offset());
-        }), arr;
-    }
     console.log("cate list loaded");
-    {
-        var classify_sec = ($(".toolbar_text"), $(".classify_sec"));
-        getOffsetCached();
-    }
+    var menu_toolbar = $(".menu_toolbar"), menu_offset = menu_toolbar.offset(), toolBar_toggle = $(".toolBar_toggle");
+    $(window).scrollTop() >= menu_offset.top && (menu_toolbar.css({
+        position: "fixed",
+        top: 0
+    }), toolBar_toggle.fadeIn(300)), //$('body').on('mousewheel', function(event) {
+    //	console.log(event.deltaX, event.deltaY, event.deltaFactor);
+    //});
+    //function getListTop(){
+    //	var arr = [];
+    //
+    //	classify_sec.each(function(index, value){
+    //		arr.push($(this).offset());
+    //	});
+    //	return arr;
+    //}
     $(window).on("scroll", delayTrigger(function() {
-        var scrollTop = $(d.body).scrollTop(), scrollDirection = (getListTop(), 1), scrollTmp = 0;
-        header.css(scrollTop >= headerTop ? {
+        var scrollTop = $(window).scrollTop();
+        scrollTop >= menu_offset.top ? (menu_toolbar.css({
             position: "fixed",
             top: 0
-        } : {
+        }), toolBar_toggle.fadeIn(300)) : (menu_toolbar.css({
             position: "static"
-        }), scrollDirection = scrollTop >= scrollTmp ? 1 : -1, console.log(scrollTmp, scrollTop), 
-        scrollTmp = scrollTop, console.log(scrollDirection);
+        }), toolBar_toggle.fadeOut(300));
     }));
 });

@@ -24,7 +24,7 @@
 	        
 	    {{-- 密码 --}}
 		<div class="u-input-item" id="user-pwd">
-			<input type="password" name="user-pwd" id="user-pwd" class="user-pwd box f-pr" placeholder="密码(6-20位a-zA-Z0-9_)" minlength="6" maxlength="20" required>
+			<input type="password" name="user-pwd" id="user-pwd" class="user-pwd box f-pr" placeholder="密码(6-20位)" minlength="6" maxlength="20" required>
 			<div class="u-error-tip f-dn">请填写正确密码格式</div>
 		</div>
 

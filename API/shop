@@ -188,7 +188,6 @@
                 shop_distance : "400"           // 商家距离(米)
                 price_begin   : ""              // 起送价
                 is_collected : ""               // 是否被收藏了
-                shop_remark : ""                // 额外说明
             }
         }
 

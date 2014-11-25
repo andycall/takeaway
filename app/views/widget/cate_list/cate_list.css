@@ -184,7 +184,7 @@ ul, li{
 	cursor: pointer;
 	color: #08c;
 	text-decoration: none;
-	opacity: 0;
+	display: none;
 }
 
 .icon-rst-badge{
