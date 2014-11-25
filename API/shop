@@ -65,17 +65,6 @@
                     ]
                 ]
             }
-            "data" => [
-                "goods_category" => [
-                    [
-                        "classify_name" => "10元管饱",  // 类别名称
-                        "classify_name_abbr" => "点餐就有红包拿！没办…",  // 类别名称简写
-                        "classify_id"  => "",          // 类别id
-                        "classify_count" => "23",       // 类别中有多少商品
-                        "classify_icon" => "",         // 类别图标地址
-                    ]
-                ]
-            ]
         ]
     }
 
@@ -115,6 +104,7 @@
                                 goods_price : ""    // 商品价格
                                 goods_icon  : ""    // 一些用户促销的图标
                                 goods_original : "" // 如果是促销, 这个用于显示原价
+                                good_sails : "123" // 一个月之内的销量
                             }
                          ]
                     }
@@ -198,7 +188,6 @@
                 shop_distance : "400"           // 商家距离(米)
                 price_begin   : ""              // 起送价
                 is_collected : ""               // 是否被收藏了
-                shop_remark : ""                // 额外说明
             }
         }
 

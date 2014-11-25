@@ -14,6 +14,10 @@
                     @yield("shop_details")
 			    </div>
                 <div class="shop_container ui-helper-clearfix">
+                    <div class="pop_window">
+                        {{-- 左侧滑出的评论框 --}}
+                        @yield("pop_window")
+                    </div>
                     <div class="shop_left">
                         {{-- 美食分类 --}}
                         @yield("cate_category")
@@ -40,6 +44,11 @@
 			<div id="footer">
 				@yield("footer")
 			</div>
+            
+            {{-- 玻璃罩 --}}
+            <div class="u-mask">
+                
+            </div>
 			@yield("script")
 		</body>
 	</html>
