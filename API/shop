@@ -333,7 +333,7 @@
     // 注意: 购物车里面只能添加一家商店内的商品
     // 在购物车内删除商品
     type : "post"
-    url  : ""
+    url  : "/goods_comments"
     input : {
         shop_id : "123213"      // 商家id
         goods_id : "123213"     // 商品id
@@ -396,6 +396,7 @@
               level_1 : "8"               // 评论为1星的比例
           }
           shop_total   : ""               // 总评价
+          comment_total: ""               //多少人评价
           comment_body : [                // 这里没分页了,有多少给多少吧.
             {
                 comment_person : ""             // 评论人

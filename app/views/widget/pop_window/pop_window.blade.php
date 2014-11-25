@@ -1,21 +1,23 @@
 {{-- 评论弹出框 --}}
 
-{{-- header --}}
+<script type="text/template" id="drawer-temp">
+
+
 <div class="drawer-header">
-	{{-- close --}}
+
 	<a href="javascript:void(0)" class="u-close js-close-pop-window">x</a>
 
      <div class="drawer-dish">
-     	<h3 class="dish-name" title="宫保鸡丁套饭">宫保鸡丁套饭
+     	<h3 class="dish-name" title="<%= good_name %>"><%= good_name %>
      	<a href="javascript:void(0)" class="u-favor">♥</a></h3>
      </div>
 
 </div>
- {{-- 评价 --}}
+
 <div class="drawer-rating f-cb">
 	<div class="u-point">
-		<strong class="point">3.4</strong>
-		<strong class="comment-count">5人评价</strong>
+		<strong class="point js-point"><%= shop_total %></strong>
+		<strong class="comment-count"><%= conmment_total%>人评价</strong>
 	</div>
 
 	<ul class="u-diagram">
@@ -28,8 +30,8 @@
 				<i>★</i>
 				<i>★</i>
 			</span>
-			<span class="u-bar"></span>
-			20.0%
+			<span class="u-bar" style="width:<%= (shop_level.level_5/100*80)%>"></span>
+			<span class="rate"><%= shop_level.level_5 %>%</span>
 		</li>
 		<li>
 			<i class="u-icon-star"></i>
@@ -38,10 +40,10 @@
 				<i>★</i>
 				<i>★</i>
 				<i>★</i>
-				<i>★</i>
+				<i class="off">★</i>
 			</span>
-			<span class="u-bar"></span>
-			40.0%
+			<span class="u-bar" style="width:<%= (shop_level.level_5/100*80)%>"></span>
+			<span class="rate"><%= shop_level.level_4 %>%</span>
 		</li>
 		<li>
 			<i class="u-icon-star"></i>
@@ -49,41 +51,41 @@
 				<i>★</i>
 				<i>★</i>
 				<i>★</i>
-				<i>★</i>
-				<i>★</i>
+				<i class="off">★</i>
+				<i class="off">★</i>
 			</span>
-			<span class="u-bar"></span>
-			20.0%
+			<span class="u-bar" style="width:<%= (shop_level.level_5/100*80)%>"></span>
+			<span class="rate"><%= shop_level.level_3 %>%</span>
 		</li>
 		<li>
 			<i class="u-icon-star"></i>
 			<span class="rating-stars">
 				<i>★</i>
 				<i>★</i>
-				<i>★</i>
-				<i>★</i>
-				<i>★</i>
+				<i class="off">★</i>
+				<i class="off">★</i>
+				<i class="off">★</i>
 			</span>
-			<span class="u-bar"></span>
-			0.0%
+			<span class="u-bar" style="width:<%= (shop_level.level_5/100*80)%>"></span>
+			<span class="rate"><%= shop_level.level_2 %>%</span>
 		</li>
 		<li>
 			<i class="u-icon-star"></i>
 			<span class="rating-stars">
 				<i>★</i>
-				<i>★</i>
-				<i>★</i>
-				<i>★</i>
-				<i>★</i>
+				<i class="off">★</i>
+				<i class="off">★</i>
+				<i class="off">★</i>
+				<i class="off">★</i>
 			</span>
-			<span class="u-bar"></span>
-			20.0%
+			<span class="u-bar" style="width:<%= (shop_level.level_5/100*80)%>"></span>
+			<span class="rate"><%= shop_level.level_1 %>%</span>
 		</li>
 	</ul>
 	
 </div>
 
-{{-- 用户评论 --}}
+
 <div class="drawer-comment">
 	<h4 class="u-comment-cheader">
 		用户评价
@@ -93,19 +95,23 @@
 		</span>
 	</h4>
 
-	{{-- comment lists --}}
-	<ul class="comment-lists">
-		<li class="comment-item f-cb">
-			<p class="user-info">
-				4***c 2014-11-25
-				<i class="user-star">★★★★★</i>
-			</p>
 
-			<p class="user-text">不错</p>
-		</li>
+	<ul class="comment-lists">
+	    <% for( var i = 0, len= comment_body.length; i < len; i++){%>
+	    	<li class="comment-item f-cb">
+				<p class="user-info">
+				    <span class="user-name">comment_body[i].comment_person</span>
+				    <span class="user-date">comment_body[i].comment_date</span>
+					<i class="user-star"></i>
+				</p>
+
+				<p class="user-text">comment_body[i].comment_content</p>
+			</li>
+	    <%}%>
 	</ul>
 </div>
 
+</script>
 @section("css")
     @parent
     {{HTML::style("/css/widget/pop_window/pop_window.css")}}

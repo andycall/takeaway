@@ -92,6 +92,8 @@
           color: #ff9307;
           font-family: "eleme";
           font-style: normal; }
+        .drawer-rating .u-diagram li .rating-stars .off {
+          color: #a7a7a7 !important; }
       .drawer-rating .u-diagram li .u-bar {
         width: 16px;
         display: inline-block;
