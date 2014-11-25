@@ -14,15 +14,17 @@
     @include("widget.swipe.swipe")
 @stop
 
-{{-- 我的收藏 --}}
-@section("my_collection")
-    @include("widget/my_collection/my_collection")
-@stop
 
 {{-- 我的收藏弹出框 --}}
 @section("my_collection_alert")
     @include("widget/my_collection_alert/my_collection_alert")
 @stop
+
+{{-- 我的收藏 --}}
+@section("my_collection")
+    @include("widget/my_collection/my_collection")
+@stop
+
 
   {{-- 餐厅列表 --}}
 @section("shop_list")
