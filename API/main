@@ -165,6 +165,19 @@
         nextSrc : ""                                    // 登录成功后的跳转地址
         errMsg  : ""                                    // 如果出现错误, 错误信息就出现在这, 如果没有, 那内容为空.
         no      : 0                                     // 错误号 ,错误号就出现在这, 如果没有, 那内容为空.
+        data    : {
+            collection_shop : [   // 返回用户收藏的所有商家， 同样是最多5个商家。
+                {
+                    shop_id    : ""  // 商店的id
+                    shop_image : ""  // 商店logo图片地址
+                    shop_name  : ""  // 商店名称
+                    shop_status : "" // 商店状态
+                    deliver_time : "" // 预计送达时间
+                    shop_level : ""  // 评论等级
+                    order_count : "" // 订单数量
+                }
+            ]
+        }
     }
 
     // 取消收藏
