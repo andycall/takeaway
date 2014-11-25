@@ -184,6 +184,7 @@ ul, li{
 	cursor: pointer;
 	color: #08c;
 	text-decoration: none;
+	opacity: 0;
 }
 
 .icon-rst-badge{
@@ -259,6 +260,7 @@ img.icon-rst-badge{
 	color: #666;
 }
 
+
 .cate_view li{
 	box-sizing: border-box;
 	position: relative;
@@ -267,6 +269,7 @@ img.icon-rst-badge{
 	width: 100%;
 	height: 65px;
 	padding: 0px 30px;
+	border-bottom: 1px solid #EEE;
 }
 
 .menu_sec_info, .menu_sec_note, .menu_sec_action, .menu_sec_status{

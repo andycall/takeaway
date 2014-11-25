@@ -14,8 +14,12 @@
                     @yield("shop_details")
 			    </div>
                 <div class="shop_container ui-helper-clearfix">
+                    <div class="pop_window">
+                        {{-- 左侧滑出的评论框 --}}
+                        @yield("pop_window")
+                    </div>
                     <div class="shop_left">
-                        {{-- 美食分类 --}}
+                        {{-- 美食分类 --}} t
                         @yield("cate_category")
                         {{-- 美食列表--}}
                         @yield("cate_list")

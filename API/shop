@@ -104,6 +104,7 @@
                                 goods_price : ""    // 商品价格
                                 goods_icon  : ""    // 一些用户促销的图标
                                 goods_original : "" // 如果是促销, 这个用于显示原价
+                                good_sails : "123" // 一个月之内的销量
                             }
                          ]
                     }

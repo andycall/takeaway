@@ -44,6 +44,12 @@
     @include('widget.shop_cart.shop_cart')
 @stop
 
+{{-- 左侧滑出的评论框 --}}
+
+@section("pop_window")
+    @include("widget.pop_window.pop_window")
+@stop
+
 
 @section("footer")
 	@include("widget.footer.footer")

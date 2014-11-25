@@ -34,28 +34,29 @@
 </div>
 
 <div class="cate_view">
-    <section>
-        <h2 title="套餐类">套餐类</h2>
-        <p  class="ad_sec" title="每天可享受两单优惠，每单可享受3份特价菜。">每天可享受两单优惠，每单可享受3份特价菜。</p>
+    @foreach($category['data']['classify_sec'] as $key=>$value)
+    <section class="classify_sec" data-classify_id="{{$value['classify_id']}}">
+        <h2 title="{{$value['classify_name']}}">{{$value['classify_name']}}</h2>
+        {{--<p  class="ad_sec" title="">每天可享受两单优惠，每单可享受3份特价菜。</p>--}}
         <ul class="menu_list">
-            @foreach($category['data']['classify_sec'] as $key=>$value)
-            <li class="menu_list_block">
+            @foreach($value['classify_goods'] as $good_name=>$good_value)
+            <li class="menu_list_block" data-good_id="{{$good_value['goods_id']}}">
                 <div class="menu_sec_info">
                     <p class="menu_sec_title">
                         <a href="#" class="dish_flavor favor_btn">♥</a>
-                        <a href="#" class="dish_title">{{$value['classify_name']}}</a>
+                        <a href="#" class="dish_title"></a>
                     </p>
-                    <p class="menu_sec_desc" title="麻辣李素">麻辣李素</p>
+                    <p class="menu_sec_desc" title="{{$good_value['goods_name']}}">{{$good_value['goods_name']}}</p>
                 </div>
                 <div class="menu_sec_note">
-                    <span class="rst-d-ordered dish_state">2</span>
+                    {{--<span class="rst-d-ordered dish_state">2</span>--}}
                 </div>
                 <div class="menu_sec_action">
                     <div class="dish_act act_btn">
                         <a href="" class="rst-d-act-add add_btn" title="点击一份">
                             <span class="rst-d-act-glyph"></span>
-                            <span class="price symbol-rmb">28</span>
-                        </a>
+                            <span class="price symbol-rmb">{{$good_value['goods_price']}}</span>
+                         </a>
                         {{--<a href="" class="rst-d-act-toggle caret add_main_btn"></a>--}}
                         <div class="rst-hint-modal clear-cart">
                             <p>篮子中已有「比格比萨」的美食，清空篮子后才能加入「土豆肉丝炒饭」</p>
@@ -73,14 +74,15 @@
                 </div>
                 <div class="menu_sec_status">
                     <span class="rst-d-rating food_rating">
-                        <i class="icon-d-star s2 i_s"></i>(1)
+                        <i class="icon-d-star s{{$good_value['goods_level']}} i_s"></i>({{$good_value['comment_count']}})
                     </span>
-                    <span class="rst-d-sales">月售2份</span>
+                    <span class="rst-d-sales">月售{{$good_value['good_sails']}}份</span>
                 </div>
             </li>
             @endforeach
         </ul>
     </section>
+    @endforeach
 </div>
 @section("css")
     @parent

@@ -629,17 +629,73 @@ Route::get("shop", function() {
 				        ],
 				        "classify_goods" => [
 					        0 => [
-						        "goods_id" => ""    ,   // 商品id
-						        "goods_name" => ""   ,  // 商品名称
+						        "goods_id" => "123213"    ,   // 商品id
+						        "goods_name" => "Db才"   ,  // 商品名称
+						        "goods_level" => "8" ,   // 商品等级, 总共10个等级
+						        "comment_count" => "123",  // 投票人数
+						        "goods_price" => "22",    // 商品价格
+						        "goods_icon" =>  "",    // 一些用户促销的图标
+						        "goods_original" => "23", // 如果是促销, 这个用于显示原价
+						        "good_sails" => "123"    // 一个月之内的销量
+					        ],
+					        1 => [
+						        "goods_id" => "1232323213"    ,   // 商品id
+						        "goods_name" => "D2223b才"   ,  // 商品名称
+						        "goods_level" => "4" ,   // 商品等级, 总共10个等级
+						        "comment_count" => "13",  // 投票人数
+						        "goods_price" => "2323",    // 商品价格
+						        "goods_icon" =>  "",    // 一些用户促销的图标
+						        "goods_original" => "3", // 如果是促销, 这个用于显示原价
+						        "good_sails" => "13"    // 一个月之内的销量
+					        ]
+				        ]
+			        ],
+			        1 => [
+				        "classify_name" => "20元管饱",  // 类别名称
+				        "classify_id"   => "13"  ,        // 类别id
+				        "classify_icon"  => "http://fuss10.elemecdn.com/c/12/d2b0ed6e994997099e86581009d3bjpeg.jpeg"  ,       // 类别图标地址
+				        "activity_ads" => [          // 这个种类是不是活动, 不是则为空
+					        "activity_name" => "" ,      // 活动标题
+					        "activity_statement" => ""  // 活动描述
+				        ],
+				        "classify_images" => [           // 有的类别会有图片, 如果没有,这个为空数组
+					        0 => [
+						        "goods_id" => "",       // 商品id
+						        "goods_image" => "",     // 商品图片地址
+						        "goods_name" => "" ,    // 商品名称
 						        "goods_level" => "" ,   // 商品等级, 总共10个等级
 						        "comment_count" => "",  // 投票人数
-						        "goods_price" => "",    // 商品价格
-						        "goods_icon" =>  "",    // 一些用户促销的图标
+						        "goods_sails" => ""   , // 商品销量
+						        "goods_price" => ""    , // 商品价格
+						        "goods_icon" => ""    , // 一些用户促销的图标
 						        "goods_original" => "" // 如果是促销, 这个用于显示原价
+					        ]
+				        ],
+				        "classify_goods" => [
+					        0 => [
+						        "goods_id" => "123213"    ,   // 商品id
+						        "goods_name" => "Db才"   ,  // 商品名称
+						        "goods_level" => "8" ,   // 商品等级, 总共10个等级
+						        "comment_count" => "123",  // 投票人数
+						        "goods_price" => "22",    // 商品价格
+						        "goods_icon" =>  "",    // 一些用户促销的图标
+						        "goods_original" => "23", // 如果是促销, 这个用于显示原价
+						        "good_sails" => "123"    // 一个月之内的销量
+					        ],
+					        1 => [
+						        "goods_id" => "1232323213"    ,   // 商品id
+						        "goods_name" => "D2223b才"   ,  // 商品名称
+						        "goods_level" => "4" ,   // 商品等级, 总共10个等级
+						        "comment_count" => "13",  // 投票人数
+						        "goods_price" => "2323",    // 商品价格
+						        "goods_icon" =>  "",    // 一些用户促销的图标
+						        "goods_original" => "3", // 如果是促销, 这个用于显示原价
+						        "good_sails" => "13"    // 一个月之内的销量
 					        ]
 				        ]
 			        ]
-		        ]
+		        ],
+
 	        ]
         ]
 	];
