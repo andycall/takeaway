@@ -51,53 +51,145 @@ Route::get('/', function(){
 		],
 
 
-		"my_store" => [
-			"url" => "###",
-			"data" => [
-				[
-					"shop_id" => "123435",
-					"place_id" => "589u65487945",
-					"shop_url" => "http://www.baidu.com",
-					"shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
-					"deliver_time" => "22",
-					"deliver_start" => "17:00",
-					"shop_name" => "三顾冒菜",
-					"shop_type" => "中餐",
-					"shop_level" => "4.3",
-					"order_count" => "202",
-					"is_opening" => "0",
-					"is_ready_for_order" => "1"
-				],
-				[
-					"shop_id" => "124124345",
-					"place_id" => "234534",
-					"shop_url" => "##",
-					"shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
-					"deliver_time" => "45",
-					"deliver_start" => "",
-					"shop_name" => "乐堡王",
-					"shop_type" => "中式，西式",
-					"shop_level" => "4.3",
-					"order_count" => "5134",
-					"is_opening" => "0",
-					"is_ready_for_order" => "0"
-				],
-				[
-					"shop_id" => "45675656",
-					"place_id" => "435456456436346346346",
-					"shop_url" => "##",
-					"shop_logo" => "",
-					"deliver_time" => "",
-					"deliver_start" => "",
-					"shop_name" => "铁板牛肉",
-					"shop_type" => "中餐",
-					"shop_level" => "3.8",
-					"order_count" => "202",
-					"is_opening" => "2",
-					"is_ready_for_order" => "0"
-				]
-			]
-		],
+        "my_store" => [
+            "url" => "###",
+            "data" => [
+                [
+                    "shop_id" => "123435",
+                    "place_id" => "589u65487945",
+                    "shop_url" => "http://www.baidu.com",
+                    "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
+                    "deliver_time" => "22",
+                    "deliver_start" => "17:00",
+                    "shop_name" => "三顾冒菜",
+                    "shop_type" => "中餐",
+                    "shop_level" => "4.3",
+                    "order_count" => "202",
+                    "is_opening" => "0",
+                    "is_ready_for_order" => "1"
+                ],
+                [
+                    "shop_id" => "124124345",
+                    "place_id" => "234534",
+                    "shop_url" => "##",
+                    "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
+                    "deliver_time" => "45",
+                    "deliver_start" => "",
+                    "shop_name" => "乐堡王",
+                    "shop_type" => "中式，西式",
+                    "shop_level" => "4.3",
+                    "order_count" => "5134",
+                    "is_opening" => "0",
+                    "is_ready_for_order" => "0"
+                ],
+                [
+                    "shop_id" => "45675656",
+                    "place_id" => "435456456436346346346",
+                    "shop_url" => "##",
+                    "shop_logo" => "",
+                    "deliver_time" => "",
+                    "deliver_start" => "",
+                    "shop_name" => "铁板牛肉",
+                    "shop_type" => "中餐",
+                    "shop_level" => "3.8",
+                    "order_count" => "202",
+                    "is_opening" => "2",
+                    "is_ready_for_order" => "0"
+                ]
+            ]
+        ],
+        "my_store_alert" => [
+            "data" => [
+                "new_shop" => [
+                    [
+                        "shop_id" => "123435",
+                        "place_id" => "589u65487945",
+                        "shop_url" => "http://www.baidu.com",
+                        "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
+                        "deliver_time" => "22",
+                        "deliver_start" => "17:00",
+                        "shop_name" => "新三顾冒菜",
+                        "shop_type" => "新中餐",
+                        "shop_level" => "4.3",
+                        "order_count" => "202",
+                        "is_opening" => "0",
+                        "is_ready_for_order" => "1"
+                    ],
+                    [
+                        "shop_id" => "124124345",
+                        "place_id" => "234534",
+                        "shop_url" => "##",
+                        "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
+                        "deliver_time" => "45",
+                        "deliver_start" => "",
+                        "shop_name" => "新乐堡王",
+                        "shop_type" => "中式，西式",
+                        "shop_level" => "4.3",
+                        "order_count" => "5134",
+                        "is_opening" => "0",
+                        "is_ready_for_order" => "0"
+                    ],
+                    [
+                        "shop_id" => "45675656",
+                        "place_id" => "435456456436346346346",
+                        "shop_url" => "##",
+                        "shop_logo" => "",
+                        "deliver_time" => "",
+                        "deliver_start" => "",
+                        "shop_name" => "新铁板牛肉",
+                        "shop_type" => "中餐",
+                        "shop_level" => "3.8",
+                        "order_count" => "202",
+                        "is_opening" => "2",
+                        "is_ready_for_order" => "0"
+                    ]
+                ],
+                "hot_shop" => [
+                    [
+                        "shop_id" => "123435",
+                        "place_id" => "589u65487945",
+                        "shop_url" => "http://www.baidu.com",
+                        "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
+                        "deliver_time" => "22",
+                        "deliver_start" => "17:00",
+                        "shop_name" => "三顾冒菜",
+                        "shop_type" => "中餐",
+                        "shop_level" => "4.3",
+                        "order_count" => "202",
+                        "is_opening" => "0",
+                        "is_ready_for_order" => "1"
+                    ],
+                    [
+                        "shop_id" => "124124345",
+                        "place_id" => "234534",
+                        "shop_url" => "##",
+                        "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
+                        "deliver_time" => "45",
+                        "deliver_start" => "",
+                        "shop_name" => "乐堡王",
+                        "shop_type" => "中式，西式",
+                        "shop_level" => "4.3",
+                        "order_count" => "5134",
+                        "is_opening" => "0",
+                        "is_ready_for_order" => "0"
+                    ],
+                    [
+                        "shop_id" => "45675656",
+                        "place_id" => "435456456436346346346",
+                        "shop_url" => "##",
+                        "shop_logo" => "",
+                        "deliver_time" => "",
+                        "deliver_start" => "",
+                        "shop_name" => "铁板牛肉",
+                        "shop_type" => "中餐",
+                        "shop_level" => "3.8",
+                        "order_count" => "202",
+                        "is_opening" => "2",
+                        "is_ready_for_order" => "0"
+                    ]
+                ]
+            ]
+        ],
 
 
 
