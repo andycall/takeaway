@@ -60,7 +60,7 @@ define(['jquery'], function(){
 
 
 	$(window).on('scroll', delayTrigger(function(){
-
+   
 		var scrollTop = $(window).scrollTop(),
 			//postionArr = getListTop(),
 			indexCount = 0,
