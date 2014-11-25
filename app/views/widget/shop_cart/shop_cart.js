@@ -22,13 +22,13 @@
          this.itemList = [];
 
      }
-     //{
-     //     itemId: 123,
-     //     price: 10,
-     //     count: 2,
-     //     title: "平菇牛肉小份",
-     //     domLi: null/$('xxx')
-     // }
+//     {
+//          itemId: 123,
+//          price: 10,
+//          count: 2,
+//          title: "平菇牛肉小份",
+//          domLi: null/$('xxx')
+//     }
 
      Cart.prototype.find = function(id){
          if(typeof id == 'object')
@@ -82,9 +82,18 @@
      }
 
      var cart = new Cart();
-     function addItem(id){
-         cart.add(id);
+     function addItem(item){
+         cart.add(item);
 
+         cart.refresh();
+     }
+
+     function refreshCart(){
+         var $totalLen = $('#cartTotalItems'),
+             $totalPrice = $('#cartTotalPrice');
+         var cartInfo = cart.refresh();
+         $totalLen.html(cartInfo.totalNum);
+         $totalPrice.html(cartInfo.totalPrice);
      }
 
      $('.d_btn, .i_btn').on('click', changeItemNum);

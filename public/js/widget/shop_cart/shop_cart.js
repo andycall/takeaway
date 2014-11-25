@@ -31,13 +31,13 @@ define([ "jquery" ], function($) {
         num.val(t), cart.refresh();
     }
     var $cartUp = $("#cartScroll");
-    $(".aside-icon-cart").on("click", toggleCartScroll), //{
-    //     itemId: 123,
-    //     price: 10,
-    //     count: 2,
-    //     title: "平菇牛肉小份",
-    //     domLi: null/$('xxx')
-    // }
+    $(".aside-icon-cart").on("click", toggleCartScroll), //     {
+    //          itemId: 123,
+    //          price: 10,
+    //          count: 2,
+    //          title: "平菇牛肉小份",
+    //          domLi: null/$('xxx')
+    //     }
     Cart.prototype.find = function(id) {
         "object" == typeof id && (id = id.id);
         for (var i = 0, len = this.itemList.length; len > i; i++) if (this.itemList[i].id === id) return this.itemList[i];
