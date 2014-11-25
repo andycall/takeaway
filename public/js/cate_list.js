@@ -24,7 +24,7 @@ define([ "jquery" ], function() {
     //	});
     //	return arr;
     //}
-    toolBar_toggle.on("click", function() {}), $(window).on("scroll", delayTrigger(function() {
+    $(window).on("scroll", delayTrigger(function() {
         var scrollTop = $(window).scrollTop();
         scrollTop >= menu_offset.top ? (menu_toolbar.css({
             position: "fixed",

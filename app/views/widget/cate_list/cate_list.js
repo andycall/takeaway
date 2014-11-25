@@ -55,10 +55,12 @@ define(['jquery'], function(){
 	//	return arr;
 	//}
 
+	toolBar_toggle.on('click', function(){
+	});
 
 
 	$(window).on('scroll', delayTrigger(function(){
-
+   
 		var scrollTop = $(window).scrollTop(),
 			//postionArr = getListTop(),
 			indexCount = 0,
