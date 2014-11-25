@@ -40,7 +40,7 @@
         {{--<p  class="ad_sec" title="">每天可享受两单优惠，每单可享受3份特价菜。</p>--}}
         <ul class="menu_list">
             @foreach($value['classify_goods'] as $good_name=>$good_value)
-            <li class="menu_list_block" data-good_id="{{$good_value['goods_id']}}">
+            <li class="menu_list_block js-get-good-id" data-good_id="{{$good_value['goods_id']}}">
                 <div class="menu_sec_info">
                     <p class="menu_sec_title">
                         <a href="#" class="dish_flavor favor_btn">♥</a>
@@ -73,10 +73,10 @@
                     </div>
                 </div>
                 <div class="menu_sec_status">
-                    <span class="rst-d-rating food_rating">
+                    <span class="rst-d-rating food_rating js-open-pop-window">
                         <i class="icon-d-star s{{$good_value['goods_level']}} i_s"></i>({{$good_value['comment_count']}})
                     </span>
-                    <span class="rst-d-sales">月售{{$good_value['good_sails']}}份</span>
+                    <span class="rst-d-sales js-open-pop-window">月售{{$good_value['good_sails']}}份</span>
                 </div>
             </li>
             @endforeach

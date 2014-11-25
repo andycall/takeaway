@@ -62,6 +62,7 @@
 	{{HTML::style("/css/lib/jquery-ui.min.css")}}
 	{{HTML::style("/css/lib/ui-btn.css")}}
 	{{HTML::style("/css/lib/font.css") }}
+    {{HTML::style("/css/template/lib/function.css") }}
 @stop
 
 @section("script")
