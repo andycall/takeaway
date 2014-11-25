@@ -1,5 +1,6 @@
-define(['jquery'], function(){
+define(['jquery', 'jquery.mousewheel'], function(){
 	console.log("cate list loaded");
+
 	function delayTrigger(callback, params){
 		var timer,
 			flag = true;
@@ -28,12 +29,18 @@ define(['jquery'], function(){
 
 	var toolbar_text = $(".toolbar_text"),
 		classify_sec = $(".classify_sec"),
-		offsetArr = getOffsetCached(),
-		scrollDirection;
+		offsetArr = getListTop(),
+		scrollDirection,
+		d = document;
+
+
+	//$('body').on('mousewheel', function(event) {
+	//	console.log(event.deltaX, event.deltaY, event.deltaFactor);
+	//});
 
 
 
-	function getOffsetCached(){
+	function getListTop(){
 		var arr = [];
 
 		classify_sec.each(function(index, value){

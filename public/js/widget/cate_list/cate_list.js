@@ -1,4 +1,4 @@
-define([ "jquery" ], function() {
+define([ "jquery", "jquery.mousewheel" ], function() {
     function delayTrigger(callback, params) {
         var timer, flag = !0;
         return function() {
@@ -8,17 +8,18 @@ define([ "jquery" ], function() {
             }, 30));
         };
     }
-    function getOffsetCached() {
+    //$('body').on('mousewheel', function(event) {
+    //	console.log(event.deltaX, event.deltaY, event.deltaFactor);
+    //});
+    function getListTop() {
         var arr = [];
         return classify_sec.each(function() {
             arr.push($(this).offset());
         }), arr;
     }
     console.log("cate list loaded");
-    {
-        var classify_sec = ($(".toolbar_text"), $(".classify_sec"));
-        getOffsetCached();
-    }
+    var classify_sec = ($(".toolbar_text"), $(".classify_sec")), d = (getListTop(), 
+    document);
     $(window).on("scroll", delayTrigger(function() {
         var scrollTop = $(d.body).scrollTop(), scrollDirection = (getListTop(), 1), scrollTmp = 0;
         header.css(scrollTop >= headerTop ? {
