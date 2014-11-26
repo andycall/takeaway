@@ -1,6 +1,5 @@
 define([ "jquery" ], function() {
-    console.log("pop windows loaded");
-    /*
+    console.log("pop windows loaded"), /*
 	 *@include “左侧评论打开与关闭”
 	 *@include "ajax获取评论并显示出来" 
 	*/
