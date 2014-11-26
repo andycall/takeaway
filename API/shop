@@ -287,7 +287,7 @@
 
     // 收藏商品
         type : "post"
-        url  : "",
+        url  : "/collect",
         input : { // 会放在queryString里面
             shop_id : "123213",
             goods_id : "123213123"
@@ -302,7 +302,7 @@
 
     // 取消收藏商品
     type : "post"
-    url  : "",
+    url  : "/delCollect",
     input : { // 会放在queryString里面
         shop_id : "123213",
         goods_id : "123213123"

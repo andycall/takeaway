@@ -670,7 +670,7 @@ Route::get("shop", function() {
             ],
 
             "data" => [
-                "shop_id" => "123",                    // 商家id
+                "shop_id" => "123rrttytytry",                    // 商家id
                 "place_id" => "12345",                   // 商家位置id
                 "shop_logo" => "http://localhost:8080/images/5c81fa9884117928491470659e18djpeg.jpeg",                  // 商家的logo图片地址
                 "shop_name" => "撒拉尔人家",                  // 商家名称
@@ -2542,6 +2542,57 @@ Route::post("/ajax_change_password", function(){
         "errMsg"  => "",                                // 如果出现错误, 错误信息就出现在这, 如果没有, 那内容为空.
         "no"      => 0,                               // 错误号 ,错误号就出现在这, 如果没有, 那内容为空.
         "data" => []
+    ];
+
+    return Response::json($data);
+});
+
+//商品评论
+Route::get("/goods_comments", function(){
+    $data = [
+        "success" => "true",
+        "state"   => 200,
+        "errMsg"  => "",
+
+        "data"    => [
+            "shop_level" => [
+                "level_5" => "50",
+                "level_4" => "10",
+                "level_3" => "20",
+                "level_2" => "10",
+                "level_1" => "10"
+            ]
+        ],
+
+        "shop_total"     => "20",
+        "comment_total"  => "4",
+        "comment_body"   => [
+            [
+                "comment_person"  => "lijinxin",
+                "comment_date"    => "2014/11/25",
+                "comment_level"   => "2",
+                "comment_content" => "hahaha"
+            ]
+        ]
+
+    ];
+
+    return Response::json($data);
+});
+
+//收藏商品
+Route::post("/collect", function(){
+    $data = [
+        "success" => "true"
+    ];
+
+    return Response::json($data);
+});
+
+//取消收藏商品
+Route::post("/delCollect", function(){
+    $data = [
+        "success" => "true"
     ];
 
     return Response::json($data);

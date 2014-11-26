@@ -26,11 +26,45 @@ define(['jquery'], function(){
 		}
 	}
 
+	function getListTop(list){
+		var arr = [];
 
-	var d            = document,
-		menu_toolbar = $(".menu_toolbar"),
-		menu_offset  = menu_toolbar.offset(),
-		toolBar_toggle = $(".toolBar_toggle");
+		list.each(function(index, value){
+			arr.push($(this).offset());
+		});
+		return arr;
+	}
+
+	var CaculateDirection = (function(){
+		var direction = 1,
+			scrollTmp = 0;
+
+		return function(scrollTop){
+			if(scrollTop > scrollTmp){
+				direction = 1;
+			}
+			else{
+				direction = -1;
+			}
+			scrollTmp = scrollTop;
+
+			return direction;
+		}
+	}());
+
+	var d               = document,
+		menu_toolbar    = $(".menu_toolbar"),
+		menu_offset     = menu_toolbar.offset(),
+		toolBar_toggle  = $(".toolBar_toggle"),
+		drop_down_menu  = $(".drop_down_menu"),
+		classify_sec    = $(".classify_sec"),
+		sec_title       = $(".sec_title"),
+		toolbar_text    = $(".toolbar_text").find("span"),
+		scrollIndex     = 0,
+		scrollDirection = 1,
+		scrollTmp       = 0,
+		ready_tmp,               // 状态保存
+		ready_status    = false; // 是否需要运行切换
 
 	if($(window).scrollTop() >= menu_offset.top){
 		menu_toolbar.css({
@@ -40,59 +74,59 @@ define(['jquery'], function(){
 		toolBar_toggle.fadeIn(300);
 	}
 
-	//$('body').on('mousewheel', function(event) {
-	//	console.log(event.deltaX, event.deltaY, event.deltaFactor);
-	//});
-
-
-
-	//function getListTop(){
-	//	var arr = [];
-	//
-	//	classify_sec.each(function(index, value){
-	//		arr.push($(this).offset());
-	//	});
-	//	return arr;
-	//}
-
 	toolBar_toggle.on('click', function(){
+		drop_down_menu.toggle();
 	});
 
-
-	$(window).on('scroll', delayTrigger(function(){
-   
+	$(window).on('scroll', function(e){
 		var scrollTop = $(window).scrollTop(),
-			//postionArr = getListTop(),
-			indexCount = 0,
-			scrollDirection = 1,
-			scrollTmp = 0;
+			positionArr = getListTop(classify_sec),
+			direction = CaculateDirection(scrollTop),
+			isReady = scrollTop >= menu_offset.top, // 是否可以切换fixed
+			nextPosition, prevPosition,
+			target;
 
-		if(scrollTop >= menu_offset.top){
+		if(isReady != ready_tmp){
+			ready_status = true;
+			ready_tmp = isReady;
+		}
+
+		if(isReady && ready_status){
 			menu_toolbar.css({
 				"position" : "fixed",
 				"top" : 0
 			});
 			toolBar_toggle.fadeIn(300);
+			ready_status = false;
 		}
-		else {
+		else if(!isReady && ready_status){
 			menu_toolbar.css({
-				"position" : "static"
+				"position" : "absolute"
 			});
 			toolBar_toggle.fadeOut(300);
+			ready_status = false;
 		}
-		//
-		//if(scrollTmp <= scrollTop){
-		//	scrollDirection = 1;
-		//}
-		//else {
-		//	scrollDirection = -1;
-		//}
-		//console.log(scrollTmp, scrollTop);
-		//scrollTmp = scrollTop;
-		//
-		//console.log(scrollDirection);
 
-	}));
+
+		if(isReady && direction === 1){
+			if(scrollIndex + 1 >= positionArr.length) return;
+			nextPosition = positionArr[scrollIndex+1];
+			if(scrollTop + 10 > nextPosition.top){
+				target = sec_title.eq(scrollIndex + 1).find("span").html();
+				scrollIndex++;
+				toolbar_text.html(target);
+			}
+		}
+		else if(isReady && direction === -1){
+			if(scrollIndex - 1 < 0) return;
+			prevPosition = positionArr[scrollIndex];
+			if(scrollTop + 10 < prevPosition.top){
+				target = sec_title.eq(scrollIndex - 1).find('span').html();
+				scrollIndex--;
+				toolbar_text.html(target);
+			}
+		}
+	});
 
 
 
