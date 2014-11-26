@@ -28,13 +28,10 @@
 				<i>★</i>
 				<i>★</i>
 			</span>
-<<<<<<< HEAD
-			<span class="u-bar" style="width:<%= (shop_level.level_5/100*80+'px')%>"></span>
-			<span class="rate"><%= shop_level.level_5 %>%</span>
-=======
+
 			<span class="u-bar" style="width:<%= (data.shop_level.level_5/100*80)%>"></span>
 			<span class="rate"><%= data.shop_level.level_5 %>%</span>
->>>>>>> bguTest
+
 		</li>
 		<li>
 			<i class="u-icon-star"></i>
@@ -45,13 +42,10 @@
 				<i>★</i>
 				<i class="off">★</i>
 			</span>
-<<<<<<< HEAD
-			<span class="u-bar" style="width:<%= (shop_level.level_5/100*80+'px')%>"></span>
-			<span class="rate"><%= shop_level.level_4 %>%</span>
-=======
+
 			<span class="u-bar" style="width:<%= (data.shop_level.level_5/100*80)%>"></span>
 			<span class="rate"><%= data.shop_level.level_4 %>%</span>
->>>>>>> bguTest
+			
 		</li>
 		<li>
 			<i class="u-icon-star"></i>
