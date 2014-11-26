@@ -211,13 +211,18 @@
         data    : {
             collection_shop : [   // 返回用户收藏的所有商家， 同样是最多5个商家。
                 {
-                    shop_id    : ""  // 商店的id
-                    shop_image : ""  // 商店logo图片地址
-                    shop_name  : ""  // 商店名称
-                    shop_status : "" // 商店状态
-                    deliver_time : "" // 预计送达时间
-                    shop_level : ""  // 评论等级
-                    order_count : "" // 订单数量
+                    shop_id : ""                    // 商家id
+                    place_id : ""                   // 商家位置id
+                    shop_url : ""                   // 点击跳转到相应商家
+                    shop_logo : ""                  // 商家的logo图片地址
+                    deliver_time : ""               // 送货时间间隔
+                    deliver_start: ""               // 送货开始时间
+                    shop_name : ""                  // 商家名称
+                    shop_type : ""                  // 商家类型
+                    shop_level : "4.3"              // 五分制
+                    order_count : "20"              // 订单数量
+                    is_opening : "0"                // 0 是正在营业, 1是打烊了 2 是太忙
+                    is_ready_for_order : ""         // 是否接受预定
                 }
             ]
         }
@@ -226,7 +231,7 @@
     // 取消收藏
     type : "post"
     url  : "",
-    input : {                                           // 会放在queryString里面
+    input : {                                        // 会放在queryString里面
         shop_id : "123213",
         place_id : "123213123"
     }
@@ -239,13 +244,18 @@
         data    : {
             collection_shop : [   // 返回用户收藏的所有商家， 同样是最多5个商家。
                 {
-                    shop_id    : ""  // 商店的id
-                    shop_image : ""  // 商店logo图片地址
-                    shop_name  : ""  // 商店名称
-                    shop_status : "" // 商店状态
-                    deliver_time : "" // 预计送达时间
-                    shop_level : ""  // 评论等级
-                    order_count : "" // 订单数量
+                    shop_id : ""                    // 商家id
+                    place_id : ""                   // 商家位置id
+                    shop_url : ""                   // 点击跳转到相应商家
+                    shop_logo : ""                  // 商家的logo图片地址
+                    deliver_time : ""               // 送货时间间隔
+                    deliver_start: ""               // 送货开始时间
+                    shop_name : ""                  // 商家名称
+                    shop_type : ""                  // 商家类型
+                    shop_level : "4.3"              // 五分制
+                    order_count : "20"              // 订单数量
+                    is_opening : "0"                // 0 是正在营业, 1是打烊了 2 是太忙
+                    is_ready_for_order : ""         // 是否接受预定
                 }
             ]
         }
@@ -256,7 +266,18 @@
     type : "post"
     url : "",
     input : {
-        shop_id: ["1", "2"] / 商店id
+        cancel_collection: [                        //取消收藏的店铺数组
+            {
+                shop_id : "123213",
+                place_id : "123213123"
+            }
+        ],
+        add_collection: [                           //添加收藏的店铺数组
+            {
+                shop_id : "123213",
+                place_id : "123213123"
+            }
+        ]
     }
     output : {
         success : "true"                                // 成功返回true, 失败返回false
@@ -265,32 +286,25 @@
         errMsg  : ""                                    // 如果出现错误, 错误信息就出现在这, 如果没有, 那内容为空.
         no      : 0                                     // 错误号 ,错误号就出现在这, 如果没有, 那内容为空.
         data    : {
-            collection_shop : [ // 5个                         // 点击提交按钮之后， 需要返回我的收藏的5个商家
+            collection_shop : [ // 5个                  // 点击提交按钮之后， 需要返回我的收藏的5个商家
                 {
-                    shop_id    : ""  // 商店的id
-                    shop_image : ""  // 商店logo图片地址
-                    shop_name  : ""  // 商店名称
-                    shop_status : "" // 商店状态
-                    deliver_time : "" // 预计送达时间
-                    shop_level : ""  // 评论等级
-                    order_count : "" // 订单数量
+                    shop_id : ""                    // 商家id
+                    place_id : ""                   // 商家位置id
+                    shop_url : ""                   // 点击跳转到相应商家
+                    shop_logo : ""                  // 商家的logo图片地址
+                    deliver_time : ""               // 送货时间间隔
+                    deliver_start: ""               // 送货开始时间
+                    shop_name : ""                  // 商家名称
+                    shop_type : ""                  // 商家类型
+                    shop_level : "4.3"              // 五分制
+                    order_count : "20"              // 订单数量
+                    is_opening : "0"                // 0 是正在营业, 1是打烊了 2 是太忙
+                    is_ready_for_order : ""         // 是否接受预定
                 }
             ]
         }
     }
 
-    // 提交我收藏的店铺
 
-    type : "post"
-    url  : ""
-    input : {
-        shop_id : ["1", "2"] // 商店id
-    }
-    output : {
-        success : "true"                                 // 成功返回true, 失败返回false
-        state   : 200                                   // HTTP 状态码
-        nextSrc : ""                                    // 登录成功后的跳转地址
-        errMsg  : ""                                    // 如果出现错误, 错误信息就出现在这, 如果没有, 那内容为空.
-        no      : 0                                     // 错误号 ,错误号就出现在这, 如果没有, 那内容为空.
-    }
+
 
