@@ -61,10 +61,9 @@ define(['jquery'], function(){
 		sec_title       = $(".sec_title"),
 		toolbar_text    = $(".toolbar_text").find("span"),
 		scrollIndex     = 0,
-		scrollDirection = 1,
-		scrollTmp       = 0,
 		ready_tmp,               // 状态保存
 		ready_status    = false; // 是否需要运行切换
+
 
 	if($(window).scrollTop() >= menu_offset.top){
 		menu_toolbar.css({
@@ -83,6 +82,7 @@ define(['jquery'], function(){
 			positionArr = getListTop(classify_sec),
 			direction = CaculateDirection(scrollTop),
 			isReady = scrollTop >= menu_offset.top, // 是否可以切换fixed
+			isSwape = scrollIndex === swape_tmp,
 			nextPosition, prevPosition,
 			target;
 
@@ -90,6 +90,7 @@ define(['jquery'], function(){
 			ready_status = true;
 			ready_tmp = isReady;
 		}
+
 
 		if(isReady && ready_status){
 			menu_toolbar.css({
@@ -101,7 +102,8 @@ define(['jquery'], function(){
 		}
 		else if(!isReady && ready_status){
 			menu_toolbar.css({
-				"position" : "absolute"
+				"position" : "absolute",
+				"top"    : "auto"
 			});
 			toolBar_toggle.fadeOut(300);
 			ready_status = false;
