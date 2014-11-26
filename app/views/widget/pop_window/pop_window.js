@@ -1,9 +1,12 @@
 define(['jquery'], function(){
-    console.log("pop_window in loaded");
+
+	console.log("pop windows loaded");
+
 	/*
 	 *@include “左侧评论打开与关闭”
 	 *@include "ajax获取评论并显示出来" 
 	*/
+	console.log("pop_window is loaded");
 
     //跟踪商品名称
     var goodName = "";
@@ -19,10 +22,10 @@ define(['jquery'], function(){
     	$windowMask.show();
 
     	var data = {
-    		"good_id"   :  $this.parents(".js-get-good-id").attr("data-good_id")   //商品id
+    		"good_id"  :  $this.parents(".js-get-good-id").attr("data-good_id")
     	};
 
-        goodName = $this.parents(".menu_sec_status").siblings(".menu_sec_info").find(".menu_sec_desc").text() //商品名称
+        goodName = $this.parents(".menu_sec_status").siblings(".menu_sec_info").find(".menu_sec_desc").text();
 
     	ajaxGetConmments(data);
     });
@@ -37,7 +40,6 @@ define(['jquery'], function(){
 	//ajax
 	function ajaxGetConmments(data){
 		$.get("/goods_comments", function(res){
-
             if( typeof res != "object" ){
 
                 try{
@@ -50,10 +52,10 @@ define(['jquery'], function(){
             }
 
             //请求成功后
-            if(res.success && res){
-      
+            if(res.succuess && res.data){
+
                 if(res.data){
-                    showConmments(res);
+                    showConmments(res.data);
                 }else if(res.nextSrc){
                     location.href = res.nextSrc;
                 }
@@ -69,13 +71,15 @@ define(['jquery'], function(){
 
 	//ajax获取成功后的操作 将数据填进dom中
 	function showConmments(data){
+        //保存商品名称
         data.good_name = goodName;
-        
+        alert(346947);
+
         //获取模板填数据
         var temp = _.template( $("#drawer-temp").html() );
-
         temp(data);
-
+        console.log(temp);
+        
         //渲染
         $(".pop_window").html(temp);
 	}

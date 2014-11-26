@@ -1,7 +1,6 @@
 {{-- 评论弹出框 --}}
 
 <script type="text/template" id="drawer-temp">
-<%console.log(shop_total)%>
 <div class="drawer-header">
 	<a href="javascript:void(0)" class="u-close js-close-pop-window">x</a>
 
@@ -45,7 +44,6 @@
 
 			<span class="u-bar" style="width:<%= (data.shop_level.level_5/100*80)%>"></span>
 			<span class="rate"><%= data.shop_level.level_4 %>%</span>
-			
 		</li>
 		<li>
 			<i class="u-icon-star"></i>
