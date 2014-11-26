@@ -15,9 +15,9 @@ define([ "jquery" ], function() {
     function showConmments(data) {
         data.good_name = goodName;
         //获取模板填数据
-        var temp = _.template($("#drawer-temp").html());
-        temp(data), //渲染
-        $(".pop_window").html(temp);
+        var temp = _.template($("#drawer-temp").html())(data);
+        console.log(temp), //渲染
+        $(".pop_inner").html(temp);
     }
     console.log("pop_window in loaded");
     /*

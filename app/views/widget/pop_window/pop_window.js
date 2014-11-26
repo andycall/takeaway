@@ -70,14 +70,15 @@ define(['jquery'], function(){
 	//ajax获取成功后的操作 将数据填进dom中
 	function showConmments(data){
         data.good_name = goodName;
-        
+
         //获取模板填数据
-        var temp = _.template( $("#drawer-temp").html() );
 
-        temp(data);
 
+		var temp = _.template( $("#drawer-temp").html() )(data);
+
+		console.log(temp);
         //渲染
-        $(".pop_window").html(temp);
+        $(".pop_inner").html(temp);
 	}
 
 });

@@ -1,9 +1,8 @@
 {{-- 评论弹出框 --}}
 
 <script type="text/template" id="drawer-temp">
-<%console.log(shop_total)%>
-<div class="drawer-header">
 
+<div class="drawer-header">
 	<a href="javascript:void(0)" class="u-close js-close-pop-window">x</a>
 
      <div class="drawer-dish">
@@ -81,7 +80,7 @@
 			<span class="rate"><%= data.shop_level.level_1 %>%</span>
 		</li>
 	</ul>
-	
+
 </div>
 
 
@@ -115,6 +114,7 @@
 </div>
 
 </script>
+<div class="pop_inner"></div>
 @section("css")
     @parent
     {{HTML::style("/css/widget/pop_window/pop_window.css")}}
