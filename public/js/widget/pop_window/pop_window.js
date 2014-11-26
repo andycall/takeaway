@@ -8,16 +8,16 @@ define([ "jquery" ], function() {
                 return void alert("服务器数据错误");
             }
             //请求成功后
-            res.succuess && res.data ? res.data ? showConmments(res.data) : res.nextSrc && (location.href = res.nextSrc) : res.errMsg && alert(res.errMsg);
+            "true" == res.success && res.data ? res.data ? showConmments(res.data) : res.nextSrc && (location.href = res.nextSrc) : res.errMsg && alert(res.errMsg);
         });
     }
     //ajax获取成功后的操作 将数据填进dom中
     function showConmments(data) {
         //保存商品名称
-        data.good_name = goodName, alert(346947);
+        data.good_name = goodName;
         //获取模板填数据
-        var temp = _.template($("#drawer-temp").html());
-        temp(data), console.log(temp), //渲染
+        var temp = _.template($("#drawer-temp").html())(data);
+        //渲染
         $(".pop_window").html(temp);
     }
     console.log("pop windows loaded"), /*

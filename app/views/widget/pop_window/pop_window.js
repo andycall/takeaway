@@ -40,6 +40,7 @@ define(['jquery'], function(){
 	//ajax
 	function ajaxGetConmments(data){
 		$.get("/goods_comments", function(res){
+
             if( typeof res != "object" ){
 
                 try{
@@ -52,7 +53,7 @@ define(['jquery'], function(){
             }
 
             //请求成功后
-            if(res.succuess && res.data){
+            if(res.success == "true" && res.data){
 
                 if(res.data){
                     showConmments(res.data);
@@ -73,12 +74,9 @@ define(['jquery'], function(){
 	function showConmments(data){
         //保存商品名称
         data.good_name = goodName;
-        alert(346947);
 
         //获取模板填数据
-        var temp = _.template( $("#drawer-temp").html() );
-        temp(data);
-        console.log(temp);
+        var temp = _.template( $("#drawer-temp").html() )(data);
         
         //渲染
         $(".pop_window").html(temp);
