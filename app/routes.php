@@ -2359,3 +2359,36 @@ Route::post("/ajax_change_password", function(){
     return Response::json($data);
 });
 
+//商品评论
+Route::get("/goods_comments", function(){
+    $data = [
+        "success" => "true",
+        "state"   => 200,
+        "errMsg"  => "",
+
+        "data"    => [
+            "shop_level" => [
+                "level_5" => "50",
+                "level_4" => "10",
+                "level_3" => "20",
+                "level_2" => "10",
+                "level_1" => "10"
+            ]
+        ],
+
+        "shop_total"     => "20",
+        "comment_total"  => "4",
+        "comment_body"   => [
+            [
+                "conmment_person"  => "lijinxin",
+                "conmment_date"    => "2014/11/25",
+                "conmment_level"   => "2",
+                "conmment_content" => "hahaha"
+            ]
+        ]
+
+    ];
+
+    return Response::json($data);
+});
+
