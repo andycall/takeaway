@@ -17,8 +17,8 @@ define([ "jquery" ], function() {
         data.good_name = goodName;
         //获取模板填数据
         var temp = _.template($("#drawer-temp").html())(data);
-        //渲染
-        $(".pop_window").html(temp);
+        console.log(temp), //渲染
+        $(".pop_inner").html(temp);
     }
     console.log("pop windows loaded"), /*
 	 *@include “左侧评论打开与关闭”

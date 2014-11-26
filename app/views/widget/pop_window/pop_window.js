@@ -52,6 +52,8 @@ define(['jquery'], function(){
 
             }
 
+
+
             //请求成功后
             if(res.success == "true" && res.data){
 
@@ -74,12 +76,15 @@ define(['jquery'], function(){
 	function showConmments(data){
         //保存商品名称
         data.good_name = goodName;
-
         //获取模板填数据
-        var temp = _.template( $("#drawer-temp").html() )(data);
+
+
+		var temp = _.template( $("#drawer-temp").html() )(data);
+
+		console.log(temp);
         
         //渲染
-        $(".pop_window").html(temp);
+        $(".pop_inner").html(temp);
 	}
 
 });

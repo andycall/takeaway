@@ -86,7 +86,7 @@
 
 		</li>
 	</ul>
-	
+
 </div>
 
 
@@ -120,6 +120,7 @@
 </div>
 
 </script>
+<div class="pop_inner"></div>
 @section("css")
     @parent
     {{HTML::style("/css/widget/pop_window/pop_window.css")}}
