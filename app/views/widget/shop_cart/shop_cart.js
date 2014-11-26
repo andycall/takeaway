@@ -145,6 +145,19 @@
          $cartUp.animate({top: -$cartUp.height() + 'px'});
          cart.empty();
      });
+
+     define(['cart'], function(cart) {
+         return {
+             add: function() {
+                 // todo with module cart
+             },
+
+             del: function(){},
+
+             refresh: function(){}
+         }
+     });
+
      console.log("shop cart loaded");
 
  });

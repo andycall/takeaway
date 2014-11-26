@@ -545,6 +545,16 @@ Route::get('/', function(){
 
 Route::get("shop", function() {
 	$data = [
+        "collect" => [
+            [
+                "detail" => "大盘鸡就解决解决",
+                "price" => 1000
+            ],
+            [
+                "detail" => "ffg决解决",
+                "price" => 688
+            ],
+        ],
 		"userbar" => [
 			"url" => [
 				"my_place" => "这里是地址",
@@ -695,6 +705,7 @@ Route::get("shop", function() {
                 ]
             ]
         ],
+
         "category" => [
 	        "data" => [
 		        "classify_sec" => [
