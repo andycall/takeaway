@@ -11,11 +11,11 @@
         <div class="modal-body">
 
             <ul>
-                <li class="new action">
-                    <p>新餐厅</p>
+                <li class="new">
+                    <p class="p_new action">新餐厅</p>
                 </li>
                 <li class="hot">
-                    <p>热门餐厅</p>
+                    <p class="p_hot">热门餐厅</p>
                 </li>
                 <div class="ui-helper-clearfix"></div>
             </ul>

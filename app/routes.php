@@ -55,7 +55,7 @@ Route::get('/', function(){
             "url" => "###",
             "data" => [
                 [
-                    "shop_id" => "123435",
+                    "shop_id" => "37589",
                     "place_id" => "589u65487945",
                     "shop_url" => "http://www.baidu.com",
                     "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
@@ -69,7 +69,7 @@ Route::get('/', function(){
                     "is_ready_for_order" => "1"
                 ],
                 [
-                    "shop_id" => "124124345",
+                    "shop_id" => "985236",
                     "place_id" => "234534",
                     "shop_url" => "##",
                     "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
@@ -83,7 +83,7 @@ Route::get('/', function(){
                     "is_ready_for_order" => "0"
                 ],
                 [
-                    "shop_id" => "45675656",
+                    "shop_id" => "775755",
                     "place_id" => "435456456436346346346",
                     "shop_url" => "##",
                     "shop_logo" => "",
@@ -102,54 +102,7 @@ Route::get('/', function(){
             "data" => [
                 "new_shop" => [
                     [
-                        "shop_id" => "123435",
-                        "place_id" => "589u65487945",
-                        "shop_url" => "http://www.baidu.com",
-                        "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
-                        "deliver_time" => "22",
-                        "deliver_start" => "17:00",
-                        "shop_name" => "新三顾冒菜",
-                        "shop_type" => "新中餐",
-                        "shop_level" => "4.3",
-                        "order_count" => "202",
-                        "is_opening" => "0",
-                        "is_collected" => "1"  ,                    // 是否被收藏了
-                        "is_ready_for_order" => "1"
-                    ],
-                    [
-                        "shop_id" => "124124345",
-                        "place_id" => "234534",
-                        "shop_url" => "##",
-                        "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
-                        "deliver_time" => "45",
-                        "deliver_start" => "",
-                        "shop_name" => "新乐堡王",
-                        "shop_type" => "中式，西式",
-                        "shop_level" => "4.3",
-                        "order_count" => "5134",
-                        "is_collected" => "1"  ,                    // 是否被收藏了
-                        "is_opening" => "0",
-                        "is_ready_for_order" => "0"
-                    ],
-                    [
-                        "shop_id" => "45675656",
-                        "place_id" => "435456456436346346346",
-                        "shop_url" => "##",
-                        "shop_logo" => "",
-                        "deliver_time" => "",
-                        "deliver_start" => "",
-                        "shop_name" => "新铁板牛肉",
-                        "shop_type" => "中餐",
-                        "shop_level" => "3.8",
-                        "order_count" => "202",
-                        "is_collected" => ""  ,                    // 是否被收藏了
-                        "is_opening" => "2",
-                        "is_ready_for_order" => "0"
-                    ]
-                ],
-                "hot_shop" => [
-                    [
-                        "shop_id" => "123435",
+                        "shop_id" => "37589",
                         "place_id" => "589u65487945",
                         "shop_url" => "http://www.baidu.com",
                         "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
@@ -170,16 +123,108 @@ Route::get('/', function(){
                         "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
                         "deliver_time" => "45",
                         "deliver_start" => "",
+                        "shop_name" => "脆皮鸡",
+                        "shop_type" => "中式，西式",
+                        "shop_level" => "4.3",
+                        "order_count" => "5134",
+                        "is_collected" => "0"  ,                    // 是否被收藏了
+                        "is_opening" => "0",
+                        "is_ready_for_order" => "0"
+                    ],
+                    [
+                        "shop_id" => "45675656",
+                        "place_id" => "435456456436346346346",
+                        "shop_url" => "##",
+                        "shop_logo" => "",
+                        "deliver_time" => "",
+                        "deliver_start" => "",
+                        "shop_name" => "脆皮鸭",
+                        "shop_type" => "中餐",
+                        "shop_level" => "3.8",
+                        "order_count" => "202",
+                        "is_collected" => "0"  ,                    // 是否被收藏了
+                        "is_opening" => "2",
+                        "is_ready_for_order" => "0"
+                    ],
+                    [
+                        "shop_id" => "3758966",
+                        "place_id" => "589u65487945",
+                        "shop_url" => "http://www.baidu.com",
+                        "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
+                        "deliver_time" => "22",
+                        "deliver_start" => "17:00",
+                        "shop_name" => "脆皮牛蛙",
+                        "shop_type" => "中餐",
+                        "shop_level" => "4.3",
+                        "order_count" => "202",
+                        "is_opening" => "0",
+                        "is_collected" => "0"  ,                    // 是否被收藏了
+                        "is_ready_for_order" => "0"
+                    ],
+                    [
+                        "shop_id" => "1241243",
+                        "place_id" => "234534",
+                        "shop_url" => "##",
+                        "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
+                        "deliver_time" => "45",
+                        "deliver_start" => "",
+                        "shop_name" => "臭脚丫",
+                        "shop_type" => "中式，西式",
+                        "shop_level" => "4.3",
+                        "order_count" => "5134",
+                        "is_collected" => "0"  ,                    // 是否被收藏了
+                        "is_opening" => "0",
+                        "is_ready_for_order" => "0"
+                    ],
+                    [
+                        "shop_id" => "456756",
+                        "place_id" => "435456456436346346346",
+                        "shop_url" => "##",
+                        "shop_logo" => "",
+                        "deliver_time" => "",
+                        "deliver_start" => "",
+                        "shop_name" => "静香园",
+                        "shop_type" => "中餐",
+                        "shop_level" => "3.8",
+                        "order_count" => "202",
+                        "is_collected" => "0"  ,                    // 是否被收藏了
+                        "is_opening" => "2",
+                        "is_ready_for_order" => "0"
+                    ]
+                ],
+                "hot_shop" => [
+                    [
+                        "shop_id" => "37589",
+                        "place_id" => "589u65487945",
+                        "shop_url" => "http://www.baidu.com",
+                        "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
+                        "deliver_time" => "22",
+                        "deliver_start" => "17:00",
+                        "shop_name" => "三顾冒菜",
+                        "shop_type" => "中餐",
+                        "shop_level" => "4.3",
+                        "order_count" => "202",
+                        "is_opening" => "0",
+                        "is_collected" => "1"  ,                    // 是否被收藏了
+                        "is_ready_for_order" => "1"
+                    ],
+                    [
+                        "shop_id" => "985236",
+                        "place_id" => "234534",
+                        "shop_url" => "##",
+                        "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
+                        "deliver_time" => "45",
+                        "deliver_start" => "",
                         "shop_name" => "乐堡王",
                         "shop_type" => "中式，西式",
                         "shop_level" => "4.3",
                         "order_count" => "5134",
                         "is_opening" => "0",
-                        "is_collected" => ""  ,                    // 是否被收藏了
-                        "is_ready_for_order" => "0"
+                        "is_collected" => "1"  ,                    // 是否被收藏了
+                        "is_ready_for_order" => "1"
                     ],
                     [
-                        "shop_id" => "45675656",
+                        "shop_id" => "775755",
                         "place_id" => "435456456436346346346",
                         "shop_url" => "##",
                         "shop_logo" => "",
@@ -191,8 +236,52 @@ Route::get('/', function(){
                         "order_count" => "202",
                         "is_opening" => "2",
                         "is_ready_for_order" => "0",
-                        "is_collected" => ""                      // 是否被收藏了
-
+                        "is_collected" => "1"                      // 是否被收藏了
+                    ],
+                    [
+                        "shop_id" => "797979",
+                        "place_id" => "589u65487945",
+                        "shop_url" => "http://www.baidu.com",
+                        "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
+                        "deliver_time" => "22",
+                        "deliver_start" => "17:00",
+                        "shop_name" => "罐罐米线",
+                        "shop_type" => "中餐",
+                        "shop_level" => "4.3",
+                        "order_count" => "202",
+                        "is_opening" => "0",
+                        "is_collected" => "0"  ,                    // 是否被收藏了
+                        "is_ready_for_order" => "0"
+                    ],
+                    [
+                        "shop_id" => "121212",
+                        "place_id" => "234534",
+                        "shop_url" => "##",
+                        "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
+                        "deliver_time" => "45",
+                        "deliver_start" => "",
+                        "shop_name" => "乡村基",
+                        "shop_type" => "中式，西式",
+                        "shop_level" => "4.3",
+                        "order_count" => "5134",
+                        "is_collected" => "0"  ,                    // 是否被收藏了
+                        "is_opening" => "0",
+                        "is_ready_for_order" => "0"
+                    ],
+                    [
+                        "shop_id" => "797979",
+                        "place_id" => "435456456436346346346",
+                        "shop_url" => "##",
+                        "shop_logo" => "",
+                        "deliver_time" => "",
+                        "deliver_start" => "",
+                        "shop_name" => "黄焖鸡",
+                        "shop_type" => "中餐",
+                        "shop_level" => "3.8",
+                        "order_count" => "202",
+                        "is_collected" => "0"  ,                    // 是否被收藏了
+                        "is_opening" => "2",
+                        "is_ready_for_order" => "0"
                     ]
                 ]
             ]
