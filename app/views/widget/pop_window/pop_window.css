@@ -50,7 +50,7 @@
       background: #000;
       color: #fff;
       position: absolute; }
-    .drawer-header .drawer-dish .u-favor:hover {
+    .drawer-header .drawer-dish .u-favor:hover, .drawer-header .drawer-dish .u-favor.on {
       opacity: 1;
       background: #ff6000;
       color: #fff; }

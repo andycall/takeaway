@@ -1,5 +1,5 @@
 @for ($i = 0; $i < count($shops); $i++)
-    <div class="collection-row-wrapper">
+    <div class="collection-row-wrapper" class="restaurant-{{$shops[$i]['shop_id']}}">
         <a href="{{$shops[$i]['shop_url']}}">
 @if($shops[$i]['is_opening'])
             <div class="collection-row-book collection-row-colse" data-shop_id="{{$shops[$i]['shop_id']}}" data-place_id="{{$shops[$i]['place_id']}}">
@@ -62,6 +62,10 @@
                 </div>
             </div>
         </a>
-        <input type="checkbox"/>
+@if($shops[$i]['is_collected'])
+        <input type="checkbox" class="check" checked="checked" shop_id="{{$shops[$i]['shop_id']}}" place_id="{{$shops[$i]['place_id']}}"/>
+@else
+        <input type="checkbox" class="check" shop_id="{{$shops[$i]['shop_id']}}" place_id="{{$shops[$i]['place_id']}}"/>
+@endif
     </div>
 @endfor

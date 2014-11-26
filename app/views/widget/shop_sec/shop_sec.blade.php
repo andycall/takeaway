@@ -1,5 +1,5 @@
 @for ($i = 0; $i < count($shops); $i++)
-    <a href="{{$shops[$i]['shop_url']}}">
+    <a href="{{$shops[$i]['shop_url']}}" class="restaurant-{{$shops[$i]['shop_id']}}">
         @if($shops[$i]['is_opening'])
             <div class="collection-row-book collection-row-colse" data-shop_id="{{$shops[$i]['shop_id']}}" data-place_id="{{$shops[$i]['place_id']}}">
         @else

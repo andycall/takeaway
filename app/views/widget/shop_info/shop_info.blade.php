@@ -1,7 +1,7 @@
 @for ($n = 0; $n < ceil(count($shops)/5); $n++)
     <div class="more_shops-row">
 @for ($i = $n * 5 ; $i < $n * 5 + 5 & $i < count($shops); $i++)
-        <a href="{{$shops[$i]['shop_url']}}">
+        <a href="{{$shops[$i]['shop_url']}}" class="restaurant-{{$shops[$i]['shop_id']}}">
 @if($shops[$i]['is_opening'])
             <div class="more_shops-row-book more_shops-row-colse" data-support_activity="{{ implode(",", $shops[$i]['support_activity']) }}" data-isHot="{{$shops[$i]['isHot']}}" data-isOnline="{{$shops[$i]['isOnline']}}" data-isSupportPay="{{$shops[$i]['isSupportPay']}}" data-flavor="{{ isset($shops[$i]['flavor']) ? $shops[$i]['flavor'] : ""  }}" data-shop_id="{{$shops[$i]['shop_id']}}" data-place_id="{{$shops[$i]['place_id']}}">
 @else

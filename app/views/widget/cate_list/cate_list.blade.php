@@ -1,12 +1,12 @@
 
 <div class="menu_toolbar">
     <div class="toolbar_text" data-classify_id="">
-        <span>逗比</span>
+        <span>{{$category['data']['classify_sec'][0]['classify_name']}}</span>
         <img class="icon-rst-badge" src="" alt="" title=""/>
     </div>
     <div class="menu_tool">
         <div class="toolbar_category element_drop_down">
-            <a href="#" class="toolBar_toggle caret">美食分类</a>
+            <a href="javascript:void(0)" class="toolBar_toggle caret">美食分类</a>
             <div class="drop_down_menu">
                 <ul class="cate_drop_down ui-helper-clearfix">
                     @foreach($good_category['data']['goods_category'] as $key=>$value)
@@ -36,7 +36,7 @@
 <div class="cate_view">
     @foreach($category['data']['classify_sec'] as $key=>$value)
     <section class="classify_sec" data-classify_id="{{$value['classify_id']}}">
-        <h2 title="{{$value['classify_name']}}">{{$value['classify_name']}}</h2>
+        <h2 class="sec_title" title="{{$value['classify_name']}}"><span>{{$value['classify_name']}}</span></h2>
         {{--<p  class="ad_sec" title="">每天可享受两单优惠，每单可享受3份特价菜。</p>--}}
         <ul class="menu_list">
             @foreach($value['classify_goods'] as $good_name=>$good_value)
