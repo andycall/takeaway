@@ -67,6 +67,7 @@
                         order_count : "20"              // 订单数量
                         is_opening : "0"                // 0 是正在营业, 1是打烊了 2 是太忙
                         is_ready_for_order : ""         // 是否接受预定
+                        is_collected : ""               // 是否被收藏
                     }
                 ]
                 hot_shop : [
@@ -83,6 +84,7 @@
                         order_count : "20"              // 订单数量
                         is_opening : "0"                // 0 是正在营业, 1是打烊了 2 是太忙
                         is_ready_for_order : ""         // 是否接受预定
+                        is_collected : ""               // 是否被收藏
                     }
                 ]
             ]

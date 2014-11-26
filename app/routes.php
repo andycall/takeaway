@@ -113,6 +113,7 @@ Route::get('/', function(){
                         "shop_level" => "4.3",
                         "order_count" => "202",
                         "is_opening" => "0",
+                        "is_collected" => "1"  ,                    // 是否被收藏了
                         "is_ready_for_order" => "1"
                     ],
                     [
@@ -126,6 +127,7 @@ Route::get('/', function(){
                         "shop_type" => "中式，西式",
                         "shop_level" => "4.3",
                         "order_count" => "5134",
+                        "is_collected" => "1"  ,                    // 是否被收藏了
                         "is_opening" => "0",
                         "is_ready_for_order" => "0"
                     ],
@@ -140,6 +142,7 @@ Route::get('/', function(){
                         "shop_type" => "中餐",
                         "shop_level" => "3.8",
                         "order_count" => "202",
+                        "is_collected" => ""  ,                    // 是否被收藏了
                         "is_opening" => "2",
                         "is_ready_for_order" => "0"
                     ]
@@ -157,6 +160,7 @@ Route::get('/', function(){
                         "shop_level" => "4.3",
                         "order_count" => "202",
                         "is_opening" => "0",
+                        "is_collected" => "1"  ,                    // 是否被收藏了
                         "is_ready_for_order" => "1"
                     ],
                     [
@@ -171,6 +175,7 @@ Route::get('/', function(){
                         "shop_level" => "4.3",
                         "order_count" => "5134",
                         "is_opening" => "0",
+                        "is_collected" => ""  ,                    // 是否被收藏了
                         "is_ready_for_order" => "0"
                     ],
                     [
@@ -185,7 +190,9 @@ Route::get('/', function(){
                         "shop_level" => "3.8",
                         "order_count" => "202",
                         "is_opening" => "2",
-                        "is_ready_for_order" => "0"
+                        "is_ready_for_order" => "0",
+                        "is_collected" => ""                      // 是否被收藏了
+
                     ]
                 ]
             ]
