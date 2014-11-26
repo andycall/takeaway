@@ -63,7 +63,7 @@
             </div>
         </a>
 @if($shops[$i]['is_collected'])
-        <input type="checkbox" checked="checked"/>
+        <input type="checkbox" checked="checked" value="{{$shops[$i]['shop_id']}}"/>
 @else
         <input type="checkbox"/>
 @endif
