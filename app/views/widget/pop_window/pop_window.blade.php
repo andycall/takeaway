@@ -4,7 +4,6 @@
 
 
 <div class="drawer-header">
-
 	<a href="javascript:void(0)" class="u-close js-close-pop-window">x</a>
 
      <div class="drawer-dish">
@@ -30,7 +29,7 @@
 				<i>★</i>
 				<i>★</i>
 			</span>
-			<span class="u-bar" style="width:<%= (shop_level.level_5/100*80)%>"></span>
+			<span class="u-bar" style="width:<%= (shop_level.level_5/100*80+'px')%>"></span>
 			<span class="rate"><%= shop_level.level_5 %>%</span>
 		</li>
 		<li>
@@ -42,7 +41,7 @@
 				<i>★</i>
 				<i class="off">★</i>
 			</span>
-			<span class="u-bar" style="width:<%= (shop_level.level_5/100*80)%>"></span>
+			<span class="u-bar" style="width:<%= (shop_level.level_5/100*80+'px')%>"></span>
 			<span class="rate"><%= shop_level.level_4 %>%</span>
 		</li>
 		<li>
@@ -54,7 +53,7 @@
 				<i class="off">★</i>
 				<i class="off">★</i>
 			</span>
-			<span class="u-bar" style="width:<%= (shop_level.level_5/100*80)%>"></span>
+			<span class="u-bar" style="width:<%= (shop_level.level_5/100*80+'px')%>"></span>
 			<span class="rate"><%= shop_level.level_3 %>%</span>
 		</li>
 		<li>
@@ -66,7 +65,7 @@
 				<i class="off">★</i>
 				<i class="off">★</i>
 			</span>
-			<span class="u-bar" style="width:<%= (shop_level.level_5/100*80)%>"></span>
+			<span class="u-bar" style="width:<%= (shop_level.level_5/100*80+'px')%>"></span>
 			<span class="rate"><%= shop_level.level_2 %>%</span>
 		</li>
 		<li>
@@ -78,7 +77,7 @@
 				<i class="off">★</i>
 				<i class="off">★</i>
 			</span>
-			<span class="u-bar" style="width:<%= (shop_level.level_5/100*80)%>"></span>
+			<span class="u-bar" style="width:<%= (shop_level.level_5/100*80)+'px'%>"></span>
 			<span class="rate"><%= shop_level.level_1 %>%</span>
 		</li>
 	</ul>

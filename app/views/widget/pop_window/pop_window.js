@@ -6,7 +6,6 @@ define(['jquery'], function(){
 	 *@include “左侧评论打开与关闭”
 	 *@include "ajax获取评论并显示出来" 
 	*/
-	console.log("pop_window is loaded");
 
     //跟踪商品名称
     var goodName = "";
