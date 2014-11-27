@@ -2874,3 +2874,42 @@ Route::post("/collect-list", function(){
     return Response::json($data);
 });
 
+Route::post("/cartSetCount", function (){
+    $data = [
+        "success" => "true"
+    ];
+    return Response::json($data);
+});
+
+Route::post("/cartClear", function (){
+    $data = [
+        "success" => "true"
+    ];
+    return Response::json($data);
+});
+
+Route::post("/cartAdd", function (){
+    $data = [
+        "success" => "true",
+        "data" => [
+            "addedItem" => [
+                "goods_id" => "1234",
+                "goods_name" => "欧亚非爱吃的烤红薯", // 商品名称
+                "goods_count" => "3", // 商品数量
+                "goods_price" => "99", // 商品价格
+            ],
+            "cart_all"  => "999",  // 所有的总价
+            "shop_id" => "46456",
+            "is_ready"  => "true",  // 是否可以下单(有些商家会设定起步价)
+            "card_count" => "2" // 所有东西的数量
+        ]
+    ];
+    return Response::json($data);
+});
+
+Route::post("/cartDel", function (){
+    $data = [
+        "success" => "true"
+    ];
+    return Response::json($data);
+});
