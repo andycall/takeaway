@@ -5,7 +5,7 @@
         {{--收藏过的美食在这里--}}
     {{--</div>--}}
     <ul class="rst-aside-menu-list favor_list">
-        @foreach{$collect as $item}
+        @foreach($collect as $item)
         <li class="rst-aside-dish-item" data-shop-id="{{$item['shop_id']}}" data-good-id="{{$item['good_id']}}">
             <div class="rst-d-info">
                 <p class="rst-d-main text-overflow">
