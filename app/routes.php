@@ -2636,3 +2636,12 @@ Route::post("/delCollect", function(){
     return Response::json($data);
 });
 
+//提交我的收藏列表
+Route::post("/collect-list", function(){
+    $data = [
+        "success" => "true"
+    ];
+
+    return Response::json($data);
+});
+
