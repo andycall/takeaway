@@ -264,7 +264,7 @@
     // 提交我的收藏的弹出框
 
     type : "post"
-    url : "",
+    url : "takeaway/public/index.php/collect-list",
     input : {
         cancel_collection: [                        //取消收藏的店铺数组
             {
