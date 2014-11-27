@@ -9,58 +9,51 @@ define(['jquery', "tools/Sizer"], function($, Sizer){
 		drop_list.toggle();
 	});
 
-	function getAllData(){
+	(function(){
 		var target = $(".shop_container .more_shops-row-book");
 
-		var result = {
-			support_activity : [],
-			isHot : [],
-			isOnline : [],
-			isSupportPay : [],
-			flavor : []
-		};
+		var result = [];
 
 		target.each(function(index, value){
-			var ta = target.eq(index),
-				shop_id = ta.data('shop_id'),
-				data = {};
-			data[shop_id] = ta.data("support_activity");
-			result.support_activity.push(data);
-			Sizer.add("support_activity", data);
 
-			data[shop_id] = ta.data('ishot');
-			result.isHot.push(data);
-			data[shop_id] = ta.data('isonline');
-			result.isOnline.push(data);
-			data[shop_id] = ta.data("issupportpay");
-			result.isSupportPay.push(data);
-			data[shop_id] = ta.data("flavor");
-			result.flavor.push(data);
+			var target = $(this),
+				place_id = target.data("place_id"),
+				shop_id = target.data("shop_id"),
+				flavor  = target.data("flavor"),
+				issupportpay = target.data('issupportpay'),
+				isonline = target.data('isonline'),
+				ishot   = target.data('ishot'),
+				support_activity = target.data('support_activity').split(","),
+				storage = {};
+
+			storage['place_id'] = place_id;
+			storage['shop_id']  = shop_id;
+			storage['flavor']   = flavor;
+			storage['issupportpay'] = issupportpay;
+			storage['isonline'] = isonline;
+			storage['ishot']  = ishot;
+			storage['support_activity'] = support_activity;
+			storage['shop_id'] = shop_id;
+
+
+			result.push(storage);
+
 		});
 
-		return result;
-	}
+		Sizer.add(result);
 
-	choice_click.on('click', 'b', function(ev){
+	})();
 
-		var checked = $(this).parent().find('input')[0].checked;
+	choice_click.on('click', function(ev){
 
-		if(checked){
-			$(this).parent().find('input')[0].checked = false;
-		}
-		else {
-			$(this).parent().find('input')[0].checked = true;
-		}
+		var target = ev.currentTarget,
+			input  = $(target).find("input"),
+			b      = $(target).find("b");
 
-		var checkedBtn = $(".choice_click"),
-			checkedArray = [];
+		var checked = input[0].checked;
+		var value   = b.html();
 
-		checkedBtn.each(function(index, value){
-			if(value.checked){
-				checkedArray.push(value);
-			}
-		});
-		console.log(checkedArray);
+
 
 
 
