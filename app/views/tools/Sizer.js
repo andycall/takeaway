@@ -45,22 +45,21 @@ define(['jquery'], function($){
 
 		if(!$.isPlainObject(labelObject)) return;
 
-		var result = {};
+		var result = [];
 
-		for(var key in labelObject){
-			result[key] = [];
-		}
 
 		for(var i = 0,len = self.data.length; i < len; i ++){
-			var target = self.data[i];
+			var target = self.data[i],
+                flag  = true;
 
 			for(var name in labelObject) {
-
-				if (target[name] == labelObject[name]) {
-					result[name].push(target);
+				if (target[name] !=  labelObject[name]) {
+                    flag = false;
 				}
 			}
-
+            if(flag){
+                result.push(target);
+            }
 		}
 
 		return result;

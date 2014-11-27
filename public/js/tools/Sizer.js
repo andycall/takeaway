@@ -22,11 +22,10 @@ define([ "jquery" ], function($) {
             self.data;
         }
         if ($.isPlainObject(labelObject)) {
-            var result = {};
-            for (var key in labelObject) result[key] = [];
-            for (var i = 0, len = self.data.length; len > i; i++) {
-                var target = self.data[i];
-                for (var name in labelObject) target[name] == labelObject[name] && result[name].push(target);
+            for (var result = [], i = 0, len = self.data.length; len > i; i++) {
+                var target = self.data[i], flag = !0;
+                for (var name in labelObject) target[name] != labelObject[name] && (flag = !1);
+                flag && result.push(target);
             }
             return result;
         }

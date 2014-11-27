@@ -35,28 +35,46 @@ define(['jquery', "tools/Sizer"], function($, Sizer){
 			storage['support_activity'] = support_activity;
 			storage['shop_id'] = shop_id;
 
-
 			result.push(storage);
 
 		});
+        console.log(result);
 
 		Sizer.add(result);
 
 	})();
 
-	choice_click.on('click', function(ev){
+	choice_click.on('click' ,function(ev){
 
-		var target = ev.currentTarget,
+
+		var target = ev.delegateTarget,
 			input  = $(target).find("input"),
-			b      = $(target).find("b");
+			text      = $(target).find("label"),
+            nowChecked = input[0].checked;
 
-		var checked = input[0].checked;
-		var value   = b.html();
+        input[0].checked = ! nowChecked;
+
+        var obj = {};
+
+        var spans = $(".choice_click");
+
+        spans.each(function(index, value){
+            var input = $(this).find("input"),
+                text  = $(this).find("label");
+
+            var checked = input[0].checked,
+                val   = text.html(),
+                label  = $(this).data('label');
+
+            if(checked){
+                obj[label] = Number(checked);
+            }
+        });
+
+        console.log(Sizer.get(obj));
 
 
-
-
-
+        return false;
 	});
 
 

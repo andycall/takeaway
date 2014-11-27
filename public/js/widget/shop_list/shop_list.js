@@ -10,12 +10,17 @@ define([ "jquery", "tools/Sizer" ], function($, Sizer) {
             storage.place_id = place_id, storage.shop_id = shop_id, storage.flavor = flavor, 
             storage.issupportpay = issupportpay, storage.isonline = isonline, storage.ishot = ishot, 
             storage.support_activity = support_activity, storage.shop_id = shop_id, result.push(storage);
-        }), Sizer.add(result);
+        }), console.log(result), Sizer.add(result);
     }(), choice_click.on("click", function(ev) {
-        {
-            var target = ev.currentTarget, input = $(target).find("input"), b = $(target).find("b");
-            input[0].checked, b.html();
-        }
+        var target = ev.delegateTarget, input = $(target).find("input"), nowChecked = ($(target).find("label"), 
+        input[0].checked);
+        input[0].checked = !nowChecked;
+        var obj = {}, spans = $(".choice_click");
+        return spans.each(function() {
+            var input = $(this).find("input"), text = $(this).find("label"), checked = input[0].checked, label = (text.html(), 
+            $(this).data("label"));
+            checked && (obj[label] = Number(checked));
+        }), console.log(Sizer.get(obj)), !1;
     }), drop_list.on("click", "li", function(ev) {
         {
             var target = ev.currentTarget;

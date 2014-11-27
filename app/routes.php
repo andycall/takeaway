@@ -300,9 +300,9 @@ Route::get('/', function(){
                 "shops" => [
                     [
                         "support_activity" => [2,3],       // 所有支持的活动的id
-                        "isHot" => true,                  // 是否是热门餐厅
-                        "isOnline" => true,                    // 是否营业
-                        "isSupportPay" => true,                   // 是否支持在线支付
+                        "isHot" => 1,                  // 是否是热门餐厅
+                        "isOnline" => 0,                    // 是否营业
+                        "isSupportPay" => 0,                   // 是否支持在线支付
                         "flavor" => "西式" ,                  // 餐厅口味
                         "shop_id" => "456113123"    ,                         // 商家id
                         "place_id" => "12123"   ,                        // 商家位置id
@@ -332,9 +332,9 @@ Route::get('/', function(){
                         ]
                     ],[
                         "support_activity" => [1,2],       // 所有支持的活动的id
-                        "isHot" => true,                  // 是否是热门餐厅
-                        "isOnline" => true,                    // 是否营业
-                        "isSupportPay" => true,                   // 是否支持在线支付
+                        "isHot" => 1,                  // 是否是热门餐厅
+                        "isOnline" => 0,                    // 是否营业
+                        "isSupportPay" => 1,                   // 是否支持在线支付
                         "flavor" => "中式" ,                  // 餐厅口味
                         "shop_id" => "45226"    ,                         // 商家id
                         "place_id" => "123"   ,                        // 商家位置id
@@ -364,9 +364,9 @@ Route::get('/', function(){
                         ]
                     ],[
                         "support_activity" => [1,2],       // 所有支持的活动的id
-                        "isHot" => true,                  // 是否是热门餐厅
-                        "isOnline" => true,                    // 是否营业
-                        "isSupportPay" => true,                   // 是否支持在线支付
+                        "isHot" => 0,                  // 是否是热门餐厅
+                        "isOnline" => 1,                    // 是否营业
+                        "isSupportPay" => 1,                   // 是否支持在线支付
                         "flavor" => "中式" ,                  // 餐厅口味
                         "shop_id" => "45336"    ,                         // 商家id
                         "place_id" => "123"   ,                        // 商家位置id
@@ -396,9 +396,9 @@ Route::get('/', function(){
                         ]
                     ],[
                         "support_activity" => [1,3],       // 所有支持的活动的id
-                        "isHot" => true,                  // 是否是热门餐厅
-                        "isOnline" => true,                    // 是否营业
-                        "isSupportPay" => true,                   // 是否支持在线支付
+                        "isHot" => 1,                  // 是否是热门餐厅
+                        "isOnline" => 0,                    // 是否营业
+                        "isSupportPay" => 1,                   // 是否支持在线支付
                         "flavor" => "中式" ,                  // 餐厅口味
                         "shop_id" => "45666"    ,                         // 商家id
                         "place_id" => "123"   ,                        // 商家位置id
@@ -428,9 +428,9 @@ Route::get('/', function(){
                         ]
                     ],[
                         "support_activity" => [2,3],       // 所有支持的活动的id
-                        "isHot" => true,                  // 是否是热门餐厅
-                        "isOnline" => true,                    // 是否营业
-                        "isSupportPay" => true,                   // 是否支持在线支付
+                        "isHot" => 1,                  // 是否是热门餐厅
+                        "isOnline" => 1,                    // 是否营业
+                        "isSupportPay" => 0,                   // 是否支持在线支付
                         "flavor" => "中式" ,                  // 餐厅口味
                         "shop_id" => "456"    ,                         // 商家id
                         "place_id" => "123"   ,                        // 商家位置id
@@ -461,9 +461,9 @@ Route::get('/', function(){
                     ],
 	                [
 		                "support_activity" => [1,3],       // 所有支持的活动的id
-		                "isHot" => true,                  // 是否是热门餐厅
-		                "isOnline" => true,                    // 是否营业
-		                "isSupportPay" => true,                   // 是否支持在线支付
+		                "isHot" => 1,                  // 是否是热门餐厅
+		                "isOnline" => 1,                    // 是否营业
+		                "isSupportPay" => 1,                   // 是否支持在线支付
 		                "flavor" => "韩式" ,                  // 餐厅口味
 		                "shop_id" => "456123123"    ,                         // 商家id
 		                "place_id" => "12123"   ,                        // 商家位置id

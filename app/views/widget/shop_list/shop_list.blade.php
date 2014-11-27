@@ -2,16 +2,16 @@
         <div class="shops-header">
             <div class="ui-helper-clearfix">
                <span class="shops_func choice_click" data-label="ishot">
-                    <input type="checkbox" class="sh_hot_shops" id="sh_hot_shops" name="hot_shops" checked="checked"/>
-                    <label for="sh_hot_shops">热门餐厅</label>
+                    <input type="checkbox" class="sh_hot_shops"  name="hot_shops" checked="checked"/>
+                    <label>热门餐厅</label>
                </span>
-               <span class="shops_func choice_click" data-lable="isonline">
-                    <input type="checkbox" class="sh_hot_shops" id="sh_running" name="hot_shops" />
+               <span class="shops_func choice_click" data-label="isonline">
+                    <input type="checkbox" class="sh_hot_shops"  name="hot_shops" />
                    <label for="sh_running">营业中</label>
                 </span>
                 <span class="fliter"></span>
-               <span class="shops_func choice_click" data-lable="issupportpay">
-                    <input type="checkbox" id="sh_online_pay" class="sh_hot_shops" name="hot_shops" />
+               <span class="shops_func choice_click" data-label="issupportpay">
+                    <input type="checkbox"  class="sh_hot_shops" name="hot_shops" />
                     <label for="sh_online_pay">在线支付</label>
                 </span>
                 <div class="flavor_block" data-label="flavor">
@@ -34,8 +34,8 @@
         <div class="shop_activities">
             <div class="ui-helper-clearfix">
             @foreach($shop_list['data']['activity'] as $key=>$value)
-                    <span class="choice_click activities-btn" data-activity-id="{{$key}}">
-                       <input id="checkbox_btn_{{$key}}" name="filter" type="checkbox">
+                    <span class="activities-btn" data-activity-id="{{$key}}">
+                       <input id="checkbox_btn_{{$key}}" class="sh_hot_shops" name="filter" type="checkbox">
                        <label for="checkbox_btn_{{$key}}">{{$value}}</label>
                    </span>
             @endforeach
