@@ -146,17 +146,15 @@
          cart.empty();
      });
 
-     define(['cart'], function(cart) {
-         return {
-             add: function() {
-                 // todo with module cart
-             },
+     return {
+         add: function() {
+             // todo with module cart
+         },
 
-             del: function(){},
+         del: function(){},
 
-             refresh: function(){}
-         }
-     });
+         refresh: function(){}
+     };
 
      console.log("shop cart loaded");
 

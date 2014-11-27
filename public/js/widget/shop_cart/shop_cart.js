@@ -68,7 +68,7 @@ define([ "jquery" ], function($) {
         this.itemList = [];
     };
     var cart = new Cart();
-    $(".d_btn, .i_btn").on("click", changeItemNum), $(".rcart-d-del").on("click", function() {
+    return $(".d_btn, .i_btn").on("click", changeItemNum), $(".rcart-d-del").on("click", function() {
         var self = $(this);
         self.parent().remove();
         var itemTotal = $(".basket_list li").length;
@@ -81,11 +81,9 @@ define([ "jquery" ], function($) {
         $cartUp.animate({
             top: -$cartUp.height() + "px"
         }), cart.empty();
-    }), define([ "cart" ], function() {
-        return {
-            add: function() {},
-            del: function() {},
-            refresh: function() {}
-        };
-    }), console.log("shop cart loaded");
+    }), {
+        add: function() {},
+        del: function() {},
+        refresh: function() {}
+    };
 });
