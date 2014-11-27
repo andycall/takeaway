@@ -69,8 +69,8 @@
   background-color: #eee;
   cursor: pointer;
 }
-.collection-modal .collection-row .modal-body ul .action p,
-.collection-modal .collection-row .modal-body ul .action p:hover {
+.collection-modal .collection-row .modal-body ul .action,
+.collection-modal .collection-row .modal-body ul .action:hover {
   color: #555;
   background-color: #fff;
   border: 1px solid #ddd;

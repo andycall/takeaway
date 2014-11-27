@@ -51,53 +51,241 @@ Route::get('/', function(){
 		],
 
 
-		"my_store" => [
-			"url" => "###",
-			"data" => [
-				[
-					"shop_id" => "123435",
-					"place_id" => "589u65487945",
-					"shop_url" => "http://www.baidu.com",
-					"shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
-					"deliver_time" => "22",
-					"deliver_start" => "17:00",
-					"shop_name" => "三顾冒菜",
-					"shop_type" => "中餐",
-					"shop_level" => "4.3",
-					"order_count" => "202",
-					"is_opening" => "0",
-					"is_ready_for_order" => "1"
-				],
-				[
-					"shop_id" => "124124345",
-					"place_id" => "234534",
-					"shop_url" => "##",
-					"shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
-					"deliver_time" => "45",
-					"deliver_start" => "",
-					"shop_name" => "乐堡王",
-					"shop_type" => "中式，西式",
-					"shop_level" => "4.3",
-					"order_count" => "5134",
-					"is_opening" => "0",
-					"is_ready_for_order" => "0"
-				],
-				[
-					"shop_id" => "45675656",
-					"place_id" => "435456456436346346346",
-					"shop_url" => "##",
-					"shop_logo" => "",
-					"deliver_time" => "",
-					"deliver_start" => "",
-					"shop_name" => "铁板牛肉",
-					"shop_type" => "中餐",
-					"shop_level" => "3.8",
-					"order_count" => "202",
-					"is_opening" => "2",
-					"is_ready_for_order" => "0"
-				]
-			]
-		],
+        "my_store" => [
+            "url" => "###",
+            "data" => [
+                [
+                    "shop_id" => "37589",
+                    "place_id" => "589u65487945",
+                    "shop_url" => "http://www.baidu.com",
+                    "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
+                    "deliver_time" => "22",
+                    "deliver_start" => "17:00",
+                    "shop_name" => "三顾冒菜",
+                    "shop_type" => "中餐",
+                    "shop_level" => "4.3",
+                    "order_count" => "202",
+                    "is_opening" => "0",
+                    "is_ready_for_order" => "1"
+                ],
+                [
+                    "shop_id" => "985236",
+                    "place_id" => "234534",
+                    "shop_url" => "##",
+                    "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
+                    "deliver_time" => "45",
+                    "deliver_start" => "",
+                    "shop_name" => "乐堡王",
+                    "shop_type" => "中式，西式",
+                    "shop_level" => "4.3",
+                    "order_count" => "5134",
+                    "is_opening" => "0",
+                    "is_ready_for_order" => "0"
+                ],
+                [
+                    "shop_id" => "775755",
+                    "place_id" => "435456456436346346346",
+                    "shop_url" => "##",
+                    "shop_logo" => "",
+                    "deliver_time" => "",
+                    "deliver_start" => "",
+                    "shop_name" => "铁板牛肉",
+                    "shop_type" => "中餐",
+                    "shop_level" => "3.8",
+                    "order_count" => "202",
+                    "is_opening" => "2",
+                    "is_ready_for_order" => "0"
+                ]
+            ]
+        ],
+        "my_store_alert" => [
+            "data" => [
+                "new_shop" => [
+                    [
+                        "shop_id" => "37589",
+                        "place_id" => "589u65487945",
+                        "shop_url" => "http://www.baidu.com",
+                        "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
+                        "deliver_time" => "22",
+                        "deliver_start" => "17:00",
+                        "shop_name" => "三顾冒菜",
+                        "shop_type" => "中餐",
+                        "shop_level" => "4.3",
+                        "order_count" => "202",
+                        "is_opening" => "0",
+                        "is_collected" => "1"  ,                    // 是否被收藏了
+                        "is_ready_for_order" => "1"
+                    ],
+                    [
+                        "shop_id" => "124124345",
+                        "place_id" => "234534",
+                        "shop_url" => "##",
+                        "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
+                        "deliver_time" => "45",
+                        "deliver_start" => "",
+                        "shop_name" => "脆皮鸡",
+                        "shop_type" => "中式，西式",
+                        "shop_level" => "4.3",
+                        "order_count" => "5134",
+                        "is_collected" => "0"  ,                    // 是否被收藏了
+                        "is_opening" => "0",
+                        "is_ready_for_order" => "0"
+                    ],
+                    [
+                        "shop_id" => "45675656",
+                        "place_id" => "435456456436346346346",
+                        "shop_url" => "##",
+                        "shop_logo" => "",
+                        "deliver_time" => "",
+                        "deliver_start" => "",
+                        "shop_name" => "脆皮鸭",
+                        "shop_type" => "中餐",
+                        "shop_level" => "3.8",
+                        "order_count" => "202",
+                        "is_collected" => "0"  ,                    // 是否被收藏了
+                        "is_opening" => "2",
+                        "is_ready_for_order" => "0"
+                    ],
+                    [
+                        "shop_id" => "3758966",
+                        "place_id" => "589u65487945",
+                        "shop_url" => "http://www.baidu.com",
+                        "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
+                        "deliver_time" => "22",
+                        "deliver_start" => "17:00",
+                        "shop_name" => "脆皮牛蛙",
+                        "shop_type" => "中餐",
+                        "shop_level" => "4.3",
+                        "order_count" => "202",
+                        "is_opening" => "0",
+                        "is_collected" => "0"  ,                    // 是否被收藏了
+                        "is_ready_for_order" => "0"
+                    ],
+                    [
+                        "shop_id" => "1241243",
+                        "place_id" => "234534",
+                        "shop_url" => "##",
+                        "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
+                        "deliver_time" => "45",
+                        "deliver_start" => "",
+                        "shop_name" => "臭脚丫",
+                        "shop_type" => "中式，西式",
+                        "shop_level" => "4.3",
+                        "order_count" => "5134",
+                        "is_collected" => "0"  ,                    // 是否被收藏了
+                        "is_opening" => "0",
+                        "is_ready_for_order" => "0"
+                    ],
+                    [
+                        "shop_id" => "456756",
+                        "place_id" => "435456456436346346346",
+                        "shop_url" => "##",
+                        "shop_logo" => "",
+                        "deliver_time" => "",
+                        "deliver_start" => "",
+                        "shop_name" => "静香园",
+                        "shop_type" => "中餐",
+                        "shop_level" => "3.8",
+                        "order_count" => "202",
+                        "is_collected" => "0"  ,                    // 是否被收藏了
+                        "is_opening" => "2",
+                        "is_ready_for_order" => "0"
+                    ]
+                ],
+                "hot_shop" => [
+                    [
+                        "shop_id" => "37589",
+                        "place_id" => "589u65487945",
+                        "shop_url" => "http://www.baidu.com",
+                        "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
+                        "deliver_time" => "22",
+                        "deliver_start" => "17:00",
+                        "shop_name" => "三顾冒菜",
+                        "shop_type" => "中餐",
+                        "shop_level" => "4.3",
+                        "order_count" => "202",
+                        "is_opening" => "0",
+                        "is_collected" => "1"  ,                    // 是否被收藏了
+                        "is_ready_for_order" => "1"
+                    ],
+                    [
+                        "shop_id" => "985236",
+                        "place_id" => "234534",
+                        "shop_url" => "##",
+                        "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
+                        "deliver_time" => "45",
+                        "deliver_start" => "",
+                        "shop_name" => "乐堡王",
+                        "shop_type" => "中式，西式",
+                        "shop_level" => "4.3",
+                        "order_count" => "5134",
+                        "is_opening" => "0",
+                        "is_collected" => "1"  ,                    // 是否被收藏了
+                        "is_ready_for_order" => "1"
+                    ],
+                    [
+                        "shop_id" => "775755",
+                        "place_id" => "435456456436346346346",
+                        "shop_url" => "##",
+                        "shop_logo" => "",
+                        "deliver_time" => "",
+                        "deliver_start" => "",
+                        "shop_name" => "铁板牛肉",
+                        "shop_type" => "中餐",
+                        "shop_level" => "3.8",
+                        "order_count" => "202",
+                        "is_opening" => "2",
+                        "is_ready_for_order" => "0",
+                        "is_collected" => "1"                      // 是否被收藏了
+                    ],
+                    [
+                        "shop_id" => "797979",
+                        "place_id" => "589u65487945",
+                        "shop_url" => "http://www.baidu.com",
+                        "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
+                        "deliver_time" => "22",
+                        "deliver_start" => "17:00",
+                        "shop_name" => "罐罐米线",
+                        "shop_type" => "中餐",
+                        "shop_level" => "4.3",
+                        "order_count" => "202",
+                        "is_opening" => "0",
+                        "is_collected" => "0"  ,                    // 是否被收藏了
+                        "is_ready_for_order" => "0"
+                    ],
+                    [
+                        "shop_id" => "121212",
+                        "place_id" => "234534",
+                        "shop_url" => "##",
+                        "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
+                        "deliver_time" => "45",
+                        "deliver_start" => "",
+                        "shop_name" => "乡村基",
+                        "shop_type" => "中式，西式",
+                        "shop_level" => "4.3",
+                        "order_count" => "5134",
+                        "is_collected" => "0"  ,                    // 是否被收藏了
+                        "is_opening" => "0",
+                        "is_ready_for_order" => "0"
+                    ],
+                    [
+                        "shop_id" => "797979",
+                        "place_id" => "435456456436346346346",
+                        "shop_url" => "##",
+                        "shop_logo" => "",
+                        "deliver_time" => "",
+                        "deliver_start" => "",
+                        "shop_name" => "黄焖鸡",
+                        "shop_type" => "中餐",
+                        "shop_level" => "3.8",
+                        "order_count" => "202",
+                        "is_collected" => "0"  ,                    // 是否被收藏了
+                        "is_opening" => "2",
+                        "is_ready_for_order" => "0"
+                    ]
+                ]
+            ]
+        ],
 
 
 
@@ -453,6 +641,20 @@ Route::get('/', function(){
 
 Route::get("shop", function() {
 	$data = [
+        "collect" => [
+            [
+                "detail" => "大盘鸡就解决解决",
+                "price" => 1000,
+                "good_id" => 1999,
+                "shop_id" => 21243
+            ],
+            [
+                "detail" => "ffg决解决",
+                "price" => 688,
+                "good_id" => 2234,
+                "shop_id" => 21243
+            ],
+        ],
 		"userbar" => [
 			"url" => [
 				"my_place" => "这里是地址",
@@ -603,6 +805,7 @@ Route::get("shop", function() {
                 ]
             ]
         ],
+
         "category" => [
 	        "data" => [
 		        "classify_sec" => [
@@ -701,6 +904,258 @@ Route::get("shop", function() {
 	];
 
 	return View::make("template.shop.shop")->with($data);
+});
+
+Route::get("comment", function(){
+	$data = [
+		"userbar" => [
+			"url" => [
+				"my_place" => "这里是地址",
+				"switch_palce" => "##",
+				"logo" => "123" ,                         // 网站主页地址
+				"mobile" => "123",                 // 跳转到下载手机APP的地址
+				"my_ticket" => "123",                 // 我的饿单的地址
+				"my_gift"  => "123",                // 礼品中心地址
+				"feedback" => "123",                // 反馈留言地址
+				"shop_chart" => "123",                // 购物车地址
+				"user_mail" => "123",                // 用户提醒的地址
+				"personal" => "123",                // 个人中心地址
+				"my_collection" => "123",               // 我的收藏地址
+				"my_secure" => "123",              // 安全设置的地址
+				"loginout" => "123",              // 退出登录的地址
+				"switch_place" => "123"                  // 切换当前地址的地址
+			]
+		],
+		"top_bar" => [
+			"url" => [
+				"return_back" => "##",               // 返回主页的地址
+				"shop_url" =>  "###",                // 当前商家的地址
+				"comment_url" => "####",               // 商家评论页的地址
+				"menu_url"  => "#####",                 // 美食墙的地址
+				"message_url" => "#######",               // 商家留言的地址
+				"map_url" => "########",                //地图地址
+			],
+
+			"data" => [
+				"shop_id" => "123rrttytytry",                    // 商家id
+				"place_id" => "12345",                   // 商家位置id
+				"shop_logo" => "http://localhost:8080/images/5c81fa9884117928491470659e18djpeg.jpeg",                  // 商家的logo图片地址
+				"shop_name" => "撒拉尔人家",                  // 商家名称
+				"shop_type" => "中式",                  // 商家类型
+				"shop_level" => [                  // 总共10个等级, 1个半星一个等级
+					"level_5" => "66",              // 评论为5星的比例
+					"level_4" => "17",              // 评论为4星的比例
+					"level_3" => "7",               // 评论为3星的比例
+					"level_2" => "2",               // 评论为2星的比例
+					"level_1" => "8",               // 评论为1星的比例
+				],
+				"shop_total"   => "4.5",                // 总评价
+				"comment_count" => "500",              // 评论人数
+				"shop_statement" => "叫外卖上饿了么",             // 商家简介
+				"shop_time"     => "09:50 - 13:30 / 16:00 - 19:30", // 商家开门时间 (纯字符串, 应该是商家自己写上去的)
+				"shop_address"  => "重庆邮电大学堕落街",              // 商家地址
+				"deliver_begin" => "19:30",         // 送餐开始时间
+				"shop_distance" => "400",           // 商家距离(米)
+				"price_begin"   => "15",              // 起送价
+				"is_collected" => "1",               // 是否被收藏了
+				"shop_remark" => "傻逼"               //额外说明
+			]
+		],
+		"announcement" => [
+			"data" => [
+				"announce_content" => "餐厅公告内容餐厅公告内容餐厅公告内容餐厅公告内容餐厅公告内容餐厅公告内容",              // 餐厅公告内容
+				"start_price"      => "99999",              // 起送价
+				"activities"       => [               // 商家活动
+					[
+						"activity_name" => "该餐厅支持在线支付", // 活动标题
+						"activity_icon" => "online-payment"          // 活动图标
+					],
+					[
+						"activity_name" => "满10-3", // 活动标题
+						"activity_icon" => "extra-discount"          // 活动图标
+					]
+				]
+			]
+		],
+		"good_category" => [
+			"data" => [
+				"goods_category" => [
+					[
+						"classify_name" => "10元管饱",  // 类别名称
+						"classify_name_abbr" => "点餐就包拿！没办…",  // 类别名称简写
+						"classify_id"  => "1",          // 类别id
+						"classify_count" => "23",       // 类别中有多少商品
+						"classify_icon" => "123",         // 类别图标地址
+					],
+					[
+						"classify_name" => "10元管饱",  // 类别名称
+						"classify_name_abbr" => "点餐就包拿！没办…",  // 类别名称简写
+						"classify_id"  => "",          // 类别id
+						"classify_count" => "23",       // 类别中有多少商品
+						"classify_icon" => "",         // 类别图标地址
+					],
+					[
+						"classify_name" => "10元管饱",  // 类别名称
+						"classify_name_abbr" => "点就有红包拿！没办…",  // 类别名称简写
+						"classify_id"  => "",          // 类别id
+						"classify_count" => "23",       // 类别中有多少商品
+						"classify_icon" => "",         // 类别图标地址
+					],
+					[
+						"classify_name" => "10元管饱",  // 类别名称
+						"classify_name_abbr" => "点红包拿！办…",  // 类别名称简写
+						"classify_id"  => "",          // 类别id
+						"classify_count" => "23",       // 类别中有多少商品
+						"classify_icon" => "",         // 类别图标地址
+					],
+					[
+						"classify_name" => "10元管饱",  // 类别名称
+						"classify_name_abbr" => "点餐就有红包办…",  // 类别名称简写
+						"classify_id"  => "",          // 类别id
+						"classify_count" => "23",       // 类别中有多少商品
+						"classify_icon" => "",         // 类别图标地址
+					],
+					[
+						"classify_name" => "10元管饱",  // 类别名称
+						"classify_name_abbr" => "点餐有红包拿！没办…",  // 类别名称简写
+						"classify_id"  => "",          // 类别id
+						"classify_count" => "23",       // 类别中有多少商品
+						"classify_icon" => "",         // 类别图标地址
+					],
+					[
+						"classify_name" => "10元管饱",  // 类别名称
+						"classify_name_abbr" => "点餐…",  // 类别名称简写
+						"classify_id"  => "",          // 类别id
+						"classify_count" => "23",       // 类别中有多少商品
+						"classify_icon" => "",         // 类别图标地址
+					]
+				],
+				"good_activity" => [
+					[
+						"activity_name" => "1元秒杀（限新用户）重庆",  // 活动名称
+						"activity_id" => "123",                      // 活动id
+						"activity_icon" => "123",                       // 活动图标地址
+						"activity_statement" => "1元秒杀爽到爆！"      // 活动简洁
+					],
+					[
+						"activity_name" => "1元秒杀（限新用户）重庆",  // 活动名称
+						"activity_id" => "123",                      // 活动id
+						"activity_icon" => "",                       // 活动图标地址
+						"activity_statement" => "1元秒杀爽到爆！"      // 活动简洁
+					],
+					[
+						"activity_name" => "1元秒杀（限新用户）重庆",  // 活动名称
+						"activity_id" => "123",                      // 活动id
+						"activity_icon" => "",                       // 活动图标地址
+						"activity_statement" => "1元秒杀爽到爆！"      // 活动简洁
+					],
+					[
+						"activity_name" => "1元秒杀（限新用户）重庆",  // 活动名称
+						"activity_id" => "123",                      // 活动id
+						"activity_icon" => "",                       // 活动图标地址
+						"activity_statement" => "1元秒杀爽到爆！"      // 活动简洁
+					]
+				]
+			]
+		],
+		"category" => [
+			"data" => [
+				"classify_sec" => [
+					0 => [
+						"classify_name" => "10元管饱",  // 类别名称
+						"classify_id"   => "123"  ,        // 类别id
+						"classify_icon"  => "http://fuss10.elemecdn.com/c/12/d2b0ed6e994997099e86581009d3bjpeg.jpeg"  ,       // 类别图标地址
+						"activity_ads" => [          // 这个种类是不是活动, 不是则为空
+							"activity_name" => "" ,      // 活动标题
+							"activity_statement" => ""  // 活动描述
+						],
+						"classify_images" => [           // 有的类别会有图片, 如果没有,这个为空数组
+							0 => [
+								"goods_id" => "",       // 商品id
+								"goods_image" => "",     // 商品图片地址
+								"goods_name" => "" ,    // 商品名称
+								"goods_level" => "" ,   // 商品等级, 总共10个等级
+								"comment_count" => "",  // 投票人数
+								"goods_sails" => ""   , // 商品销量
+								"goods_price" => ""    , // 商品价格
+								"goods_icon" => ""    , // 一些用户促销的图标
+								"goods_original" => "" // 如果是促销, 这个用于显示原价
+							]
+						],
+						"classify_goods" => [
+							0 => [
+								"goods_id" => "123213"    ,   // 商品id
+								"goods_name" => "Db才"   ,  // 商品名称
+								"goods_level" => "8" ,   // 商品等级, 总共10个等级
+								"comment_count" => "123",  // 投票人数
+								"goods_price" => "22",    // 商品价格
+								"goods_icon" =>  "",    // 一些用户促销的图标
+								"goods_original" => "23", // 如果是促销, 这个用于显示原价
+								"good_sails" => "123"    // 一个月之内的销量
+							],
+							1 => [
+								"goods_id" => "1232323213"    ,   // 商品id
+								"goods_name" => "D2223b才"   ,  // 商品名称
+								"goods_level" => "4" ,   // 商品等级, 总共10个等级
+								"comment_count" => "13",  // 投票人数
+								"goods_price" => "2323",    // 商品价格
+								"goods_icon" =>  "",    // 一些用户促销的图标
+								"goods_original" => "3", // 如果是促销, 这个用于显示原价
+								"good_sails" => "13"    // 一个月之内的销量
+							]
+						]
+					],
+					1 => [
+						"classify_name" => "20元管饱",  // 类别名称
+						"classify_id"   => "13"  ,        // 类别id
+						"classify_icon"  => "http://fuss10.elemecdn.com/c/12/d2b0ed6e994997099e86581009d3bjpeg.jpeg"  ,       // 类别图标地址
+						"activity_ads" => [          // 这个种类是不是活动, 不是则为空
+							"activity_name" => "" ,      // 活动标题
+							"activity_statement" => ""  // 活动描述
+						],
+						"classify_images" => [           // 有的类别会有图片, 如果没有,这个为空数组
+							0 => [
+								"goods_id" => "",       // 商品id
+								"goods_image" => "",     // 商品图片地址
+								"goods_name" => "" ,    // 商品名称
+								"goods_level" => "" ,   // 商品等级, 总共10个等级
+								"comment_count" => "",  // 投票人数
+								"goods_sails" => ""   , // 商品销量
+								"goods_price" => ""    , // 商品价格
+								"goods_icon" => ""    , // 一些用户促销的图标
+								"goods_original" => "" // 如果是促销, 这个用于显示原价
+							]
+						],
+						"classify_goods" => [
+							0 => [
+								"goods_id" => "123213"    ,   // 商品id
+								"goods_name" => "Db才"   ,  // 商品名称
+								"goods_level" => "8" ,   // 商品等级, 总共10个等级
+								"comment_count" => "123",  // 投票人数
+								"goods_price" => "22",    // 商品价格
+								"goods_icon" =>  "",    // 一些用户促销的图标
+								"goods_original" => "23", // 如果是促销, 这个用于显示原价
+								"good_sails" => "123"    // 一个月之内的销量
+							],
+							1 => [
+								"goods_id" => "1232323213"    ,   // 商品id
+								"goods_name" => "D2223b才"   ,  // 商品名称
+								"goods_level" => "4" ,   // 商品等级, 总共10个等级
+								"comment_count" => "13",  // 投票人数
+								"goods_price" => "2323",    // 商品价格
+								"goods_icon" =>  "",    // 一些用户促销的图标
+								"goods_original" => "3", // 如果是促销, 这个用于显示原价
+								"good_sails" => "13"    // 一个月之内的销量
+							]
+						]
+					]
+				],
+
+			]
+		]
+	];
+
+	return View::make("template.shop.shop_comment")->with($data);
 });
 
 Route::get("/login", function(){
