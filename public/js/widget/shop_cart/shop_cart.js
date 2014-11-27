@@ -81,5 +81,11 @@ define([ "jquery" ], function($) {
         $cartUp.animate({
             top: -$cartUp.height() + "px"
         }), cart.empty();
+    }), define([ "cart" ], function() {
+        return {
+            add: function() {},
+            del: function() {},
+            refresh: function() {}
+        };
     }), console.log("shop cart loaded");
 });

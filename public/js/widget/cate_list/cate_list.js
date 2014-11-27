@@ -20,13 +20,13 @@ define([ "jquery" ], function() {
     }), toolBar_toggle.fadeIn(300)), toolBar_toggle.on("click", function() {
         drop_down_menu.toggle();
     }), $(window).on("scroll", function() {
-        var // 是否可以切换fixed
-        nextPosition, prevPosition, target, scrollTop = $(window).scrollTop(), positionArr = getListTop(classify_sec), direction = CaculateDirection(scrollTop), isReady = scrollTop >= menu_offset.top;
+        var nextPosition, prevPosition, target, scrollTop = $(window).scrollTop(), positionArr = getListTop(classify_sec), direction = CaculateDirection(scrollTop), isReady = scrollTop >= menu_offset.top;
         if (isReady != ready_tmp && (ready_status = !0, ready_tmp = isReady), isReady && ready_status ? (menu_toolbar.css({
             position: "fixed",
             top: 0
         }), toolBar_toggle.fadeIn(300), ready_status = !1) : !isReady && ready_status && (menu_toolbar.css({
-            position: "absolute"
+            position: "absolute",
+            top: "auto"
         }), toolBar_toggle.fadeOut(300), ready_status = !1), isReady && 1 === direction) {
             if (scrollIndex + 1 >= positionArr.length) return;
             nextPosition = positionArr[scrollIndex + 1], scrollTop + 10 > nextPosition.top && (target = sec_title.eq(scrollIndex + 1).find("span").html(), 

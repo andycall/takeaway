@@ -19,20 +19,10 @@
                         @yield("pop_window")
                     </div>
                     <div class="shop_left">
-                        {{-- 美食分类 --}}
-                        @yield("cate_category")
-                        {{-- 美食列表--}}
-                        @yield("cate_list")
+                        @yield("shop_left")
                     </div>
                     <div class="shop_right">
-                        {{-- 餐厅公告 --}}
-                        @yield("restaurant_announcement")
-                        {{-- 我的收藏 --}}
-                        @yield("goods_collection")
-                        {{-- 本周热卖 --}}
-                        @yield("hot_sails")
-                        {{-- 商店地图 --}}
-                        @yield("shop_map")
+                        @yield("shop_right")
                     </div>
                 </div>
                 {{-- 餐厅购物车 --}}

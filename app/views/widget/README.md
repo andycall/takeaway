@@ -49,6 +49,14 @@ hot_sails 本周热卖
 
 shop_map 商店地图
 
+pop_window 用户评论弹出框
+
+shop_cart 购物车
+
+shop_comment 商家评论
+
+shop_evaluate 商家评论得分框
+
 
 #### personal
 

@@ -6,25 +6,17 @@
 
 {{-- 商家顶部信息栏 --}}
 @section("shop_details")
-    @include("widget/shop_details/shop_details",array("active" => "meun"))
+    @include("widget/shop_details/shop_details",array("active" => "comment"))
 @stop
 
 @section("shop_left")
-    {{-- 美食分类 --}}
-    @include("widget/cate_category/cate_category")
-    {{-- 美食列表--}}
-    @include("widget/cate_list/cate_list")
+    {{-- 商家评论 --}}
+    @include("widget/shop_comment/shop_comment")
 @stop
 
 @section("shop_right")
-    {{-- 餐厅公告 --}}
-    @include("widget/restaurant_announcement/restaurant_announcement")
-    {{-- 我的收藏(商品) --}}
-    @include("widget/goods_collection/goods_collection")
-    {{-- 本周热卖 --}}
-    @include("widget/hot_sails/hot_sails")
-    {{-- 商店地图 --}}
-    @include("widget/shop_map/shop_map")
+    {{-- 商家评分 --}}
+    @include("widget/shop_evaluate/shop_evaluate")
 @stop
 
 
@@ -55,6 +47,6 @@
 @stop
 
 @section("script")
-    {{HTML::script("/js/lib/require.js", ["data-main" => url("js/template/shop/shop.js")])}}
+    {{HTML::script("/js/lib/require.js", ["data-main" => url("js/template/shop/shop_comment.js")])}}
 @stop
 
