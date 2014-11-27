@@ -1152,7 +1152,49 @@ Route::get("comment", function(){
 				],
 
 			]
-		]
+		],
+        "shop_comments" => [
+            [
+                "good_name" => "炸酱泡脚",    //菜单名
+                "user_name" => "lijinxinree654688", //用户名
+                "time"      => "2014 0506",  //时间
+                "content"   => "泡脚好吃",  //评论内容
+                "good_price"=> "100000",    //价格    
+                "star_url"  => "http://static11.elemecdn.com/forward/dist/img/restaurant/rst-sprites.b35686d3.png"
+            ],
+            [
+                "good_name" => "炸酱泡脚",    //菜单名
+                "user_name" => "lijinxinree654688", //用户名
+                "time"      => "2014 0506",  //时间
+                "content"   => "泡脚好吃",  //评论内容
+                "good_price"=> "100000",    //价格    
+                "star_url"  => "http://static11.elemecdn.com/forward/dist/img/restaurant/rst-sprites.b35686d3.png"
+            ],
+            [
+                "good_name" => "炸酱泡脚",    //菜单名
+                "user_name" => "lijinxinree654688", //用户名
+                "time"      => "2014 0506",  //时间
+                "content"   => "泡脚好吃",  //评论内容
+                "good_price"=> "100000",    //价格    
+                "star_url"  => "http://static11.elemecdn.com/forward/dist/img/restaurant/rst-sprites.b35686d3.png"
+            ],
+            [
+                "good_name" => "炸酱泡脚",    //菜单名
+                "user_name" => "lijinxinree654688", //用户名
+                "time"      => "2014 0506",  //时间
+                "good_price"=> "100000",    //价格    
+                "content"   => "泡脚好吃",  //评论内容
+                "star_url"  => "http://static11.elemecdn.com/forward/dist/img/restaurant/rst-sprites.b35686d3.png"
+            ],
+            [
+                "good_name" => "炸酱泡脚",    //菜单名
+                "user_name" => "lijinxinree654688", //用户名
+                "time"      => "2014 0506",  //时间
+                "good_price"=> "100000",    //价格    
+                "content"   => "泡脚好吃",  //评论内容
+                "star_url"  => "http://static11.elemecdn.com/forward/dist/img/restaurant/rst-sprites.b35686d3.png"
+            ],
+        ]
 	];
 
 	return View::make("template.shop.shop_comment")->with($data);
