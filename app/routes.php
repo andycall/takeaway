@@ -688,6 +688,17 @@ Route::get("shop", function() {
                 "shop_id" => 21243
             ],
         ],
+        "best_seller" => [
+            "data" => [
+                "goods_id" => "",        // 商品id
+                "goods_name" => "",      // 商品名称
+                "goods_level" => "",     // 商品等级, 总共10个等级
+                "comment_count" => "",   // 投票人数
+                "goods_price" => "",     // 商品价格
+                "shop_state"  => "true", // 商家是不是打烊了..
+                "error_state" => ""     // 打烊信息
+            ]
+        ],
 		"userbar" => [
 			"url" => [
 				"my_place" => "这里是地址",

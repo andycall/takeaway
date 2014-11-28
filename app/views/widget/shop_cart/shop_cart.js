@@ -149,17 +149,17 @@
          }else if(e.target.className.indexOf('i_btn') !== -1){ //++
              t = val + 1;
          }
-         if(t == 0){
-             grandPa.remove();
-             var itemTotal = $('.basket_list li').length;
-             if(itemTotal == 0){
-                 $('#cartScroll').html('<p class="rcart-empty">篮子是空的</p>');
-                 $('.rcart-info').remove();
-             }else{
-                 $('#cartTotalItems').html(itemTotal);
-             }
-             fixScroll();
-         }
+         //if(t == 0){
+         //    grandPa.remove();
+         //    var itemTotal = $('.basket_list li').length;
+         //    if(itemTotal == 0){
+         //        $('#cartScroll').html('<p class="rcart-empty">篮子是空的</p>');
+         //        $('.rcart-info').remove();
+         //    }else{
+         //        $('#cartTotalItems').html(itemTotal);
+         //    }
+         //    fixScroll();
+         //}
          var id = grandPa.data('good_id'),
              shop_id = grandPa.data('shop_id');
 

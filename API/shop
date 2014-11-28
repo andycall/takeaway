@@ -130,7 +130,7 @@
 
         // 本周热卖
         best_seller :  {
-            data : {
+            data : [{
                 goods_id : ""        // 商品id
                 goods_name : ""      // 商品名称
                 goods_level : ""     // 商品等级, 总共10个等级
@@ -138,7 +138,7 @@
                 goods_price : ""     // 商品价格
                 shop_state  : "true" // 商家是不是打烊了..
                 error_state : ""     // 打烊信息
-            }
+            }]
         }
 
         // 位置地图

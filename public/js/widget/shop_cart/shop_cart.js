@@ -27,14 +27,20 @@ define([ "jquery", "underscore" ], function($, _) {
         var self = $(e.target);
         if ("A" == self.context.tagName) {
             var t, dad = self.parent(), grandPa = self.parent().parent(), num = dad.find(".set_num_in"), val = parseInt(num.val());
-            if (-1 !== e.target.className.indexOf("d_btn") ? //--
+            -1 !== e.target.className.indexOf("d_btn") ? //--
             t = val > 0 ? val - 1 : val : -1 !== e.target.className.indexOf("i_btn") && (//++
-            t = val + 1), 0 == t) {
-                grandPa.remove();
-                var itemTotal = $(".basket_list li").length;
-                0 == itemTotal ? ($("#cartScroll").html('<p class="rcart-empty">篮子是空的</p>'), $(".rcart-info").remove()) : $("#cartTotalItems").html(itemTotal), 
-                fixScroll();
-            }
+            t = val + 1);
+            //if(t == 0){
+            //    grandPa.remove();
+            //    var itemTotal = $('.basket_list li').length;
+            //    if(itemTotal == 0){
+            //        $('#cartScroll').html('<p class="rcart-empty">篮子是空的</p>');
+            //        $('.rcart-info').remove();
+            //    }else{
+            //        $('#cartTotalItems').html(itemTotal);
+            //    }
+            //    fixScroll();
+            //}
             var id = grandPa.data("good_id"), shop_id = grandPa.data("shop_id");
             $.ajax({
                 url: "./cartSetCount",
