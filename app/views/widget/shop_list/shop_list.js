@@ -7,6 +7,8 @@ define(['jquery', "tools/Sizer"], function($, Sizer){
 
 	drop_button.on('click', function(e){
 		drop_list.toggle();
+		$(this).toggleClass("active");
+		return false;
 	});
 
 	(function(){
@@ -44,39 +46,55 @@ define(['jquery', "tools/Sizer"], function($, Sizer){
 
 	})();
 
-	choice_click.on('click' ,function(ev){
 
 
-		var target = ev.delegateTarget,
-			input  = $(target).find("input"),
-			text      = $(target).find("label"),
-            nowChecked = input[0].checked;
+	// 事件触发的数据获取中间件
+	function dataTrigger(ev, type){
 
-        input[0].checked = ! nowChecked;
+		var obj = {};
 
-        var obj = {};
+		if(type == "checkbox"){
+			var deleteTarget = ev.delegateTarget,
+				input  = $(deleteTarget).find("input");
 
-        var spans = $(".choice_click");
+			if(input){
+				var nowChecked = input[0].checked;
+				input[0].checked = ! nowChecked;
+			}
+		}
+		else{
+			var target = ev.target;
 
-        spans.each(function(index, value){
-            var input = $(this).find("input"),
-                text  = $(this).find("label");
-
-            var checked = input[0].checked,
-                val   = text.html(),
-                label  = $(this).data('label');
-
-            if(checked){
-                obj[label] = Number(checked);
-            }
-        });
-
-        console.log(Sizer.get(obj));
+			obj['flavor'] = $(target).html();
+		}
 
 
-        return false;
+		var spans = $(".choice_click");
+
+		spans.each(function(index, value){
+			var input = $(this).find("input"),
+				text  = $(this).find("label");
+
+			var checked = input[0].checked,
+				val   = text.html(),
+				label  = $(this).data('label');
+
+			if(checked){
+				obj[label] = Number(checked);
+			}
+		});
+
+
+		console.log(Sizer.get(obj));
+
+	}
+
+	drop_list.on("click", "li", function(ev){
+		console.log(ev.target);
 	});
 
+
+	choice_click.on('click', dataTrigger);
 
 
 	drop_list.on('click', "li", function(ev){

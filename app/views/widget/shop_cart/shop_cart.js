@@ -168,28 +168,28 @@
 
 
 
-
      //***********************************************BUG
-     //$('#cartScroll').delegate($('.rcart-d-del'), 'click', function(e){
-     //    var self = $(e.target);
-     //    //self.parent().remove();
-     //    //var itemTotal = $('.basket_list li').length;
-     //    //if(itemTotal == 0){
-     //    //    $('#cartScroll').html('<p class="rcart-empty">篮子是空的</p>');
-     //    //    $('.rcart-info').remove();
-     //    //}else{
-     //    //    $('#cartTotalItems').html(itemTotal);
-     //    //}
-     //    //cart.refresh();
-     //    //$cartUp.animate({top: -$cartUp.height() + 'px'});
-     //    var pnt = self.parent();
-     //    cart.del(pnt.data('good_id'));
-     //    pnt.remove();
-     //    refreshCart();
-     //    fixScroll();
-     //});
+     $('#cartScroll').on('click', '.rcart-d-del', function(e){
+         var self = $(e.target);
+	     console.log(self);
+         //self.parent().remove();
+         //var itemTotal = $('.basket_list li').length;
+         //if(itemTotal == 0){
+         //    $('#cartScroll').html('<p class="rcart-empty">篮子是空的</p>');
+         //    $('.rcart-info').remove();
+         //}else{
+         //    $('#cartTotalItems').html(itemTotal);
+         //}
+         //cart.refresh();
+         //$cartUp.animate({top: -$cartUp.height() + 'px'});
+         var pnt = self.parent();
+         cart.del(pnt.data('good_id'));
+         pnt.remove();
+         refreshCart();
+         fixScroll();
+     });
 
-     //$('#cartScroll').delegate($('.rcart-clear'), 'click', clearCart);
+     $('#cartScroll').on('click','.basket_clear_btn', clearCart);
      function clearCart(){
          $('#cartScroll').html('<p class="rcart-empty">篮子是空的</p>');
          //$('.rcart-info').remove();
@@ -210,7 +210,7 @@
      var exports = {
          add: function(id, shop_id) {
              $.ajax({
-                 url: "http://localhost:8080/takeaway/public/cartAdd",
+                 url: "/cartAdd",
                  type: "post",
                  data: {
                      good_id: id,

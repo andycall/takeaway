@@ -1,8 +1,28 @@
 define([ "jquery", "tools/Sizer" ], function($, Sizer) {
+    // 事件触发的数据获取中间件
+    function dataTrigger(ev, type) {
+        var obj = {};
+        if ("checkbox" == type) {
+            var deleteTarget = ev.delegateTarget, input = $(deleteTarget).find("input");
+            if (input) {
+                var nowChecked = input[0].checked;
+                input[0].checked = !nowChecked;
+            }
+        } else {
+            var target = ev.target;
+            obj.flavor = $(target).html();
+        }
+        var spans = $(".choice_click");
+        spans.each(function() {
+            var input = $(this).find("input"), text = $(this).find("label"), checked = input[0].checked, label = (text.html(), 
+            $(this).data("label"));
+            checked && (obj[label] = Number(checked));
+        }), console.log(Sizer.get(obj));
+    }
     var drop_button = $(".drop_button"), drop_list = $(".drop_list"), choice_click = ($(".activities-btn"), 
     $(".shops_func"), $(".choice_click"));
     drop_button.on("click", function() {
-        drop_list.toggle();
+        return drop_list.toggle(), $(this).toggleClass("active"), !1;
     }), function() {
         var target = $(".shop_container .more_shops-row-book"), result = [];
         target.each(function() {
@@ -11,17 +31,9 @@ define([ "jquery", "tools/Sizer" ], function($, Sizer) {
             storage.issupportpay = issupportpay, storage.isonline = isonline, storage.ishot = ishot, 
             storage.support_activity = support_activity, storage.shop_id = shop_id, result.push(storage);
         }), console.log(result), Sizer.add(result);
-    }(), choice_click.on("click", function(ev) {
-        var target = ev.delegateTarget, input = $(target).find("input"), nowChecked = ($(target).find("label"), 
-        input[0].checked);
-        input[0].checked = !nowChecked;
-        var obj = {}, spans = $(".choice_click");
-        return spans.each(function() {
-            var input = $(this).find("input"), text = $(this).find("label"), checked = input[0].checked, label = (text.html(), 
-            $(this).data("label"));
-            checked && (obj[label] = Number(checked));
-        }), console.log(Sizer.get(obj)), !1;
-    }), drop_list.on("click", "li", function(ev) {
+    }(), drop_list.on("click", "li", function(ev) {
+        console.log(ev.target);
+    }), choice_click.on("click", dataTrigger), drop_list.on("click", "li", function(ev) {
         {
             var target = ev.currentTarget;
             target.innerHTML;
