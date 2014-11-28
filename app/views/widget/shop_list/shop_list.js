@@ -7,65 +7,94 @@ define(['jquery', "tools/Sizer"], function($, Sizer){
 
 	drop_button.on('click', function(e){
 		drop_list.toggle();
+		$(this).toggleClass("active");
+		return false;
 	});
 
-	function getAllData(){
+	(function(){
 		var target = $(".shop_container .more_shops-row-book");
 
-		var result = {
-			support_activity : [],
-			isHot : [],
-			isOnline : [],
-			isSupportPay : [],
-			flavor : []
-		};
+		var result = [];
 
 		target.each(function(index, value){
-			var ta = target.eq(index),
-				shop_id = ta.data('shop_id'),
-				data = {};
-			data[shop_id] = ta.data("support_activity");
-			result.support_activity.push(data);
-			Sizer.add("support_activity", data);
 
-			data[shop_id] = ta.data('ishot');
-			result.isHot.push(data);
-			data[shop_id] = ta.data('isonline');
-			result.isOnline.push(data);
-			data[shop_id] = ta.data("issupportpay");
-			result.isSupportPay.push(data);
-			data[shop_id] = ta.data("flavor");
-			result.flavor.push(data);
+			var target = $(this),
+				place_id = target.data("place_id"),
+				shop_id = target.data("shop_id"),
+				flavor  = target.data("flavor"),
+				issupportpay = target.data('issupportpay'),
+				isonline = target.data('isonline'),
+				ishot   = target.data('ishot'),
+				support_activity = target.data('support_activity').split(","),
+				storage = {};
+
+			storage['place_id'] = place_id;
+			storage['shop_id']  = shop_id;
+			storage['flavor']   = flavor;
+			storage['issupportpay'] = issupportpay;
+			storage['isonline'] = isonline;
+			storage['ishot']  = ishot;
+			storage['support_activity'] = support_activity;
+			storage['shop_id'] = shop_id;
+
+			result.push(storage);
+
 		});
+        console.log(result);
 
-		return result;
-	}
+		Sizer.add(result);
 
-	choice_click.on('click', 'b', function(ev){
+	})();
 
-		var checked = $(this).parent().find('input')[0].checked;
 
-		if(checked){
-			$(this).parent().find('input')[0].checked = false;
+
+	// 事件触发的数据获取中间件
+	function dataTrigger(ev, type){
+
+		var obj = {};
+
+		if(type == "checkbox"){
+			var deleteTarget = ev.delegateTarget,
+				input  = $(deleteTarget).find("input");
+
+			if(input){
+				var nowChecked = input[0].checked;
+				input[0].checked = ! nowChecked;
+			}
 		}
-		else {
-			$(this).parent().find('input')[0].checked = true;
+		else{
+			var target = ev.target;
+
+			obj['flavor'] = $(target).html();
 		}
 
-		var checkedBtn = $(".choice_click"),
-			checkedArray = [];
 
-		checkedBtn.each(function(index, value){
-			if(value.checked){
-				checkedArray.push(value);
+		var spans = $(".choice_click");
+
+		spans.each(function(index, value){
+			var input = $(this).find("input"),
+				text  = $(this).find("label");
+
+			var checked = input[0].checked,
+				val   = text.html(),
+				label  = $(this).data('label');
+
+			if(checked){
+				obj[label] = Number(checked);
 			}
 		});
-		console.log(checkedArray);
 
 
+		console.log(Sizer.get(obj));
 
+	}
+
+	drop_list.on("click", "li", function(ev){
+		console.log(ev.target);
 	});
 
+
+	choice_click.on('click', dataTrigger);
 
 
 	drop_list.on('click', "li", function(ev){

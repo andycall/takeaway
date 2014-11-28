@@ -1,4 +1,4 @@
-define([ "jquery" ], function($) {
+define([ "jquery", "underscore" ], function($, _) {
     function toggleCartScroll() {
         $cartUp.animate(parseInt($cartUp.css("top")) ? {
             top: "0px"
@@ -16,31 +16,51 @@ define([ "jquery" ], function($) {
         //init
         this.itemList = [];
     }
+    //实例化 cart
+    function refreshCart() {
+        var $totalLen = $("#cartTotalItems"), $totalPrice = $("#cartTotalPrice"), cartInfo = cart.refresh();
+        $totalLen.html(cartInfo.totalNum), $totalPrice.html(cartInfo.totalPrice), 0 == cartInfo.totalNum ? $(".aside-cart-btn").addClass("disabled").html("篮子是空的哦") : $(".aside-cart-btn").removeClass("disabled").html("点击支付");
+    }
     function changeItemNum(e) {
-        var t, self = $(this), dad = self.parent(), grandPa = self.parent().parent(), num = dad.find(".set_num_in"), val = parseInt(num.val());
-        if (//--
-        t = -1 !== e.target.className.indexOf("d_btn") ? val > 0 ? val - 1 : val : val + 1, 
-        0 == t) {
-            grandPa.remove();
-            var itemTotal = $(".basket_list li").length;
-            0 == itemTotal ? ($("#cartScroll").html('<p class="rcart-empty">篮子是空的</p>'), $(".rcart-info").remove()) : $("#cartTotalItems").html(itemTotal), 
-            $cartUp.animate({
-                top: -$cartUp.height() + "px"
-            });
+        var self = $(e.target);
+        if ("A" == self.context.tagName) {
+            var t, dad = self.parent(), grandPa = self.parent().parent(), num = dad.find(".set_num_in"), val = parseInt(num.val());
+            if (-1 !== e.target.className.indexOf("d_btn") ? //--
+            t = val > 0 ? val - 1 : val : -1 !== e.target.className.indexOf("i_btn") && (//++
+            t = val + 1), 0 == t) {
+                grandPa.remove();
+                var itemTotal = $(".basket_list li").length;
+                0 == itemTotal ? ($("#cartScroll").html('<p class="rcart-empty">篮子是空的</p>'), $(".rcart-info").remove()) : $("#cartTotalItems").html(itemTotal), 
+                fixScroll();
+            }
+            var id = grandPa.data("good_id");
+            cart.find(id, function(item) {
+                item && (item.count = t, refreshCart());
+            }), num.val(t), cart.refresh();
         }
-        num.val(t), cart.refresh();
+    }
+    function clearCart() {
+        $("#cartScroll").html('<p class="rcart-empty">篮子是空的</p>'), //$('.rcart-info').remove();
+        cart.empty(), refreshCart(), fixScroll();
+    }
+    //***********************************************BUG
+    function fixScroll() {
+        $cartUp.animate({
+            top: -$cartUp.height() + "px"
+        });
     }
     var $cartUp = $("#cartScroll");
     $(".aside-icon-cart").on("click", toggleCartScroll), //     {
-    //          itemId: 123,
+    //          id: 123,
     //          price: 10,
     //          count: 2,
     //          title: "平菇牛肉小份",
     //          domLi: null/$('xxx')
     //     }
-    Cart.prototype.find = function(id) {
+    Cart.prototype.find = function(id, callback) {
         "object" == typeof id && (id = id.id);
-        for (var i = 0, len = this.itemList.length; len > i; i++) if (this.itemList[i].id === id) return this.itemList[i];
+        for (var i = 0, len = this.itemList.length; len > i; i++) if (this.itemList[i].id == id) return callback && callback(this.itemList[i]), 
+        this.itemList[i];
         return !1;
     }, /**
       * [add 增加商品]
@@ -48,44 +68,142 @@ define([ "jquery" ], function($) {
       * 返回 true 表示已经有这个 item, 返回数字表示成功
       */
     Cart.prototype.add = function(item) {
-        return this.find(item.id) ? !1 : (this.itemList.push(item), ture);
+        if (!this.find(item.id)) {
+            this.itemList.push(item);
+            var tpl = _.template($("#tpl-cart-item").html())({
+                data: item
+            });
+            return $(".rcart-empty").length > 0 && $("#cartScroll").html('<h4 class="rcart-title">购物车<a class="rcart-clear basket_clear_btn">[清空]</a></h4><ul class="rcart-list basket_list"></ul>'), 
+            $(".basket_list").append(tpl), refreshCart(), fixScroll(), !0;
+        }
+        return !1;
+    }, Cart.prototype.setCount = function(id, callback) {
+        var item = this.find(id);
+        return item ? void callback(item) : callback(null);
     }, Cart.prototype.del = function(id) {
         "object" == typeof id && (id = id.id);
-        for (var i = 0, len = this.itemList.length; len > i; i++) if (this.itemList[i].id === id) return this.itemList.splice(i, 1);
+        for (var i = 0, len = this.itemList.length; len > i; i++) if (this.itemList[i].id == id) return this.itemList.splice(i, 1);
         return !1;
     }, Cart.prototype.getTotalPrice = function() {
         var total = 0;
         return this.itemList.forEach(function(item) {
-            total += parseInt(item.price);
+            var count = item.count || 0;
+            total += parseInt(item.price * count);
+        }), total;
+    }, Cart.prototype.getTotalCount = function() {
+        var total = 0;
+        return this.itemList.forEach(function(item) {
+            var count = item.count || 0;
+            total += parseInt(count);
         }), total;
     }, Cart.prototype.refresh = function() {
-        return this.totalPrice = this.getTotalPrice(), this.totalNum = this.itemList.length, 
+        return this.totalPrice = this.getTotalPrice(), this.totalNum = this.getTotalCount(), 
         {
             totalPrice: this.totalPrice,
             totalNum: this.totalNum
         };
+    }, //todo for debug 显示状态用的
+    Cart.prototype.state = function() {
+        console.log(this.itemList);
     }, Cart.prototype.empty = function() {
         this.itemList = [];
     };
     var cart = new Cart();
-    $(".d_btn, .i_btn").on("click", changeItemNum), $(".rcart-d-del").on("click", function() {
-        var self = $(this);
-        self.parent().remove();
-        var itemTotal = $(".basket_list li").length;
-        0 == itemTotal ? ($("#cartScroll").html('<p class="rcart-empty">篮子是空的</p>'), $(".rcart-info").remove()) : $("#cartTotalItems").html(itemTotal), 
-        cart.refresh(), $cartUp.animate({
-            top: -$cartUp.height() + "px"
-        });
-    }), $(".rcart-clear").on("click", function() {
-        $("#cartScroll").html('<p class="rcart-empty">篮子是空的</p>'), $(".rcart-info").remove(), 
-        $cartUp.animate({
-            top: -$cartUp.height() + "px"
-        }), cart.empty();
-    }), define([ "cart" ], function() {
-        return {
-            add: function() {},
-            del: function() {},
-            refresh: function() {}
-        };
-    }), console.log("shop cart loaded");
+    $("#cartScroll").delegate($(".d_btn, .i_btn"), "click", changeItemNum), //***********************************************BUG
+    $("#cartScroll").on("click", ".rcart-d-del", function(e) {
+        var self = $(e.target);
+        console.log(self);
+        //self.parent().remove();
+        //var itemTotal = $('.basket_list li').length;
+        //if(itemTotal == 0){
+        //    $('#cartScroll').html('<p class="rcart-empty">篮子是空的</p>');
+        //    $('.rcart-info').remove();
+        //}else{
+        //    $('#cartTotalItems').html(itemTotal);
+        //}
+        //cart.refresh();
+        //$cartUp.animate({top: -$cartUp.height() + 'px'});
+        var pnt = self.parent();
+        cart.del(pnt.data("good_id")), pnt.remove(), refreshCart(), fixScroll();
+    }), $("#cartScroll").on("click", ".basket_clear_btn", clearCart);
+    var exports = {
+        add: function(id, shop_id) {
+            $.ajax({
+                url: "/cartAdd",
+                type: "post",
+                data: {
+                    good_id: id,
+                    shop_id: shop_id
+                },
+                beforeSend: function() {},
+                success: function(res) {
+                    if ("true" == res.success) {
+                        var data = res.data;
+                        $("#cartTotalItems").html(data.cart_count), $("#cartTotalPrice").html(data.cart_all), 
+                        cart.add({
+                            id: data.addedItem.goods_id,
+                            price: data.addedItem.goods_price,
+                            count: data.addedItem.goods_count,
+                            title: data.addedItem.goods_name,
+                            shop_id: data.shop_id,
+                            domLi: null
+                        });
+                    } else alert(res.info);
+                }
+            });
+        },
+        del: function(id, shop_id) {
+            $.ajax({
+                url: "http://localhost:8080/takeaway/public/cartDel",
+                type: "post",
+                data: {
+                    good_id: id,
+                    shop_id: shop_id
+                },
+                success: function(res) {
+                    if ("true" == res.success) {
+                        var deled = cart.del(id);
+                        return deled ? ($('.rcart-dish[data-good_id="' + id + '"]').remove(), refreshCart(), 
+                        fixScroll(), deled) : !1;
+                    }
+                    alert("网络错误!");
+                }
+            });
+        },
+        setCount: function(id, count, shop_id) {
+            $.ajax({
+                url: "http://localhost:8080/takeaway/public/cartSetCount",
+                type: "post",
+                data: {
+                    good_id: id,
+                    shop_id: shop_id,
+                    count: count
+                },
+                success: function(res) {
+                    "true" == res.success ? cart.find(id, function(item) {
+                        item && (item.count = count, refreshCart(), fixScroll());
+                    }) : alert("网络错误!");
+                }
+            });
+        },
+        empty: function() {
+            $.ajax({
+                url: "http://localhost:8080/takeaway/public/cartClear",
+                type: "post",
+                data: {
+                    good_id: id,
+                    shop_id: shop_id,
+                    count: count
+                },
+                success: function(res) {
+                    "true" == res.success ? clearCart() : alert("网络错误!");
+                }
+            });
+        },
+        getState: function() {
+            cart.state();
+        }
+    };
+    //TODO devel for DEBUG
+    return window.cart = exports, exports;
 });

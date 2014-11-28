@@ -1,20 +1,20 @@
 <div class="shops">
         <div class="shops-header">
             <div class="ui-helper-clearfix">
-               <span class="shops_func choice_click">
-                    <input type="checkbox" class="sh_hot_shops" name="hot_shops" checked="checked"/>
-                    <b>热门餐厅</b>
+               <span class="shops_func choice_click" data-label="ishot">
+                    <input type="checkbox" class="sh_hot_shops"  name="hot_shops" checked="checked"/>
+                    <label>热门餐厅</label>
                </span>
-               <span class="shops_func choice_click">
-                    <input type="checkbox" class="sh_hot_shops" name="hot_shops" />
-                   <b>营业中</b>
+               <span class="shops_func choice_click" data-label="isonline">
+                    <input type="checkbox" class="sh_hot_shops"  name="hot_shops" />
+                   <label for="sh_running">营业中</label>
                 </span>
                 <span class="fliter"></span>
-               <span class="shops_func choice_click">
-                    <input type="checkbox" class="sh_hot_shops" name="hot_shops" />
-                    <b>在线支付</b>
+               <span class="shops_func choice_click" data-label="issupportpay">
+                    <input type="checkbox"  class="sh_hot_shops" name="hot_shops" />
+                    <label for="sh_online_pay">在线支付</label>
                 </span>
-                <div class="flavor_block">
+                <div class="flavor_block" data-label="flavor">
                     <div class="drop_button"><a>口味</a></div>
                         <ul class="drop_list">
                             <li>全部</li>
@@ -34,14 +34,14 @@
         <div class="shop_activities">
             <div class="ui-helper-clearfix">
             @foreach($shop_list['data']['activity'] as $key=>$value)
-                    <span class="choice_click activities-btn" data-activity-id="{{$key}}">
-                       <input name="filter" type="checkbox">
-                       <b>{{$value}}</b>
+                    <span class="activities-btn" data-activity-id="{{$key}}">
+                       <input id="checkbox_btn_{{$key}}" class="sh_hot_shops" name="filter" type="checkbox">
+                       <label for="checkbox_btn_{{$key}}">{{$value}}</label>
                    </span>
             @endforeach
             </div>
         </div>
-        <table class="shop_container">
+        <table id="shop_container" class="shop_container">
             <tr>
                 <td>
                     @include("widget/shop_info/shop_info" , array("shops" => $shop_list['data']['shops']))
