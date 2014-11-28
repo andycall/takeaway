@@ -267,11 +267,14 @@
                              shop_id: data['shop_id'],
                              domLi: null
                          });
+
                      }else{
                          alert(res.info);
                      }
                  }
+
              });
+             refreshCart();
          },
 
          del: function(id, shop_id){

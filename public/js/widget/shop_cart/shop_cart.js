@@ -166,7 +166,7 @@ define([ "jquery", "underscore" ], function($, _) {
                         });
                     } else alert(res.info);
                 }
-            });
+            }), refreshCart();
         },
         del: function(id, shop_id) {
             $.ajax({
