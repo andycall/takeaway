@@ -142,26 +142,20 @@
          var dad = self.parent();
          var grandPa = self.parent().parent();
          var num = dad.find('.set_num_in');
-         var val = parseInt(num.val());
+         var val = parseInt(num.val()) || 0;
          var t;
          if(e.target.className.indexOf('d_btn') !== -1){ //--
              t = val > 0 ? val - 1 : val;
          }else if(e.target.className.indexOf('i_btn') !== -1){ //++
              t = val + 1;
          }
-         //if(t == 0){
-         //    grandPa.remove();
-         //    var itemTotal = $('.basket_list li').length;
-         //    if(itemTotal == 0){
-         //        $('#cartScroll').html('<p class="rcart-empty">篮子是空的</p>');
-         //        $('.rcart-info').remove();
-         //    }else{
-         //        $('#cartTotalItems').html(itemTotal);
-         //    }
-         //    fixScroll();
-         //}
+
          var id = grandPa.data('good_id'),
              shop_id = grandPa.data('shop_id');
+
+         if(t <= 0){
+             return exports.del(id);
+         }
 
          $.ajax({
              url: "./cartSetCount",
@@ -177,6 +171,7 @@
                          if(item){
                              item.count = t;
                              num.val(t);
+
                              refreshCart();
                              fixScroll();
                          }
@@ -187,6 +182,17 @@
              }
          });
      }
+
+
+     $('#cartScroll').on('keyup', '.set_num_in', function(e){
+         var self = $(e.target);
+         var pnt = self.parents('.rcart-dish');
+         var id = pnt.data('good_id'),
+             shop_id = pnt.data('shop_id'),
+             count = parseInt(self.val());
+        if(!count) return false;
+         exports.setCount(id, count, shop_id);
+     });
 
 
      $('#cartScroll').on('click', '.rcart-d-del', function(e){
@@ -304,6 +310,9 @@
          },
 
          setCount: function(id, count, shop_id){
+             if(count <= 0){
+                 return exports.del(id, shop_id);
+             }
              $.ajax({
                  url: "./cartSetCount",
                  type: "post",

@@ -26,23 +26,12 @@ define([ "jquery", "underscore" ], function($, _) {
     function changeItemNum(e) {
         var self = $(e.target);
         if ("A" == self.context.tagName) {
-            var t, dad = self.parent(), grandPa = self.parent().parent(), num = dad.find(".set_num_in"), val = parseInt(num.val());
+            var t, dad = self.parent(), grandPa = self.parent().parent(), num = dad.find(".set_num_in"), val = parseInt(num.val()) || 0;
             -1 !== e.target.className.indexOf("d_btn") ? //--
             t = val > 0 ? val - 1 : val : -1 !== e.target.className.indexOf("i_btn") && (//++
             t = val + 1);
-            //if(t == 0){
-            //    grandPa.remove();
-            //    var itemTotal = $('.basket_list li').length;
-            //    if(itemTotal == 0){
-            //        $('#cartScroll').html('<p class="rcart-empty">篮子是空的</p>');
-            //        $('.rcart-info').remove();
-            //    }else{
-            //        $('#cartTotalItems').html(itemTotal);
-            //    }
-            //    fixScroll();
-            //}
             var id = grandPa.data("good_id"), shop_id = grandPa.data("shop_id");
-            $.ajax({
+            return 0 >= t ? exports.del(id) : void $.ajax({
                 url: "./cartSetCount",
                 type: "post",
                 data: {
@@ -133,7 +122,10 @@ define([ "jquery", "underscore" ], function($, _) {
         this.itemList = [];
     };
     var cart = new Cart();
-    $("#cartScroll").on("click", ".d_btn, .i_btn", changeItemNum), $("#cartScroll").on("click", ".rcart-d-del", function(e) {
+    $("#cartScroll").on("click", ".d_btn, .i_btn", changeItemNum), $("#cartScroll").on("keyup", ".set_num_in", function(e) {
+        var self = $(e.target), pnt = self.parents(".rcart-dish"), id = pnt.data("good_id"), shop_id = pnt.data("shop_id"), count = parseInt(self.val());
+        return count ? void exports.setCount(id, count, shop_id) : !1;
+    }), $("#cartScroll").on("click", ".rcart-d-del", function(e) {
         var self = $(e.target), pnt = self.parent(), id = pnt.data("good_id"), shop_id = pnt.data("shop_id");
         $.ajax({
             url: "./cartDel",
@@ -193,7 +185,7 @@ define([ "jquery", "underscore" ], function($, _) {
             });
         },
         setCount: function(id, count, shop_id) {
-            $.ajax({
+            return 0 >= count ? exports.del(id, shop_id) : void $.ajax({
                 url: "./cartSetCount",
                 type: "post",
                 data: {
