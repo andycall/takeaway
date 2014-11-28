@@ -2672,7 +2672,57 @@ Route::post("/delCollect", function(){
 //提交我的收藏列表
 Route::post("/collect-list", function(){
     $data = [
-        "success" => "true"
+        "success" => "true",
+        "state"   => 200       ,                            // HTTP 状态码
+        "nextSrc" => ""       ,                             // 登录成功后的跳转地址
+        "errMsg"  => ""       ,                             // 如果出现错误, 错误信息就出现在这, 如果没有, 那内容为空.
+        "no"      => 0           ,                          // 错误号 ,错误号就出现在这, 如果没有, 那内容为空.
+        "data"    => [
+            "collection_shop" => [
+                [
+                    "shop_id" => "37589",
+                    "place_id" => "589u65487945",
+                    "shop_url" => "http://www.baidu.com",
+                    "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
+                    "deliver_time" => "22",
+                    "deliver_start" => "17:00",
+                    "shop_name" => "ajax三顾冒菜",
+                    "shop_type" => "中餐",
+                    "shop_level" => "4.3",
+                    "order_count" => "202",
+                    "is_opening" => "0",
+                    "is_ready_for_order" => "1"
+                ],
+                [
+                    "shop_id" => "985236",
+                    "place_id" => "234534",
+                    "shop_url" => "##",
+                    "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
+                    "deliver_time" => "45",
+                    "deliver_start" => "",
+                    "shop_name" => "ajxa乐堡王",
+                    "shop_type" => "中式，西式",
+                    "shop_level" => "4.3",
+                    "order_count" => "5134",
+                    "is_opening" => "0",
+                    "is_ready_for_order" => "0"
+                ],
+                [
+                    "shop_id" => "775755",
+                    "place_id" => "435456456436346346346",
+                    "shop_url" => "##",
+                    "shop_logo" => "",
+                    "deliver_time" => "",
+                    "deliver_start" => "",
+                    "shop_name" => "ajax铁板牛肉",
+                    "shop_type" => "中餐",
+                    "shop_level" => "3.8",
+                    "order_count" => "202",
+                    "is_opening" => "2",
+                    "is_ready_for_order" => "0"
+                ]
+            ]
+        ]
     ];
 
     return Response::json($data);
