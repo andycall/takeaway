@@ -689,14 +689,51 @@ Route::get("shop", function() {
             ],
         ],
         "best_seller" => [
-            "data" => [
-                "goods_id" => "",        // 商品id
-                "goods_name" => "",      // 商品名称
-                "goods_level" => "",     // 商品等级, 总共10个等级
-                "comment_count" => "",   // 投票人数
-                "goods_price" => "",     // 商品价格
+            [
+                "goods_id" => "1234",        // 商品id
+                "goods_name" => "李星颖",      // 商品名称
+                "goods_level" => "7",     // 商品等级, 总共10个等级
+                "comment_count" => "123",   // 投票人数
+                "goods_price" => "78",     // 商品价格
+                "shop_id" => "32453",
                 "shop_state"  => "true", // 商家是不是打烊了..
                 "error_state" => ""     // 打烊信息
+            ],
+            [
+                "goods_id" => "456",        // 商品id
+                "goods_name" => "李星颖2",      // 商品名称
+                "goods_level" => "10",     // 商品等级, 总共10个等级
+                "comment_count" => "234",   // 投票人数
+                "goods_price" => "78",     // 商品价格
+                "shop_id" => "32453",
+                "shop_state"  => "true", // 商家是不是打烊了..
+                "error_state" => ""     // 打烊信息
+            ],
+            [
+                "goods_id" => "345456",        // 商品id
+                "goods_name" => "李星颖3",      // 商品名称
+                "goods_level" => "7",     // 商品等级, 总共10个等级
+                "comment_count" => "456",   // 投票人数
+                "goods_price" => "114",     // 商品价格
+                "shop_id" => "456",
+                "shop_state"  => "true", // 商家是不是打烊了..
+                "error_state" => ""     // 打烊信息
+            ],
+            [
+                "goods_id" => "345",        // 商品id
+                "goods_name" => "李星颖4",      // 商品名称
+                "goods_level" => "3",     // 商品等级, 总共10个等级
+                "comment_count" => "54",   // 投票人数
+                "goods_price" => "77",     // 商品价格
+                "shop_id" => "56765",
+                "shop_state"  => "true", // 商家是不是打烊了..
+                "error_state" => ""     // 打烊信息
+            ]
+        ],
+        "shop_map" =>   [
+            "data" => [
+                "map_url" => "http://restapi.amap.com/v3/staticmap?size=340*240&location=106.605994,29.534128&paths=5,0x0000ff,0.5,,:106.604483,29.534763;106.607504,29.533493&markers=-1,http://static11.elemecdn.com/forward/img_in_php/marker_restaurant.png,0:106.604483,29.534763|-1,http://static11.elemecdn.com/forward/img_in_php/marker_entrance.png,0:106.607504,29.533493&key=a48480140567ca23414873c1b56ebf53",
+                "distance" => "45369"
             ]
         ],
 		"userbar" => [
