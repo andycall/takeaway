@@ -11,7 +11,7 @@
 		.point{
 			float: left;
 			color: #ff6c0f;
-			font: 300 52px/1em "Helvetica Neue";
+			font: 300 52px/1em "Helvetica Neue",arial,sans-serif;
 		}
 		.detail{
 			margin: 6px 0 0 90px;
@@ -19,7 +19,6 @@
 				font-size: 15px;
 				position: relative;
 				top:1px;
-
 				.glyph-rating-star{
 					display: inline-block;
 					margin-right: 1px;
@@ -56,6 +55,9 @@
 				overflow: hidden;
 				color: #ff9307;
 				font-family: "eleme"
+			}
+			.glyph-rating-star.off{
+					color: #a7a7a7;
 			}
 
 		}
