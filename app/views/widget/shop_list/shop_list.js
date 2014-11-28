@@ -3,7 +3,19 @@ define(['jquery', "tools/Sizer"], function($, Sizer){
 		drop_list = $(".drop_list"),
 		activitiesBtn = $('.activities-btn'),
 		shops_func = $('.shops_func'),
-		choice_click = $(".choice_click");
+		choice_click = $(".choice_click"),
+		shop_activity = [],
+		shop_container = $(".shop_container");
+
+
+	activitiesBtn.each(function(){
+		shop_activity.push({
+			id : $(this).data("activity_id"),
+			value : $(this).find('label').html()
+		});
+	});
+
+
 
 	drop_button.on('click', function(e){
 		drop_list.toggle();
@@ -12,7 +24,7 @@ define(['jquery', "tools/Sizer"], function($, Sizer){
 	});
 
 	(function(){
-		var target = $(".shop_container .more_shops-row-book");
+		var target = shop_container.find(".more_shops-row-book");
 
 		var result = [];
 
@@ -51,9 +63,11 @@ define(['jquery', "tools/Sizer"], function($, Sizer){
 	// 事件触发的数据获取中间件
 	function dataTrigger(ev, type){
 
-		var obj = {};
+		var obj = {},
+			spans,
+			activities;
 
-		if(type == "checkbox"){
+		if(type == "checkbox" || type == "activity"){
 			var deleteTarget = ev.delegateTarget,
 				input  = $(deleteTarget).find("input");
 
@@ -62,39 +76,68 @@ define(['jquery', "tools/Sizer"], function($, Sizer){
 				input[0].checked = ! nowChecked;
 			}
 		}
-		else{
+		else if(type == 'drop'){
 			var target = ev.target;
+			$('.drop_button').find('a').html(target);
 
 			obj['flavor'] = $(target).html();
 		}
 
+		if(type == "checkbox" || type == 'drop'){
 
-		var spans = $(".choice_click");
+			spans = $(".choice_click");
 
-		spans.each(function(index, value){
-			var input = $(this).find("input"),
-				text  = $(this).find("label");
+			spans.each(function(index, value){
+				var input = $(this).find("input"),
+					text  = $(this).find("label");
 
-			var checked = input[0].checked,
-				val   = text.html(),
-				label  = $(this).data('label');
+				var checked = input[0].checked,
+					val   = text.html(),
+					label  = $(this).data('label');
 
-			if(checked){
-				obj[label] = Number(checked);
-			}
-		});
+				if(checked){
+					obj[label] = Number(checked);
+				}
+			});
+		}
+		else{
+			spans = $(".activities-btn");
+
+			activities = [];
+
+			spans.each(function(){
+				var input = $(this).find("input"),
+					activity  = $(this).data("activity_id");
+				var checked = input[0].checked;
 
 
+				if(checked){
+					activities.push(activity);
+				}
+			});
+
+			obj['support_activity'] = activities;
+
+		}
 		console.log(Sizer.get(obj));
 
+		var template = _.template($("#shop_list_template").html())({
+			shops : Sizer.get(obj),
+			shop_activity : shop_activity
+		});
+
+		shop_container.find('td').html(template);
 	}
 
-	drop_list.on("click", "li", function(ev){
-		console.log(ev.target);
+	drop_list.on("click", "li", function(e){
+		dataTrigger(e, "drop");
 	});
-
-
-	choice_click.on('click', dataTrigger);
+	choice_click.on('click', function(e){
+		dataTrigger(e, "checkbox");
+	});
+	activitiesBtn.on('click', function(e){
+		dataTrigger(e, "activity");
+	});
 
 
 	drop_list.on('click', "li", function(ev){

@@ -53,7 +53,15 @@ define(['jquery'], function($){
                 flag  = true;
 
 			for(var name in labelObject) {
-				if (target[name] !=  labelObject[name]) {
+				if(name == "support_activity"){
+					var activity = labelObject[name];
+					for(var j = 0,len_activity = activity.length; j < len_activity ; j ++){
+						if(target['support_activity'][j] != activity[j]){
+							flag = false;
+						}
+					}
+				}
+				if (name != "support_activity" && target[name] !=  labelObject[name]) {
                     flag = false;
 				}
 			}
