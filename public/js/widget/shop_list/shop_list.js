@@ -10,7 +10,8 @@ define([ "jquery", "tools/Sizer" ], function($, Sizer) {
             }
         } else if ("drop" == type) {
             var target = ev.target;
-            $(".drop_button").find("a").html(target), obj.flavor = $(target).html();
+            //$('.drop_button').find('a').html(target);
+            obj.flavor = $(target).html();
         }
         "checkbox" == type || "drop" == type ? (spans = $(".choice_click"), spans.each(function() {
             var input = $(this).find("input"), text = $(this).find("label"), checked = input[0].checked, label = (text.html(), 

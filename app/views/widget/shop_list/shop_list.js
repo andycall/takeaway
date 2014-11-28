@@ -78,7 +78,7 @@ define(['jquery', "tools/Sizer"], function($, Sizer){
 		}
 		else if(type == 'drop'){
 			var target = ev.target;
-			$('.drop_button').find('a').html(target);
+			//$('.drop_button').find('a').html(target);
 
 			obj['flavor'] = $(target).html();
 		}
