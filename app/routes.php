@@ -1185,7 +1185,49 @@ Route::get("comment", function(){
 				],
 
 			]
-		]
+		],
+        "shop_comments" => [
+            [
+                "good_name" => "炸酱泡脚",    //菜单名
+                "user_name" => "lijinxinree654688", //用户名
+                "time"      => "2014 0506",  //时间
+                "content"   => "泡脚好吃",  //评论内容
+                "good_price"=> "100000",    //价格    
+                "star_url"  => "http://static11.elemecdn.com/forward/dist/img/restaurant/rst-sprites.b35686d3.png"
+            ],
+            [
+                "good_name" => "炸酱泡脚",    //菜单名
+                "user_name" => "lijinxinree654688", //用户名
+                "time"      => "2014 0506",  //时间
+                "content"   => "泡脚好吃",  //评论内容
+                "good_price"=> "100000",    //价格    
+                "star_url"  => "http://static11.elemecdn.com/forward/dist/img/restaurant/rst-sprites.b35686d3.png"
+            ],
+            [
+                "good_name" => "炸酱泡脚",    //菜单名
+                "user_name" => "lijinxinree654688", //用户名
+                "time"      => "2014 0506",  //时间
+                "content"   => "泡脚好吃",  //评论内容
+                "good_price"=> "100000",    //价格    
+                "star_url"  => "http://static11.elemecdn.com/forward/dist/img/restaurant/rst-sprites.b35686d3.png"
+            ],
+            [
+                "good_name" => "炸酱泡脚",    //菜单名
+                "user_name" => "lijinxinree654688", //用户名
+                "time"      => "2014 0506",  //时间
+                "good_price"=> "100000",    //价格    
+                "content"   => "泡脚好吃",  //评论内容
+                "star_url"  => "http://static11.elemecdn.com/forward/dist/img/restaurant/rst-sprites.b35686d3.png"
+            ],
+            [
+                "good_name" => "炸酱泡脚",    //菜单名
+                "user_name" => "lijinxinree654688", //用户名
+                "time"      => "2014 0506",  //时间
+                "good_price"=> "100000",    //价格    
+                "content"   => "泡脚好吃",  //评论内容
+                "star_url"  => "http://static11.elemecdn.com/forward/dist/img/restaurant/rst-sprites.b35686d3.png"
+            ],
+        ]
 	];
 
 	return View::make("template.shop.shop_comment")->with($data);
@@ -1208,8 +1250,6 @@ Route::get("/register", function(){
 	return View::make("template.login_register.register")->with($data);
 
 });
-
-
 
 
 Route::get("/personal_center", function(){
@@ -1286,275 +1326,6 @@ Route::get("/personal_center", function(){
 	return View::make("template.personal.personal_center")->with($data);
 });
 
-Route::get("/personal_after_month", function(){
-	$data = [
-		"userbar" => [
-			"url" => [
-				"my_place" => "这里是地址",
-				"switch_palce" => "##",
-				"logo" => "123" ,                         // 网站主页地址
-				"mobile" => "123",                 // 跳转到下载手机APP的地址
-				"my_ticket" => "123",                 // 我的饿单的地址
-				"my_gift"  => "123",                // 礼品中心地址
-				"feedback" => "123",                // 反馈留言地址
-				"shop_chart" => "123",                // 购物车地址
-				"user_mail" => "123",                // 用户提醒的地址
-				"personal" => "123",                // 个人中心地址
-				"my_collection" => "123",               // 我的收藏地址
-				"my_secure" => "123",              // 安全设置的地址
-				"loginout" => "123",              // 退出登录的地址
-				"switch_place" => "123"                  // 切换当前地址的地址
-			]
-		],
-		"sidebar" => [  // 左侧栏地址
-			"personal_center" => url("/personal_center"),  // 个人中心的地址
-			"personal_recent_month" => url("personal_recent_month"), // 最近一个月的地址
-			"personal_after_month" => url("personal_after_month") , // 一个月之前
-			"personal_uncomment" => url("personal_uncomment") ,  // 未点评的订单
-			"personal_return" => url("personal_return"),     // 退单中的订单
-			"personal_collection_shop" => url("personal_collection_shop"),// 我收藏的餐厅的地址
-			"personal_collection_goods" => url("personal_collection_goods"), // 我收藏的商品的地址
-			"personal_my_site" => url("personal_my_site") ,  // 我的地址
-			"personal_change_password" => url("personal_change_password"), // 修改密码
-			"personal_secure"=> url("personal_secure"),        // 安全设置
-			"personal_details" => url("personal_details")       // 收支明细
-		],
-
-        "after_month" => [
-            "deal_count" => "11",
-            "deal" => [
-                [
-                    "shop_id" => "111123",
-                    "deal_id" => "123",
-                    "deal_statue" => "3",
-                    "same_again" => "##",
-                    "deal_is_retrun" => "1",
-                    "deal_return" => "##",
-                    "deal_is_pre" => "1",
-                    "deal_pre_time" => "2014-11-17 11:45:00",
-                    "deal_again" => "##",
-                    "shop_name" => "臭脚丫",
-                    "deal_number" => "1234567345678",
-                    "deal_time" => "2014-11-18 11:11:27",
-                    "deal_phone" => "15340525659 15340525659",
-                    "deliver_address" => "邮电大学太极操场西6门",
-                    "deliver_phone" => "18716625394",
-                    "deliver_remark" => "吃吃吃！",
-                    "deal_speed" => "0",
-                    "deal_satisfied" => "0",
-                    "good" => [
-                        [
-                            "goods_id" => "111123",
-                            "goods_name" => "红烧肉",
-                            "goods_value" => "12",
-                            "goods_amount" => "1",
-                            "goods_total" => "12",
-                            "good_atisfied" => "0"
-                        ],
-                        [
-                            "goods_id" => "111123",
-                            "goods_name" => "红烧肉",
-                            "goods_value" => "12",
-                            "goods_amount" => "1",
-                            "goods_total" => "12",
-                            "good_atisfied" => "2"
-                        ]
-                    ],
-                    "others" => [
-                        [
-                            "item_name" => "红烧肉",
-                            "item_value" => "-5",
-                            "item_amount" => "1",
-                            "item_total" => "-5"
-                        ]
-                    ],
-                    "total" => "19"
-                ],
-                [
-                    "shop_id" => "123",
-                    "deal_id" => "123",
-                    "deal_statue" => "0",
-                    "same_again" => "##",
-                    "deal_is_retrun" => "0",
-                    "deal_return" => "##",
-                    "deal_is_pre" => "1",
-                    "deal_pre_time" => "2014-11-17 11:45:00",
-                    "deal_again" => "##",
-                    "shop_name" => "臭脚丫",
-                    "deal_number" => "1234567345678",
-                    "deal_time" => "2014-11-18 11:11:27",
-                    "deal_phone" => "15340525659 15340525659",
-                    "deliver_address" => "邮电大学太极操场西6门",
-                    "deliver_phone" => "18716625394",
-                    "deliver_remark" => "吃吃吃！",
-                    "deal_speed" => "75分钟",
-                    "deal_satisfied" => "0",
-                    "good" => [
-                        [
-                            "goods_id" => "123",
-                            "goods_name" => "红烧肉",
-                            "goods_value" => "12",
-                            "goods_amount" => "1",
-                            "goods_total" => "12",
-                            "good_atisfied" => "0"
-                        ],
-                        [
-                            "goods_id" => "123",
-                            "goods_name" => "红烧肉",
-                            "goods_value" => "12",
-                            "goods_amount" => "1",
-                            "goods_total" => "12",
-                            "good_atisfied" => "0"
-                        ]
-                    ],
-                    "others" => [
-                        [
-                            "item_name" => "减减减",
-                            "item_value" => "-5",
-                            "item_amount" => "1",
-                            "item_total" => "-5"
-                        ]
-                    ],
-                    "total" => "19"
-                ],
-                [
-                    "shop_id" => "123",
-                    "deal_id" => "123",
-                    "deal_statue" => "1",
-                    "same_again" => "##",
-                    "deal_is_retrun" => "1",
-                    "deal_return" => "##",
-                    "deal_is_pre" => "1",
-                    "deal_pre_time" => "2014-11-17 11:45:00",
-                    "deal_again" => "##",
-                    "shop_name" => "臭脚丫",
-                    "deal_number" => "1234567345678",
-                    "deal_time" => "2014-11-18 11:11:27",
-                    "deal_phone" => "15340525659 15340525659",
-                    "deliver_address" => "邮电大学太极操场西6门",
-                    "deliver_phone" => "18716625394",
-                    "deliver_remark" => "吃吃吃！",
-                    "deal_speed" => "5分钟",
-                    "deal_satisfied" => "0",
-                    "good" => [
-                        [
-                            "goods_id" => "123",
-                            "goods_name" => "红烧肉",
-                            "goods_value" => "12",
-                            "goods_amount" => "1",
-                            "goods_total" => "12",
-                            "good_atisfied" => "0"
-                        ],
-                        [
-                            "goods_id" => "123",
-                            "goods_name" => "红烧肉",
-                            "goods_value" => "12",
-                            "goods_amount" => "1",
-                            "goods_total" => "12",
-                            "good_atisfied" => "0"
-                        ]
-                    ],
-                    "others" => [
-                        [
-                            "item_name" => "红烧肉",
-                            "item_value" => "-5",
-                            "item_amount" => "1",
-                            "item_total" => "-5"
-                        ]
-                    ],
-                    "total" => "19"
-                ],
-                [
-                    "shop_id" => "123",
-                    "deal_id" => "123",
-                    "deal_statue" => "2",
-                    "same_again" => "##",
-                    "deal_is_retrun" => "1",
-                    "deal_return" => "##",
-                    "deal_is_pre" => "1",
-                    "deal_pre_time" => "2014-11-17 11:45:00",
-                    "deal_again" => "##",
-                    "shop_name" => "臭脚丫",
-                    "deal_number" => "1234567345678",
-                    "deal_time" => "2014-11-18 11:11:27",
-                    "deal_phone" => "15340525659 15340525659",
-                    "deliver_address" => "邮电大学太极操场西6门",
-                    "deliver_phone" => "18716625394",
-                    "deliver_remark" => "吃吃吃！",
-                    "deal_speed" => "5分钟",
-                    "deal_satisfied" => "1",
-                    "good" => [
-                        [
-                            "goods_id" => "123",
-                            "goods_name" => "红烧肉",
-                            "goods_value" => "12",
-                            "goods_amount" => "1",
-                            "goods_total" => "12",
-                            "good_atisfied" => "0"
-                        ],
-                        [
-                            "goods_id" => "123",
-                            "goods_name" => "红烧肉",
-                            "goods_value" => "12",
-                            "goods_amount" => "1",
-                            "goods_total" => "12",
-                            "good_atisfied" => "0"
-                        ]
-                    ],
-                    "others" => [
-                        [
-                            "item_name" => "红烧肉",
-                            "item_value" => "-5",
-                            "item_amount" => "1",
-                            "item_total" => "-5"
-                        ]
-                    ],
-                    "total" => "19"
-                ]
-            ]
-        ]
-	];
-
-	return View::make("template.personal.personal_after_month")->with($data);
-});
-
-Route::get("/personal_change_password", function(){
-	$data = [
-		"userbar" => [
-			"url" => [
-				"my_place" => "这里是地址",
-				"switch_palce" => "##",
-				"logo" => "123" ,                         // 网站主页地址
-				"mobile" => "123",                 // 跳转到下载手机APP的地址
-				"my_ticket" => "123",                 // 我的饿单的地址
-				"my_gift"  => "123",                // 礼品中心地址
-				"feedback" => "123",                // 反馈留言地址
-				"shop_chart" => "123",                // 购物车地址
-				"user_mail" => "123",                // 用户提醒的地址
-				"personal" => "123",                // 个人中心地址
-				"my_collection" => "123",               // 我的收藏地址
-				"my_secure" => "123",              // 安全设置的地址
-				"loginout" => "123",              // 退出登录的地址
-				"switch_place" => "123"                  // 切换当前地址的地址
-			]
-		],
-		"sidebar" => [  // 左侧栏地址
-			"personal_center" => url("/personal_center"),  // 个人中心的地址
-			"personal_recent_month" => url("personal_recent_month"), // 最近一个月的地址
-			"personal_after_month" => url("personal_after_month") , // 一个月之前
-			"personal_uncomment" => url("personal_uncomment") ,  // 未点评的订单
-			"personal_return" => url("personal_return"),     // 退单中的订单
-			"personal_collection_shop" => url("personal_collection_shop"),// 我收藏的餐厅的地址
-			"personal_collection_goods" => url("personal_collection_goods"), // 我收藏的商品的地址
-			"personal_my_site" => url("personal_my_site") ,  // 我的地址
-			"personal_change_password" => url("personal_change_password"), // 修改密码
-			"personal_secure"=> url("personal_secure"),        // 安全设置
-			"personal_details" => url("personal_details")       // 收支明细
-		]
-	];
-
-	return View::make("template.personal.personal_change_password")->with($data);
-});
 
 Route::get("/personal_change_password", function(){
 	$data = [
@@ -2898,3 +2669,51 @@ Route::post("/delCollect", function(){
     return Response::json($data);
 });
 
+//提交我的收藏列表
+Route::post("/collect-list", function(){
+    $data = [
+        "success" => "true"
+    ];
+
+    return Response::json($data);
+});
+
+Route::post("/cartSetCount", function (){
+    $data = [
+        "success" => "true"
+    ];
+    return Response::json($data);
+});
+
+Route::post("/cartClear", function (){
+    $data = [
+        "success" => "true"
+    ];
+    return Response::json($data);
+});
+
+Route::post("/cartAdd", function (){
+    $data = [
+        "success" => "true",
+        "data" => [
+            "addedItem" => [
+                "goods_id" => "1234",
+                "goods_name" => "欧亚非爱吃的烤红薯", // 商品名称
+                "goods_count" => "3", // 商品数量
+                "goods_price" => "99", // 商品价格
+            ],
+            "cart_all"  => "999",  // 所有的总价
+            "shop_id" => "46456",
+            "is_ready"  => "true",  // 是否可以下单(有些商家会设定起步价)
+            "card_count" => "2" // 所有东西的数量
+        ]
+    ];
+    return Response::json($data);
+});
+
+Route::post("/cartDel", function (){
+    $data = [
+        "success" => "true"
+    ];
+    return Response::json($data);
+});
