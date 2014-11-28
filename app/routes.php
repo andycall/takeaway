@@ -2686,7 +2686,7 @@ Route::post("/collect-list", function(){
                     "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
                     "deliver_time" => "22",
                     "deliver_start" => "17:00",
-                    "shop_name" => "ajax三顾冒菜",
+                    "shop_name" => "三顾冒菜",
                     "shop_type" => "中餐",
                     "shop_level" => "4.3",
                     "order_count" => "202",
@@ -2700,7 +2700,7 @@ Route::post("/collect-list", function(){
                     "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
                     "deliver_time" => "45",
                     "deliver_start" => "",
-                    "shop_name" => "ajxa乐堡王",
+                    "shop_name" => "乐堡王",
                     "shop_type" => "中式，西式",
                     "shop_level" => "4.3",
                     "order_count" => "5134",
@@ -2714,12 +2714,26 @@ Route::post("/collect-list", function(){
                     "shop_logo" => "",
                     "deliver_time" => "",
                     "deliver_start" => "",
-                    "shop_name" => "ajax铁板牛肉",
+                    "shop_name" => "铁板牛肉",
                     "shop_type" => "中餐",
                     "shop_level" => "3.8",
                     "order_count" => "202",
                     "is_opening" => "2",
                     "is_ready_for_order" => "0"
+                ],
+                [
+                    "shop_id" => "37589",
+                    "place_id" => "589u65487945",
+                    "shop_url" => "http://www.baidu.com",
+                    "shop_logo" => "images/5c81fa9884117928491470659e18djpeg.jpeg",
+                    "deliver_time" => "22",
+                    "deliver_start" => "17:00",
+                    "shop_name" => "ajax三顾冒菜",
+                    "shop_type" => "中餐",
+                    "shop_level" => "4.3",
+                    "order_count" => "202",
+                    "is_opening" => "0",
+                    "is_ready_for_order" => "1"
                 ]
             ]
         ]
