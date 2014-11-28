@@ -121,14 +121,20 @@
          var cartInfo = cart.refresh();
          $totalLen.html(cartInfo.totalNum);
          $totalPrice.html(cartInfo.totalPrice);
-         if(cartInfo.totalNum == 0){
+
+         if(cartInfo.totalPrice == 0){
+             $('.rcart-info').hide();
+             $('#cartScroll').html('<p class="rcart-empty">篮子是空的</p>');
              $('.aside-cart-btn').addClass('disabled').html('篮子是空的哦');
          }else{
+             $('.rcart-info').show();
              $('.aside-cart-btn').removeClass('disabled').html('点击支付');
          }
+
+
      }
 
-     $('#cartScroll').delegate($('.d_btn, .i_btn'), 'click', changeItemNum);
+     $('#cartScroll').on('click', '.d_btn, .i_btn', changeItemNum);
 
      function changeItemNum(e){
          var self = $(e.target);
@@ -154,52 +160,81 @@
              }
              fixScroll();
          }
-         var id = grandPa.data('good_id');
-         cart.find(id, function(item){
+         var id = grandPa.data('good_id'),
+             shop_id = grandPa.data('shop_id');
 
-             if(!item)return;
-             item.count = t;
-             refreshCart();
+         $.ajax({
+             url: "./cartSetCount",
+             type: "post",
+             data: {
+                 good_id: id,
+                 shop_id: shop_id,
+                 count: t
+             },
+             success: function (res) {
+                 if("true" == res.success){
+                     cart.find(id, function(item){
+                         if(item){
+                             item.count = t;
+                             num.val(t);
+                             refreshCart();
+                             fixScroll();
+                         }
+                     });
+                 }else{
+                     alert("网络错误!");
+                 }
+             }
          });
-         num.val(t);
-         cart.refresh();
      }
 
 
-
-
-     //***********************************************BUG
      $('#cartScroll').on('click', '.rcart-d-del', function(e){
          var self = $(e.target);
-	     console.log(self);
-         //self.parent().remove();
-         //var itemTotal = $('.basket_list li').length;
-         //if(itemTotal == 0){
-         //    $('#cartScroll').html('<p class="rcart-empty">篮子是空的</p>');
-         //    $('.rcart-info').remove();
-         //}else{
-         //    $('#cartTotalItems').html(itemTotal);
-         //}
-         //cart.refresh();
-         //$cartUp.animate({top: -$cartUp.height() + 'px'});
          var pnt = self.parent();
-         cart.del(pnt.data('good_id'));
-         pnt.remove();
-         refreshCart();
-         fixScroll();
+         var id = pnt.data('good_id'),
+             shop_id = pnt.data('shop_id');
+
+         $.ajax({
+             url: "./cartDel",
+             type: "post",
+             data: {
+                 good_id: id,
+                 shop_id: shop_id
+             },
+             success: function (res) {
+                 if("true" == res.success){
+
+                     cart.del(pnt.data('good_id'));
+                     pnt.remove();
+
+                     refreshCart();
+                     fixScroll();
+                 }else{
+                     alert("网络错误!");
+                 }
+             }
+         });
      });
 
      $('#cartScroll').on('click','.basket_clear_btn', clearCart);
      function clearCart(){
-         $('#cartScroll').html('<p class="rcart-empty">篮子是空的</p>');
-         //$('.rcart-info').remove();
-         cart.empty();
-         refreshCart()
-         fixScroll();
+         $.ajax({
+             url: "./cartClear",
+             type: "post",
+             data: {
+             },
+             success: function (res) {
+                 if("true" == res.success){
+                     cart.empty();
+                     refreshCart()
+                     fixScroll();
+                 }else{
+                     alert("网络错误!");
+                 }
+             }
+         });
      }
-//***********************************************BUG
-
-
 
 
 
@@ -210,7 +245,7 @@
      var exports = {
          add: function(id, shop_id) {
              $.ajax({
-                 url: "/cartAdd",
+                 url: "./cartAdd",
                  type: "post",
                  data: {
                      good_id: id,
@@ -241,7 +276,7 @@
 
          del: function(id, shop_id){
              $.ajax({
-                 url: "http://localhost:8080/takeaway/public/cartDel",
+                 url: "./cartDel",
                  type: "post",
                  data: {
                      good_id: id,
@@ -267,7 +302,7 @@
 
          setCount: function(id, count, shop_id){
              $.ajax({
-                 url: "http://localhost:8080/takeaway/public/cartSetCount",
+                 url: "./cartSetCount",
                  type: "post",
                  data: {
                      good_id: id,
@@ -290,28 +325,12 @@
              });
          },
 
-         empty: function(){
-             $.ajax({
-                 url: "http://localhost:8080/takeaway/public/cartClear",
-                 type: "post",
-                 data: {
-                     good_id: id,
-                     shop_id: shop_id,
-                     count: count
-                 },
-                 success: function (res) {
-                     if("true" == res.success){
-                         clearCart();
-                     }else{
-                         alert("网络错误!");
-                     }
-                 }
-             });
-         },
+         empty: clearCart,
 
          getState: function(){
              cart.state();
          }
+         //TODO for debug
      };
 
      window.cart = exports; //TODO devel for DEBUG
