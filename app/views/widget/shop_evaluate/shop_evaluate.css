@@ -10,7 +10,7 @@
     .rst-rating-aside .rating-point .point {
       float: left;
       color: #ff6c0f;
-      font: 300 52px/1em "Helvetica Neue"; }
+      font: 300 52px/1em "Helvetica Neue",arial,sans-serif; }
     .rst-rating-aside .rating-point .detail {
       margin: 6px 0 0 90px; }
       .rst-rating-aside .rating-point .detail .rating-stars {
@@ -45,6 +45,8 @@
         overflow: hidden;
         color: #ff9307;
         font-family: "eleme"; }
+      .rst-rating-aside .rating-diagram .diagram-item .glyph-rating-star.off {
+        color: #a7a7a7; }
     .rst-rating-aside .rating-diagram .bar {
       width: 97.2px;
       display: inline-block;
