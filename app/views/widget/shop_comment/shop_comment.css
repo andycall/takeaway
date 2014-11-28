@@ -45,6 +45,8 @@
       line-height: 1em; }
       .rst-rating .rst-rating-block .rst-rating-dish a {
         color: #08c; }
+      .rst-rating .rst-rating-block .rst-rating-dish a:hover {
+        text-decoration: underline; }
       .rst-rating .rst-rating-block .rst-rating-dish .icon-d-star {
         float: right;
         width: 65px;

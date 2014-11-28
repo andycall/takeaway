@@ -688,6 +688,17 @@ Route::get("shop", function() {
                 "shop_id" => 21243
             ],
         ],
+        "best_seller" => [
+            "data" => [
+                "goods_id" => "",        // 商品id
+                "goods_name" => "",      // 商品名称
+                "goods_level" => "",     // 商品等级, 总共10个等级
+                "comment_count" => "",   // 投票人数
+                "goods_price" => "",     // 商品价格
+                "shop_state"  => "true", // 商家是不是打烊了..
+                "error_state" => ""     // 打烊信息
+            ]
+        ],
 		"userbar" => [
 			"url" => [
 				"my_place" => "这里是地址",
@@ -982,7 +993,7 @@ Route::get("comment", function(){
 					"level_2" => "2",               // 评论为2星的比例
 					"level_1" => "8",               // 评论为1星的比例
 				],
-				"shop_total"   => "4.5",                // 总评价
+				"shop_total"   => "10",                // 总评价
 				"comment_count" => "500",              // 评论人数
 				"shop_statement" => "叫外卖上饿了么",             // 商家简介
 				"shop_time"     => "09:50 - 13:30 / 16:00 - 19:30", // 商家开门时间 (纯字符串, 应该是商家自己写上去的)
@@ -2672,7 +2683,71 @@ Route::post("/delCollect", function(){
 //提交我的收藏列表
 Route::post("/collect-list", function(){
     $data = [
-        "success" => "true"
+        "success" => "true",
+        "state"   => 200       ,                            // HTTP 状态码
+        "nextSrc" => ""       ,                             // 登录成功后的跳转地址
+        "errMsg"  => ""       ,                             // 如果出现错误, 错误信息就出现在这, 如果没有, 那内容为空.
+        "no"      => 0           ,                          // 错误号 ,错误号就出现在这, 如果没有, 那内容为空.
+        "data"    => [
+            "collection_shop" => [
+                [
+                    "shop_id" => "37589",
+                    "place_id" => "589u65487945",
+                    "shop_url" => "http://www.baidu.com",
+                    "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
+                    "deliver_time" => "22",
+                    "deliver_start" => "17:00",
+                    "shop_name" => "三顾冒菜",
+                    "shop_type" => "中餐",
+                    "shop_level" => "4.3",
+                    "order_count" => "202",
+                    "is_opening" => "0",
+                    "is_ready_for_order" => "1"
+                ],
+                [
+                    "shop_id" => "985236",
+                    "place_id" => "234534",
+                    "shop_url" => "##",
+                    "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
+                    "deliver_time" => "45",
+                    "deliver_start" => "",
+                    "shop_name" => "乐堡王",
+                    "shop_type" => "中式，西式",
+                    "shop_level" => "4.3",
+                    "order_count" => "5134",
+                    "is_opening" => "0",
+                    "is_ready_for_order" => "0"
+                ],
+                [
+                    "shop_id" => "775755",
+                    "place_id" => "435456456436346346346",
+                    "shop_url" => "##",
+                    "shop_logo" => "",
+                    "deliver_time" => "",
+                    "deliver_start" => "",
+                    "shop_name" => "铁板牛肉",
+                    "shop_type" => "中餐",
+                    "shop_level" => "3.8",
+                    "order_count" => "202",
+                    "is_opening" => "2",
+                    "is_ready_for_order" => "0"
+                ],
+                [
+                    "shop_id" => "37589",
+                    "place_id" => "589u65487945",
+                    "shop_url" => "http://www.baidu.com",
+                    "shop_logo" => "images/5c81fa9884117928491470659e18djpeg.jpeg",
+                    "deliver_time" => "22",
+                    "deliver_start" => "17:00",
+                    "shop_name" => "ajax三顾冒菜",
+                    "shop_type" => "中餐",
+                    "shop_level" => "4.3",
+                    "order_count" => "202",
+                    "is_opening" => "0",
+                    "is_ready_for_order" => "1"
+                ]
+            ]
+        ]
     ];
 
     return Response::json($data);

@@ -1,30 +1,33 @@
 <div class="rst-rating-aside f-cb">
 	<div class="rating-point f-cb" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
-    	<strong class="point" itemprop="ratingValue">4.8</strong>
+    	<strong class="point" itemprop="ratingValue">{{ $top_bar["data"]["shop_total"] }}</strong>
 	  	<div class="detail">
 		    <span class="rating-stars">
-		  		<i class="glyph-rating-star">★</i>
-		  		<i class="glyph-rating-star">★</i>
-		  		<i class="glyph-rating-star">★</i>
-		  		<i class="glyph-rating-star">★</i>
-		  		<i class="glyph-rating-star">★</i>
+		  		@for($i = 0, $len = ($top_bar["data"]["shop_total"]/2); $i < $len; $i++ )
+		  			<i class="glyph-rating-star">★</i>
+		  		@endfor
 		  	</span>
-	    	<span class="comment" href="/cq-jgmx/rating"><span itemprop="reviewCount">16</span>人评价</span>
+	    	<span class="comment" href="/cq-jgmx/rating"><span itemprop="reviewCount">{{ $top_bar["data"]["comment_count"] }}</span>人评价</span>
 	  	</div>
    </div>
 
    <ul class="rating-diagram">
-	  <li class="diagram-item">
-	      <span class="rating-stars">
-			  <i class="glyph-rating-star">★</i>
-			  <i class="glyph-rating-star">★</i>
-			  <i class="glyph-rating-star">★</i>
-			  <i class="glyph-rating-star">★</i>
-			  <i class="glyph-rating-star">★</i>
-	     </span>
-	     <span class="bar"></span>
-	     59%
-	  </li>
+     @foreach ($top_bar["data"]["shop_level"] as $key => $value)
+     	<li class="diagram-item">
+	      	<span class="rating-stars">
+	      		@for ($i = 0; $i < substr($key, 6,1); $i++)
+			  		<i class="glyph-rating-star">★</i>
+			    @endfor
+
+			    @for ($m = 0; $m < 5-substr($key, 6,1); $m++)
+			  		<i class="glyph-rating-star off">★</i>
+			    @endfor
+	     	</span>
+
+	     	<span class="bar" style="width: {{ ($value/100*120).'px' }}; "></span>
+	     	{{ $value }}
+	    </li>
+     @endforeach
     </ul>
 </div>
 @section("css")

@@ -89,10 +89,11 @@ define(['jquery'], function($){
                         success: function(res) {
                             if (res.success == 'true') {
 
+                                showComments(res.data);
 
+                                for( var i = res.data.collection_shop.length ; i > 0 ; i--){
 
-
-
+                                }
 
 
 
@@ -132,5 +133,23 @@ define(['jquery'], function($){
         }
 
     });
+
+    function showComments(data){
+
+        var temp = _.template( $("#collection-row").html() )(data);
+
+        $(".collection .collection-row").html(temp);
+
+    }
+
+    function collection(shop_id){
+
+        var className = ".restaurant-" + shop_id;
+
+        var obj = $(className);
+
+        obj.find(".collect_star").css("display","block");
+
+    }
 
 });

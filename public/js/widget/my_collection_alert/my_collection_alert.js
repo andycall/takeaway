@@ -5,6 +5,10 @@ define([ "jquery" ], function($) {
             cancel_collection["shop_id_" + n].shop_id = n, cancel_collection["shop_id_" + n].place_id = $(this).attr("place_id"));
         });
     }
+    function showComments(data) {
+        var temp = _.template($("#collection-row").html())(data);
+        $(".collection .collection-row").html(temp);
+    }
     console.log("my collection alert loaded");
     var n, cancel_collection = [], add_collection = [], post = {};
     window.onload = function() {
@@ -46,7 +50,10 @@ define([ "jquery" ], function($) {
                 type: "POST",
                 data: post,
                 success: function(res) {
-                    "true" == res.success || alert("收藏失败，请重新收藏");
+                    if ("true" == res.success) {
+                        showComments(res.data);
+                        for (var i = res.data.collection_shop.length; i > 0; i--) ;
+                    } else alert("收藏失败，请重新收藏");
                 }
             }), cancel_collection = [], cancel_collection_each(), add_collection = [];
             break;
