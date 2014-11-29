@@ -16,7 +16,8 @@ require.config({
 		shop_details : "../widget/shop_details",
 		shop_map : "../widget/shop_map",
 		shop_cart : "../widget/shop_cart",
-		pop_window : "../widget/pop_window"
+		pop_window : "../widget/pop_window",
+		shop_collect_bar : "../weight/shop_collect_bar"
 	}
 });
 
@@ -32,7 +33,8 @@ define([
 	"shop_details/shop_details",
 	"shop_map/shop_map",
 	"shop_cart/shop_cart",
-	"pop_window/pop_window"
+	"pop_window/pop_window",
+	"shop_collect_bar/shop_collect_bar"
 ], function($){
 	console.log("init");
 });

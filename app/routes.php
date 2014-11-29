@@ -2829,3 +2829,23 @@ Route::post("/cartDel", function (){
     ];
     return Response::json($data);
 });
+
+//收藏餐厅
+Route::post("/shopFavor", function (){
+    $data = [
+        "success" => "true",
+        "errMsg" => ""
+    ];
+    return Response::json($data);
+});
+
+//收藏餐厅
+Route::post("/delShopFavor", function (){
+    $data = [
+        "success" => "true",
+        "errMsg" => ""
+    ];
+    return Response::json($data);
+});
+
+

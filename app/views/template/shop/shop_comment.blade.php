@@ -31,6 +31,11 @@
     @include("widget.pop_window.pop_window")
 @stop
 
+{{-- 最右侧收藏按钮 --}}
+@section("shop_collect_bar")
+    @include("widget.shop_collect_bar.shop_collect_bar")
+@stop
+
 
 @section("footer")
 	@include("widget.footer.footer")
