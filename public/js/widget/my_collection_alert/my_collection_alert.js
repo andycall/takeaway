@@ -7,7 +7,7 @@ define([ "jquery" ], function($) {
     }
     function addClick() {
         $(".add").on("click", function() {
-            $(".collection-modal").css("display", "block");
+            $(".collection-modal").css("display", "block"), $(".modal-backdrop").css("display", "block");
         }), $(".collection-row-book .collection-row-book-close").on("click", function() {
             var father = $(this).parents(".collection-row-book"), shop_id = father.data("shop_id"), place_id = father.data("place_id"), post = {};
             post.shop_id = shop_id, post.place_id = place_id, $.ajax({
@@ -25,7 +25,6 @@ define([ "jquery" ], function($) {
         $(".collection .collection-row").html(temp);
     }
     function uncollection(shop_id) {
-        console.log(shop_id);
         var className = ".restaurant-" + shop_id, obj = $(className);
         obj.find(".collect_star").css("display", "none"), obj.find(".uncollect").removeClass("change"), 
         obj.find(".collect").addClass("change");
@@ -50,16 +49,17 @@ define([ "jquery" ], function($) {
             break;
 
           case "set close":
-            $(".collection-modal").css("display", "none");
+            $(".collection-modal").css("display", "none"), $(".modal-backdrop").css("display", "none");
             break;
 
           case "btn btn-yellow":
-            $(".collection-modal").css("display", "none"), $(".collection-modal input").each(function() {
+            $(".collection-modal").css("display", "none"), $(".modal-backdrop").css("display", "none"), 
+            $(".collection-modal input").each(function() {
                 this.checked && (n = $(this).attr("shop_id"), add_collection["shop_id_" + n] = new Array(2), 
                 add_collection["shop_id_" + n].shop_id = n, add_collection["shop_id_" + n].place_id = $(this).attr("place_id"));
             }), Object.keys(add_collection).forEach(function(value) {
                 cancel_collection[value] && (delete cancel_collection[value], delete add_collection[value]);
-            }), post.add_collection = [], post.cancel_collection = [], Object.keys(add_collection).forEach(function(value, index) {
+            }), post = {}, post.add_collection = [], post.cancel_collection = [], Object.keys(add_collection).forEach(function(value, index) {
                 post.add_collection[index] = {}, post.add_collection[index] = {
                     shop_id: add_collection[value].shop_id,
                     place_id: add_collection[value].place_id
@@ -75,13 +75,12 @@ define([ "jquery" ], function($) {
                 data: post,
                 success: function(res) {
                     if ("true" == res.success) {
-                        showComments(res.data);
-                        for (var i = post.add_collection.length - 1; i >= 0; i--) collection(post.add_collection[i].shop_id);
-                        for (var i = post.cancel_collection.length - 1; i >= 0; i--) uncollection(post.cancel_collection[i].shop_id);
+                        if (showComments(res.data), post.add_collection.length) for (var i = post.add_collection.length - 1; i >= 0; i--) collection(post.add_collection[i].shop_id);
+                        if (post.cancel_collection.length) for (var i = post.cancel_collection.length - 1; i >= 0; i--) uncollection(post.cancel_collection[i].shop_id);
                         addClick();
                     } else alert("收藏失败，请重新收藏");
                 }
-            }), cancel_collection = [], cancel_collection_each(), add_collection = [], post = {};
+            }), cancel_collection = [], cancel_collection_each(), add_collection = [];
             break;
 
           case "p_hot":

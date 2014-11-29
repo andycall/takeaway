@@ -23,12 +23,18 @@ define(['jquery'], function($){
             break;
 
             case "set close":
+
                 $(".collection-modal").css('display','none');
-            break;
+
+                $(".modal-backdrop").css('display', 'none');
+
+                break;
 
             case "btn btn-yellow":
+
                 $(".collection-modal").css('display', 'none');
 
+                $(".modal-backdrop").css('display', 'none');
 
                 $(".collection-modal input").each(function () {
                     this.checked && (
@@ -45,6 +51,8 @@ define(['jquery'], function($){
                         delete add_collection[value];
                     }
                 });
+
+                post = {};
 
                 post.add_collection = [];
                 post.cancel_collection = [];
@@ -73,12 +81,20 @@ define(['jquery'], function($){
 
                                 showComments(res.data);
 
-                                for( var i = post.add_collection.length-1 ; i >= 0 ; i--){
-                                    collection(post.add_collection[i].shop_id);
+                                if(post.add_collection.length){
+
+                                    for( var i = post.add_collection.length-1 ; i >= 0 ; i--){
+                                        collection(post.add_collection[i].shop_id);
+                                    }
+
                                 }
 
-                                for( var i = post.cancel_collection.length-1 ; i >= 0 ; i--){
-                                    uncollection(post.cancel_collection[i].shop_id);
+                                if(post.cancel_collection.length){
+
+                                    for( var i = post.cancel_collection.length-1 ; i >= 0 ; i--){
+                                        uncollection(post.cancel_collection[i].shop_id);
+                                    }
+
                                 }
 
                                 addClick();
@@ -93,7 +109,6 @@ define(['jquery'], function($){
                 cancel_collection = [];
                 cancel_collection_each();
                 add_collection = [];
-                post = {};
 
             break;
 
@@ -203,6 +218,8 @@ define(['jquery'], function($){
 
             $(".collection-modal").css('display', 'block');
 
+            $(".modal-backdrop").css('display', 'block');
+
         });
 
         $(".collection-row-book .collection-row-book-close").on('click', function(e) {
@@ -249,7 +266,7 @@ define(['jquery'], function($){
     }
 
     function uncollection(shop_id){
-console.log(shop_id);
+
         var className = ".restaurant-" + shop_id;
 
         var obj = $(className);
