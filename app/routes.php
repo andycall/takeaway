@@ -317,12 +317,12 @@ Route::get('/', function(){
                         "deliver_state_start" => "100块都不送",
                         "deliver_start_statement" => "顺丰快递,耶"        ,               // 起送价描述, 注意,这是一段话
                         "shop_address" => "黄脚丫"          ,             // 商家地址
-                        "is_opening"  => "0"            ,            // 0 是正在营业, 1是打烊了
+                        "is_opening"  => "1"            ,            // 0 是正在营业, 1是打烊了
                         "close_msg"  => "关门啦"             ,           // 关门信息
                         "business_hours" => "08:00"           ,          // 营业时间
                         "shop_summary" => "lalalal"              ,         // 商家简介
                         "order_count"=> "22"               ,       // 订单数量
-                        "is_collected" => ""                 ,      // 是否被收藏了
+                        "is_collected" => "1"                 ,      // 是否被收藏了
                         "is_ready_for_order" => "1",
                         "additions" => [                          // 额外的内容
                             0 => [
@@ -339,7 +339,7 @@ Route::get('/', function(){
                         "shop_id" => "45226"    ,                         // 商家id
                         "place_id" => "123"   ,                        // 商家位置id
                         "shop_url" => "http://baidu.com"   ,                       // 点击跳转到相应商家
-                        "shop_logo" => ""  ,                      // 商家的logo图片地址
+                        "shop_logo" => url("/images/b73eb7c921384a1ad96d7f6e96bf1.jpg")  ,                      // 商家的logo图片地址
                         "deliver_time" => "22",                     // 送货时间间隔
                         "deliver_start" => "10:00" ,                    // 送货开始时间
                         "shop_name" => "臭脚丫"       ,                   // 商家名称
@@ -349,7 +349,7 @@ Route::get('/', function(){
                         "deliver_state_start" => "100块都不送",
                         "deliver_start_statement" => "顺丰快递,耶"        ,               // 起送价描述, 注意,这是一段话
                         "shop_address" => "黄脚丫"          ,             // 商家地址
-                        "is_opening"  => "0"            ,            // 0 是正在营业, 1是打烊了
+                        "is_opening"  => "2"            ,            // 0 是正在营业, 1是打烊了
                         "close_msg "  => "关门啦"             ,           // 关门信息
                         "business_hours" => "08:00"           ,          // 营业时间
                         "shop_summary" => "lalalal"              ,         // 商家简介
@@ -498,25 +498,25 @@ Route::get('/', function(){
         "add_image" => [
             "data" => [
                 [
-                    "image_url" => "###",
-                    "jump_url" => "##",
+                    "image_url" => url("/images/4f1385094a51bc1816c65b3ea6da9gif.gif"),
+                    "jump_url" => "http://baidu.com",
                 ],
-                [
-                    "image_url" => "###",
-                    "jump_url" => "##",
-                ],
-                [
-                    "image_url" => "###",
-                    "jump_url" => "##",
-                ],
-                [
-                    "image_url" => "###",
-                    "jump_url" => "##",
-                ],
-                [
-                    "image_url" => "###",
-                    "jump_url" => "##",
-                ]
+	            [
+		            "image_url" => url("/images/4f1385094a51bc1816c65b3ea6da9gif.gif"),
+		            "jump_url" => "http://baidu.com",
+	            ],
+	            [
+		            "image_url" => url("/images/4f1385094a51bc1816c65b3ea6da9gif.gif"),
+		            "jump_url" => "http://baidu.com",
+	            ],
+	            [
+		            "image_url" => url("/images/4f1385094a51bc1816c65b3ea6da9gif.gif"),
+		            "jump_url" => "http://baidu.com",
+	            ],
+	            [
+		            "image_url" => url("/images/4f1385094a51bc1816c65b3ea6da9gif.gif"),
+		            "jump_url" => "http://baidu.com",
+	            ]
             ]
         ],
         "more_shop" => [
@@ -687,6 +687,54 @@ Route::get("shop", function() {
                 "good_id" => 2234,
                 "shop_id" => 21243
             ],
+        ],
+        "best_seller" => [
+            [
+                "goods_id" => "1234",        // 商品id
+                "goods_name" => "李星颖",      // 商品名称
+                "goods_level" => "7",     // 商品等级, 总共10个等级
+                "comment_count" => "123",   // 投票人数
+                "goods_price" => "78",     // 商品价格
+                "shop_id" => "32453",
+                "shop_state"  => "true", // 商家是不是打烊了..
+                "error_state" => ""     // 打烊信息
+            ],
+            [
+                "goods_id" => "456",        // 商品id
+                "goods_name" => "李星颖2",      // 商品名称
+                "goods_level" => "10",     // 商品等级, 总共10个等级
+                "comment_count" => "234",   // 投票人数
+                "goods_price" => "78",     // 商品价格
+                "shop_id" => "32453",
+                "shop_state"  => "true", // 商家是不是打烊了..
+                "error_state" => ""     // 打烊信息
+            ],
+            [
+                "goods_id" => "345456",        // 商品id
+                "goods_name" => "李星颖3",      // 商品名称
+                "goods_level" => "7",     // 商品等级, 总共10个等级
+                "comment_count" => "456",   // 投票人数
+                "goods_price" => "114",     // 商品价格
+                "shop_id" => "456",
+                "shop_state"  => "true", // 商家是不是打烊了..
+                "error_state" => ""     // 打烊信息
+            ],
+            [
+                "goods_id" => "345",        // 商品id
+                "goods_name" => "李星颖4",      // 商品名称
+                "goods_level" => "3",     // 商品等级, 总共10个等级
+                "comment_count" => "54",   // 投票人数
+                "goods_price" => "77",     // 商品价格
+                "shop_id" => "56765",
+                "shop_state"  => "true", // 商家是不是打烊了..
+                "error_state" => ""     // 打烊信息
+            ]
+        ],
+        "shop_map" =>   [
+            "data" => [
+                "map_url" => "http://restapi.amap.com/v3/staticmap?size=340*240&location=106.605994,29.534128&paths=5,0x0000ff,0.5,,:106.604483,29.534763;106.607504,29.533493&markers=-1,http://static11.elemecdn.com/forward/img_in_php/marker_restaurant.png,0:106.604483,29.534763|-1,http://static11.elemecdn.com/forward/img_in_php/marker_entrance.png,0:106.607504,29.533493&key=a48480140567ca23414873c1b56ebf53",
+                "distance" => "45369"
+            ]
         ],
 		"userbar" => [
 			"url" => [
@@ -2781,3 +2829,23 @@ Route::post("/cartDel", function (){
     ];
     return Response::json($data);
 });
+
+//收藏餐厅
+Route::post("/shopFavor", function (){
+    $data = [
+        "success" => "true",
+        "errMsg" => ""
+    ];
+    return Response::json($data);
+});
+
+//收藏餐厅
+Route::post("/delShopFavor", function (){
+    $data = [
+        "success" => "true",
+        "errMsg" => ""
+    ];
+    return Response::json($data);
+});
+
+
