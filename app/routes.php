@@ -522,7 +522,7 @@ Route::get('/', function(){
         "more_shop" => [
 			"data" => [
                 [
-                    "shop_id" => "12423235235235",
+                    "shop_id" => "37589",
                     "place_id" => "12423235235235",
                     "support_activity" => [1,2,3],
                     "isHot" => "1",
@@ -541,12 +541,12 @@ Route::get('/', function(){
                     "business_hours" => "24小时",
                     "shop_summary"  => "吃吃吃",
                     "order_count" => "202",
-                    "is_collected" => "0",
+                    "is_collected" => "1",
                     "is_opening" => "0",
                     "is_ready_for_order" => "1"
                 ],
                 [
-                    "shop_id" => "12423235235235",
+                    "shop_id" => "37589",
                     "place_id" => "12423235235235",
                     "support_activity" => [1,2,3],
                     "isHot" => "1",
@@ -565,7 +565,7 @@ Route::get('/', function(){
                     "business_hours" => "24小时",
                     "shop_summary"  => "吃吃吃",
                     "order_count" => "202",
-                    "is_collected" => "0",
+                    "is_collected" => "1",
                     "is_opening" => "0",
                     "is_ready_for_order" => "1"
                 ],
@@ -877,8 +877,7 @@ Route::get("shop", function() {
                         "activity_icon" => "",                       // 活动图标地址
                         "activity_statement" => "1元秒杀爽到爆！"      // 活动简洁
                     ],
-                    [
-                        "activity_name" => "1元秒杀（限新用户）重庆",  // 活动名称
+                    [    "activity_name" => "1元秒杀（限新用户）重庆",  // 活动名称
                         "activity_id" => "123",                      // 活动id
                         "activity_icon" => "",                       // 活动图标地址
                         "activity_statement" => "1元秒杀爽到爆！"      // 活动简洁
@@ -886,7 +885,6 @@ Route::get("shop", function() {
                 ]
             ]
         ],
-
         "category" => [
 	        "data" => [
 		        "classify_sec" => [
@@ -1411,6 +1409,84 @@ Route::get("/personal_change_password", function(){
 	];
 
 	return View::make("template.personal.personal_change_password")->with($data);
+});
+
+Route::get("/personal_change_email", function(){
+	$data = [
+		"userbar" => [
+			"url" => [
+				"my_place" => "这里是地址",
+				"switch_palce" => "##",
+				"logo" => "123" ,                         // 网站主页地址
+				"mobile" => "123",                 // 跳转到下载手机APP的地址
+				"my_ticket" => "123",                 // 我的饿单的地址
+				"my_gift"  => "123",                // 礼品中心地址
+				"feedback" => "123",                // 反馈留言地址
+				"shop_chart" => "123",                // 购物车地址
+				"user_mail" => "123",                // 用户提醒的地址
+				"personal" => "123",                // 个人中心地址
+				"my_collection" => "123",               // 我的收藏地址
+				"my_secure" => "123",              // 安全设置的地址
+				"loginout" => "123",              // 退出登录的地址
+				"switch_place" => "123"                  // 切换当前地址的地址
+			]
+		],
+		"sidebar" => [  // 左侧栏地址
+			"personal_center" => url("/personal_center"),  // 个人中心的地址
+			"personal_recent_month" => url("personal_recent_month"), // 最近一个月的地址
+			"personal_after_month" => url("personal_after_month") , // 一个月之前
+			"personal_uncomment" => url("personal_uncomment") ,  // 未点评的订单
+			"personal_return" => url("personal_return"),     // 退单中的订单
+			"personal_collection_shop" => url("personal_collection_shop"),// 我收藏的餐厅的地址
+			"personal_collection_goods" => url("personal_collection_goods"), // 我收藏的商品的地址
+			"personal_my_site" => url("personal_my_site") ,  // 我的地址
+			"personal_change_password" => url("personal_change_password"), // 修改密码
+			"personal_secure"=> url("personal_secure"),        // 安全设置
+			"personal_details" => url("personal_details")       // 收支明细
+		]
+	];
+
+	return View::make("template.personal.personal_change_email")->with($data);
+});
+
+
+Route::get("/personal_change_limit", function(){
+	$data = [
+		"userbar" => [
+			"url" => [
+				"my_place" => "这里是地址",
+				"switch_palce" => "##",
+				"logo" => "123" ,                         // 网站主页地址
+				"mobile" => "123",                 // 跳转到下载手机APP的地址
+				"my_ticket" => "123",                 // 我的饿单的地址
+				"my_gift"  => "123",                // 礼品中心地址
+				"feedback" => "123",                // 反馈留言地址
+				"shop_chart" => "123",                // 购物车地址
+				"user_mail" => "123",                // 用户提醒的地址
+				"personal" => "123",                // 个人中心地址
+				"my_collection" => "123",               // 我的收藏地址
+				"my_secure" => "123",              // 安全设置的地址
+				"loginout" => "123",              // 退出登录的地址
+				"switch_place" => "123"                  // 切换当前地址的地址
+			]
+		],
+		"sidebar" => [  // 左侧栏地址
+			"personal_center" => url("/personal_center"),  // 个人中心的地址
+			"personal_recent_month" => url("personal_recent_month"), // 最近一个月的地址
+			"personal_after_month" => url("personal_after_month") , // 一个月之前
+			"personal_uncomment" => url("personal_uncomment") ,  // 未点评的订单
+			"personal_return" => url("personal_return"),     // 退单中的订单
+			"personal_collection_shop" => url("personal_collection_shop"),// 我收藏的餐厅的地址
+			"personal_collection_goods" => url("personal_collection_goods"), // 我收藏的商品的地址
+			"personal_my_site" => url("personal_my_site") ,  // 我的地址
+			"personal_change_password" => url("personal_change_password"), // 修改密码
+			"personal_secure"=> url("personal_secure"),        // 安全设置
+			"personal_details" => url("personal_details")       // 收支明细
+		]
+	];
+
+	return View::make("template.personal.personal_change_limit")->with($data);
+
 });
 
 Route::get("/personal_collection_goods", function(){
@@ -2760,7 +2836,153 @@ Route::post("/delCollect", function(){
 });
 
 //提交我的收藏列表
-Route::post("/collect-list", function(){
+Route::post("/collect_list", function(){
+    $data = [
+        "success" => "true",
+        "state"   => 200       ,                            // HTTP 状态码
+        "nextSrc" => ""       ,                             // 登录成功后的跳转地址
+        "errMsg"  => ""       ,                             // 如果出现错误, 错误信息就出现在这, 如果没有, 那内容为空.
+        "no"      => 0           ,                          // 错误号 ,错误号就出现在这, 如果没有, 那内容为空.
+        "data"    => [
+            "collection_shop" => [
+                [
+                    "shop_id" => "37589",
+                    "place_id" => "589u65487945",
+                    "shop_url" => "http://www.baidu.com",
+                    "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
+                    "deliver_time" => "22",
+                    "deliver_start" => "17:00",
+                    "shop_name" => "三顾冒菜",
+                    "shop_type" => "中餐",
+                    "shop_level" => "4.3",
+                    "order_count" => "202",
+                    "is_opening" => "0",
+                    "is_ready_for_order" => "1"
+                ],
+                [
+                    "shop_id" => "985236",
+                    "place_id" => "234534",
+                    "shop_url" => "##",
+                    "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
+                    "deliver_time" => "45",
+                    "deliver_start" => "",
+                    "shop_name" => "乐堡王",
+                    "shop_type" => "中式，西式",
+                    "shop_level" => "4.3",
+                    "order_count" => "5134",
+                    "is_opening" => "0",
+                    "is_ready_for_order" => "0"
+                ],
+                [
+                    "shop_id" => "775755",
+                    "place_id" => "435456456436346346346",
+                    "shop_url" => "##",
+                    "shop_logo" => "",
+                    "deliver_time" => "",
+                    "deliver_start" => "",
+                    "shop_name" => "铁板牛肉",
+                    "shop_type" => "中餐",
+                    "shop_level" => "3.8",
+                    "order_count" => "202",
+                    "is_opening" => "2",
+                    "is_ready_for_order" => "0"
+                ],
+                [
+                    "shop_id" => "37589",
+                    "place_id" => "589u65487945",
+                    "shop_url" => "http://www.baidu.com",
+                    "shop_logo" => "images/5c81fa9884117928491470659e18djpeg.jpeg",
+                    "deliver_time" => "22",
+                    "deliver_start" => "17:00",
+                    "shop_name" => "ajax三顾冒菜",
+                    "shop_type" => "中餐",
+                    "shop_level" => "4.3",
+                    "order_count" => "202",
+                    "is_opening" => "0",
+                    "is_ready_for_order" => "1"
+                ]
+            ]
+        ]
+    ];
+
+    return Response::json($data);
+});
+
+//添加收藏
+Route::post("/add_collect", function(){
+    $data = [
+        "success" => "true",
+        "state"   => 200       ,                            // HTTP 状态码
+        "nextSrc" => ""       ,                             // 登录成功后的跳转地址
+        "errMsg"  => ""       ,                             // 如果出现错误, 错误信息就出现在这, 如果没有, 那内容为空.
+        "no"      => 0           ,                          // 错误号 ,错误号就出现在这, 如果没有, 那内容为空.
+        "data"    => [
+            "collection_shop" => [
+                [
+                    "shop_id" => "37589",
+                    "place_id" => "589u65487945",
+                    "shop_url" => "http://www.baidu.com",
+                    "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
+                    "deliver_time" => "22",
+                    "deliver_start" => "17:00",
+                    "shop_name" => "三顾冒菜",
+                    "shop_type" => "中餐",
+                    "shop_level" => "4.3",
+                    "order_count" => "202",
+                    "is_opening" => "0",
+                    "is_ready_for_order" => "1"
+                ],
+                [
+                    "shop_id" => "985236",
+                    "place_id" => "234534",
+                    "shop_url" => "##",
+                    "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
+                    "deliver_time" => "45",
+                    "deliver_start" => "",
+                    "shop_name" => "乐堡王",
+                    "shop_type" => "中式，西式",
+                    "shop_level" => "4.3",
+                    "order_count" => "5134",
+                    "is_opening" => "0",
+                    "is_ready_for_order" => "0"
+                ],
+                [
+                    "shop_id" => "775755",
+                    "place_id" => "435456456436346346346",
+                    "shop_url" => "##",
+                    "shop_logo" => "",
+                    "deliver_time" => "",
+                    "deliver_start" => "",
+                    "shop_name" => "铁板牛肉",
+                    "shop_type" => "中餐",
+                    "shop_level" => "3.8",
+                    "order_count" => "202",
+                    "is_opening" => "2",
+                    "is_ready_for_order" => "0"
+                ],
+                [
+                    "shop_id" => "37589",
+                    "place_id" => "589u65487945",
+                    "shop_url" => "http://www.baidu.com",
+                    "shop_logo" => "images/5c81fa9884117928491470659e18djpeg.jpeg",
+                    "deliver_time" => "22",
+                    "deliver_start" => "17:00",
+                    "shop_name" => "ajax三顾冒菜",
+                    "shop_type" => "中餐",
+                    "shop_level" => "4.3",
+                    "order_count" => "202",
+                    "is_opening" => "0",
+                    "is_ready_for_order" => "1"
+                ]
+            ]
+        ]
+    ];
+
+    return Response::json($data);
+});
+
+//取消收藏
+Route::post("/cancel_collection", function(){
     $data = [
         "success" => "true",
         "state"   => 200       ,                            // HTTP 状态码
