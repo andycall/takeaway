@@ -3,6 +3,6 @@
 
 define(function(){
 	return {
-
+		"smsAuth" : "/switchAuth"  //短信验证码
 	}
 });

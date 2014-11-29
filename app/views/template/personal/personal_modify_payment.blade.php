@@ -9,11 +9,11 @@
 @stop
 
 @section("sidebar")
-    @include("widget.sideBar.sideBar", array("active" => "details"))
+    @include("widget.sideBar.sideBar", array("active" => "secure"))
 @stop
 
 @section("rightContent")
-    @include("widget.personal_details.personal_details")
+    @include("widget.personal_modify_payment.personal_modify_payment")
 @stop
 
 @section("footer")
@@ -23,10 +23,11 @@
 @section("css")
     {{HTML::style("/css/lib/jquery-ui.css")}}
     {{HTML::style("/css/template/lib/normalize.css")}}
+    {{HTML::style("/css/template/lib/function.css")}}
     {{HTML::style("/css/template/personal/personal.css")}}
 @stop
 
 @section("script")
-    {{HTML::script("/js/lib/require.js", ["data-main" => url("js/template/personal/personal_details.js")])}}
+    {{HTML::script("/js/lib/require.js", ["data-main" => url("js/template/personal/personal_modify_payment.js")])}}
 @stop
 
