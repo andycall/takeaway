@@ -541,7 +541,7 @@ Route::get('/', function(){
                     "business_hours" => "24小时",
                     "shop_summary"  => "吃吃吃",
                     "order_count" => "202",
-                    "is_collected" => "0",
+                    "is_collected" => "1",
                     "is_opening" => "0",
                     "is_ready_for_order" => "1"
                 ],
@@ -565,7 +565,7 @@ Route::get('/', function(){
                     "business_hours" => "24小时",
                     "shop_summary"  => "吃吃吃",
                     "order_count" => "202",
-                    "is_collected" => "0",
+                    "is_collected" => "1",
                     "is_opening" => "0",
                     "is_ready_for_order" => "1"
                 ],
@@ -2863,8 +2863,8 @@ Route::post("/add_collect", function(){
     return Response::json($data);
 });
 
-//提交我的收藏列表
-Route::post("/collect-list", function(){
+//取消收藏
+Route::post("/cancel_collection", function(){
     $data = [
         "success" => "true",
         "state"   => 200       ,                            // HTTP 状态码

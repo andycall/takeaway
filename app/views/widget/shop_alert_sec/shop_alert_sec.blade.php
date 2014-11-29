@@ -80,9 +80,7 @@
 <% }else{ %>
         <div class="collection-row-book" data-shop_id="<% print(collection_shop[shop].shop_id) %>" data-place_id="<% print(collection_shop[shop].place_id) %>">
 <% } %>
-            <div class="collection-row-book-close">
-                <i href="##" class="close"></i>
-            </div>
+            <div class="collection-row-book-close"></div>
             <div class="collection-row-book-left">
                 <div class="logo">
 <% if(collection_shop[shop].shop_logo){ %>

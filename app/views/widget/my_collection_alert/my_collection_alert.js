@@ -93,6 +93,7 @@ define(['jquery'], function($){
                 cancel_collection = [];
                 cancel_collection_each();
                 add_collection = [];
+                post = {};
 
             break;
 
@@ -117,19 +118,69 @@ define(['jquery'], function($){
 
     });
 
-    $(".collection-row-book").on('click', function(e) {
+    $(".more_shops-row-book .uncollect").on('click', function(e) {
 
-        var e_class = e.target.className || null;
-        var shop_id = $(this).data("shop_id");
-        var place_id = $(this).data("place_id");
+        var father = $(this).parents(".more_shops-row-book");
+        var shop_id = father.data("shop_id");
+        var place_id = father.data("place_id");
+        var post = {};
 
-        console.log(e_class);
+        post.shop_id = shop_id;
+        post.place_id = place_id;
 
-        switch (e_class) {
-            case "close":
-                alert(1);
-            console.log(this.data(place_id));
-        }
+        $.ajax({
+            url: "takeaway/public/index.php/cancel_collection",
+            type: "POST",
+            data: post,
+            success: function(res) {
+                if (res.success == 'true') {
+
+                    showComments(res.data);
+
+                    uncollection(shop_id);
+
+                    addClick();
+
+                } else {
+                    alert('取消收藏失败，请重试');
+                }
+            }
+        });
+
+        post = {};
+
+    });
+
+    $(".more_shops-row-book .collect").on('click', function(e) {
+
+        var father = $(this).parents(".more_shops-row-book");
+        var shop_id = father.data("shop_id");
+        var place_id = father.data("place_id");
+        var post = {};
+
+        post.shop_id = shop_id;
+        post.place_id = place_id;
+
+        $.ajax({
+            url: "takeaway/public/index.php/add_collect",
+            type: "POST",
+            data: post,
+            success: function(res) {
+                if (res.success == 'true') {
+
+                    showComments(res.data);
+
+                    collection(shop_id);
+
+                    addClick();
+
+                } else {
+                    alert('收藏失败，请重新收藏');
+                }
+            }
+        });
+
+        post = {};
 
     });
 
@@ -154,6 +205,39 @@ define(['jquery'], function($){
 
         });
 
+        $(".collection-row-book .collection-row-book-close").on('click', function(e) {
+
+            var father = $(this).parents(".collection-row-book");
+            var shop_id = father.data("shop_id");
+            var place_id = father.data("place_id");
+            var post = {};
+
+            post.shop_id = shop_id;
+            post.place_id = place_id;
+
+            $.ajax({
+                url: "takeaway/public/index.php/cancel_collection",
+                type: "POST",
+                data: post,
+                success: function(res) {
+                    if (res.success == 'true') {
+
+                        showComments(res.data);
+
+                        uncollection(shop_id);
+
+                        addClick();
+
+                    } else {
+                        alert('取消收藏失败，请重试');
+                    }
+                }
+            });
+
+            post = {};
+
+        });
+
     }
 
     function showComments(data){
@@ -165,7 +249,7 @@ define(['jquery'], function($){
     }
 
     function uncollection(shop_id){
-
+console.log(shop_id);
         var className = ".restaurant-" + shop_id;
 
         var obj = $(className);
