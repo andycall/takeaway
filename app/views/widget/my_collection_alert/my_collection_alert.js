@@ -4,29 +4,11 @@ define(['jquery'], function($){
     var n;
     var post = {};
 
-    function cancel_collection_each(){
-
-        $(".collection-modal input").each(function () {
-            if (this.checked) {
-                n = $(this).attr("shop_id");
-                cancel_collection["shop_id_" + n] = new Array(2);
-                cancel_collection["shop_id_" + n]["shop_id"] = n;
-                cancel_collection["shop_id_" + n]["place_id"] = $(this).attr("place_id");
-            }
-        });
-
-    }
-
     window.onload = function(){
         cancel_collection_each();
     };
 
-    $(".add").on('click',function() {
-
-        $(".collection-modal").css('display', 'block');
-
-    });
-
+    addClick();
 
     $(".collection-modal").on('click', function(e){
         var e_class = e.target.className || null ;
@@ -83,7 +65,7 @@ define(['jquery'], function($){
 
                 if(post.add_collection.length || post.cancel_collection.length){
                     $.ajax({
-                        url: "takeaway/public/index.php/collect-list",
+                        url: "takeaway/public/index.php/collect_list",
                         type: "POST",
                         data: post,
                         success: function(res) {
@@ -91,14 +73,15 @@ define(['jquery'], function($){
 
                                 showComments(res.data);
 
-                                for( var i = res.data.collection_shop.length ; i > 0 ; i--){
-
+                                for( var i = post.add_collection.length-1 ; i >= 0 ; i--){
+                                    collection(post.add_collection[i].shop_id);
                                 }
 
+                                for( var i = post.cancel_collection.length-1 ; i >= 0 ; i--){
+                                    uncollection(post.cancel_collection[i].shop_id);
+                                }
 
-
-
-
+                                addClick();
 
                             } else {
                                 alert('收藏失败，请重新收藏');
@@ -134,11 +117,64 @@ define(['jquery'], function($){
 
     });
 
+    $(".collection-row-book").on('click', function(e) {
+
+        var e_class = e.target.className || null;
+        var shop_id = $(this).data("shop_id");
+        var place_id = $(this).data("place_id");
+
+        console.log(e_class);
+
+        switch (e_class) {
+            case "close":
+                alert(1);
+            console.log(this.data(place_id));
+        }
+
+    });
+
+    function cancel_collection_each(){
+
+        $(".collection-modal input").each(function () {
+            if (this.checked) {
+                n = $(this).attr("shop_id");
+                cancel_collection["shop_id_" + n] = new Array(2);
+                cancel_collection["shop_id_" + n]["shop_id"] = n;
+                cancel_collection["shop_id_" + n]["place_id"] = $(this).attr("place_id");
+            }
+        });
+
+    }
+
+    function addClick(){
+
+        $(".add").on('click',function() {
+
+            $(".collection-modal").css('display', 'block');
+
+        });
+
+    }
+
     function showComments(data){
 
         var temp = _.template( $("#collection-row").html() )(data);
 
         $(".collection .collection-row").html(temp);
+
+    }
+
+    function uncollection(shop_id){
+
+        var className = ".restaurant-" + shop_id;
+
+        var obj = $(className);
+
+        obj.find(".collect_star").css("display","none");
+
+        obj.find(".uncollect").removeClass("change");
+
+        obj.find(".collect").addClass("change");
 
     }
 
@@ -149,6 +185,10 @@ define(['jquery'], function($){
         var obj = $(className);
 
         obj.find(".collect_star").css("display","block");
+
+        obj.find(".collect").removeClass("change");
+
+        obj.find(".uncollect").addClass("change");
 
     }
 

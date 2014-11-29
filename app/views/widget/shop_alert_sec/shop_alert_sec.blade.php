@@ -74,7 +74,7 @@
 <script type="text/template" id="collection-row">
 
 <% for(var shop in collection_shop){%>
-    <a href="<% print(collection_shop[shop].shop_url) %>" class="restaurant-<% print(collection_shop[shop].shop_url) %>">
+    <a href="<% print(collection_shop[shop].shop_url) %>" class="restaurant-<% print(collection_shop[shop].shop_id) %>">
 <% if(collection_shop[shop].is_opening != 0){ %>
         <div class="collection-row-book collection-row-colse" data-shop_id="<% print(collection_shop[shop].shop_id) %>" data-place_id="<% print(collection_shop[shop].place_id) %>">
 <% }else{ %>
