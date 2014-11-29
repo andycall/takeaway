@@ -498,25 +498,25 @@ Route::get('/', function(){
         "add_image" => [
             "data" => [
                 [
-                    "image_url" => "###",
-                    "jump_url" => "##",
+                    "image_url" => url("/images/4f1385094a51bc1816c65b3ea6da9gif.gif"),
+                    "jump_url" => "http://baidu.com",
                 ],
-                [
-                    "image_url" => "###",
-                    "jump_url" => "##",
-                ],
-                [
-                    "image_url" => "###",
-                    "jump_url" => "##",
-                ],
-                [
-                    "image_url" => "###",
-                    "jump_url" => "##",
-                ],
-                [
-                    "image_url" => "###",
-                    "jump_url" => "##",
-                ]
+	            [
+		            "image_url" => url("/images/4f1385094a51bc1816c65b3ea6da9gif.gif"),
+		            "jump_url" => "http://baidu.com",
+	            ],
+	            [
+		            "image_url" => url("/images/4f1385094a51bc1816c65b3ea6da9gif.gif"),
+		            "jump_url" => "http://baidu.com",
+	            ],
+	            [
+		            "image_url" => url("/images/4f1385094a51bc1816c65b3ea6da9gif.gif"),
+		            "jump_url" => "http://baidu.com",
+	            ],
+	            [
+		            "image_url" => url("/images/4f1385094a51bc1816c65b3ea6da9gif.gif"),
+		            "jump_url" => "http://baidu.com",
+	            ]
             ]
         ],
         "more_shop" => [
