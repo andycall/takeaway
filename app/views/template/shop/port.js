@@ -4,7 +4,11 @@
 
 define(function(){
 	return {
-		cartSetCount : "cartSetCount"  // 注释..
+		cartSetCount : "./cartSetCount",
+        cartClear: "./cartClear",
+        cartAdd: "./cartAdd",
+        cartDel: "./cartDel",
+
 	}
 
 });

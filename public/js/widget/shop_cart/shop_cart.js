@@ -49,7 +49,7 @@ define([ "jquery", "underscore", "shop/port" ], function($, _, port) {
     }
     function clearCart() {
         $.ajax({
-            url: "./cartClear",
+            url: port.cartClear,
             type: "post",
             data: {},
             success: function(res) {
@@ -125,7 +125,7 @@ define([ "jquery", "underscore", "shop/port" ], function($, _, port) {
     }), $("#cartScroll").on("click", ".rcart-d-del", function(e) {
         var self = $(e.target), pnt = self.parent(), id = pnt.data("good_id"), shop_id = pnt.data("shop_id");
         $.ajax({
-            url: "./cartDel",
+            url: port.cartDel,
             type: "post",
             data: {
                 good_id: id,
@@ -140,7 +140,7 @@ define([ "jquery", "underscore", "shop/port" ], function($, _, port) {
     var exports = {
         add: function(id, shop_id) {
             $.ajax({
-                url: "./cartAdd",
+                url: port.cartAdd,
                 type: "post",
                 data: {
                     good_id: id,
@@ -165,7 +165,7 @@ define([ "jquery", "underscore", "shop/port" ], function($, _, port) {
         },
         del: function(id, shop_id) {
             $.ajax({
-                url: "./cartDel",
+                url: port.cartDel,
                 type: "post",
                 data: {
                     good_id: id,
@@ -183,7 +183,7 @@ define([ "jquery", "underscore", "shop/port" ], function($, _, port) {
         },
         setCount: function(id, count, shop_id) {
             return 0 >= count ? exports.del(id, shop_id) : void $.ajax({
-                url: "./cartSetCount",
+                url: port.cartSetCount,
                 type: "post",
                 data: {
                     good_id: id,

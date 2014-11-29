@@ -3,6 +3,9 @@
  */
 define(function() {
     return {
-        cartSetCount: "cartSetCount"
+        cartSetCount: "./cartSetCount",
+        cartClear: "./cartClear",
+        cartAdd: "./cartAdd",
+        cartDel: "./cartDel"
     };
 });

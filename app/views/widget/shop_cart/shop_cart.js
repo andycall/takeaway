@@ -198,7 +198,7 @@
              shop_id = pnt.data('shop_id');
 
          $.ajax({
-             url: "./cartDel",
+             url: port['cartDel'],
              type: "post",
              data: {
                  good_id: id,
@@ -222,7 +222,7 @@
      $('#cartScroll').on('click','.basket_clear_btn', clearCart);
      function clearCart(){
          $.ajax({
-             url: "./cartClear",
+             url: port['cartClear'],
              type: "post",
              data: {
              },
@@ -247,7 +247,7 @@
      var exports = {
          add: function(id, shop_id) {
              $.ajax({
-                 url: "./cartAdd",
+                 url: port['cartAdd'],
                  type: "post",
                  data: {
                      good_id: id,
@@ -281,7 +281,7 @@
 
          del: function(id, shop_id){
              $.ajax({
-                 url: "./cartDel",
+                 url: port['cartDel'],
                  type: "post",
                  data: {
                      good_id: id,
@@ -310,7 +310,7 @@
                  return exports.del(id, shop_id);
              }
              $.ajax({
-                 url: "./cartSetCount",
+                 url: port['cartSetCount'],
                  type: "post",
                  data: {
                      good_id: id,
