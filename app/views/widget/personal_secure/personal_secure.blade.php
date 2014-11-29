@@ -36,7 +36,7 @@
             <td><div class="info"><p>wssgcg****@qq.com尚未激活，请去邮箱查看激活邮件</p></div></td>
             <td>
                 <a href="/profile/sendac">重发激活邮件</a><br>
-                <a href="/profile/bindemail">更换邮箱</a>
+                <a href="/persona_change_email">更换邮箱</a>
             </td>
 
 
