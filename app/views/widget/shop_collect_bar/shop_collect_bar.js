@@ -1,4 +1,5 @@
 define(["jquery"], function($){
+	console.log("shop collection bar loaded");
 /*
  *  @include "侧边栏收藏按钮"
 */
@@ -8,7 +9,7 @@ define(["jquery"], function($){
 		      $favorStatus = $this.find(".status");  //状态
 
 		 //商家信息
-		 var shopInfo{
+		 var shopInfo  = {
 		 	'shop_id'         : "",
 		 	"shop_name"  : ""
 		 };
