@@ -32,25 +32,25 @@
                     <div class="more_shops-row-book-left">
                         <div class="logo">
         @if($shops[$i]['shop_logo'])
-                                <img src="{{url($shops[$i]['shop_logo'])}}"/>
+                            <img src="{{url($shops[$i]['shop_logo'])}}"/>
         @else
                             <img src='{{url("images/eleme_restaurant_logo.jpg")}}'/>
         @endif
                         </div>
         @if (!$shops[$i]['deliver_time'])
-                            <span title="该餐厅刚开张，暂无送餐时间数据"></span>
+                            <span data-deliver_time="{{$shops[$i]['deliver_time']}}" title="该餐厅刚开张，暂无送餐时间数据"></span>
         @elseif ($shops[$i]['deliver_time'] < 45)
-                            <span title="平均送餐时间{{$shops[$i]['deliver_time']}}分钟">{{$shops[$i]['deliver_time']}}分钟</span>
+                            <span data-deliver_time="{{$shops[$i]['deliver_time']}}" title="平均送餐时间{{$shops[$i]['deliver_time']}}分钟">{{$shops[$i]['deliver_time']}}分钟</span>
         @else
-                            <span class="long_time" title="当前餐厅送餐较慢">45+分钟</span>
+                            <span data-deliver_time="{{$shops[$i]['deliver_time']}}" class="long_time" title="当前餐厅送餐较慢">45+分钟</span>
         @endif
                     </div>
-                    <div class="more_shops-row-book-right">
+                    <div data-order_count="{{$shops[$i]['order_count']}}" data-shop_level="{{$shops[$i]['shop_level']}}" data-shop_type="{{$shops[$i]['shop_type']}}" data-is_opening="{{$shops[$i]['is_opening']}}" class="more_shops-row-book-right">
                         <div class="title">
                             <p>{{$shops[$i]['shop_name']}}</p>
                         </div>
     @if($shops[$i]['is_opening'])
-                        <div class="busy">
+                            <div class="busy">
         @if($shops[$i]['is_opening']==1)
                                 <span>休息中</span>
                             </div>
@@ -109,7 +109,7 @@
                                 </li>
         @endfor
                         </ul>
-                        <div class="divider">
+                        <div class="divider" data-shop_summary="{{$shops[$i]['shop_summary']}}" data-business_hours="{{$shops[$i]['business_hours']}}" data-shop_address="{{$shops[$i]['shop_address']}}" data-deliver_state_start="{{$shops[$i]['deliver_state_start']}}" data-shop_announce="{{$shops[$i]['shop_announce']}}">
                             <p class="ann"><strong>公告:</strong>&nbsp;{{$shops[$i]['shop_announce']}}</p>
                             <p><strong>起送价:</strong>&nbsp;{{$shops[$i]['deliver_state_start']}}</p>
                             <p><strong>地址:</strong>&nbsp;{{$shops[$i]['shop_address']}}</p>
