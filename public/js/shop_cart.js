@@ -1,4 +1,4 @@
-define([ "jquery", "underscore" ], function($, _) {
+define([ "jquery", "underscore", "shop/port" ], function($, _, port) {
     function toggleCartScroll() {
         $cartUp.animate(parseInt($cartUp.css("top")) ? {
             top: "0px"
@@ -32,7 +32,7 @@ define([ "jquery", "underscore" ], function($, _) {
             t = val + 1);
             var id = grandPa.data("good_id"), shop_id = grandPa.data("shop_id");
             return 0 >= t ? exports.del(id) : void $.ajax({
-                url: "./cartSetCount",
+                url: port.cartSetCount,
                 type: "post",
                 data: {
                     good_id: id,
@@ -49,7 +49,7 @@ define([ "jquery", "underscore" ], function($, _) {
     }
     function clearCart() {
         $.ajax({
-            url: "./cartClear",
+            url: port.cartClear,
             type: "post",
             data: {},
             success: function(res) {
@@ -115,9 +115,6 @@ define([ "jquery", "underscore" ], function($, _) {
             totalPrice: this.totalPrice,
             totalNum: this.totalNum
         };
-    }, //todo for debug 显示状态用的
-    Cart.prototype.state = function() {
-        console.log(this.itemList);
     }, Cart.prototype.empty = function() {
         this.itemList = [];
     };
@@ -128,7 +125,7 @@ define([ "jquery", "underscore" ], function($, _) {
     }), $("#cartScroll").on("click", ".rcart-d-del", function(e) {
         var self = $(e.target), pnt = self.parent(), id = pnt.data("good_id"), shop_id = pnt.data("shop_id");
         $.ajax({
-            url: "./cartDel",
+            url: port.cartDel,
             type: "post",
             data: {
                 good_id: id,
@@ -143,7 +140,7 @@ define([ "jquery", "underscore" ], function($, _) {
     var exports = {
         add: function(id, shop_id) {
             $.ajax({
-                url: "./cartAdd",
+                url: port.cartAdd,
                 type: "post",
                 data: {
                     good_id: id,
@@ -168,7 +165,7 @@ define([ "jquery", "underscore" ], function($, _) {
         },
         del: function(id, shop_id) {
             $.ajax({
-                url: "./cartDel",
+                url: port.cartDel,
                 type: "post",
                 data: {
                     good_id: id,
@@ -186,7 +183,7 @@ define([ "jquery", "underscore" ], function($, _) {
         },
         setCount: function(id, count, shop_id) {
             return 0 >= count ? exports.del(id, shop_id) : void $.ajax({
-                url: "./cartSetCount",
+                url: port.cartSetCount,
                 type: "post",
                 data: {
                     good_id: id,
@@ -200,11 +197,7 @@ define([ "jquery", "underscore" ], function($, _) {
                 }
             });
         },
-        empty: clearCart,
-        getState: function() {
-            cart.state();
-        }
+        empty: clearCart
     };
-    //TODO devel for DEBUG
-    return window.cart = exports, exports;
+    return exports;
 });

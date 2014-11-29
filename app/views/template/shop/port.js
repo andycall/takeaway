@@ -7,8 +7,7 @@ define(function(){
 		cartSetCount : "./cartSetCount",
         cartClear: "./cartClear",
         cartAdd: "./cartAdd",
-        cartDel: "./cartDel",
-
+        cartDel: "./cartDel"
 	}
 
 });
