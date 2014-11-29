@@ -11,7 +11,7 @@ require.config({
 		shop_cart : "../widget/shop_cart",
 		shop_evaluate : "../widget/shop_evaluate",
 		shop_comment : "../widget/shop_comment",
-		shop_collect_bar : "../weight/shop_collect_bar"
+		shop_collect_bar : "../widget/shop_collect_bar"
 	}
 });
 
