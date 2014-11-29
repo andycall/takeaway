@@ -21,7 +21,7 @@ define([ "jquery", "shop_cart/shop_cart" ], function($, cart) {
     }), toolBar_toggle.fadeIn(300)), toolBar_toggle.on("click", function() {
         drop_down_menu.toggle();
     }), // 购物车
-    $(".rst-d-act-add").on("click", function() {
+    $(".cate_view").on("click", ".rst-d-act-add", function() {
         var good_id = $(this).parents(".menu_list_block").data("shop_id");
         return cart.add(good_id, shop_id), !1;
     }), $(window).on("scroll", function() {

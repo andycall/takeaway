@@ -39,6 +39,7 @@
                  return this.itemList[i];
              }
          }
+         if(callback) callback(null);
          return false;
      }
      /**
@@ -117,7 +118,14 @@
          var cartInfo = cart.refresh();
          $totalLen.html(cartInfo.totalNum);
          $totalPrice.html(cartInfo.totalPrice);
-
+         $('.rcart-dish').each(function(i, item){
+             var $item = $(item);
+             var id = $item.data('good_id'),
+                 shop_id = $item.data('shop_id');
+             cart.find(id, function(good){
+                $item.find('.set_num_in').val(good.count);
+             });
+         });
          if(cartInfo.totalPrice == 0){
              $('.rcart-info').hide();
              $('#cartScroll').html('<p class="rcart-empty">篮子是空的</p>');
@@ -246,35 +254,42 @@
 
      var exports = {
          add: function(id, shop_id) {
-             $.ajax({
-                 url: port['cartAdd'],
-                 type: "post",
-                 data: {
-                     good_id: id,
-                     shop_id: shop_id
-                 },
-                 beforeSend: function(){
-                     //todo 这里应该转个菊花什么的
-                 },
-                 success: function(res){
-                     if('true' == res.success){
-                         var data = res.data;
-                         $('#cartTotalItems').html(data['cart_count']);
-                         $('#cartTotalPrice').html(data['cart_all']);
-                         cart.add({
-                             id: data.addedItem['goods_id'],
-                             price: data.addedItem['goods_price'],
-                             count: data.addedItem['goods_count'],
-                             title: data.addedItem['goods_name'],
-                             shop_id: data['shop_id'],
-                             domLi: null
-                         });
+             cart.find(id, function(item){
+                 console.log(id, item);
+                 if(item){
+                     item.count ++;
+                 }else{
+                     $.ajax({
+                         url: port['cartAdd'],
+                         type: "post",
+                         data: {
+                             good_id: id,
+                             shop_id: shop_id
+                         },
+                         beforeSend: function(){
+                             //todo 这里应该转个菊花什么的
+                         },
+                         success: function(res){
+                             if('true' == res.success){
+                                 var data = res.data;
+                                 $('#cartTotalItems').html(data['cart_count']);
+                                 $('#cartTotalPrice').html(data['cart_all']);
+                                 cart.add({
+                                     id: data.addedItem['goods_id'],
+                                     price: data.addedItem['goods_price'],
+                                     count: data.addedItem['goods_count'],
+                                     title: data.addedItem['goods_name'],
+                                     shop_id: data['shop_id'],
+                                     domLi: null
+                                 });
 
-                     }else{
-                         alert(res.info);
-                     }
+                             }else{
+                                 alert(res.info);
+                             }
+                         }
+
+                     });
                  }
-
              });
              refreshCart();
          },

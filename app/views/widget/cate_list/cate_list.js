@@ -56,7 +56,7 @@ define(['jquery' , "shop_cart/shop_cart"], function($, cart){
 
 
 	// 购物车
-	$(".rst-d-act-add").on('click', function(){
+	$(".cate_view").on('click', '.rst-d-act-add', function(){
 		var good_id = $(this).parents('.menu_list_block').data("shop_id");
 
 		cart.add(good_id, shop_id);
