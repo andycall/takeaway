@@ -1,4 +1,4 @@
-define(['jquery'], function($){
+define(['jquery','login/port'], function($, port){
     //登陆模块
 
     /*
@@ -25,7 +25,7 @@ define(['jquery'], function($){
 
     //验证码ajax请求
     function getAuth(data,callback){
-        $.post("/switch_auth", data, function(res){
+        $.post( port["switchAuth"], data, function(res){
             res = {};
             if( typeof res != object ){
                 try{
@@ -74,11 +74,11 @@ define(['jquery'], function($){
 
     //切换按钮
     var $switchMobile = $("#switch-mobile"),
-        $switchNormal = $("#switch-normal");
+         $switchNormal = $("#switch-normal");
 
     //切换容器
     var $mobileLoginW = $(".js-mobile-wapper"),
-        $normalLoginW = $(".js-normal-wapper");
+         $normalLoginW = $(".js-normal-wapper");
 
     //$switchMobile  ==> $mobileLoginW
     //switchNormal   ==> $normalLoginW
@@ -112,11 +112,11 @@ define(['jquery'], function($){
         $(".u-error-tip").hide();
     });
 
-    var $divUserEmail = $("#login-user-name"),
-        $divUserPwd  = $("#login-user-pwd"),
-        $divUserTel  = $("#login-user-mobile"),
-        $divAuth1    = $("#login-user-auth1"),
-        $divAuth2    = $("#login-user-auth2");
+    var $divUserEmail   = $("#login-user-name"),
+            $divUserPwd  = $("#login-user-pwd"),
+            $divUserTel    = $("#login-user-mobile"),
+            $divAuth1      = $("#login-user-auth1"),
+            $divAuth2      = $("#login-user-auth2");
 
     //表单验证     
     function checkLogin(data){
@@ -124,12 +124,12 @@ define(['jquery'], function($){
         $(".u-error-tip").hide();
 
         var regEmail = /^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$/, //邮箱验证
-            regTel   = /^[\d]{11}$/; //手机号码目前只支持11位
+            regTel       = /^[\d]{11}$/; //手机号码目前只支持11位
 
         //normal err tip
-        var $errPwd      = $divUserPwd.find(".u-error-tip"),
+        var $errPwd         = $divUserPwd.find(".u-error-tip"),
             $errUserName = $divUserEmail.find(".u-error-tip"),
-            $errAuth     = $divAuth1.find(".u-error-tip");
+            $errAuth          = $divAuth1.find(".u-error-tip");
         
         if( loginWay == 'normal'){
             //验证邮箱
@@ -177,7 +177,7 @@ define(['jquery'], function($){
     //ajax
     function ajaxForm(data){
         $.ajax({
-            url      : '/login',
+            url      : port['login'],
             type     :  'post',
             dataType :  'json',
             data     :  data,

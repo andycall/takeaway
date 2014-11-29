@@ -1,7 +1,7 @@
-define([ "jquery" ], function($) {
+define([ "jquery", "shop/port" ], function($, port) {
     //收藏ajax
     function shopFavorAjax(data) {
-        $.post("/shopFavor", data, function(res) {
+        $.post(port.shopFavor, data, function(res) {
             if ("object" != typeof res) try {
                 res = $.parseJSON(res);
             } catch (err) {
@@ -15,7 +15,7 @@ define([ "jquery" ], function($) {
     }
     //取消收藏ajax
     function delShopFavor(data) {
-        $.post("/delShopFavor", data, function(res) {
+        $.post(port.delShopFavor, data, function(res) {
             if ("object" != typeof res) try {
                 res = $.parseJSON(res);
             } catch (err) {

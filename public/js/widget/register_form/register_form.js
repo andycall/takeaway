@@ -1,7 +1,7 @@
-define([ "jquery" ], function($) {
+define([ "jquery", "register/port" ], function($, port) {
     //验证码ajax请求
     function getAuth(data) {
-        $.post("/switch_auth", data, function(res) {
+        $.post(post.switchAuth, data, function(res) {
             if (typeof res != object) try {
                 res = $.parseJSON(res);
             } catch (err) {
@@ -42,7 +42,7 @@ define([ "jquery" ], function($) {
     //ajax
     function ajaxForm(data) {
         $.ajax({
-            url: "/register",
+            url: port.register,
             type: "post",
             dataType: "json",
             data: data,

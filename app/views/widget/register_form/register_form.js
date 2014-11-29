@@ -1,4 +1,4 @@
-define(["jquery"], function($){
+define(["jquery", "register/port"], function($, port){
     //注册表单
     /*
      *@include 验证
@@ -19,7 +19,7 @@ define(["jquery"], function($){
 
     //验证码ajax请求
     function getAuth(data,callback){
-        $.post("/switch_auth", data, function(res){
+        $.post(post["switchAuth"], data, function(res){
             if( typeof res != object ){
                 try{
                     res = $.parseJSON(res);
@@ -129,10 +129,10 @@ define(["jquery"], function($){
     //ajax
     function ajaxForm(data){
         $.ajax({
-            url      : '/register', 
-            type     :  'post',
-            dataType :  'json',
-            data     :  data,
+            url            : port["register"], 
+            type          :  'post',
+            dataType   :  'json',
+            data          :  data,
 
             success  : function(res){
                 if( typeof res != object ){
