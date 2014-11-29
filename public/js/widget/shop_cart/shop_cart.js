@@ -115,9 +115,6 @@ define([ "jquery", "underscore" ], function($, _) {
             totalPrice: this.totalPrice,
             totalNum: this.totalNum
         };
-    }, //todo for debug 显示状态用的
-    Cart.prototype.state = function() {
-        console.log(this.itemList);
     }, Cart.prototype.empty = function() {
         this.itemList = [];
     };
@@ -200,11 +197,7 @@ define([ "jquery", "underscore" ], function($, _) {
                 }
             });
         },
-        empty: clearCart,
-        getState: function() {
-            cart.state();
-        }
+        empty: clearCart
     };
-    //TODO devel for DEBUG
-    return window.cart = exports, exports;
+    return exports;
 });

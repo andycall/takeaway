@@ -104,10 +104,6 @@
         };
      }
 
-     //todo for debug 显示状态用的
-     Cart.prototype.state = function(){
-         console.log(this.itemList);
-     }
 
      Cart.prototype.empty = function(){
          this.itemList = [];
@@ -339,13 +335,8 @@
 
          empty: clearCart,
 
-         getState: function(){
-             cart.state();
-         }
-         //TODO for debug
      };
 
-     window.cart = exports; //TODO devel for DEBUG
      return exports;
      console.log("shop cart loaded");
 
