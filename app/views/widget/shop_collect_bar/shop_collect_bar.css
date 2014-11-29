@@ -13,6 +13,8 @@
     border-bottom: 1px solid #ddd;
     color: #ddd;
     font: 26px/1em "eleme","sans-serif"; }
+  .rst-fav .glyph.on {
+    color: #f5522c; }
   .rst-fav .status {
     display: block;
     color: #a3a3a3;
