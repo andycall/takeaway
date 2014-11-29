@@ -1,4 +1,4 @@
- define(['jquery', 'underscore'], function($, _){
+ define(['jquery', 'underscore', "shop/port"], function($, _, port){
      var $cartUp = $('#cartScroll');
      $('.aside-icon-cart').on('click', toggleCartScroll);
      function toggleCartScroll(e){
@@ -158,7 +158,7 @@
          }
 
          $.ajax({
-             url: "./cartSetCount",
+             url: port['cartSetCount'],
              type: "post",
              data: {
                  good_id: id,

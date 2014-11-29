@@ -1,4 +1,4 @@
-define([ "jquery", "underscore" ], function($, _) {
+define([ "jquery", "underscore", "shop/port" ], function($, _, port) {
     function toggleCartScroll() {
         $cartUp.animate(parseInt($cartUp.css("top")) ? {
             top: "0px"
@@ -32,7 +32,7 @@ define([ "jquery", "underscore" ], function($, _) {
             t = val + 1);
             var id = grandPa.data("good_id"), shop_id = grandPa.data("shop_id");
             return 0 >= t ? exports.del(id) : void $.ajax({
-                url: "./cartSetCount",
+                url: port.cartSetCount,
                 type: "post",
                 data: {
                     good_id: id,
