@@ -2,7 +2,7 @@
         <div class="shops-header">
             <div class="ui-helper-clearfix">
                <span class="shops_func choice_click" data-label="ishot">
-                    <input type="checkbox" class="sh_hot_shops"  name="hot_shops" checked="checked"/>
+                    <input type="checkbox" class="sh_hot_shops"  name="hot_shops"/>
                     <label>热门餐厅</label>
                </span>
                <span class="shops_func choice_click" data-label="isonline">
@@ -57,10 +57,10 @@
         <%  for (var i = n * 5 ; (i < n * 5 + 5) && (i < shops.length); i++){ %>
             <a href="<%= shops[i]['shop_url'] %>" class="restaurant-<%= shops[i]['shop_id'] %>">
             
-             <% if(shops[i]['is_opening']){ %>
-                  <div class="more_shops-row-book more_shops-row-colse" data-support_activity="<%= shops[i]['support_activity'].join(',') %>" data-isHot="<%= Number(shops[i]['isHot']) %>" data-isOnline="<%= Number(shops[i]['isOnline']) %>" data-isSupportPay="<%= Number(shops[i]['isSupportPay']) %>" data-flavor="<%=  shops[i]['flavor'] ? shops[i]['flavor'] : ''  %>" data-shop_id="<%= shops[i]['shop_id'] %>" data-place_id="<%= shops[i]['place_id'] %>">
+             <% if(shops[i]['isonline']){ %>
+                  <div class="more_shops-row-book more_shops-row-colse" data-support_activity="<%= shops[i]['support_activity'].join(',') %>" data-isHot="<%= Number(shops[i]['ishot']) %>" data-isOnline="<%= Number(shops[i]['isonline']) %>" data-isSupportPay="<%= Number(shops[i]['issupportpay']) %>" data-flavor="<%=  shops[i]['flavor'] %>" data-shop_id="<%= shops[i]['shop_id'] %>" data-place_id="<%= shops[i]['place_id'] %>">
             <% } else { %>
-                  <div class="more_shops-row-book" data-support_activity="<%= shops[i]['support_activity'].join(',') %>" data-isHot="<%= Number(shops[i]['isHot']) %>" data-isOnline="<%= Number(shops[i]['isOnline']) %>" data-isSupportPay="<%= shops[i]['isSupportPay'] %>" data-flavor="<% shops[i]['flavor'] ? shops[i]['flavor'] : ''  %>" data-shop_id="<%= shops[i]['shop_id'] %>" data-place_id="<%= shops[i]['place_id'] %>">
+                  <div class="more_shops-row-book" data-support_activity="<%= shops[i]['support_activity'].join(',') %>" data-isHot="<%= Number(shops[i]['ishot']) %>" data-isOnline="<%= Number(shops[i]['isonline']) %>" data-isSupportPay="<%= shops[i]['issupportpay'] %>" data-flavor="<%= shops[i]['flavor'] %>" data-shop_id="<%= shops[i]['shop_id'] %>" data-place_id="<%= shops[i]['place_id'] %>">
             <% } %>
 
 
@@ -88,8 +88,8 @@
                     <div class="more_shops-row-book-left">
                         <div class="logo">
 
-            <% if(shops[i]['shop_logo']){ %>
-                                    <img src="<%= shops[i]['shop_logo'] %>"/>
+            <% if(shops[i]['shop_logo'] != "images/eleme_restaurant_logo.jpg"){ %>
+                                    <img class="logo_flag" src="<%= shops[i]['shop_logo'] %>"/>
             <% } else { %>
                                     <img src='images/eleme_restaurant_logo.jpg'/>
             <% } %>
@@ -160,6 +160,7 @@
                                 <p class="close">餐厅太忙，暂不接受订单</p>
             <% } %>
                         <ul>
+
             <% for(var m = 0; m < shops[i]['support_activity'].length; m++){ %>
                                     <li>
                                         <span class="icon" style="background-position: 0 <%= 20-shops[i]['support_activity'][m]*20 %>px"></span>

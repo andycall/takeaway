@@ -25,6 +25,11 @@
                         @yield("shop_right")
                     </div>
                 </div>
+                 
+                 {{-- 右侧收藏商家按钮 --}}
+                 <div class="shop_collect_bar">
+                    	@yield("shop_collect_bar")
+                 </div>
                 {{-- 餐厅购物车 --}}
 
                 <div class="shop_chart">

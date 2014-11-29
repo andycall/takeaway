@@ -52,10 +52,8 @@ define(['jquery'], function($){
 			var target = self.data[i],
                 flag  = true;
 
+
 			for(var name in labelObject) {
-				if(labelObject[name] == "continue"){
-					continue;
-				}
 
 				if(name == "support_activity"){
 					var activity = labelObject[name];

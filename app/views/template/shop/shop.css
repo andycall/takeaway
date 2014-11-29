@@ -84,3 +84,13 @@ a{
 	overflow-x:hidden;
 	display: none;
 }
+
+/* 最右侧收藏按钮 */
+.shop_collect_bar{
+	position: absolute;
+	left: 50%;
+	top: 165px;
+	width: 54px;
+	background: red;
+	margin-left: 584px;
+}

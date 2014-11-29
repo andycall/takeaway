@@ -87,3 +87,5 @@ personal_uncomment 未点评的订单
 personal_verify_email 验证邮箱
 
 personal_verify_phone 验证手机
+
+shop_collect_bar   商家页面最右收藏按钮
