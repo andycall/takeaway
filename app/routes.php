@@ -317,12 +317,12 @@ Route::get('/', function(){
                         "deliver_state_start" => "100块都不送",
                         "deliver_start_statement" => "顺丰快递,耶"        ,               // 起送价描述, 注意,这是一段话
                         "shop_address" => "黄脚丫"          ,             // 商家地址
-                        "is_opening"  => "0"            ,            // 0 是正在营业, 1是打烊了
+                        "is_opening"  => "1"            ,            // 0 是正在营业, 1是打烊了
                         "close_msg"  => "关门啦"             ,           // 关门信息
                         "business_hours" => "08:00"           ,          // 营业时间
                         "shop_summary" => "lalalal"              ,         // 商家简介
                         "order_count"=> "22"               ,       // 订单数量
-                        "is_collected" => ""                 ,      // 是否被收藏了
+                        "is_collected" => "1"                 ,      // 是否被收藏了
                         "is_ready_for_order" => "1",
                         "additions" => [                          // 额外的内容
                             0 => [
@@ -339,7 +339,7 @@ Route::get('/', function(){
                         "shop_id" => "45226"    ,                         // 商家id
                         "place_id" => "123"   ,                        // 商家位置id
                         "shop_url" => "http://baidu.com"   ,                       // 点击跳转到相应商家
-                        "shop_logo" => ""  ,                      // 商家的logo图片地址
+                        "shop_logo" => url("/images/b73eb7c921384a1ad96d7f6e96bf1.jpg")  ,                      // 商家的logo图片地址
                         "deliver_time" => "22",                     // 送货时间间隔
                         "deliver_start" => "10:00" ,                    // 送货开始时间
                         "shop_name" => "臭脚丫"       ,                   // 商家名称
@@ -349,7 +349,7 @@ Route::get('/', function(){
                         "deliver_state_start" => "100块都不送",
                         "deliver_start_statement" => "顺丰快递,耶"        ,               // 起送价描述, 注意,这是一段话
                         "shop_address" => "黄脚丫"          ,             // 商家地址
-                        "is_opening"  => "0"            ,            // 0 是正在营业, 1是打烊了
+                        "is_opening"  => "2"            ,            // 0 是正在营业, 1是打烊了
                         "close_msg "  => "关门啦"             ,           // 关门信息
                         "business_hours" => "08:00"           ,          // 营业时间
                         "shop_summary" => "lalalal"              ,         // 商家简介
