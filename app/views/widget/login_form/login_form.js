@@ -26,8 +26,7 @@ define(['jquery','login/port'], function($, port){
     //验证码ajax请求
     function getAuth(data,callback){
         $.post( port["switchAuth"], data, function(res){
-            res = {};
-            if( typeof res != object ){
+            if( typeof res != 'object' ){
                 try{
                     res = $.parseJSON(res);
                 }catch(err){
@@ -36,9 +35,9 @@ define(['jquery','login/port'], function($, port){
                 }
             }
 
-            if( res.success && res.nextSrc ){
+            if( res.success == "true" ){
                 if(res.nextSrc){
-                    $(".captcha-img").attrs("src",res.nextSrc);
+                    if(data.auth_way == "image") $(".captcha-img").attr("src",res.nextSrc);
                 }else{
                     alert("短信已经发送，请注意接收验证码");
                     
@@ -183,7 +182,7 @@ define(['jquery','login/port'], function($, port){
             data     :  data,
 
             success : function(res){
-                if( typeof res != object ){
+                if( typeof res != 'object' ){
                     try{
                         res = $.parseJSON(res);
                     }catch(err){
