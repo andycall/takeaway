@@ -3,8 +3,8 @@ define(function() {
     return {
         switchAuth: "/switch_auth",
         //点击切换验证码
-        "'login'": "/login",
+        login: "/loginAjax",
         //登陆
-        register: "/register"
+        register: "/registerAjax"
     };
 });

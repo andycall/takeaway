@@ -2,12 +2,12 @@ define([ "jquery", "login/port" ], function($, port) {
     //验证码ajax请求
     function getAuth(data) {
         $.post(port.switchAuth, data, function(res) {
-            if (res = {}, typeof res != object) try {
+            if ("object" != typeof res) try {
                 res = $.parseJSON(res);
             } catch (err) {
                 return void alert("服务器数据异常，稍后再试");
             }
-            if (res.success && res.nextSrc) if (res.nextSrc) $(".captcha-img").attrs("src", res.nextSrc); else {
+            if ("true" == res.success) if (res.nextSrc) "image" == data.auth_way && $(".captcha-img").attr("src", res.nextSrc); else {
                 alert("短信已经发送，请注意接收验证码"), //计时禁止连续发送30秒
                 $smsBtn.attr("disabled", "disabled");
                 var count = 30, orginText = $smsBtn.text(), authTimer = setInterval(function() {
@@ -48,7 +48,7 @@ define([ "jquery", "login/port" ], function($, port) {
             dataType: "json",
             data: data,
             success: function(res) {
-                if (typeof res != object) try {
+                if ("object" != typeof res) try {
                     res = $.parseJSON(res);
                 } catch (err) {
                     return void alert("服务器异常，稍后再试");

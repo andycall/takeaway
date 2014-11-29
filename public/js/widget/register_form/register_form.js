@@ -1,13 +1,13 @@
 define([ "jquery", "register/port" ], function($, port) {
     //验证码ajax请求
     function getAuth(data) {
-        $.post(post.switchAuth, data, function(res) {
-            if (typeof res != object) try {
+        $.post(port.switchAuth, data, function(res) {
+            if ("object" != typeof res) try {
                 res = $.parseJSON(res);
             } catch (err) {
                 return void alert("服务器数据异常，稍后再试");
             }
-            if (res.success) {
+            if ("true" == res.success) {
                 alert("短信已经发送，请注意接收验证码"), //计时禁止连续发送30秒
                 $smsBtn.attr("disabled", "disabled");
                 var count = 30, orginText = $smsBtn.text(), authTimer = setInterval(function() {
@@ -47,7 +47,7 @@ define([ "jquery", "register/port" ], function($, port) {
             dataType: "json",
             data: data,
             success: function(res) {
-                if (typeof res != object) try {
+                if ("object" != typeof res) try {
                     res = $.parseJSON(res);
                 } catch (err) {
                     return void alert("服务器异常，稍后再试");

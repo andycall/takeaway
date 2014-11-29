@@ -522,7 +522,7 @@ Route::get('/', function(){
         "more_shop" => [
 			"data" => [
                 [
-                    "shop_id" => "12423235235235",
+                    "shop_id" => "37589",
                     "place_id" => "12423235235235",
                     "support_activity" => [1,2,3],
                     "isHot" => "1",
@@ -541,12 +541,12 @@ Route::get('/', function(){
                     "business_hours" => "24小时",
                     "shop_summary"  => "吃吃吃",
                     "order_count" => "202",
-                    "is_collected" => "0",
+                    "is_collected" => "1",
                     "is_opening" => "0",
                     "is_ready_for_order" => "1"
                 ],
                 [
-                    "shop_id" => "12423235235235",
+                    "shop_id" => "37589",
                     "place_id" => "12423235235235",
                     "support_activity" => [1,2,3],
                     "isHot" => "1",
@@ -565,7 +565,7 @@ Route::get('/', function(){
                     "business_hours" => "24小时",
                     "shop_summary"  => "吃吃吃",
                     "order_count" => "202",
-                    "is_collected" => "0",
+                    "is_collected" => "1",
                     "is_opening" => "0",
                     "is_ready_for_order" => "1"
                 ],
@@ -2794,7 +2794,153 @@ Route::post("/delCollect", function(){
 });
 
 //提交我的收藏列表
-Route::post("/collect-list", function(){
+Route::post("/collect_list", function(){
+    $data = [
+        "success" => "true",
+        "state"   => 200       ,                            // HTTP 状态码
+        "nextSrc" => ""       ,                             // 登录成功后的跳转地址
+        "errMsg"  => ""       ,                             // 如果出现错误, 错误信息就出现在这, 如果没有, 那内容为空.
+        "no"      => 0           ,                          // 错误号 ,错误号就出现在这, 如果没有, 那内容为空.
+        "data"    => [
+            "collection_shop" => [
+                [
+                    "shop_id" => "37589",
+                    "place_id" => "589u65487945",
+                    "shop_url" => "http://www.baidu.com",
+                    "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
+                    "deliver_time" => "22",
+                    "deliver_start" => "17:00",
+                    "shop_name" => "三顾冒菜",
+                    "shop_type" => "中餐",
+                    "shop_level" => "4.3",
+                    "order_count" => "202",
+                    "is_opening" => "0",
+                    "is_ready_for_order" => "1"
+                ],
+                [
+                    "shop_id" => "985236",
+                    "place_id" => "234534",
+                    "shop_url" => "##",
+                    "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
+                    "deliver_time" => "45",
+                    "deliver_start" => "",
+                    "shop_name" => "乐堡王",
+                    "shop_type" => "中式，西式",
+                    "shop_level" => "4.3",
+                    "order_count" => "5134",
+                    "is_opening" => "0",
+                    "is_ready_for_order" => "0"
+                ],
+                [
+                    "shop_id" => "775755",
+                    "place_id" => "435456456436346346346",
+                    "shop_url" => "##",
+                    "shop_logo" => "",
+                    "deliver_time" => "",
+                    "deliver_start" => "",
+                    "shop_name" => "铁板牛肉",
+                    "shop_type" => "中餐",
+                    "shop_level" => "3.8",
+                    "order_count" => "202",
+                    "is_opening" => "2",
+                    "is_ready_for_order" => "0"
+                ],
+                [
+                    "shop_id" => "37589",
+                    "place_id" => "589u65487945",
+                    "shop_url" => "http://www.baidu.com",
+                    "shop_logo" => "images/5c81fa9884117928491470659e18djpeg.jpeg",
+                    "deliver_time" => "22",
+                    "deliver_start" => "17:00",
+                    "shop_name" => "ajax三顾冒菜",
+                    "shop_type" => "中餐",
+                    "shop_level" => "4.3",
+                    "order_count" => "202",
+                    "is_opening" => "0",
+                    "is_ready_for_order" => "1"
+                ]
+            ]
+        ]
+    ];
+
+    return Response::json($data);
+});
+
+//添加收藏
+Route::post("/add_collect", function(){
+    $data = [
+        "success" => "true",
+        "state"   => 200       ,                            // HTTP 状态码
+        "nextSrc" => ""       ,                             // 登录成功后的跳转地址
+        "errMsg"  => ""       ,                             // 如果出现错误, 错误信息就出现在这, 如果没有, 那内容为空.
+        "no"      => 0           ,                          // 错误号 ,错误号就出现在这, 如果没有, 那内容为空.
+        "data"    => [
+            "collection_shop" => [
+                [
+                    "shop_id" => "37589",
+                    "place_id" => "589u65487945",
+                    "shop_url" => "http://www.baidu.com",
+                    "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
+                    "deliver_time" => "22",
+                    "deliver_start" => "17:00",
+                    "shop_name" => "三顾冒菜",
+                    "shop_type" => "中餐",
+                    "shop_level" => "4.3",
+                    "order_count" => "202",
+                    "is_opening" => "0",
+                    "is_ready_for_order" => "1"
+                ],
+                [
+                    "shop_id" => "985236",
+                    "place_id" => "234534",
+                    "shop_url" => "##",
+                    "shop_logo" => url("images/5c81fa9884117928491470659e18djpeg.jpeg"),
+                    "deliver_time" => "45",
+                    "deliver_start" => "",
+                    "shop_name" => "乐堡王",
+                    "shop_type" => "中式，西式",
+                    "shop_level" => "4.3",
+                    "order_count" => "5134",
+                    "is_opening" => "0",
+                    "is_ready_for_order" => "0"
+                ],
+                [
+                    "shop_id" => "775755",
+                    "place_id" => "435456456436346346346",
+                    "shop_url" => "##",
+                    "shop_logo" => "",
+                    "deliver_time" => "",
+                    "deliver_start" => "",
+                    "shop_name" => "铁板牛肉",
+                    "shop_type" => "中餐",
+                    "shop_level" => "3.8",
+                    "order_count" => "202",
+                    "is_opening" => "2",
+                    "is_ready_for_order" => "0"
+                ],
+                [
+                    "shop_id" => "37589",
+                    "place_id" => "589u65487945",
+                    "shop_url" => "http://www.baidu.com",
+                    "shop_logo" => "images/5c81fa9884117928491470659e18djpeg.jpeg",
+                    "deliver_time" => "22",
+                    "deliver_start" => "17:00",
+                    "shop_name" => "ajax三顾冒菜",
+                    "shop_type" => "中餐",
+                    "shop_level" => "4.3",
+                    "order_count" => "202",
+                    "is_opening" => "0",
+                    "is_ready_for_order" => "1"
+                ]
+            ]
+        ]
+    ];
+
+    return Response::json($data);
+});
+
+//取消收藏
+Route::post("/cancel_collection", function(){
     $data = [
         "success" => "true",
         "state"   => 200       ,                            // HTTP 状态码
@@ -2921,6 +3067,50 @@ Route::post("/delShopFavor", function (){
         "success" => "true",
         "errMsg" => ""
     ];
+    return Response::json($data);
+});
+
+//登陆表单
+Route::post("/loginAjax",function(){
+    $data = [
+        "success"  => "true", //成功
+        "errMsg"  => "",     //错误信息
+        "nextSrc"  => "/"   //到主页
+    ];
+
+    return Response::json($data);
+});
+
+//注册表单
+Route::post("/registerAjax",function(){
+    $data = [
+        "success"  => "true", //成功
+        "errMsg"  => "",       //错误信息
+        "nextSrc"  => "/login" //到登陆页面
+    ];
+
+    return Response::json($data);
+});
+
+//切换验证码
+Route::post("/switch_auth",function(){
+    $input = Input::all();
+
+    if( $input["auth_way"] == "image" ){  //如果验证码类型为图片的话
+        $data = [
+            "success"  => "true", //成功
+            "errMsg"  => "",       //错误信息
+            "nextSrc"  => "http://image.meilele.com/images/201411/1416780324084308751.jpg" //验证码地址
+       ];
+
+    }elseif( $input["auth_way"] == "sms" ){ //短信验证码
+        $data = [
+            "success"  => "true", //成功
+            "errMsg"  => "",  //错误信息
+            "nextSrc" => ""   //跳转地址
+        ];
+    }
+
     return Response::json($data);
 });
 
