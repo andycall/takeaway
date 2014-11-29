@@ -2267,6 +2267,20 @@ Route::get("/personal_secure", function(){
 				"switch_place" => "123"                  // 切换当前地址的地址
 			]
 		],
+        "personal_secure" => [
+            "secure_level" => "low",   //low|middle|high
+            "secure_level_chinese" => "低",  // 安全等级
+            "secure_phone" => "110110110110",  // 用户的手机号码
+            "secure_center" => "./personal_center", //安全中心地址
+            "change_phone" => "http://baidu.com/s?wd=change_phone",  // 更换手机号码的链接
+            "change_email" => "http://baidu.com/s?wd=change_email",  // 更换邮箱的链接
+            "send_email" => "http://baidu.com/s?wd=send_email", //重发激活邮件
+            "cancel_phone" => "http://baidu.com/s?wd=cancel_phone",  // 解除绑定的地址
+            "secure_email" => "abc@fsdghjk.com",  // 用户邮箱地址
+            "cash_limit" => "50", //支付额度
+            "email_state"  => "inactive",  // 邮箱状态
+            "phone_state"  => "inactive"  // 手机状态
+        ],
 		"sidebar" => [  // 左侧栏地址
 			"personal_center" => url("/personal_center"),  // 个人中心的地址
 			"personal_recent_month" => url("personal_recent_month"), // 最近一个月的地址
