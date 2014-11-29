@@ -2848,4 +2848,48 @@ Route::post("/delShopFavor", function (){
     return Response::json($data);
 });
 
+//登陆表单
+Route::post("/loginAjax",function(){
+    $data = [
+        "success"  => "true", //成功
+        "errMsg"  => "",     //错误信息
+        "nextSrc"  => "/"   //到主页
+    ];
+
+    return Response::json($data);
+});
+
+//注册表单
+Route::post("/registerAjax",function(){
+    $data = [
+        "success"  => "true", //成功
+        "errMsg"  => "",       //错误信息
+        "nextSrc"  => "/login" //到登陆页面
+    ];
+
+    return Response::json($data);
+});
+
+//切换验证码
+Route::post("/switch_auth",function(){
+    $input = Input::all();
+
+    if( $input["auth_way"] == "image" ){  //如果验证码类型为图片的话
+        $data = [
+            "success"  => "true", //成功
+            "errMsg"  => "",       //错误信息
+            "nextSrc"  => "http://image.meilele.com/images/201411/1416780324084308751.jpg" //验证码地址
+       ];
+
+    }elseif( $input["auth_way"] == "sms" ){ //短信验证码
+        $data = [
+            "success"  => "true", //成功
+            "errMsg"  => "",  //错误信息
+            "nextSrc" => ""   //跳转地址
+        ];
+    }
+
+    return Response::json($data);
+});
+
 
