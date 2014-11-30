@@ -7,7 +7,7 @@
     </header>
 
     <section class="cart-group cart_group" data-id="0">
-        <ul class="cgroup-list">
+        <ul class="cgroup-list" id="cgroup-list">
             <li class="cgroup-item s_food" data-id="9999500">
                 <div class="cdish-name">年糕盐煎肉</div>
                 <div class="cdish-price symbol-rmb">12</div>
@@ -24,6 +24,7 @@
         </ul>
     </section>
 
+
     <footer class="ctable-footer group">
         <div id="module_note" class="cart-note">
             <div class="ctable-form group">
@@ -38,6 +39,21 @@
     </footer>
 </article>
 
+<script type="text/template" id="tpl-cgroup-item">
+    <li class="cgroup-item s_food" data-good_id="<%= data.good_id %>">
+        <div class="cdish-name"><%= data.title %></div>
+        <div class="cdish-price symbol-rmb"><%= data.price %></div>
+        <div class="cdish-modify">
+            <a class="cdish-action desc dec_btn">-</a>
+            <input class="cdish-qty set_num" type="text" value="<%= data.count %>">
+            <a class="cdish-action incr inc_btn">+</a>
+        </div>
+        <div class="cdish-total symbol-rmb"><%= data.price * data.count %></div>
+        <div class="cdish-del">
+            <a class="del del_btn">×</a>
+        </div>
+    </li>
+</script>
 @section("css")
     @parent
     {{HTML::style("/css/widget/good_basket/good_basket.css")}}

@@ -14,7 +14,7 @@ define([ "jquery", "underscore", "shop/port" ], function($, _, port) {
     function Cart(opts) {
         for (var i in opts) this[i] = opts[i];
         //init
-        this.itemList = [];
+        this.itemList = [], this.init();
     }
     //实例化 cart
     function refreshCart() {
@@ -66,7 +66,7 @@ define([ "jquery", "underscore", "shop/port" ], function($, _, port) {
         });
     }
     function fixScroll() {
-        $cartUp.animate({
+        $cartUp && $cartUp.animate({
             top: -$cartUp.height() + "px"
         });
     }
@@ -91,11 +91,16 @@ define([ "jquery", "underscore", "shop/port" ], function($, _, port) {
     Cart.prototype.add = function(item) {
         if (!this.find(item.id)) {
             this.itemList.push(item);
-            var tpl = _.template($("#tpl-cart-item").html())({
-                data: item
-            });
-            return $(".rcart-empty").length > 0 && $("#cartScroll").html('<h4 class="rcart-title">购物车<a class="rcart-clear basket_clear_btn">[清空]</a></h4><ul class="rcart-list basket_list"></ul>'), 
-            $(".basket_list").append(tpl), refreshCart(), fixScroll(), !0;
+            try {
+                var tpl = _.template($("#tpl-cart-item").html())({
+                    data: item
+                });
+                $(".rcart-empty").length > 0 && $("#cartScroll").html('<h4 class="rcart-title">购物车<a class="rcart-clear basket_clear_btn">[清空]</a></h4><ul class="rcart-list basket_list"></ul>'), 
+                $(".basket_list").append(tpl);
+            } catch (e) {
+                console.log("point 1");
+            }
+            return refreshCart(), fixScroll(), !0;
         }
         return !1;
     }, Cart.prototype.setCount = function(id, callback) {
@@ -125,6 +130,20 @@ define([ "jquery", "underscore", "shop/port" ], function($, _, port) {
         };
     }, Cart.prototype.empty = function() {
         this.itemList = [];
+    }, Cart.prototype.each = function() {}, Cart.prototype.init = function(cb) {
+        $.ajax({
+            url: port.cartInit,
+            type: "POST",
+            data: {},
+            success: function(res) {
+                if ("true" == res.success) {
+                    var data = res.data;
+                    data.forEach(function(item) {
+                        cart.add(item), cb && cb(item);
+                    });
+                } else alert("NetWork Error!");
+            }
+        });
     };
     var cart = new Cart();
     $("#cartScroll").on("click", ".d_btn, .i_btn", changeItemNum), $("#cartScroll").on("keyup", ".set_num_in", function(e) {
@@ -148,7 +167,7 @@ define([ "jquery", "underscore", "shop/port" ], function($, _, port) {
     var exports = {
         add: function(id, shop_id) {
             cart.find(id, function(item) {
-                console.log(id, item), item ? item.count++ : $.ajax({
+                item ? item.count++ : $.ajax({
                     url: port.cartAdd,
                     type: "post",
                     data: {

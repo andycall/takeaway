@@ -14,13 +14,21 @@ define([ "jquery", "underscore", "shop/port" ], function($, _, port) {
     function Cart(opts) {
         for (var i in opts) this[i] = opts[i];
         //init
-        this.itemList = [];
+        this.itemList = [], this.init();
     }
     //实例化 cart
     function refreshCart() {
         var $totalLen = $("#cartTotalItems"), $totalPrice = $("#cartTotalPrice"), cartInfo = cart.refresh();
-        $totalLen.html(cartInfo.totalNum), $totalPrice.html(cartInfo.totalPrice), 0 == cartInfo.totalPrice ? ($(".rcart-info").hide(), 
-        $("#cartScroll").html('<p class="rcart-empty">篮子是空的</p>'), $(".aside-cart-btn").addClass("disabled").html("篮子是空的哦")) : ($(".rcart-info").show(), 
+        $totalLen.html(cartInfo.totalNum), $totalPrice.html(cartInfo.totalPrice), $(".rcart-dish").each(function(i, item) {
+            {
+                var $item = $(item), id = $item.data("good_id");
+                $item.data("shop_id");
+            }
+            cart.find(id, function(good) {
+                $item.find(".set_num_in").val(good.count);
+            });
+        }), 0 == cartInfo.totalPrice ? ($(".rcart-info").hide(), $("#cartScroll").html('<p class="rcart-empty">篮子是空的</p>'), 
+        $(".aside-cart-btn").addClass("disabled").html("篮子是空的哦")) : ($(".rcart-info").show(), 
         $(".aside-cart-btn").removeClass("disabled").html("点击支付"));
     }
     function changeItemNum(e) {
@@ -58,7 +66,7 @@ define([ "jquery", "underscore", "shop/port" ], function($, _, port) {
         });
     }
     function fixScroll() {
-        $cartUp.animate({
+        $cartUp && $cartUp.animate({
             top: -$cartUp.height() + "px"
         });
     }
@@ -74,7 +82,7 @@ define([ "jquery", "underscore", "shop/port" ], function($, _, port) {
         "object" == typeof id && (id = id.id);
         for (var i = 0, len = this.itemList.length; len > i; i++) if (this.itemList[i].id == id) return callback && callback(this.itemList[i]), 
         this.itemList[i];
-        return !1;
+        return callback && callback(null), !1;
     }, /**
       * [add 增加商品]
       * @param {[type]} itemId [description]
@@ -83,11 +91,16 @@ define([ "jquery", "underscore", "shop/port" ], function($, _, port) {
     Cart.prototype.add = function(item) {
         if (!this.find(item.id)) {
             this.itemList.push(item);
-            var tpl = _.template($("#tpl-cart-item").html())({
-                data: item
-            });
-            return $(".rcart-empty").length > 0 && $("#cartScroll").html('<h4 class="rcart-title">购物车<a class="rcart-clear basket_clear_btn">[清空]</a></h4><ul class="rcart-list basket_list"></ul>'), 
-            $(".basket_list").append(tpl), refreshCart(), fixScroll(), !0;
+            try {
+                var tpl = _.template($("#tpl-cart-item").html())({
+                    data: item
+                });
+                $(".rcart-empty").length > 0 && $("#cartScroll").html('<h4 class="rcart-title">购物车<a class="rcart-clear basket_clear_btn">[清空]</a></h4><ul class="rcart-list basket_list"></ul>'), 
+                $(".basket_list").append(tpl);
+            } catch (e) {
+                console.log("point 1");
+            }
+            return refreshCart(), fixScroll(), !0;
         }
         return !1;
     }, Cart.prototype.setCount = function(id, callback) {
@@ -117,6 +130,20 @@ define([ "jquery", "underscore", "shop/port" ], function($, _, port) {
         };
     }, Cart.prototype.empty = function() {
         this.itemList = [];
+    }, Cart.prototype.init = function(cb) {
+        $.ajax({
+            url: port.cartInit,
+            type: "POST",
+            data: {},
+            success: function(res) {
+                if ("true" == res.success) {
+                    var data = res.data;
+                    data.forEach(function(item) {
+                        cart.add(item), cb && cb(item);
+                    });
+                } else alert("NetWork Error!");
+            }
+        });
     };
     var cart = new Cart();
     $("#cartScroll").on("click", ".d_btn, .i_btn", changeItemNum), $("#cartScroll").on("keyup", ".set_num_in", function(e) {
@@ -139,28 +166,30 @@ define([ "jquery", "underscore", "shop/port" ], function($, _, port) {
     }), $("#cartScroll").on("click", ".basket_clear_btn", clearCart);
     var exports = {
         add: function(id, shop_id) {
-            $.ajax({
-                url: port.cartAdd,
-                type: "post",
-                data: {
-                    good_id: id,
-                    shop_id: shop_id
-                },
-                beforeSend: function() {},
-                success: function(res) {
-                    if ("true" == res.success) {
-                        var data = res.data;
-                        $("#cartTotalItems").html(data.cart_count), $("#cartTotalPrice").html(data.cart_all), 
-                        cart.add({
-                            id: data.addedItem.goods_id,
-                            price: data.addedItem.goods_price,
-                            count: data.addedItem.goods_count,
-                            title: data.addedItem.goods_name,
-                            shop_id: data.shop_id,
-                            domLi: null
-                        });
-                    } else alert(res.info);
-                }
+            cart.find(id, function(item) {
+                item ? item.count++ : $.ajax({
+                    url: port.cartAdd,
+                    type: "post",
+                    data: {
+                        good_id: id,
+                        shop_id: shop_id
+                    },
+                    beforeSend: function() {},
+                    success: function(res) {
+                        if ("true" == res.success) {
+                            var data = res.data;
+                            $("#cartTotalItems").html(data.cart_count), $("#cartTotalPrice").html(data.cart_all), 
+                            cart.add({
+                                id: data.addedItem.goods_id,
+                                price: data.addedItem.goods_price,
+                                count: data.addedItem.goods_count,
+                                title: data.addedItem.goods_name,
+                                shop_id: data.shop_id,
+                                domLi: null
+                            });
+                        } else alert(res.info);
+                    }
+                });
             }), refreshCart();
         },
         del: function(id, shop_id) {

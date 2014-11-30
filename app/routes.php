@@ -3375,6 +3375,21 @@ Route::post("/cartDel", function (){
     return Response::json($data);
 });
 
+Route::post("/cartInit", function (){
+    $data = [
+        "success" => "true",
+        "data" => [
+            [
+                "id" => "1234",
+                "price" => "345",
+                "count" => "3",
+                "title" => "平菇牛肉小份"
+            ]
+        ]
+    ];
+    return Response::json($data);
+});
+
 //收藏餐厅
 Route::post("/shopFavor", function (){
     $data = [

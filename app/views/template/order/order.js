@@ -6,6 +6,7 @@ require.config({
 		}
 	},
 	paths : {
+        shop : "../template/shop",
 		order : "../template/order",
 		footer  :"../widget/footer",
 		content_header : "../widget/content_header",
@@ -14,7 +15,8 @@ require.config({
 		good_basket : "../widget/good_basket",
 		pay_method : "../widget/pay_method",
 		userBar : "../widget/userBar",
-		cart_topbar : "../widget/cart_topbar"
+		cart_topbar : "../widget/cart_topbar",
+        shop_cart : "../widget/shop_cart",
 	}
 });
 

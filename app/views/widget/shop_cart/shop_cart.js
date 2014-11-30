@@ -20,7 +20,7 @@
          }
          //init
          this.itemList = [];
-
+        this.init();
      }
 //     {
 //          id: 123,
@@ -50,9 +50,14 @@
      Cart.prototype.add = function(item){
          if(!this.find(item.id)){
              this.itemList.push(item);
-             var tpl = _.template($('#tpl-cart-item').html())({data: item});
-             if($('.rcart-empty').length > 0)$('#cartScroll').html('<h4 class="rcart-title">购物车<a class="rcart-clear basket_clear_btn">[清空]</a></h4><ul class="rcart-list basket_list"></ul>');
-             $('.basket_list').append(tpl);
+             try{
+                 var tpl = _.template($('#tpl-cart-item').html())({data: item});
+                 if($('.rcart-empty').length > 0)$('#cartScroll').html('<h4 class="rcart-title">购物车<a class="rcart-clear basket_clear_btn">[清空]</a></h4><ul class="rcart-list basket_list"></ul>');
+                 $('.basket_list').append(tpl);
+             }catch(e){
+                 console.log('point 1');
+             }
+
              refreshCart();
              fixScroll();
              return true;
@@ -108,6 +113,31 @@
 
      Cart.prototype.empty = function(){
          this.itemList = [];
+     }
+
+     Cart.prototype.each = function(cb){
+
+     }
+
+     Cart.prototype.init = function(cb){
+         var self = this;
+         $.ajax({
+             url: port['cartInit'],
+             type: "POST",
+             data: {},
+             success: function(res){
+                 if(res.success == 'true'){
+                     var data = res.data;
+                     data.forEach(function(item){
+                         cart.add(item);
+                         cb && cb(item);
+                     });
+                 }else{
+                     alert('NetWork Error!');
+                 }
+             }
+         });
+
      }
 
      var cart = new Cart();  //实例化 cart
@@ -249,13 +279,13 @@
 
 
      function fixScroll(){
-         $cartUp.animate({top: -$cartUp.height() + 'px'});
+         if($cartUp)
+             $cartUp.animate({top: -$cartUp.height() + 'px'});
      }
 
      var exports = {
          add: function(id, shop_id) {
              cart.find(id, function(item){
-                 console.log(id, item);
                  if(item){
                      item.count ++;
                  }else{
