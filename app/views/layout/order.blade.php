@@ -6,7 +6,7 @@
 		</head>
 		<body>
 
-			<div id="content">
+	<div id="content">
                 <div class="header">
                   {{-- 头部 --}}
                     @yield("header")
@@ -22,7 +22,7 @@
                     {{-- 功能 --}}
                     @yield("function_module")
                 </div>
-			</div>
+            </div>
 
 			{{-- footer --}}
 			<div id="footer">
