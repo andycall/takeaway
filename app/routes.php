@@ -672,6 +672,32 @@ Route::get('/', function(){
 	return View::make('template.home.home')->with($data);
 });
 
+Route::get("/order", function(){
+	$data = [
+		"userbar" => [
+			"url" => [
+				"my_place" => "这里是地址",
+				"switch_palce" => "##",
+				"logo" => "123" ,                         // 网站主页地址
+				"mobile" => "123",                 // 跳转到下载手机APP的地址
+				"my_ticket" => "123",                 // 我的饿单的地址
+				"my_gift"  => "123",                // 礼品中心地址
+				"feedback" => "123",                // 反馈留言地址
+				"shop_chart" => "123",                // 购物车地址
+				"user_mail" => "123",                // 用户提醒的地址
+				"personal" => "123",                // 个人中心地址
+				"my_collection" => "123",               // 我的收藏地址
+				"my_secure" => "123",              // 安全设置的地址
+				"loginout" => "123",              // 退出登录的地址
+				"switch_place" => "123"                  // 切换当前地址的地址
+			]
+		],
+
+	];
+
+	return View::make("template.order.order")->with($data);
+});
+
 Route::get("shop", function() {
 	$data = [
         "collect" => [
