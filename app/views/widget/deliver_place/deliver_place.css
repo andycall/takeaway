@@ -77,7 +77,33 @@ ul {
         background: #fff;
         line-height: 18px;
         color: #333;
-        cursor: pointer; }
+        cursor: pointer;
+        position: relative; }
+      .u-send-info .cmodule-content .cart-payment .ui_disabled {
+        background: #ebebeb;
+        color: #999;
+        cursor: default; }
+      .u-send-info .cmodule-content .cart-payment .ui_disabled:hover .u-disabled-tip {
+        display: block; }
+      .u-send-info .cmodule-content .cart-payment .u-disabled-tip {
+        position: absolute;
+        display: block;
+        top: -94px;
+        background: #df4d3f;
+        text-align: center;
+        border-radius: 4px;
+        color: #fff;
+        display: none; }
+      .u-send-info .cmodule-content .cart-payment .u-disabled-tip:after {
+        content: "";
+        width: 0;
+        height: 0;
+        display: block;
+        border-width: 12px;
+        border-color: #df4d3f transparent transparent;
+        border-style: solid;
+        position: absolute;
+        left: 23px; }
       .u-send-info .cmodule-content .cart-payment .ui_selected {
         position: relative;
         border-color: #eb6100;
@@ -189,5 +215,97 @@ ul {
   top: 0;
   z-index: 1000;
   display: none; }
+
+.sms-auth {
+  width: 598px;
+  height: 289px;
+  border-radius: 3px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.49804);
+  position: relative;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  position: fixed;
+  left: 50%;
+  top: 159px;
+  margin-left: -300px;
+  z-index: 1001; }
+  .sms-auth .exit-sms-auth {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    font: 700 14px/1em Tahoma,sans-serif;
+    color: #333; }
+  .sms-auth .exit-sms-auth:hover {
+    color: blue; }
+  .sms-auth .bs-modal-title {
+    font-size: 18px;
+    line-height: 1em;
+    margin: 0;
+    padding: 15px 20px;
+    border-bottom: 1px solid #e5e5e5; }
+  .sms-auth .bs-modal-body {
+    padding: 30px 40px; }
+  .sms-auth .ui-alert {
+    margin-top: -20px;
+    background: #fefaae;
+    border: 1px solid #ebdfbc;
+    color: #b68c43;
+    margin-bottom: 20px;
+    padding: 8px 14px;
+    border-radius: 3px;
+    font-size: 14px; }
+    .sms-auth .ui-alert .icon-warning {
+      margin-right: 6px;
+      width: 16px;
+      height: 16px;
+      background: url(http://static11.elemecdn.com/forward/dist/img/cart/cart-sprites.248cae2a.png) 0px -100px no-repeat transparent; }
+  .sms-auth .checkout-auth-title {
+    font: bold 18px/1.6 'Helvetica Neue', Arial, 'Microsoft Yahei', sans-serif;
+    margin: 0 0 10px; }
+  .sms-auth .u-auth-send .auth-input-wrapper {
+    float: left;
+    margin: 0px 14px 0px 0px;
+    padding: 4px;
+    border-radius: 2px;
+    border: 1px solid #cccccc; }
+  .sms-auth .u-auth-send .auth-input {
+    font-size: 14px;
+    border-color: transparent;
+    width: 160px;
+    height: 28px;
+    padding: 4px;
+    box-sizing: border-box;
+    display: inline-block;
+    outline: none; }
+  .sms-auth .u-auth-send .repeat-send {
+    display: inline-block;
+    width: 100px;
+    height: 28px;
+    background: #42abff;
+    border-radius: 2px;
+    line-height: 28px;
+    color: white;
+    padding: 0px;
+    font-size: 14px;
+    text-align: center;
+    outline: none;
+    border: none; }
+  .sms-auth .u-auth-send .confirm-sms-auth {
+    width: 100px;
+    height: 36px;
+    line-height: 36px;
+    background-color: #fff28e;
+    background-image: linear-gradient(#fffab8, #ffea64);
+    border-color: #e2c78d;
+    padding: 0px;
+    font-size: 14px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 2px;
+    border: 1px solid #bbbbbb; }
+  .sms-auth .u-auth-send :after {
+    content: '';
+    display: table;
+    clear: both; }
 
 /*# sourceMappingURL=deliver_place.css.map */

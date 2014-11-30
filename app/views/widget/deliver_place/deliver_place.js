@@ -14,5 +14,20 @@ define(['jquery'], function(){
 		$(".js-cmodal-wrapper").hide();
 	});
 
-	//支付方式选择效果
+	//切换效果
+	$(".cpayment-choice").on("click", function(){
+		var $this = $(this);
+ 
+		if( !$this.hasClass("ui_disabled") && !$this.hasClass("ui_selected") ){ 
+			$(".cpayment-choice").removeClass("ui_selected");
+			$this.addClass('ui_selected');
+		}
+	});
+
+	//短信验证打开
+
+	//短信验证关闭
+	$(".js-exit-auth").on("click", function(){
+		$(".js-sms-auth-wrapper").hide();
+	});
 });

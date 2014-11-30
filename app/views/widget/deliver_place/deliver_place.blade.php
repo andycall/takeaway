@@ -51,12 +51,18 @@
   	<h3 class="cmodule-title"><i class="icon-cmodule payment"></i>支付方式：</h3>
   	<div class="cmodule-content">
 	      	<div class="cart-payment">
+
+	      		     {{--
+	      		        --   注： class名ui_disabled后台根据餐厅是否支持在线付款而决定是否加 
+	      		      --}}
 			    <a id="offline_pay_btn" data-payonline="0" class="cpayment-choice ui_selected">
 			            餐到付款
+			            <span class="u-disabled-tip">当前餐厅不支持餐到付款支付功能</span>
 			    </a>
-
+                                      
 			    <a id="online_pay_btn" data-payonline="1" class="cpayment-choice ui_disabled" title="">
 			       在线支付
+			       <span class="u-disabled-tip">当前餐厅不支持在线支付功能</span>
 			   </a>
 	            </div>
 
@@ -74,12 +80,27 @@
 
 {{-- 确认下单 --}}
 
+{{-- 验证用户 --}}
+<div class="sms-auth js-sms-auth-wrapper">
+	<a href="javascript:void(0)" class="exit-sms-auth">x</a>
+	<h4 class="bs-modal-title">用户手机验证</h4>
 
+	<div class="bs-modal-body">
+		<p class="ui-alert warning"><i class="icon-warning"></i>您的手机首次在此电脑下单，请先验证手机号码。</p>
 
-<div class="u-mask js-exit-edit">
-	
+		<h5 class="checkout-auth-title">验证码已发送至<span class="auth_tel">18166387284</span>
+		</h5>
+
+		<div class="u-auth-send">
+			<div class="auth-input-wrapper"><input type="text" class="auth-input"><button class="repeat-send">重新发送</button></div><input type="button" value="提交验证码" class="confirm-sms-auth">
+		</div>
+	</div>
 </div>
 
+{{-- 弹出罩 --}}
+<div class="u-mask js-exit-edit js-exit-auth">
+	
+</div>
 @section("css")
     @parent
     {{HTML::style("/css/widget/deliver_place/deliver_place.css")}}
