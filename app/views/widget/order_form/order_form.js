@@ -17,7 +17,7 @@ define(['jquery', "jquery-ui"], function($){
         }
         e[-12] = "提前1小时";
         for (i = -11; i < 0; i++) {
-            e[i] = "提前" + (-i) * 5 + "分钟"
+	        e[i] = "提前" + (-i) * 5 + "分钟"
         }
         $(".slider").slider({range: "min",min: 2,max: 100,value: 100,slide: function(g, h) {
             var l = parseInt($(this).attr("max"));
@@ -114,15 +114,14 @@ define(['jquery', "jquery-ui"], function($){
 
         return false;
 
-    }).on('mouseover',star = function(){
-
+    }).on('mouseover', star = function(){
         $(this).parents(".comment").find("div").removeClass("mouseover");
 
         $(this).addClass("mouseover");
 
 
         var rating_text = $(this).parents(".rating_comment").find(".rating_text");
-        switch (this.innerText[0])
+        switch (this.innerText)
         {
             case "1":
                 rating_text.html("差评");

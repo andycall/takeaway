@@ -64,7 +64,7 @@ define([ "jquery", "jquery-ui" ], function($) {
     }).on("mouseover", star = function() {
         $(this).parents(".comment").find("div").removeClass("mouseover"), $(this).addClass("mouseover");
         var rating_text = $(this).parents(".rating_comment").find(".rating_text");
-        switch (this.innerText[0]) {
+        switch (this.innerText) {
           case "1":
             rating_text.html("差评");
             break;
