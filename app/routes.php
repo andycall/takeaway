@@ -1337,6 +1337,7 @@ Route::get("/personal_center", function(){
             "user_name"  =>  "DB", // 用户姓名
             "user_level" =>  "1", // 用户安全等级 0 是 low 1 是中等 2 是高 3 是满分
             "user_balance" => "20", // 用户余额
+			"jump_to_upload" => url("/personal_pic_upload"), // 跳转到上传图片的地址
             "charge" =>   "http://baidu.com",   // 跳转到充值的地址
             "user_collect" => [
 				"restaurant" => "123",   // 餐厅数量
@@ -1450,45 +1451,6 @@ Route::get("/personal_change_email", function(){
 });
 
 
-Route::get("/personal_change_limit", function(){
-	$data = [
-		"userbar" => [
-			"url" => [
-				"my_place" => "这里是地址",
-				"switch_palce" => "##",
-				"logo" => "123" ,                         // 网站主页地址
-				"mobile" => "123",                 // 跳转到下载手机APP的地址
-				"my_ticket" => "123",                 // 我的饿单的地址
-				"my_gift"  => "123",                // 礼品中心地址
-				"feedback" => "123",                // 反馈留言地址
-				"shop_chart" => "123",                // 购物车地址
-				"user_mail" => "123",                // 用户提醒的地址
-				"personal" => "123",                // 个人中心地址
-				"my_collection" => "123",               // 我的收藏地址
-				"my_secure" => "123",              // 安全设置的地址
-				"loginout" => "123",              // 退出登录的地址
-				"switch_place" => "123"                  // 切换当前地址的地址
-			]
-		],
-		"sidebar" => [  // 左侧栏地址
-			"personal_center" => url("/personal_center"),  // 个人中心的地址
-			"personal_recent_month" => url("personal_recent_month"), // 最近一个月的地址
-			"personal_after_month" => url("personal_after_month") , // 一个月之前
-			"personal_uncomment" => url("personal_uncomment") ,  // 未点评的订单
-			"personal_return" => url("personal_return"),     // 退单中的订单
-			"personal_collection_shop" => url("personal_collection_shop"),// 我收藏的餐厅的地址
-			"personal_collection_goods" => url("personal_collection_goods"), // 我收藏的商品的地址
-			"personal_my_site" => url("personal_my_site") ,  // 我的地址
-			"personal_change_password" => url("personal_change_password"), // 修改密码
-			"personal_secure"=> url("personal_secure"),        // 安全设置
-			"personal_details" => url("personal_details")       // 收支明细
-		]
-	];
-
-	return View::make("template.personal.personal_change_limit")->with($data);
-
-});
-
 Route::get("/personal_collection_goods", function(){
 	$data = [
 		"userbar" => [
@@ -1539,6 +1501,284 @@ Route::get("/personal_collection_goods", function(){
 	];
 
 	return View::make("template.personal.personal_collection_goods")->with($data);
+});
+
+Route::get("/personal_after_month", function(){
+	$data = [
+		"userbar" => [
+			"url" => [
+				"my_place" => "这里是地址",
+				"switch_palce" => "##",
+				"logo" => "123" ,                         // 网站主页地址
+				"mobile" => "123",                 // 跳转到下载手机APP的地址
+				"my_ticket" => "123",                 // 我的饿单的地址
+				"my_gift"  => "123",                // 礼品中心地址
+				"feedback" => "123",                // 反馈留言地址
+				"shop_chart" => "123",                // 购物车地址
+				"user_mail" => "123",                // 用户提醒的地址
+				"personal" => "123",                // 个人中心地址
+				"my_collection" => "123",               // 我的收藏地址
+				"my_secure" => "123",              // 安全设置的地址
+				"loginout" => "123",              // 退出登录的地址
+				"switch_place" => "123"                  // 切换当前地址的地址
+			]
+		],
+		"sidebar" => [  // 左侧栏地址
+			"personal_center" => url("/personal_center"),  // 个人中心的地址
+			"personal_recent_month" => url("personal_recent_month"), // 最近一个月的地址
+			"personal_after_month" => url("personal_after_month") , // 一个月之前
+			"personal_uncomment" => url("personal_uncomment") ,  // 未点评的订单
+			"personal_return" => url("personal_return"),     // 退单中的订单
+			"personal_collection_shop" => url("personal_collection_shop"),// 我收藏的餐厅的地址
+			"personal_collection_goods" => url("personal_collection_goods"), // 我收藏的商品的地址
+			"personal_my_site" => url("personal_my_site") ,  // 我的地址
+			"personal_change_password" => url("personal_change_password"), // 修改密码
+			"personal_secure"=> url("personal_secure"),        // 安全设置
+			"personal_details" => url("personal_details")       // 收支明细
+		],
+		"recent_month" => [
+			"deal_count" => "11",
+			"deal" => [
+				[
+					"shop_id" => "111123",
+					"deal_id" => "123",
+					"deal_statue" => "3",
+					"same_again" => "##",
+					"deal_is_retrun" => "1",
+					"deal_return" => "##",
+					"deal_is_pre" => "1",
+					"deal_pre_time" => "2014-11-17 11:45:00",
+					"deal_again" => "##",
+					"shop_name" => "臭脚丫",
+					"deal_number" => "1234567345678",
+					"deal_time" => "2014-11-18 11:11:27",
+					"deal_phone" => "15340525659 15340525659",
+					"deliver_address" => "邮电大学太极操场西6门",
+					"deliver_phone" => "18716625394",
+					"deliver_remark" => "吃吃吃！",
+					"deal_speed" => "0",
+					"deal_satisfied" => "0",
+					"good" => [
+						[
+							"goods_id" => "111123",
+							"goods_name" => "红烧肉",
+							"goods_value" => "12",
+							"goods_amount" => "1",
+							"goods_total" => "12",
+							"good_atisfied" => "0"
+						],
+						[
+							"goods_id" => "111123",
+							"goods_name" => "红烧肉",
+							"goods_value" => "12",
+							"goods_amount" => "1",
+							"goods_total" => "12",
+							"good_atisfied" => "2"
+						]
+					],
+					"others" => [
+						[
+							"item_name" => "红烧肉",
+							"item_value" => "-5",
+							"item_amount" => "1",
+							"item_total" => "-5"
+						]
+					],
+					"total" => "19"
+				],
+				[
+					"shop_id" => "123",
+					"deal_id" => "123",
+					"deal_statue" => "0",
+					"same_again" => "##",
+					"deal_is_retrun" => "0",
+					"deal_return" => "##",
+					"deal_is_pre" => "1",
+					"deal_pre_time" => "2014-11-17 11:45:00",
+					"deal_again" => "##",
+					"shop_name" => "臭脚丫",
+					"deal_number" => "1234567345678",
+					"deal_time" => "2014-11-18 11:11:27",
+					"deal_phone" => "15340525659 15340525659",
+					"deliver_address" => "邮电大学太极操场西6门",
+					"deliver_phone" => "18716625394",
+					"deliver_remark" => "吃吃吃！",
+					"deal_speed" => "75分钟",
+					"deal_satisfied" => "0",
+					"good" => [
+						[
+							"goods_id" => "123",
+							"goods_name" => "红烧肉",
+							"goods_value" => "12",
+							"goods_amount" => "1",
+							"goods_total" => "12",
+							"good_atisfied" => "0"
+						],
+						[
+							"goods_id" => "123",
+							"goods_name" => "红烧肉",
+							"goods_value" => "12",
+							"goods_amount" => "1",
+							"goods_total" => "12",
+							"good_atisfied" => "0"
+						]
+					],
+					"others" => [
+						[
+							"item_name" => "减减减",
+							"item_value" => "-5",
+							"item_amount" => "1",
+							"item_total" => "-5"
+						]
+					],
+					"total" => "19"
+				],
+				[
+					"shop_id" => "123",
+					"deal_id" => "123",
+					"deal_statue" => "1",
+					"same_again" => "##",
+					"deal_is_retrun" => "1",
+					"deal_return" => "##",
+					"deal_is_pre" => "1",
+					"deal_pre_time" => "2014-11-17 11:45:00",
+					"deal_again" => "##",
+					"shop_name" => "臭脚丫",
+					"deal_number" => "1234567345678",
+					"deal_time" => "2014-11-18 11:11:27",
+					"deal_phone" => "15340525659 15340525659",
+					"deliver_address" => "邮电大学太极操场西6门",
+					"deliver_phone" => "18716625394",
+					"deliver_remark" => "吃吃吃！",
+					"deal_speed" => "5分钟",
+					"deal_satisfied" => "0",
+					"good" => [
+						[
+							"goods_id" => "123",
+							"goods_name" => "红烧肉",
+							"goods_value" => "12",
+							"goods_amount" => "1",
+							"goods_total" => "12",
+							"good_atisfied" => "0"
+						],
+						[
+							"goods_id" => "123",
+							"goods_name" => "红烧肉",
+							"goods_value" => "12",
+							"goods_amount" => "1",
+							"goods_total" => "12",
+							"good_atisfied" => "0"
+						]
+					],
+					"others" => [
+						[
+							"item_name" => "红烧肉",
+							"item_value" => "-5",
+							"item_amount" => "1",
+							"item_total" => "-5"
+						]
+					],
+					"total" => "19"
+				],
+				[
+					"shop_id" => "123",
+					"deal_id" => "123",
+					"deal_statue" => "2",
+					"same_again" => "##",
+					"deal_is_retrun" => "1",
+					"deal_return" => "##",
+					"deal_is_pre" => "1",
+					"deal_pre_time" => "2014-11-17 11:45:00",
+					"deal_again" => "##",
+					"shop_name" => "臭脚丫",
+					"deal_number" => "1234567345678",
+					"deal_time" => "2014-11-18 11:11:27",
+					"deal_phone" => "15340525659 15340525659",
+					"deliver_address" => "邮电大学太极操场西6门",
+					"deliver_phone" => "18716625394",
+					"deliver_remark" => "吃吃吃！",
+					"deal_speed" => "5分钟",
+					"deal_satisfied" => "1",
+					"good" => [
+						[
+							"goods_id" => "123",
+							"goods_name" => "红烧肉",
+							"goods_value" => "12",
+							"goods_amount" => "1",
+							"goods_total" => "12",
+							"good_atisfied" => "0"
+						],
+						[
+							"goods_id" => "123",
+							"goods_name" => "红烧肉",
+							"goods_value" => "12",
+							"goods_amount" => "1",
+							"goods_total" => "12",
+							"good_atisfied" => "0"
+						]
+					],
+					"others" => [
+						[
+							"item_name" => "红烧肉",
+							"item_value" => "-5",
+							"item_amount" => "1",
+							"item_total" => "-5"
+						]
+					],
+					"total" => "19"
+				]
+			]
+		]
+	];
+
+	return View::make("template.personal.personal_recent_month")->with($data);
+});
+
+
+Route::get("/personal_pic_upload", function(){
+	$data = [
+		"userbar" => [
+			"url" => [
+				"my_place" => "这里是地址",
+				"switch_palce" => "##",
+				"logo" => "123" ,                         // 网站主页地址
+				"mobile" => "123",                 // 跳转到下载手机APP的地址
+				"my_ticket" => "123",                 // 我的饿单的地址
+				"my_gift"  => "123",                // 礼品中心地址
+				"feedback" => "123",                // 反馈留言地址
+				"shop_chart" => "123",                // 购物车地址
+				"user_mail" => "123",                // 用户提醒的地址
+				"personal" => "123",                // 个人中心地址
+				"my_collection" => "123",               // 我的收藏地址
+				"my_secure" => "123",              // 安全设置的地址
+				"loginout" => "123",              // 退出登录的地址
+				"switch_place" => "123"                  // 切换当前地址的地址
+			]
+		],
+		"sidebar" => [  // 左侧栏地址
+			"personal_center" => url("/personal_center"),  // 个人中心的地址
+			"personal_recent_month" => url("personal_recent_month"), // 最近一个月的地址
+			"personal_after_month" => url("personal_after_month") , // 一个月之前
+			"personal_uncomment" => url("personal_uncomment") ,  // 未点评的订单
+			"personal_return" => url("personal_return"),     // 退单中的订单
+			"personal_collection_shop" => url("personal_collection_shop"),// 我收藏的餐厅的地址
+			"personal_collection_goods" => url("personal_collection_goods"), // 我收藏的商品的地址
+			"personal_my_site" => url("personal_my_site") ,  // 我的地址
+			"personal_change_password" => url("personal_change_password"), // 修改密码
+			"personal_secure"=> url("personal_secure"),        // 安全设置
+			"personal_details" => url("personal_details")       // 收支明细
+		],
+		"personal" => [       // 个人中心
+			"user_name" => "DB",  // 用户姓名
+			"user_image" => url("/images/transformer.jpg"), // 用户头像图片地址
+			"submit_cut" => "http://biadu.com",
+			"return_back" => url("personal_center")
+		]
+
+	];
+
+	return View::make("template.personal.personal_pic_upload")->with($data);
+
 });
 
 Route::get("/personal_collection_shop", function(){
@@ -2271,15 +2511,16 @@ Route::get("/personal_secure", function(){
             "secure_level" => "low",   //low|middle|high
             "secure_level_chinese" => "低",  // 安全等级
             "secure_phone" => "110110110110",  // 用户的手机号码
-            "secure_center" => "./personal_center", //安全中心地址
-            "change_phone" => "http://baidu.com/s?wd=change_phone",  // 更换手机号码的链接
-            "change_email" => "http://baidu.com/s?wd=change_email",  // 更换邮箱的链接
-            "send_email" => "http://baidu.com/s?wd=send_email", //重发激活邮件
-            "cancel_phone" => "http://baidu.com/s?wd=cancel_phone",  // 解除绑定的地址
+            "secure_center" => url("/personal_center"), //安全中心地址
+            "change_phone" => url("/personal_change_phone"),  // 更换手机号码的链接
+            "change_email" => url("/personal_change_email"),  // 更换邮箱的链接
+            "send_email" => url("/personal_verify_email"), //重发激活邮件
+            "cancel_phone" => url("/personal_change_phone"),  // 解除绑定的地址
             "secure_email" => "abc@fsdghjk.com",  // 用户邮箱地址
+	        "change_cash_limit" => url("/personal_modify_payment"), // 更改支付额度
             "cash_limit" => "50", //支付额度
-            "email_state"  => "inactive",  // 邮箱状态
-            "phone_state"  => "inactive"  // 手机状态
+            "email_state"  => "inactive",  // 邮箱状态 inactive or active
+            "phone_state"  => "inactive"  // 手机状态  inactive or active
         ],
 		"sidebar" => [  // 左侧栏地址
 			"personal_center" => url("/personal_center"),  // 个人中心的地址

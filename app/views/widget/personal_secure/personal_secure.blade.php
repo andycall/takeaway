@@ -63,8 +63,6 @@
                 @endif
                 <a href="{{$personal_secure['change_email']}}">更换邮箱</a>
             </td>
-
-
         </tr>
 
         <tr>
@@ -77,7 +75,7 @@
                 </div>
             </td>
             <td>
-                {{--<a href="{{$personal_secure['change_cash_limit']}}">更改额度</a>--}}
+                <a href="{{$personal_secure['change_cash_limit']}}">更改额度</a>
             </td>
 
         </tr>

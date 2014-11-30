@@ -23,8 +23,7 @@ require.config({
 		personal_uncomment : "../widget/personal_uncomment",
 		personal_verify_email : "../widget/personal_verify_email",
 		personal_verify_phone : "../widget/personal_verify_phone",
-		personal_change_email : "../widget/personal_change_email",
-		personal_change_limit : "../widget/personal_change_limit"
+		personal_pic_upload   : "../widget/personal_pic_upload"
 	}
 });
 
@@ -33,9 +32,8 @@ define([
 	'userBar/userBar',
 	"footer/footer",
 	"sideBar/sideBar",
-	"personal_change_limit/personal_change_limit"
+	"personal_pic_upload/personal_pic_upload"
 ], function($){
 	console.log("init");
 });
-
 

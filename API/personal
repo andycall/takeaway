@@ -30,6 +30,7 @@
             user_name  : "" // 用户姓名
             user_level : "" // 用户安全等级 0 是 low 1 是中等 2 是高 3 是满分
             user_balance : "" // 用户余额
+            jump_to_upload : "" // 跳转到上传图片的地址
             charge :   ""   // 跳转到充值的地址
             user_score : "" // 用户积分
             user_collect: {
@@ -59,6 +60,44 @@
             }
             more_deal : ""     // 收支明细的地址
         }
+    }
+
+
+    // 个人中心 图片上传
+
+    type : "blade"
+    output : {
+        user_place : ""    // 用户选择的位置
+        switch_place : ""  // 更改位置的地址
+
+        sidebar : {  // 左侧栏地址
+          personal_center : ""  // 个人中心的地址
+          personal_recent_month : "" // 最近一个月的地址
+          personal_after_month : "" // 一个月之前
+          personal_uncomment : ""   // 未点评的订单
+          personal_return : ""     // 退单中的订单
+          personal_collection_shop : ""// 我收藏的餐厅的地址
+          personal_collection_goods : "// 我收藏的商品的地址
+          personal_my_site : ""   // 我的地址
+          personal_change_password : ""// 修改密码
+          personal_secure : ""        // 安全设置
+          personal_details : ""       // 收支明细
+        }
+
+        personal : {       // 个人中心
+          user_name : ""  // 用户姓名
+          user_image : "" // 用户头像图片地址
+          submit_cute : "" // 表单提交地址
+          return_back : "" // 取消上传跳转的地址, 返回个人中心
+        }
+    }
+    input : {
+            x1 : "",  // 选中框初始X坐标
+            y1 : "",  // 选中框初始Y坐标
+            x2 : "",  // 选中框结束X坐标
+            y2 : "",  // 选中框结束Y坐标
+            width : "", // 图片宽度
+            height: ""  // 图片高度
     }
 
         // 最近一个月 (最近一个月, 一个月之前, 未点评订单, 退单中订单 采用相同的结构)
@@ -228,9 +267,10 @@
             "send_email" => "http://baidu.com/s?wd=send_email", //重发激活邮件
             "cancel_phone" => "http://baidu.com/s?wd=cancel_phone",  // 解除绑定的地址
             "secure_email" => "abc@fsdghjk.com",  // 用户邮箱地址
+            "change_cash_limit" => url("/personal_modify_payment"), // 更改支付额度
             "cash_limit" => "50", //支付额度
-            "email_state"  => "inactive",  // 邮箱状态
-            "phone_state"  => "inactive"  // 手机状态
+            "email_state"  => "inactive",  // 邮箱状态 inactive or active
+            "phone_state"  => "inactive"  // 手机状态 inactive or active
     }
 
     // 验证手机解绑

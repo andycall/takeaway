@@ -1,5 +1,5 @@
 <div class="content-header">
-    <h2>修改密码</h2>
+    <h2>更换邮箱</h2>
 </div>
 <div class="content-inner">
     <div class="email_navigation">

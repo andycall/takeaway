@@ -9,11 +9,11 @@
 @stop
 
 @section("sidebar")
-    @include("widget.sideBar.sideBar", array("active" => "change_password"))
+    @include("widget.sideBar.sideBar", array("active" => "recent_month"))
 @stop
 
 @section("rightContent")
-    @include("widget.personal_change_limit.personal_change_limit")
+    @include("widget.personal_pic_upload.personal_pic_upload")
 @stop
 
 @section("footer")
@@ -27,6 +27,6 @@
 @stop
 
 @section("script")
-    {{HTML::script("/js/lib/require.js", ["data-main" => url("js/template/personal/personal_change_limit.js")])}}
+    {{HTML::script("/js/lib/require.js", ["data-main" => url("js/template/personal/personal_pic_upload.js")])}}
 @stop
 
