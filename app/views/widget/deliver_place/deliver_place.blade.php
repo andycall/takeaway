@@ -82,7 +82,7 @@
 
 {{-- 验证用户 --}}
 <div class="sms-auth js-sms-auth-wrapper">
-	<a href="javascript:void(0)" class="exit-sms-auth">x</a>
+	<a href="javascript:void(0)" class="exit-sms-auth js-exit-auth">x</a>
 	<h4 class="bs-modal-title">用户手机验证</h4>
 
 	<div class="bs-modal-body">

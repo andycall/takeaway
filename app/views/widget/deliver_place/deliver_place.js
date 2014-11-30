@@ -29,5 +29,6 @@ define(['jquery'], function(){
 	//短信验证关闭
 	$(".js-exit-auth").on("click", function(){
 		$(".js-sms-auth-wrapper").hide();
+		$(".u-mask").hide();
 	});
 });
