@@ -78,7 +78,10 @@
 </div>
 
 
+
 {{-- 确认下单 --}}
+
+<input type="submit" class="btn btn-yellow btn-submit" value="确认下单"/>
 
 {{-- 验证用户 --}}
 <div class="sms-auth js-sms-auth-wrapper">

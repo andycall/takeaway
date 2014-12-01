@@ -10,7 +10,7 @@
 
 <div class="login-bd">
 	{{-- 普通方式表单 --}}
-	<form class="m-login" novalidate="true" id="login-form" method="post">
+	{{ Form::open(array("class" => "m-login", "novalidate" => "true", "id" => "login-form", "method" => "post" )); }}
 
 		{{-- 普通方式登陆 --}}
 		<div class="way-login-normal js-normal-wapper">
@@ -61,7 +61,7 @@
         </div>
 
         <input type="submit" class="u-login-submit" value="登陆">
-	</form>
+	{{ Form::close(); }}
 </div>
 
 {{-- 登陆底部 --}}

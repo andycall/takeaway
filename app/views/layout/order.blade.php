@@ -11,7 +11,7 @@
                   {{-- 头部 --}}
                     @yield("header")
                 </div>
-
+                {{ Form::open(array("method" => "post")); }}
                 <div class="wrapper">
                     {{-- 订单顶部  --}}
                     @yield("content_header")
@@ -22,6 +22,8 @@
                     {{-- 功能 --}}
                     @yield("function_module")
                 </div>
+
+                {{ Form::close(); }}
             </div>
 
 			{{-- footer --}}

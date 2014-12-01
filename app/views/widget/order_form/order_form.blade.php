@@ -146,7 +146,7 @@
                     <p>您对餐厅的服务是否满意：</p>
                     <div class="order_content">
                       <div class="order_label">
-                        <form class="order_content_form">
+                        {{ Form::open(array("class" => "order_content_form"));  }}
                             <label>
                               <input class="order_radio" type="radio" title="满意" name="service-rate" value="3">
                               <i class="rank3"></i>满意
@@ -159,7 +159,7 @@
                               <input class="order_radio" type="radio" title="不满意" name="service-rate" value="1">
                               <i class="rank1"></i>不满意
                             </label>
-                        </form>
+                        {{ Form::close(); }}
                       </div>
                       <div class="order_comment">
                         <textarea class="text" placeholder="再说点什么吧~"></textarea>
