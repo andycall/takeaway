@@ -92,7 +92,7 @@
 		</h5>
 
 		<div class="u-auth-send">
-			<div class="auth-input-wrapper"><input type="text" class="auth-input"><button class="repeat-send">重新发送</button></div><input type="button" value="提交验证码" class="confirm-sms-auth">
+			<div class="auth-input-wrapper"><input type="text" class="auth-input" placeholder="请输入短信验证码"><button class="repeat-send">重新发送</button></div><input type="button" value="提交验证码" class="confirm-sms-auth">
 		</div>
 	</div>
 </div>
