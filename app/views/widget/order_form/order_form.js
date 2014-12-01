@@ -1,4 +1,4 @@
-define(['jquery', "jquery-ui"], function($){
+define(['jquery','personal/port', "jquery-ui"], function($, port){
 	console.log("order form loaded");
 
     (function() {
@@ -190,7 +190,7 @@ define(['jquery', "jquery-ui"], function($){
         p.innerHTML = "已点评， 时间： " + deal_speed;
 
         $.ajax({
-            url: "####qwertyui###",
+            url: port["commentSpeed"],
             type: "POST",
             data: {
                 shop_id: shop_id,
