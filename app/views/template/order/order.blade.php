@@ -16,15 +16,7 @@
 
 {{-- 功能 --}}
 @section("function_module")
-    {{-- 送达地址 --}}
     @include("widget.deliver_place.deliver_place")
-
-    {{-- 送达时间 --}}
-    @include("widget.deliver_time.deliver_time")
-
-    {{-- 支付方式 --}}
-    @include("widget.pay_method.pay_method")
-
 @stop
 
 

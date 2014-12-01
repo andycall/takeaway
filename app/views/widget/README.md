@@ -121,4 +121,11 @@ personal_pic_upload 个人头像上传
 
 
 
-####
+#### order
+
+content_header 订单顶部
+
+good_basket 美食篮子
+
+deliver_place 送达地址 + 送达时间 +  支付方式
+
