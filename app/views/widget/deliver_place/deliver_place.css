@@ -279,17 +279,17 @@ ul {
     outline: none; }
   .sms-auth .u-auth-send .repeat-send {
     display: inline-block;
-    width: 100px;
     height: 28px;
     background: #42abff;
     border-radius: 2px;
     line-height: 28px;
     color: white;
-    padding: 0px;
+    padding: 0px 4px;
     font-size: 14px;
     text-align: center;
     outline: none;
-    border: none; }
+    border: none;
+    cursor: pointer; }
   .sms-auth .u-auth-send .confirm-sms-auth {
     width: 100px;
     height: 36px;

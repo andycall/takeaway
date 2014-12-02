@@ -354,17 +354,17 @@ ul{
 		}
 		.repeat-send{
 			display: inline-block;
-			width: 100px;
 			height: 28px;
 			background: rgb(66, 171, 255);
 			border-radius: 2px;
 			line-height: 28px;
 			color: rgb(255, 255, 255);
-			padding: 0px;
+			padding: 0px 4px;
 			font-size: 14px;
 			text-align: center;
 			outline: none;
 			border: none;
+			cursor: pointer;
 		}
 		.confirm-sms-auth{
 			width: 100px;

@@ -64,6 +64,22 @@ output : {
     errMsg  : ""                // 如果出现错误, 错误信息就出现在这, 如果没有, 那内容为空.
 }
 
+// 短信验证码确认
+
+type : "post"
+url  : ""
+input : {
+    auth       : ""  //发送用户所填短信
+    csrf_token : "" // csrf 秘钥
+}
+
+output : {
+    success : "true"            // 成功返回true, 失败返回false
+    successMsg : ""             //验证成功后的消息
+    state   : 200               // HTTP 状态码
+    errMsg  : ""                // 验证错误错误, 错误信息就出现在这, 如果没有, 那内容为空.
+}
+
 
 // 美食篮子增加货物
 
@@ -78,6 +94,7 @@ output : {
     success : "true"            // 成功返回true, 失败返回false
     state   : 200               // HTTP 状态码
     errMsg  : ""                // 如果出现错误, 错误信息就出现在这, 如果没有, 那内容为空.
+    auth    : "…………&*……*&￥%……￥%476d#￥%"            //赛回来的加密验证码
 }
 
 // 美食篮子减少货物

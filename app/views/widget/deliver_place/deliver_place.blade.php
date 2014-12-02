@@ -2,11 +2,17 @@
 <div class="m-adress hover-bac">
 	<div id="" class="caddress-module u-send-info">
 		<h3 class="cmodule-title"><i class="icon-cmodule address"></i>送达地址：</h3>
-	            <div class="cmodule-content">
-			<span class="cmodule-info current_addr">
-			            请选择地址
-			</span>
-		     <span id="addr_edit" class="cmodule-edit js-open-edit">[修改]</span>
+	            <div class="cmodule-content js-show-addr-info">
+	            	<span class="cmodule-info current_name">
+					</span>
+					<span class="cmodule-info current_addr">
+					            请选择地址
+					</span>
+					<span class="cmodule-info current_tel">
+					</span>
+					<span class="cmodule-info current_bkTel">
+					</span>
+		     		<span id="addr_edit" class="cmodule-edit js-open-edit">[修改]</span>
 	            </div>
            </div>
 
@@ -16,7 +22,7 @@
 	          <ul class="cmodal-list">
 		        <li id="new_addr" class="clist-item caddr-item-new ui_current">
 			          <input id="addr_new_radio" class="clist-radio" type="radio" name="optionAddress" checked="">
-			          <div class="caddr-edit-field">
+			          <div class="caddr-edit-field js-adress-modify">
 				            <input class="name" type="text" placeholder="姓名">
 				            <input class="addr" type="text" placeholder="外卖送到的地址">
 				            <input class="tel" type="tel" placeholder="手机号码">
@@ -29,8 +35,8 @@
 	            </ul>
 	    </div>
 	    <p class="cmodal-footer">
-		      <button class="ui-btn btn-confirm confirm_btn">保存</button>
-		      <button class="ui-btn cancel_btn js-exit-edit">取消</button>
+		      <button type="button" class="ui-btn btn-confirm confirm_btn js-save-edit">保存</button>
+		      <button type="button" class="ui-btn cancel_btn js-exit-edit">取消</button>
 	    </p>
   </div>
 </div>
@@ -95,7 +101,7 @@
 		</h5>
 
 		<div class="u-auth-send">
-			<div class="auth-input-wrapper"><input type="text" class="auth-input" placeholder="请输入短信验证码"><button class="repeat-send">重新发送</button></div><input type="button" value="提交验证码" class="confirm-sms-auth">
+			<div class="auth-input-wrapper"><input type="text" class="auth-input js-input-confirm-auth" placeholder="请输入短信验证码"><button type="button" class="repeat-send js-repeat-send-auth">重新发送</button></div><input type="button" value="提交验证码" class="confirm-sms-auth js-send-confirm-auth">
 		</div>
 	</div>
 </div>
@@ -104,6 +110,13 @@
 <div class="u-mask js-exit-edit js-exit-auth">
 	
 </div>
+
+{{-- 隐藏的输入框 --}}
+<input type="hidden" class="user-name">
+<input type="hidden" class="user-tel">
+<input type="hidden" class="user-addr">
+<input type="hidden" class="user-bkTel">
+<input type="hidden" class="uesr-auth">
 @section("css")
     @parent
     {{HTML::style("/css/widget/deliver_place/deliver_place.css")}}

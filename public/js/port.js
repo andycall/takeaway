@@ -1,10 +1,10 @@
-// 登录注册ajax 接口
+// 个人中心Ajax接口
 define(function() {
     return {
-        switchAuth: "/switch_auth",
-        //点击切换验证码
-        login: "/loginAjax",
-        //登陆
-        register: "/registerAjax"
+        smsAuth: "/switchAuth",
+        //短信验证码,
+        imageUpload: "/upload/uploadify.php",
+        // 个人中心头像上传
+        commentSpeed: "/comment_speed"
     };
 });
