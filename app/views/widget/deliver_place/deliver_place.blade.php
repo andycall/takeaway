@@ -45,10 +45,25 @@
 <div id="" class="time-module  u-send-info hover-bac">
   	<h3 class="cmodule-title"><i class="icon-cmodule time"></i>送达时间：</h3>
   	<div class="cmodule-content">
-	        	<div class="cart-time">
-	            	<div class="ctime-toggle">立即送出</div>
-	   	 </div>
-    	</div>
+	    <div class="cart-time js-select-time">
+	            <div class="ctime-toggle">请选择</div>
+
+	            <ol class="ctime-dropdown">
+		            <li class="ctime-item">17:30:00</li>
+		            <li class="ctime-item">17:45:00</li>
+		            <li class="ctime-item">18:00:00</li>
+		            <li class="ctime-item">18:15:00</li>
+		            <li class="ctime-item">18:30:00</li>
+		            <li class="ctime-item">18:45:00</li>
+		            <li class="ctime-item">19:00:00</li>
+		            <li class="ctime-item">19:15:00</li>
+		            <li class="ctime-item">19:30:00</li>
+		            <li class="ctime-item">19:45:00</li>
+        		</ol>
+	   	</div>
+
+	   	
+    </div>
 </div>
 
 

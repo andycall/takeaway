@@ -50,20 +50,34 @@ define([ "jquery", "order/port" ], function($, port) {
     /*
 	 * @include "修改地址"
 	*/
+    var $authWrapper = $(".js-sms-auth-wrapper"), //短信框
+    $uMask = $(".u-mask"), //弹出罩
+    $reallyForm = $(".js-save-bottom");
+    //表单下部
     //打开编辑地址
     $(".js-open-edit").on("click", function() {
         $(".u-mask").show(), $(".js-cmodal-wrapper").show();
     }), $(".js-exit-edit").on("click", function() {
         $(".u-mask").hide(), $(".js-cmodal-wrapper").hide();
+    });
+    //选择时间
+    var $timePeanel = $(".js-select-time"), $onPeanel = $timePeanel.find(".ctime-toggle"), $orderTimes = $timePeanel.find(".ctime-dropdown"), $itemTime = $timePeanel.find(".ctime-item");
+    //打开时间面板
+    $onPeanel.on("click", function(ev) {
+        ev.stopPropagation(), $orderTimes.addClass("on");
     }), //选择时间
-    //切换支付方式
+    $itemTime.on("click", function() {
+        var $thisVal = $(this).text();
+        $onPeanel.text($thisVal), $reallyForm.find(".order-time").val($thisVal);
+    }), //关闭时间选择面板
+    $(document.body).on("click", function() {
+        $orderTimes.removeClass("on");
+    }), //切换支付方式
     $(".cpayment-choice").on("click", function() {
         var $this = $(this);
         $this.hasClass("ui_disabled") || $this.hasClass("ui_selected") || ($(".cpayment-choice").removeClass("ui_selected"), 
         $this.addClass("ui_selected"), $reallyForm.find(".order-way").val($this.attr("data-pay-way")));
-    });
-    var $authWrapper = $(".js-sms-auth-wrapper"), $uMask = $(".u-mask"), $reallyForm = $(".js-save-bottom");
-    //短信验证关闭
+    }), //短信验证关闭
     $(".js-exit-auth").on("click", function() {
         $authWrapper.hide(), $uMask.hide();
     });
