@@ -692,15 +692,6 @@ Route::get("/order", function(){
 				"switch_place" => "123",          // 切换当前地址的地址
 			]
 		],
-<<<<<<< HEAD
-        "deliver_place" => "重庆邮电大学",    // 送达地址 
-        "deliver_tel"   => "18166387284",   // 送达电话18523016284
-        "deliver_name"  => "李金鑫",      //送达姓名  董天成
-        "deliver_time" =>[                //商家提供的送达时间
-                    "08:00", "09:00", "10:00", "12:00", "14:30", "15:30", "17:30"
-        ]
-
-=======
 		"data" => [
 			"user_name" => "SB" , // 用户姓名
 			"shop_path" => "" , //
@@ -750,7 +741,6 @@ Route::get("/order", function(){
 	        ]
 		],
         "pay_statues" => "" // 付款信息, 显示在顶部栏
->>>>>>> e280a71229383587cbb9d468bbb2c810aa620b41
 	];
 
 	return View::make("template.order.order")->with($data);
