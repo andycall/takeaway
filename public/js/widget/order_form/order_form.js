@@ -1,4 +1,4 @@
-define([ "jquery", "jquery-ui" ], function($) {
+define([ "jquery", "personal/port", "jquery-ui" ], function($, port) {
     console.log("order form loaded"), function() {
         var d = [];
         for (i = -24; 25 > i; i++) d[i] = 0 == i ? 1 : 5 * i;
@@ -105,7 +105,7 @@ define([ "jquery", "jquery-ui" ], function($) {
     }), $(".col_btn").on("click", function() {
         var $_this = $(this), p = document.createElement("p"), content = $_this.parents(".content"), order_form = $(this).parents(".order_form"), shop_id = order_form.data("shop_id"), deal_id = order_form.data("deal_id"), deal_speed = content.find(".col_value span").html();
         p.innerHTML = "已点评， 时间： " + deal_speed, $.ajax({
-            url: "####qwertyui###",
+            url: port.commentSpeed,
             type: "POST",
             data: {
                 shop_id: shop_id,
