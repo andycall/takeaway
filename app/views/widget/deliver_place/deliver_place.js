@@ -75,7 +75,7 @@ define(['jquery','order/port'], function($,port){
 	     if(!checkForm()){
 	      	ev.preventDefault();
 	     }else{
-		    $(".js-show-addr-info").find(".current_addr").text(authInfo.addr).end().find('.current_name').css({"font-weight":"bold","margin-right": "4px"}).text(authInfo.name).end().find(".current_tel").text(authInfo.phone).css({"font-weight":"bold","margin-right": "4px"}).end().find(".current_bkTel").text(authInfo.bkTel).css({"font-weight":"bold","margin-right": "4px"});
+		    $(".js-show-addr-info").find(".current_addr").text(authInfo.addr).end().find('.current_name').text(authInfo.name).end().find(".current_tel").text(authInfo.phone).end().find(".current_bkTel").text(authInfo.bkTel);
 		    $(".u-mask").hide$(".js-cmodal-wrapper").hide();
 	     }
     });
@@ -131,7 +131,8 @@ define(['jquery','order/port'], function($,port){
 			$reallyForm.find(".user-addr").val( $addrInput.val() );   //添加地址
 			authInfo.addr = $addrInput.val();
 		}
-
+        
+        //固定电话
 		if(  regBkTel.test( $bkTel.val() ) ){
 			$reallyForm.find(".user-bkTel").val( $bkTel.val() );   //添加固定电话
 			authInfo.bkTel = $bkTel.val();
@@ -150,11 +151,20 @@ define(['jquery','order/port'], function($,port){
 	//,发送验证码请求到服务器
 	$reallyForm.on("submit", function(ev){
 		ev.preventDefault();
-
+        
+        //验证地址
 		if( !checkForm() ){
 			$(".js-cmodal-wrapper").show();
 			$(".u-mask").show();
 			return false;
+		}
+
+		//验证送餐时间
+		if( $reallyForm.find(".order-time").val() == "" ){
+			$timePeanel.find(".ui-err-notice").show();
+			return false;
+		}else{
+			$timePeanel.find(".ui-err-notice").hide();
 		}
 
 		uRequestAuthAjax({

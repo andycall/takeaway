@@ -4,13 +4,26 @@
 		<h3 class="cmodule-title"><i class="icon-cmodule address"></i>送达地址：</h3>
 	            <div class="cmodule-content js-show-addr-info">
 	            	<span class="cmodule-info current_name">
+	            		@if ( !empty($deliver_name) )
+							{{ $deliver_name }}
+						@endif
 					</span>
 					<span class="cmodule-info current_addr">
-					            请选择地址
+					            @if ( !empty($deliver_place) )
+									{{ $deliver_place }}
+								@else 
+									{{ "请选择" }}
+								@endif
 					</span>
 					<span class="cmodule-info current_tel">
+						@if ( !empty($deliver_tel) )
+							{{ $deliver_tel }}
+						@endif
 					</span>
 					<span class="cmodule-info current_bkTel">
+						@if ( !empty($deliver_bkTel))
+							{{ $deliver_bkTel }}
+						@endif
 					</span>
 		     		<span id="addr_edit" class="cmodule-edit js-open-edit">[修改]</span>
 	            </div>
@@ -21,7 +34,7 @@
 	    <div class="cmodal-content">
 	          <ul class="cmodal-list">
 		        <li id="new_addr" class="clist-item caddr-item-new ui_current">
-			          <input id="addr_new_radio" class="clist-radio" type="radio" name="optionAddress" checked="">
+			          <input id="addr_new_radio" class="clist-radio" type="radio" checked="">
 			          <div class="caddr-edit-field js-adress-modify">
 				            <input class="name" type="text" placeholder="姓名">
 				            <input class="addr" type="text" placeholder="外卖送到的地址">
@@ -40,25 +53,19 @@
 	    </p>
   </div>
 </div>
-
 {{-- 送达时间 --}}
 <div id="" class="time-module  u-send-info hover-bac">
   	<h3 class="cmodule-title"><i class="icon-cmodule time"></i>送达时间：</h3>
   	<div class="cmodule-content">
 	    <div class="cart-time js-select-time">
 	            <div class="ctime-toggle">请选择</div>
-
+	            <span class="ui-err-notice">请选择送餐时间</span>
+                
 	            <ol class="ctime-dropdown">
-		            <li class="ctime-item">17:30:00</li>
-		            <li class="ctime-item">17:45:00</li>
-		            <li class="ctime-item">18:00:00</li>
-		            <li class="ctime-item">18:15:00</li>
-		            <li class="ctime-item">18:30:00</li>
-		            <li class="ctime-item">18:45:00</li>
-		            <li class="ctime-item">19:00:00</li>
-		            <li class="ctime-item">19:15:00</li>
-		            <li class="ctime-item">19:30:00</li>
-		            <li class="ctime-item">19:45:00</li>
+	            	@for( $i=0, $len=count($deliver_time); $i<$len; $i++)
+	            		<li class="ctime-item">{{ $deliver_time[$i] }}</li>
+	            	@endfor
+		            
         		</ol>
 	   	</div>
 
