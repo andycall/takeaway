@@ -1,8 +1,9 @@
-define(['jquery'], function(){
+define(['jquery','order/port'], function($,port){
 
 	/*
 	 * @include "修改地址"
 	*/
+
 
 	//打开编辑地址
 	$(".js-open-edit").on("click", function(){
@@ -14,13 +15,18 @@ define(['jquery'], function(){
 		$(".js-cmodal-wrapper").hide();
 	});
 
-	//切换效果
+	//选择时间
+	
+
+	//切换支付方式
 	$(".cpayment-choice").on("click", function(){
 		var $this = $(this);
  
 		if( !$this.hasClass("ui_disabled") && !$this.hasClass("ui_selected") ){ 
 			$(".cpayment-choice").removeClass("ui_selected");
 			$this.addClass('ui_selected');
+
+			$reallyForm.find(".order-way").val( $this.attr("data-pay-way") );
 		}
 	});
             
@@ -127,7 +133,7 @@ define(['jquery'], function(){
 			return false;
 		}
 
-		uSendAjax({
+		uRequestAuthAjax({
 			'success' : function(res){
 				$authWrapper.show();
 	            $uMask.show();
@@ -151,7 +157,7 @@ define(['jquery'], function(){
 	$(".js-repeat-send-auth").on("click", function(){
 		var $this = $(this);
 
-		uSendAuthAjax({
+		uRequestAuthAjax({
 			'success' : function(res){
 	            $reallyForm.find(".user-auth").val(res.auth);
                 
@@ -180,8 +186,8 @@ define(['jquery'], function(){
 	})
     
     //发送ajax
-	function uSendAuthAjax(callback){
-		authAjax('',     //地址
+	function uRequestAuthAjax(callback){
+		authAjax(port['orderAuth'],     //地址
 		{
 			'type'   : 'sms',        
 			'phone'  : authInfo.phone,
@@ -213,7 +219,7 @@ define(['jquery'], function(){
 
 	//发送用户所填短信验证码
 	$(".js-send-confirm-auth").on("click", function(){
-		uAuthAjax('',  //地址
+		authAjax(port['confirmAuth'],  //地址
 		{
 			'auth' : $('.js-confirm-auth').val(),
 			'csrf_token' :  authInfo.csrf_token

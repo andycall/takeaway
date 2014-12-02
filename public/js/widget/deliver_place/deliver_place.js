@@ -1,4 +1,4 @@
-define([ "jquery" ], function() {
+define([ "jquery", "order/port" ], function($, port) {
     //验证必填项
     function checkForm() {
         var $modifyAdress = $(".js-adress-modify"), $telInput = $modifyAdress.find(".tel"), $nameInput = $modifyAdress.find(".name"), $addrInput = $modifyAdress.find(".addr"), $bkTel = $modifyAdress.find(".bk");
@@ -26,8 +26,8 @@ define([ "jquery" ], function() {
         !0) : !1;
     }
     //发送ajax
-    function uSendAuthAjax(callback) {
-        authAjax("", //地址
+    function uRequestAuthAjax(callback) {
+        authAjax(port.orderAuth, //地址
         {
             type: "sms",
             phone: authInfo.phone,
@@ -55,11 +55,12 @@ define([ "jquery" ], function() {
         $(".u-mask").show(), $(".js-cmodal-wrapper").show();
     }), $(".js-exit-edit").on("click", function() {
         $(".u-mask").hide(), $(".js-cmodal-wrapper").hide();
-    }), //切换效果
+    }), //选择时间
+    //切换支付方式
     $(".cpayment-choice").on("click", function() {
         var $this = $(this);
         $this.hasClass("ui_disabled") || $this.hasClass("ui_selected") || ($(".cpayment-choice").removeClass("ui_selected"), 
-        $this.addClass("ui_selected"));
+        $this.addClass("ui_selected"), $reallyForm.find(".order-way").val($this.attr("data-pay-way")));
     });
     var $authWrapper = $(".js-sms-auth-wrapper"), $uMask = $(".u-mask"), $reallyForm = $(".js-save-bottom");
     //短信验证关闭
@@ -85,7 +86,7 @@ define([ "jquery" ], function() {
     }), //短信验证框打开
     //,发送验证码请求到服务器
     $reallyForm.on("submit", function(ev) {
-        return ev.preventDefault(), checkForm() ? void uSendAjax({
+        return ev.preventDefault(), checkForm() ? void uRequestAuthAjax({
             success: function(res) {
                 $authWrapper.show(), $uMask.show(), $reallyForm.find(".user-auth").val(res.auth);
             },
@@ -98,7 +99,7 @@ define([ "jquery" ], function() {
     }), //重复发送ajax
     $(".js-repeat-send-auth").on("click", function() {
         var $this = $(this);
-        uSendAuthAjax({
+        uRequestAuthAjax({
             success: function(res) {
                 $reallyForm.find(".user-auth").val(res.auth), //计时禁止短时间内请求验证码
                 $this.attr("disabled", "disabled");
@@ -114,7 +115,7 @@ define([ "jquery" ], function() {
         });
     }), //发送用户所填短信验证码
     $(".js-send-confirm-auth").on("click", function() {
-        uAuthAjax("", //地址
+        authAjax(port.confirmAuth, //地址
         {
             auth: $(".js-confirm-auth").val(),
             csrf_token: authInfo.csrf_token

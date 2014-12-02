@@ -61,12 +61,12 @@
 	      		     {{--
 	      		        --   注： class名ui_disabled后台根据餐厅是否支持在线付款而决定是否加 
 	      		      --}}
-			    <a id="offline_pay_btn" data-payonline="0" class="cpayment-choice ui_selected">
+			    <a id="offline_pay_btn" data-pay-way="pay_after" class="cpayment-choice ui_selected">
 			            餐到付款
 			            <span class="u-disabled-tip">当前餐厅不支持餐到付款支付功能</span>
 			    </a>
                                       
-			    <a id="online_pay_btn" data-payonline="1" class="cpayment-choice ui_disabled" title="">
+			    <a id="online_pay_btn" data-pay-way="pay_online" class="cpayment-choice ui_disabled" title="">
 			       在线支付
 			       <span class="u-disabled-tip">当前餐厅不支持在线支付功能</span>
 			   </a>
@@ -112,11 +112,13 @@
 </div>
 
 {{-- 隐藏的输入框 --}}
-<input type="hidden" class="user-name">
-<input type="hidden" class="user-tel">
-<input type="hidden" class="user-addr">
-<input type="hidden" class="user-bkTel">
-<input type="hidden" class="uesr-auth">
+<input type="hidden" name="user_name" class="user-name">
+<input type="hidden" name="user_tel" class="user-tel">
+<input type="hidden" name="user_addr" class="user-addr">
+<input type="hidden" name="user_bkTel" class="user-bkTel">
+<input type="hidden" name="user_auth" class="uesr-auth">
+<input type="hidden" name="order_way" class="order-way" value="pay_online">
+<input type="hidden" name="order_time" class="order-time" >
 @section("css")
     @parent
     {{HTML::style("/css/widget/deliver_place/deliver_place.css")}}
