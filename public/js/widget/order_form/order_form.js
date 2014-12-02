@@ -46,7 +46,7 @@ define([ "jquery", "personal/port", "jquery-ui" ], function($, port) {
             p.innerHTML = "已点评，满意";
         }
         $.ajax({
-            url: "####qwertyui###",
+            url: port.commentRestaurant,
             type: "POST",
             data: {
                 shop_id: shop_id,
@@ -88,7 +88,7 @@ define([ "jquery", "personal/port", "jquery-ui" ], function($, port) {
     }), $(".rating_comment .order_comment_save").on("click", function() {
         var rating_comment = $(this).parents(".rating_comment"), order_form = $(this).parents(".order_form"), shop_id = order_form.data("shop_id"), deal_id = order_form.data("deal_id"), goods_id = rating_comment.data("goods_id"), goods_level = rating_comment.find(".mouseover")[0].innerText[0], text = rating_comment.find(".text").val(), $_this = $(this);
         $.ajax({
-            url: "####qwertyui###",
+            url: port.commentCate,
             type: "POST",
             data: {
                 shop_id: shop_id,

@@ -5,6 +5,10 @@ define(function() {
         //短信验证码,
         imageUpload: "/upload/uploadify.php",
         // 个人中心头像上传
-        commentSpeed: "/comment_speed"
+        commentSpeed: "/comment_speed",
+        //评论送餐速度
+        commentRestaurant: "/comment_restaurant",
+        //评论送餐速度
+        commentCate: "/comment_cate"
     };
 });

@@ -1,4 +1,4 @@
-define(['jquery'], function($){
+define(['jquery','home/port'], function($, port){
 	console.log("my collection alert loaded");
     var cancel_collection = [],add_collection = [];
     var n;
@@ -73,7 +73,7 @@ define(['jquery'], function($){
 
                 if(post.add_collection.length || post.cancel_collection.length){
                     $.ajax({
-                        url: "takeaway/public/index.php/collect_list",
+                        url: port["collectList"],
                         type: "POST",
                         data: post,
                         success: function(res) {
@@ -144,7 +144,7 @@ define(['jquery'], function($){
         post.place_id = place_id;
 
         $.ajax({
-            url: "takeaway/public/index.php/cancel_collection",
+            url: port["cancelCollection"],
             type: "POST",
             data: post,
             success: function(res) {
@@ -233,7 +233,7 @@ define(['jquery'], function($){
             post.place_id = place_id;
 
             $.ajax({
-                url: "takeaway/public/index.php/cancel_collection",
+                url: port["addCollection"],
                 type: "POST",
                 data: post,
                 success: function(res) {
