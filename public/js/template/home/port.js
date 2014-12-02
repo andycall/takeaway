@@ -1,7 +1,10 @@
 // 主页 ajax 接口
 define(function() {
     return {
-        //提交我的收藏列表
-        collect_list: "./collect-list"
+        cancelCollection: "/takeaway/public/index.php/cancel_collection",
+        //取消收藏
+        addCollection: "/takeaway/public/index.php/add_collect",
+        //添加收藏
+        collectList: "/takeaway/public/index.php/collect_list"
     };
 });
