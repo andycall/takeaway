@@ -11,7 +11,7 @@
                   {{-- 头部 --}}
                     @yield("header")
                 </div>
-                {{ Form::open(array("method" => "post")); }}
+                {{ Form::open(array("method" => "post","class"=>"js-save-bottom")); }}
                 <div class="wrapper">
                     {{-- 订单顶部  --}}
                     @yield("content_header")

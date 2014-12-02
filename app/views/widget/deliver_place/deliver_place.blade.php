@@ -2,11 +2,17 @@
 <div class="m-adress hover-bac">
 	<div id="" class="caddress-module u-send-info">
 		<h3 class="cmodule-title"><i class="icon-cmodule address"></i>送达地址：</h3>
-	            <div class="cmodule-content">
-			<span class="cmodule-info current_addr">
-			            请选择地址
-			</span>
-		     <span id="addr_edit" class="cmodule-edit js-open-edit">[修改]</span>
+	            <div class="cmodule-content js-show-addr-info">
+	            	<span class="cmodule-info current_name">
+					</span>
+					<span class="cmodule-info current_addr">
+					            请选择地址
+					</span>
+					<span class="cmodule-info current_tel">
+					</span>
+					<span class="cmodule-info current_bkTel">
+					</span>
+		     		<span id="addr_edit" class="cmodule-edit js-open-edit">[修改]</span>
 	            </div>
            </div>
 
@@ -16,7 +22,7 @@
 	          <ul class="cmodal-list">
 		        <li id="new_addr" class="clist-item caddr-item-new ui_current">
 			          <input id="addr_new_radio" class="clist-radio" type="radio" name="optionAddress" checked="">
-			          <div class="caddr-edit-field">
+			          <div class="caddr-edit-field js-adress-modify">
 				            <input class="name" type="text" placeholder="姓名">
 				            <input class="addr" type="text" placeholder="外卖送到的地址">
 				            <input class="tel" type="tel" placeholder="手机号码">
@@ -29,8 +35,8 @@
 	            </ul>
 	    </div>
 	    <p class="cmodal-footer">
-		      <button class="ui-btn btn-confirm confirm_btn">保存</button>
-		      <button class="ui-btn cancel_btn js-exit-edit">取消</button>
+		      <button type="button" class="ui-btn btn-confirm confirm_btn js-save-edit">保存</button>
+		      <button type="button" class="ui-btn cancel_btn js-exit-edit">取消</button>
 	    </p>
   </div>
 </div>
@@ -39,10 +45,25 @@
 <div id="" class="time-module  u-send-info hover-bac">
   	<h3 class="cmodule-title"><i class="icon-cmodule time"></i>送达时间：</h3>
   	<div class="cmodule-content">
-	        	<div class="cart-time">
-	            	<div class="ctime-toggle">立即送出</div>
-	   	 </div>
-    	</div>
+	    <div class="cart-time js-select-time">
+	            <div class="ctime-toggle">请选择</div>
+
+	            <ol class="ctime-dropdown">
+		            <li class="ctime-item">17:30:00</li>
+		            <li class="ctime-item">17:45:00</li>
+		            <li class="ctime-item">18:00:00</li>
+		            <li class="ctime-item">18:15:00</li>
+		            <li class="ctime-item">18:30:00</li>
+		            <li class="ctime-item">18:45:00</li>
+		            <li class="ctime-item">19:00:00</li>
+		            <li class="ctime-item">19:15:00</li>
+		            <li class="ctime-item">19:30:00</li>
+		            <li class="ctime-item">19:45:00</li>
+        		</ol>
+	   	</div>
+
+	   	
+    </div>
 </div>
 
 
@@ -55,12 +76,12 @@
 	      		     {{--
 	      		        --   注： class名ui_disabled后台根据餐厅是否支持在线付款而决定是否加 
 	      		      --}}
-			    <a id="offline_pay_btn" data-payonline="0" class="cpayment-choice ui_selected">
+			    <a id="offline_pay_btn" data-pay-way="pay_after" class="cpayment-choice ui_selected">
 			            餐到付款
 			            <span class="u-disabled-tip">当前餐厅不支持餐到付款支付功能</span>
 			    </a>
                                       
-			    <a id="online_pay_btn" data-payonline="1" class="cpayment-choice ui_disabled" title="">
+			    <a id="online_pay_btn" data-pay-way="pay_online" class="cpayment-choice ui_disabled" title="">
 			       在线支付
 			       <span class="u-disabled-tip">当前餐厅不支持在线支付功能</span>
 			   </a>
@@ -95,7 +116,7 @@
 		</h5>
 
 		<div class="u-auth-send">
-			<div class="auth-input-wrapper"><input type="text" class="auth-input"><button class="repeat-send">重新发送</button></div><input type="button" value="提交验证码" class="confirm-sms-auth">
+			<div class="auth-input-wrapper"><input type="text" class="auth-input js-input-confirm-auth" placeholder="请输入短信验证码"><button type="button" class="repeat-send js-repeat-send-auth">重新发送</button></div><input type="button" value="提交验证码" class="confirm-sms-auth js-send-confirm-auth">
 		</div>
 	</div>
 </div>
@@ -104,6 +125,15 @@
 <div class="u-mask js-exit-edit js-exit-auth">
 	
 </div>
+
+{{-- 隐藏的输入框 --}}
+<input type="hidden" name="user_name" class="user-name">
+<input type="hidden" name="user_tel" class="user-tel">
+<input type="hidden" name="user_addr" class="user-addr">
+<input type="hidden" name="user_bkTel" class="user-bkTel">
+<input type="hidden" name="user_auth" class="uesr-auth">
+<input type="hidden" name="order_way" class="order-way" value="pay_online">
+<input type="hidden" name="order_time" class="order-time" >
 @section("css")
     @parent
     {{HTML::style("/css/widget/deliver_place/deliver_place.css")}}
