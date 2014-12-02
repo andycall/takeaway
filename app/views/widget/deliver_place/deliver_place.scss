@@ -1,3 +1,4 @@
+@charset "utf-8";
 body{
 	font-family: "microsoft yahei";
 }
@@ -8,6 +9,34 @@ ul,ol{
 	list-style: none;
 	margin: 0;
 	padding: 0;
+}
+
+.ui-err-notice{
+	background: #e74c3c;
+	position: absolute;
+	padding: 3px 8px;
+	border-radius: 3px;
+	box-shadow: 1px 2px 1px rgba(0,0,0,0.1);
+	font-size: 12px;
+	color: #fff;
+	white-space: nowrap;
+	cursor: default;
+	top: -45px;
+	left: 0;
+	display: none;
+}
+.ui-err-notice:after{
+	content: "";
+	width: 0;
+	height: 0;
+	display: block;
+	border-style: solid;
+	border-width: 8px;
+	border-color: #e74c3c transparent transparent;
+	position: absolute;
+	left: 50%;
+	bottom: -15px;
+	margin-left: -4px;
 }
 .m-adress{
 	position: relative;
@@ -53,6 +82,10 @@ ul,ol{
 		.cmodule-info{
 			color: #555;
 			vertical-align: middle;
+		}
+		.current_name,.current_tel{
+			font-weight: bold;
+			margin-right: 4px;
 		}
 		.cmodule-edit{
 			margin-left: 10px;

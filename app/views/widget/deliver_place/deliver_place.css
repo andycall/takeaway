@@ -9,6 +9,33 @@ ul, ol {
   margin: 0;
   padding: 0; }
 
+.ui-err-notice {
+  background: #e74c3c;
+  position: absolute;
+  padding: 3px 8px;
+  border-radius: 3px;
+  box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.1);
+  font-size: 12px;
+  color: #fff;
+  white-space: nowrap;
+  cursor: default;
+  top: -45px;
+  left: 0;
+  display: none; }
+
+.ui-err-notice:after {
+  content: "";
+  width: 0;
+  height: 0;
+  display: block;
+  border-style: solid;
+  border-width: 8px;
+  border-color: #e74c3c transparent transparent;
+  position: absolute;
+  left: 50%;
+  bottom: -15px;
+  margin-left: -4px; }
+
 .m-adress {
   position: relative; }
 
@@ -45,6 +72,9 @@ ul, ol {
     .u-send-info .cmodule-content .cmodule-info {
       color: #555;
       vertical-align: middle; }
+    .u-send-info .cmodule-content .current_name, .u-send-info .cmodule-content .current_tel {
+      font-weight: bold;
+      margin-right: 4px; }
     .u-send-info .cmodule-content .cmodule-edit {
       margin-left: 10px;
       font-size: 13px;

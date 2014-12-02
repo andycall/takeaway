@@ -14,6 +14,7 @@ define([ "jquery", "order/port" ], function($, port) {
         //验证电话
         //验证地址
         //添加地址
+        //固定电话
         //添加固定电话
         return regMust.test($nameInput.val()) ? ($nameInput.css("border-color", "#bbb"), 
         $reallyForm.find(".user-name").val($nameInput.val()), authInfo.name = $nameInput.val()) : ($nameInput.css("border-color", "red"), 
@@ -87,20 +88,16 @@ define([ "jquery", "order/port" ], function($, port) {
     //验证发送附带信息
     //保存
     $(".js-save-edit").on("click", function(ev) {
-        checkForm() ? ($(".js-show-addr-info").find(".current_addr").text(authInfo.addr).end().find(".current_name").css({
-            "font-weight": "bold",
-            "margin-right": "4px"
-        }).text(authInfo.name).end().find(".current_tel").text(authInfo.phone).css({
-            "font-weight": "bold",
-            "margin-right": "4px"
-        }).end().find(".current_bkTel").text(authInfo.bkTel).css({
-            "font-weight": "bold",
-            "margin-right": "4px"
-        }), $(".u-mask").hide$(".js-cmodal-wrapper").hide()) : ev.preventDefault();
+        checkForm() ? ($(".js-show-addr-info").find(".current_addr").text(authInfo.addr).end().find(".current_name").text(authInfo.name).end().find(".current_tel").text(authInfo.phone).end().find(".current_bkTel").text(authInfo.bkTel), 
+        $(".u-mask").hide$(".js-cmodal-wrapper").hide()) : ev.preventDefault();
     }), //短信验证框打开
     //,发送验证码请求到服务器
     $reallyForm.on("submit", function(ev) {
-        return ev.preventDefault(), checkForm() ? void uRequestAuthAjax({
+        //验证地址
+        //验证地址
+        //验证送餐时间
+        return ev.preventDefault(), checkForm() ? "" == $reallyForm.find(".order-time").val() ? ($timePeanel.find(".ui-err-notice").show(), 
+        !1) : ($timePeanel.find(".ui-err-notice").hide(), void uRequestAuthAjax({
             success: function(res) {
                 $authWrapper.show(), $uMask.show(), $reallyForm.find(".user-auth").val(res.auth);
             },
@@ -109,7 +106,7 @@ define([ "jquery", "order/port" ], function($, port) {
                 $authWrapper.hide(), $uMask.hide(), alert(res.Msg)) : //默认错误信息
                 alert("验证码发送失败, 请重试！！");
             }
-        }) : ($(".js-cmodal-wrapper").show(), $(".u-mask").show(), !1);
+        })) : ($(".js-cmodal-wrapper").show(), $(".u-mask").show(), !1);
     }), //重复发送ajax
     $(".js-repeat-send-auth").on("click", function() {
         var $this = $(this);
