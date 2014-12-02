@@ -85,7 +85,7 @@ define(['jquery','personal/port', "jquery-ui"], function($, port){
                 p.innerHTML = "已点评，满意";
         }
         $.ajax({
-            url: "####qwertyui###",
+            url: port["commentRestaurant"],
             type: "POST",
             data: {
                 shop_id: shop_id,
@@ -155,7 +155,7 @@ define(['jquery','personal/port', "jquery-ui"], function($, port){
         var $_this = $(this);
 
         $.ajax({
-            url: "####qwertyui###",
+            url: port["commentCate"],
             type: "POST",
             data: {
                 shop_id: shop_id,
