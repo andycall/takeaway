@@ -40,7 +40,7 @@
 </article>
 
 <script type="text/template" id="tpl-cgroup-item">
-    <li class="cgroup-item s_food" data-good_id="<%= data.good_id %>">
+    <li class="cgroup-item s_food" data-good_id="<%= data.good_id %>" data-shop_id="<%= data.shop_id %>">
         <div class="cdish-name"><%= data.title %></div>
         <div class="cdish-price symbol-rmb"><%= data.price %></div>
         <div class="cdish-modify">

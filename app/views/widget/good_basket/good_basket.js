@@ -1,7 +1,5 @@
 define(['jquery', 'underscore', 'shop_cart/shop_cart'], function($, _, cart){
-
     console.log(cart);
-
     /**
      * 把 cart 里的信息更新到 dom 上, itemTotaCount, itemTotalPrice
      */
