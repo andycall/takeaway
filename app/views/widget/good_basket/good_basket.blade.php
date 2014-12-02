@@ -8,19 +8,21 @@
 
     <section class="cart-group cart_group" data-id="0">
         <ul class="cgroup-list" id="cgroup-list">
-            <li class="cgroup-item s_food" data-id="9999500">
-                <div class="cdish-name">年糕盐煎肉</div>
-                <div class="cdish-price symbol-rmb">12</div>
-                <div class="cdish-modify">
-                    <a class="cdish-action desc dec_btn">-</a>
-                    <input class="cdish-qty set_num" type="text" value="4">
-                    <a class="cdish-action incr inc_btn">+</a>
-                </div>
-                <div class="cdish-total symbol-rmb">48</div>
-                <div class="cdish-del">
-                    <a class="del del_btn">×</a>
-                </div>
-            </li>
+            @foreach($data['cart_list'] as $item)
+                <li class="cgroup-item s_food" data-good_id="{{$item['good_id']}}" data-shop_id="{{$data['shop_id']}}">
+                    <div class="cdish-name">{{$item['good_name']}}</div>
+                    <div class="cdish-price symbol-rmb">{{$item['good_price']}}</div>
+                    <div class="cdish-modify">
+                        <a class="cdish-action desc dec_btn">-</a>
+                        <input class="cdish-qty set_num" type="text" value="{{$item['good_amount']}}">
+                        <a class="cdish-action incr inc_btn">+</a>
+                    </div>
+                    <div class="cdish-total symbol-rmb">{{$item['good_total']}}</div>
+                    <div class="cdish-del">
+                        <a class="del del_btn">×</a>
+                    </div>
+                </li>
+            @endforeach
         </ul>
     </section>
 
@@ -34,13 +36,13 @@
 
         </div>
         <div class="float-r">
-            <div class="cart-summary basket_info">共4份美食　应付金额：<span id="total_price_basket" class="symbol-rmb cart-cost">36</span></div>
+            <div class="cart-summary basket_info">共<span id="total_count_basket">{{count($data['cart_list'])}}</span>份美食　应付金额：<span id="total_price_basket" class="symbol-rmb cart-cost">{{$data['cart_amount']}}</span></div>
         </div>
     </footer>
 </article>
 
 <script type="text/template" id="tpl-cgroup-item">
-    <li class="cgroup-item s_food" data-good_id="<%= data.good_id %>" data-shop_id="<%= data.shop_id %>">
+    <li class="cgroup-item s_food" data-good_id="<%= data.good_id %>" data-shop_id="{{$data['shop_id']}}">
         <div class="cdish-name"><%= data.title %></div>
         <div class="cdish-price symbol-rmb"><%= data.price %></div>
         <div class="cdish-modify">

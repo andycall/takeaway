@@ -701,14 +701,36 @@ Route::get("/order", function(){
 			"shop_href" => "//r.ele.me/cqchengcinmianzhuang", // 跳转到改商家的地址
 	        "shop_type" => "中餐",  // 商家类型
 	        "cart_list" => [
-				0 => [
-					"good_name" =>"" ,// 商品名称
-					"good_price" => "", // 商品价格
-					"good_amount" => "", // 商品数量
-					"good_total" => "" // 总计价格
-	            ]
+				[
+                    "good_id" => "1234",
+                    "good_name" =>"商品1" ,// 商品名称
+                    "good_price" => "10", // 商品价格
+                    "good_amount" => "3", // 商品数量
+                    "good_total" => "30" // 总计价格
+                ],
+                [
+                    "good_id" => "12346",
+                    "good_name" =>"商品12" ,// 商品名称
+                    "good_price" => "1", // 商品价格
+                    "good_amount" => "23", // 商品数量
+                    "good_total" => "23" // 总计价格
+                ],
+                [
+                    "good_id" => "3456",
+                    "good_name" =>"商品13" ,// 商品名称
+                    "good_price" => "99", // 商品价格
+                    "good_amount" => "1", // 商品数量
+                    "good_total" => "99" // 总计价格
+                ],
+                [
+                    "good_id" => "235",
+                    "good_name" =>"商品1567" ,// 商品名称
+                    "good_price" => "19", // 商品价格
+                    "good_amount" => "1", // 商品数量
+                    "good_total" => "19" // 总计价格
+                ]
 	        ],
-	        "cart_amount" => "", // 商品总价格
+	        "cart_amount" => "999", // 商品总价格
 	        "deliver_place" => "", // 送达地址 (姓名 地点 电话号码 )董天成 数字图书馆 18523016284
 	        "deliver_time" => "", // 送达时间
 	        "pay_method" => [
