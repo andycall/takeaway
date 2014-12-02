@@ -692,7 +692,33 @@ Route::get("/order", function(){
 				"switch_place" => "123"                  // 切换当前地址的地址
 			]
 		],
-
+		"data" => [
+			"user_name" => "SB" , // 用户姓名
+			"shop_path" => "" , //
+	        "shop_id" => "546" , // 商家id
+	        "shop_logo" => "http://fuss10.elemecdn.com/6/fe/73ecf073e8a14bd3597e3bc66b889jpeg.jpeg",  // 商家logo图片地址
+	        "shop_name" => "Elm",  // 商家名称
+			"shop_href" => "//r.ele.me/cqchengcinmianzhuang", // 跳转到改商家的地址
+	        "shop_type" => "中餐",  // 商家类型
+	        "cart_list" => [
+				0 => [
+					"good_name" =>"" ,// 商品名称
+					"good_price" => "", // 商品价格
+					"good_amount" => "", // 商品数量
+					"good_total" => "" // 总计价格
+	            ]
+	        ],
+	        "cart_amount" => "", // 商品总价格
+	        "deliver_place" => "", // 送达地址 (姓名 地点 电话号码 )董天成 数字图书馆 18523016284
+	        "deliver_time" => "", // 送达时间
+	        "pay_method" => [
+				0 => [
+					"is_default" => "",  // 是否是默认的 0 是默认 1是非默认
+					"method_name" => "" // 付款方式名称
+				]
+	        ]
+		],
+        "pay_statues" => "" // 付款信息, 显示在顶部栏
 	];
 
 	return View::make("template.order.order")->with($data);

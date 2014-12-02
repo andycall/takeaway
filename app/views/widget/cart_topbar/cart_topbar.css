@@ -47,7 +47,7 @@
 	z-index: 50;
 }
 .topbar-user-dropdown {
-	top: 100%;
+	top: 28px;
 	right: 0px;
 	width: 100px;
 	background: none repeat scroll 0% 0% #FFF;
