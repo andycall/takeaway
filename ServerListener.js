@@ -12,7 +12,7 @@ var exec = require("child_process").exec,
     path,interval;
 
 stdout.write("-------------------Server Listener-------------------\n");
-stdout.write("Path: ");
+stdout.write("Repository Path: ");
 
 stdin.resume();
 stdin.setEncoding("utf-8");
@@ -48,7 +48,7 @@ process.on('uncaughtException', function(err) {
 
 //拉代码
 function pullCode(branch){
-    exec("cd "+path+" && git pull origin " + branch,function(error, stdout, stderr){
+    exec("cd "+path+" && git pull",function(error, stdout, stderr){
         var time = new Date().toString(),
             date = getDate(),
             path = dirPath+"/"+ date +".log";
