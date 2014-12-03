@@ -214,11 +214,25 @@ define(['jquery','home/port'], function($, port){
 
     function addClick(){
 
-        $(".add").on('click',function() {
+        $(".collection-row-none").on('click',function() {
 
-            $(".collection-modal").css('display', 'block');
+            var is_login = $(this).data("is_login");
+            var next_src = $(this).data("next_src");
 
-            $(".modal-backdrop").css('display', 'block');
+            if(is_login){
+
+                $(".collection-modal").css('display', 'block');
+
+                $(".modal-backdrop").css('display', 'block');
+
+            }else{
+
+                alert("亲! 还没登录呢! ");
+
+                location.href = next_src;
+
+            }
+
 
         });
 
