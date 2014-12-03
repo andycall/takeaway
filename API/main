@@ -37,6 +37,8 @@
                     place_id : ""                   // 商家位置id
                     shop_url : ""                   // 点击跳转到相应商家
                     shop_logo : ""                  // 商家的logo图片地址
+                    is_login  : ""                  // 是否登录
+                    next_src : ""                   // 跳转到登录的地址
                     deliver_time : ""               // 送货时间间隔
                     deliver_start: ""               // 送货开始时间
                     shop_name : ""                  // 商家名称
