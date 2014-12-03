@@ -50,6 +50,12 @@ Route::get('/', function(){
 			]
 		],
 
+        "uncollection_store" => [
+            "data" => [
+                "is_login" => "1",
+                "next_src" => "##"
+            ]
+        ],
 
         "my_store" => [
             "url" => "###",
