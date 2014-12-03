@@ -672,6 +672,11 @@ Route::get('/', function(){
 	return View::make('template.home.home')->with($data);
 });
 
+Route::get("/map", function(){
+	return View::make("template.map.map");
+});
+
+
 Route::get("/order", function(){
 	$data = [
 		"userbar" => [
