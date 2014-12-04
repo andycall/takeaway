@@ -31,6 +31,7 @@ output : {
         "cart_list" => [
             0 => [
                 good_name : "" // 商品名称
+                good_id : "" //  商品ID
                 good_price : "" // 商品价格
                 good_amount : "" // 商品数量
                 good_total : "" // 总计价格

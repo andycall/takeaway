@@ -49,6 +49,16 @@
             ]
         }
 
+        // 未收藏的店铺
+        uncollection_store : {
+            data : [
+                {
+                    is_login  : ""                  // 是否登录
+                    next_src : ""                   // 跳转到登录的地址
+                }
+            ]
+        }
+
 
         // 我的收藏点击按钮之后弹出的框
         my_store_alert : {
