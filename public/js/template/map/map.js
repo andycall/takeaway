@@ -6,7 +6,8 @@ require.config({
         }
     },
     paths: {
-        map: "../widget/map"
+        map: "../widget/map",
+        localMap: "../template/map"
     }
 }), // 加载项目所需的所有依赖项
 define([ "map/map", "map/init" ], function() {

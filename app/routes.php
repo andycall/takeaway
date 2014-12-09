@@ -11,6 +11,30 @@
 |
 */
 
+Route::post("mapSearch", function(){
+	$data = [
+		0 => [
+			"lat" => "12",
+			"lng" => "34"
+		],
+		1 => [
+			"lat" => "12",
+			"lng" => "34"
+		],
+		2 => [
+			"lat" => "12",
+			"lng" => "34"
+		],
+		3 => [
+			"lat" => "12",
+			"lng" => "34"
+		]
+	];
+
+	return Response::json($data);
+
+});
+
 
 Route::get('/', function(){
 	$data = [
@@ -703,11 +727,7 @@ Route::get("/order", function(){
 				"switch_place" => "123",          // 切换当前地址的地址
 			]
 		],
-<<<<<<< HEAD
-        "deliver_place" => "重庆邮电大学",    // 送达地址 
-=======
         "deliver_place" => "重庆邮电大学",    // 送达地址
->>>>>>> 7a3db5c7680abfe3945f7571e329642bdf49a558
         "deliver_tel"   => "18166387284",   // 送达电话18523016284
         "deliver_name"  => "李金鑫",      //送达姓名  董天成
         "deliver_time" =>[                //商家提供的送达时间
